@@ -19,13 +19,13 @@
                 </a>
 
                 <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
-                    <ul class="navbar-nav">
+                    <ul class="navbar-nav"> 
                         <li class="nav-item">
-                            <a href="{{ route('front.home') }}" class="nav-link active">Home</a>
+                            <a href="{{ route('front.home') }}" class="nav-link {{ Request::is('/') ? 'active' : '' }}">Home</a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="{{ route('front.menu') }}" class="nav-link">Menu</a>
+                            <a href="{{ route('front.menu') }}" class="nav-link {{ Request::is('menu') ? 'active' : '' }} ">Menu</a>
                         </li>
                     </ul>
 

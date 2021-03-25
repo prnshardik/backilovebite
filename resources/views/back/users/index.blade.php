@@ -11,17 +11,6 @@
 @endsection
 
 @section('content')
-    {{-- <div class="page-heading mt-4">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-                <a href="{{ route('back') }}"><span class="text-dark font-weight-bold">Dashboard</span></a>
-            </li>
-            <li class="breadcrumb-item">
-                <a href="{{ route('back.users') }}"><span class="text-dark font-weight-bold">Userss</span></a>
-            </li>
-            <li class="breadcrumb-item"><span class="text-dark font-weight-bold">Index</span></li>
-        </ol>
-    </div> --}}
     <div class="page-content fade-in-up">
         <div class="row">
             <div class="col-lg-12">
@@ -40,7 +29,6 @@
                                     <th>No</th>
                                     <th>Name</th>
                                     <th>Email</th>
-                                    <th>Image</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
@@ -109,10 +97,6 @@
                             name: 'email'
                         },
                         {
-                            data: 'image',
-                            name: 'image'
-                        },
-                        {
                             data: 'status',
                             name: 'status'
                         },
@@ -134,7 +118,7 @@
 
             if (confirm(msg)) {
                 $.ajax({
-                    "url": "{!! route('back.users.change_status') !!}",
+                    "url": "{!! route('back.users.change.status') !!}",
                     "dataType": "json",
                     "type": "POST",
                     "data":{

@@ -5,9 +5,9 @@
                 <div class="col-lg-6 col-md-6">
                     <p>
                         <i class="far fa-copyright"></i>
-                        2020 Handout. All Rights Reserved by
-                        <a href="https://envytheme.com/" target="_blank">
-                            EnvyTheme
+                        {{ date('Y') }} {{ _site_title() }}. All Rights Reserved by
+                        <a href="https://cypherocean.com/" target="_blank">
+                            CyoherOcean
                         </a>
                     </p>
                 </div>

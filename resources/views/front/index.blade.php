@@ -229,79 +229,6 @@
         </div>
     </section>
 
-    <section class="others-area ptb-100">
-        <div class="container-fluid">
-            <div class="row align-items-center">
-                <div class="col-lg-6 col-md-6">
-                    <div class="others-item">
-                        <div class="number">
-                            <span>01</span>
-                        </div>
-
-                        <h3>Mild Butter</h3>
-                        <p>Learning do amet contur diiscivt suia non nuameius velit modi</p>
-                    </div>
-
-                    <div class="others-item main-item">
-                        <div class="number">
-                            <span>02</span>
-                        </div>
-
-                        <h3>Slices Beef</h3>
-                        <p>Learning do amet contur diiscivt suia non nuameius velit modi</p>
-                    </div>
-
-                    <div class="others-item bottom-0">
-                        <div class="number">
-                            <span>03</span>
-                        </div>
-
-                        <h3>Sleek Onion</h3>
-                        <p>Learning do amet contur diiscivt suia non nuameius velit modi</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 col-md-6">
-                    <div class="others-item two main-item-two">
-                        <div class="number">
-                            <span>04</span>
-                        </div>
-
-                        <h3>Fresh Bread</h3>
-                        <p>Learning do amet contur diiscivt suia non nuameius velit modi</p>
-                    </div>
-
-                    <div class="others-item two">
-                        <div class="number">
-                            <span>05</span>
-                        </div>
-
-                        <h3>Lettuce Leaf</h3>
-                        <p>Learning do amet contur diiscivt suia non nuameius velit modi</p>
-                    </div>
-
-                    <div class="others-item two main-item-two bottom-0">
-                        <div class="number">
-                            <span>06</span>
-                        </div>
-
-                        <h3>Glow Cheese</h3>
-                        <p>Learning do amet contur diiscivt suia non nuameius velit modi</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="others-shape">
-            <div class="shape1">
-                <img src="{{ asset('front/img/shape/shape1.png') }}" alt="image">
-            </div>
-            <div class="shape2">
-                <img src="{{ asset('front/img/shape/shape2.png') }}" alt="image">
-            </div>
-        </div>
-    </section>
-
     <section class="burger-shop-area ptb-100">
         <div class="container">
             <div class="section-title">
@@ -1153,12 +1080,6 @@
                                 <span></span>
                                 <i class="flaticon-play-button"></i>
                             </a>
-
-                            <a href="#" class="default-btn-two">
-                                Earn Coin
-                                <span></span>
-                                <i class="flaticon-play-button"></i>
-                            </a>
                         </div>
                     </div>
                 </div>
@@ -1191,7 +1112,7 @@
                                 <h3>David McLean</h3>
                                 <span>CEO, Foodplanet</span>
                             </div>
-                            <p>I chose Handout because of their value And incredible superior customer Service they really awesome Food with quality service</p>
+                            <p>I chose ilovebite because of their value And incredible superior customer Service they really awesome Food with quality service</p>
                         </div>
 
                         <div class="testimonial-item">
@@ -1199,7 +1120,7 @@
                                 <h3>David McLean</h3>
                                 <span>CEO, Foodplanet</span>
                             </div>
-                            <p>I chose Handout because of their value And incredible superior customer Service they really awesome Food with quality service</p>
+                            <p>I chose ilovebite because of their value And incredible superior customer Service they really awesome Food with quality service</p>
                         </div>
                     </div>
                 </div>
@@ -1355,8 +1276,8 @@
     <section class="blog-area pb-70">
         <div class="container">
             <div class="section-title">
-                <span>News</span>
-                <h2>Read Burger News</h2>
+                <span>Blogs</span>
+                <h2>Read Our Blogs</h2>
             </div>
 
             <div class="row">
@@ -1512,7 +1433,7 @@
                             </li>
                             <li>
                                 <i class="flaticon-chat"></i>
-                                <a href="mailto:hello@handout.com">hello@handout.com</a>
+                                <a href="mailto:hello@ilovebite.com">hello@ilovebite.com</a>
                             </li>
                             <li>
                                 <i class="flaticon-aim"></i>
