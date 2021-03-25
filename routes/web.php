@@ -9,11 +9,14 @@ Route::get('command', function() {
     return "Command Successfully";
 });
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['middleware' => 'prevent-back-history', 'namespace' => 'Front', 'as' => 'front.'], function(){
+    Route::get('/', 'HomeController@index')->name('home');
+    Route::get('menu', 'HomeController@menu')->name('menu');
 });
 
+
 Route::group(['middleware' => 'prevent-back-history', 'namespace' => 'Back', 'as' => 'back.', 'prefix' => 'back'], function(){
+
     Route::group(['middleware' => ['guest:admin']], function () {
         Route::get('/', 'AuthController@login')->name('login');
         Route::post('signin', 'AuthController@signin')->name('signin');

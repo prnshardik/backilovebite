@@ -5,7 +5,7 @@
     @include('back.layout.meta')
 
     <title>{{ _site_title() }} | @yield('title') </title>
-    
+
     @include('back.layout.styles')
 </head>
 
@@ -31,6 +31,5 @@
     </div>
 
     @include('back.layout.scripts')
-
 </body>
 </html>
