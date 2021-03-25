@@ -15,15 +15,15 @@
         public function signin(LoginRequest $request){
             if($request->ajax()){ return true; }
 
-            $auth = auth()->attempt(['email' => $request->email, 'password' => $request->password, 'is_admin' => 'Y']);
+            $auth = auth()->guard('admin')->attempt(['email' => $request->email, 'password' => $request->password, 'is_admin' => 'Y']);
             if($auth != false){
-                $user = auth()->user();
-
+                $user = auth()->guard('admin')->user();
+                // dd($user);
                 if($user->status == 'inactive'){
-                    Auth::logout();
+                    auth()->guard('admin')->logout();
                     return redirect()->route('back.login')->with('error', 'Account belongs to this credentials is inactive, please contact administrator');
                 }elseif($user->status == 'deleted'){
-                    Auth::logout();
+                    auth()->guard('admin')->logout();
                     return redirect()->route('back.login')->with('error', 'Account belongs to this credentials is deleted, please contact administrator');
                 }else{
                     return redirect()->route('back.home')->with('success', 'Login successfully');
@@ -34,7 +34,7 @@
         }
 
         public function logout(Request $request){
-            Auth::logout();
-            return redirect()->route('back.login');
+            auth()->guard('admin')->logout();
+            return redirect()->guest(route( 'back.login' ));
         }
     }

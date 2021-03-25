@@ -9,8 +9,8 @@
             </div>
         </div>
         <ul class="side-menu metismenu">
-            <li class="{{ Request::is('back/dashboard*') ? 'active' : '' }}">
-                <a href="{{ route('back.home') }}"><i class="sidebar-item-icon fa fa-th-large"></i>
+            <li class="{{ Request::is('back/home*') ? 'active' : '' }}">
+                <a class="{{ Request::is('back/home*') ? 'active' : '' }}" href="{{ route('back.home') }}"><i class="sidebar-item-icon fa fa-th-large"></i>
                     <span class="nav-label">Dashboard</span>
                 </a>
             </li>
