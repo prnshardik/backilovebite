@@ -14,11 +14,12 @@ Route::group(['middleware' => 'prevent-back-history', 'namespace' => 'Front', 'a
     Route::get('menu', 'HomeController@menu')->name('menu');
 });
 
+Route::get('/admin', function(){ return redirect()->route('back.login'); });
 
 Route::group(['middleware' => 'prevent-back-history', 'namespace' => 'Back', 'as' => 'back.', 'prefix' => 'back'], function(){
 
     Route::group(['middleware' => ['guest:admin']], function () {
-        Route::get('/', 'AuthController@login')->name('login');
+        Route::get('/login', 'AuthController@login')->name('login');
         Route::post('signin', 'AuthController@signin')->name('signin');
     });
 
@@ -26,7 +27,7 @@ Route::group(['middleware' => 'prevent-back-history', 'namespace' => 'Back', 'as
         Route::get('logout', 'AuthController@logout')->name('logout');
 
         Route::get('home', 'HomeController@index')->name('home');
-        
+
         /** users */
             Route::any('users', 'UsersController@index')->name('users');
             Route::get('users/create', 'UsersController@create')->name('users.create');
