@@ -13,17 +13,6 @@
 @endsection
 
 @section('content')
-    {{-- <div class="page-heading mt-4">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-                <a href="{{ route('back.dashboard') }}"><span class="text-dark font-weight-bold">Dashboard</span></a>
-            </li>
-            <li class="breadcrumb-item">
-                <a href="{{ route('back.users') }}"><span class="text-dark font-weight-bold">Users</span></a>
-            </li>
-            <li class="breadcrumb-item"><span class="text-dark font-weight-bold">View</span></li>
-        </ol>
-    </div> --}}
     <div class="page-content fade-in-up">
         <div class="row">
             <div class="col-md-12">
@@ -32,34 +21,32 @@
                         <div class="ibox-title">Users View</div>
                     </div>
                     <div class="ibox-body">
-                        <form name="form" id="form" method="post">
-                            <div class="row">
-                                <div class="form-group col-sm-6">
-                                    <label for="firstname">First Name</label>
-                                    <input type="text" name="firstname" id="firstname" class="form-control" placeholder="Plese enter firstname" value="{{ $data->firstname ?? '' }}" disabled>
-                                    <span class="kt-form__help error firstname"></span>
-                                </div>
-                                <div class="form-group col-sm-6">
-                                    <label for="lastname">Last Name</label>
-                                    <input type="text" name="lastname" id="lastname" class="form-control" placeholder="Plese enter lastname" value="{{ $data->lastname ?? '' }}" disabled>
-                                    <span class="kt-form__help error lastname"></span>
-                                </div>
-                                <div class="form-group col-sm-6">
-                                    <label for="email">Email</label>
-                                    <input type="text" name="email" id="email" class="form-control" placeholder="Plese enter email address" value="{{ $data->email ?? '' }}" disabled>
-                                    <span class="kt-form__help error email"></span>
-                                </div>
-                                <div class="form-group col-sm-12">
-                                    <label for="image">Image</label>
-                                    <input type="file" class="dropify" id="image" name="image" data-default-file="{{ $data->image ?? '' }}" data-show-remove="false" disabled>
-                                    <span class="kt-form__help error image"></span>
-                                </div>
+                        <div class="row">
+                            <div class="form-group col-sm-6">
+                                <label for="firstname">First Name</label>
+                                <input type="text" name="firstname" id="firstname" class="form-control" placeholder="Plese enter firstname" value="{{ $data->firstname ?? '' }}" disabled>
+                                <span class="kt-form__help error firstname"></span>
                             </div>
+                            <div class="form-group col-sm-6">
+                                <label for="lastname">Last Name</label>
+                                <input type="text" name="lastname" id="lastname" class="form-control" placeholder="Plese enter lastname" value="{{ $data->lastname ?? '' }}" disabled>
+                                <span class="kt-form__help error lastname"></span>
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <label for="email">Email</label>
+                                <input type="text" name="email" id="email" class="form-control" placeholder="Plese enter email address" value="{{ $data->email ?? '' }}" disabled>
+                                <span class="kt-form__help error email"></span>
+                            </div>
+                            <div class="form-group col-sm-12">
+                                <label for="image">Image</label>
+                                <input type="file" class="dropify" id="image" name="image" data-default-file="{{ $data->image ?? '' }}" data-show-remove="false" disabled>
+                                <span class="kt-form__help error image"></span>
+                            </div>
+                        </div>
 
-                            <div class="form-group">
-                                <a href="{{ route('back.users') }}" class="btn btn-default">Back</a>
-                            </div>
-                        </form>
+                        <div class="form-group">
+                            <a href="{{ route('back.users') }}" class="btn btn-default">Back</a>
+                        </div>
                     </div>
                 </div>
             </div>

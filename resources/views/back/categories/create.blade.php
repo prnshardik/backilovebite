@@ -21,7 +21,7 @@
                         <div class="ibox-title">Category Create</div>
                     </div>
                     <div class="ibox-body">
-                        <form name="form" action="{{ route('back.category.insert') }}" id="form" method="post" enctype="multipart/form-data">
+                        <form name="form" action="{{ route('back.categories.insert') }}" id="form" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="form-group col-sm-12">
@@ -31,14 +31,13 @@
                                 </div>
                                 <div class="form-group col-sm-12">
                                     <label for="image">Image</label>
-                                    <input type="file" class="form-control dropify" id="image" name="image" data-show-remove="false" data-height="200" data-max-file-size="3M" data-show-errors="true"  data-allowed-file-extensions="jpg png jpeg JPG PNG JPEG"  data-max-file-size-preview="3M" required>
+                                    <input type="file" class="form-control dropify" id="image" name="image" data-show-remove="false" data-height="200" data-max-file-size="3M" data-show-errors="true"  data-allowed-file-extensions="jpg png jpeg JPG PNG JPEG"  data-max-file-size-preview="3M" required="required">
                                     <span class="kt-form__help error image"></span>
                                 </div>
                             </div>
-
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary">Submit</button>
-                                <a href="{{ route('back.category') }}" class="btn btn-default">Back</a>
+                                <a href="{{ route('back.categories') }}" class="btn btn-default">Back</a>
                             </div>
                         </form>
                     </div>

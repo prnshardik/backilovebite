@@ -21,25 +21,22 @@
                         <div class="ibox-title">Category View</div>
                     </div>
                     <div class="ibox-body">
-                        <form name="form"  id="form" method="post" enctype="multipart/form-data">
-                            @csrf
-                            <div class="row">
-                                <div class="form-group col-sm-12">
-                                    <label for="name">Name</label>
-                                    <input type="text" name="name" id="name" class="form-control" placeholder="Plese enter name" value="{{ $data->name ?? '' }}" disabled>
-                                    <span class="kt-form__help error name"></span>
-                                </div>
-                                <div class="form-group col-sm-12">
-                                    <label for="image">Image</label>
-                                    <input type="file" class="dropify" id="image" name="image" data-show-remove="false" data-height="200" data-default-file="{{ $data->image ?? '' }}" data-max-file-size="3M" data-show-errors="true"  data-allowed-file-extensions="jpg png jpeg JPG PNG JPEG"  data-max-file-size-preview="3M" disabled>
-                                    <span class="kt-form__help error image"></span>
-                                </div>
+                        <div class="row">
+                            <div class="form-group col-sm-12">
+                                <label for="name">Name</label>
+                                <input type="text" name="name" id="name" class="form-control" placeholder="Plese enter name" value="{{ $data->name ?? '' }}" disabled>
+                                <span class="kt-form__help error name"></span>
                             </div>
+                            <div class="form-group col-sm-12">
+                                <label for="image">Image</label>
+                                <input type="file" class="dropify" id="image" name="image" data-show-remove="false" data-height="200" data-default-file="{{ $data->image ?? '' }}" data-max-file-size="3M" data-show-errors="true"  data-allowed-file-extensions="jpg png jpeg JPG PNG JPEG"  data-max-file-size-preview="3M" disabled>
+                                <span class="kt-form__help error image"></span>
+                            </div>
+                        </div>
 
-                            <div class="form-group">
-                                <a href="{{ route('back.category') }}" class="btn btn-default">Back</a>
-                            </div>
-                        </form>
+                        <div class="form-group">
+                            <a href="{{ route('back.categories') }}" class="btn btn-default">Back</a>
+                        </div>
                     </div>
                 </div>
             </div>

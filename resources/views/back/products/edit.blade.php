@@ -36,16 +36,16 @@
                                 </div>
 
                                 <div class="form-group col-sm-6">
-                                    <label for="cat_id">Category Name</label>
-                                    <select name="cat_id" class="form-control select2">
-                                        <option value="" disabled >Select Category</option>
-                                        @if(isset($cat) && $cat != '')
-                                            @foreach($cat AS $row)
-                                                <option value="{{ $row->id }}" <?=(isset($data->cat_id) && $row->id == $data->cat_id ? 'selected' :'')?>>{{ $row->name }}</option>
+                                    <label for="category_id">Category Name</label>
+                                    <select name="category_id" class="form-control select2">
+                                        <option value="" disabled>Select Category</option>
+                                        @if(isset($categories) && $categories != '')
+                                            @foreach($categories AS $row)
+                                                <option value="{{ $row->id }}" <?=(isset($data->category_id) && $row->id == $data->category_id ? 'selected' :'')?>>{{ $row->name }}</option>
                                             @endforeach
                                         @endif
                                     </select>
-                                    <span class="kt-form__help error cat_id"></span>
+                                    <span class="kt-form__help error category_id"></span>
                                 </div>
 
                                 <div class="form-group col-sm-6">

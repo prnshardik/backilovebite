@@ -8,7 +8,7 @@
     use App\Http\Requests\CategoryRequest;
     use DataTables, DB, File;
 
-    class CategoryController extends Controller{
+    class CategoriesController extends Controller{
 
         /** index */
             public function index(Request $request){
@@ -16,10 +16,10 @@
                     $path = asset('/back/uploads/category/').'/';
 
                     $data = Category::select('id', 'name', 'status',
-                                            DB::Raw("CASE 
-                                                        WHEN ".'image'." != '' 
-                                                        THEN CONCAT("."'".$path."'".", ".'image'.") 
-                                                        ELSE CONCAT("."'".$path."'".", 'default.png') 
+                                            DB::Raw("CASE
+                                                        WHEN ".'image'." != ''
+                                                        THEN CONCAT("."'".$path."'".", ".'image'.")
+                                                        ELSE CONCAT("."'".$path."'".", 'default.png')
                                                     END as image")
                                         )
                                     ->get();
@@ -28,14 +28,14 @@
                             ->addIndexColumn()
                             ->addColumn('action', function($data){
                                 return ' <div class="btn-group">
-                                                <a href="'.route('back.category.view', ['id' => base64_encode($data->id)]).'" class="btn btn-default btn-xs">
+                                                <a href="'.route('back.categories.view', ['id' => base64_encode($data->id)]).'" class="btn btn-default btn-xs">
                                                     <i class="fa fa-eye"></i>
                                                 </a> &nbsp;
 
-                                                <a href="'.route('back.category.edit', ['id' => base64_encode($data->id)]).'" class="btn btn-default btn-xs">
+                                                <a href="'.route('back.categories.edit', ['id' => base64_encode($data->id)]).'" class="btn btn-default btn-xs">
                                                     <i class="fa fa-edit"></i>
                                                 </a> &nbsp;
-                                                
+
                                                 <a href="javascript:;" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
                                                     <i class="fa fa-bars"></i>
                                                 </a> &nbsp;
@@ -66,13 +66,13 @@
                             ->rawColumns(['action', 'status', 'image'])
                             ->make(true);
                 }
-                return view('back.category.index');
+                return view('back.categories.index');
             }
         /** index */
 
         /** create */
             public function create(Request $request){
-                return view('back.category.create');
+                return view('back.categories.create');
             }
         /** create */
 
@@ -80,7 +80,7 @@
             public function insert(CategoryRequest $request){
                 if($request->ajax()){ return true; }
                 if(!empty($request->all())){
-                    
+
                     $crud = [
                             'name' => $request->name,
                             'status' => 'active',
@@ -107,16 +107,16 @@
                     }else{
                         $crud["image"] = 'default.png';
                     }
-                    
+
                     $category = Category::insertGetId($crud);
-                    
+
                     if($category){
                         if(!empty($request->file('image')))
                             $file->move($folder_to_upload, $filenameToStore);
 
-                        return redirect()->route('back.category')->with('success', 'Category Created Successfully.');
+                        return redirect()->route('back.categories')->with('success', 'Category Created Successfully.');
                     }else{
-                        return redirect()->route('back.category')->with('error', 'Faild To Create Category!');
+                        return redirect()->route('back.categories')->with('error', 'Faild To Create Category!');
                     }
                 }else{
                     return redirect()->back('back.category')->with('error', 'Something went wrong');
@@ -127,52 +127,52 @@
         /** view */
             public function view(Request $request, $id=''){
                 if($id == '')
-                    return redirect()->route('back.category')->with('error', 'Something went wrong Found');
+                    return redirect()->route('back.categories')->with('error', 'Something went wrong Found');
 
                 $id = base64_decode($id);
                 $path = asset('/back/uploads/category/').'/';
 
                 $data = Category::select('id', 'name', 'status',
-                                    DB::Raw("CASE 
-                                                WHEN ".'image'." != '' 
-                                                THEN CONCAT("."'".$path."'".", ".'image'.") 
-                                                ELSE CONCAT("."'".$path."'".", 'default.png') 
+                                    DB::Raw("CASE
+                                                WHEN ".'image'." != ''
+                                                THEN CONCAT("."'".$path."'".", ".'image'.")
+                                                ELSE CONCAT("."'".$path."'".", 'default.png')
                                             END as image")
                                 )
                         ->where(['id' => $id])
                         ->first();
-                
+
                 if($data)
-                    return view('back.category.view')->with('data', $data);
+                    return view('back.categories.view')->with('data', $data);
                 else
-                    return redirect()->route('back.category')->with('error', 'No Category Found');
+                    return redirect()->route('back.categories')->with('error', 'No Category Found');
             }
         /** view */
 
         /** edit */
             public function edit(Request $request, $id=''){
                 if($id == '')
-                    return redirect()->route('back.category')->with('error', 'Something went wrong Found');
+                    return redirect()->route('back.categories')->with('error', 'Something went wrong Found');
 
                 $id = base64_decode($id);
                 $path = asset('/back/uploads/category/').'/';
 
                 $data = Category::select('id', 'name', 'status',
-                                    DB::Raw("CASE 
-                                                WHEN ".'image'." != '' 
-                                                THEN CONCAT("."'".$path."'".", ".'image'.") 
-                                                ELSE CONCAT("."'".$path."'".", 'default.png') 
+                                    DB::Raw("CASE
+                                                WHEN ".'image'." != ''
+                                                THEN CONCAT("."'".$path."'".", ".'image'.")
+                                                ELSE CONCAT("."'".$path."'".", 'default.png')
                                             END as image")
                                 )
                         ->where(['id' => $id])
                         ->first();
-                
+
                 if($data)
-                    return view('back.category.edit')->with('data', $data);
+                    return view('back.categories.edit')->with('data', $data);
                 else
-                    return redirect()->route('back.category')->with('error', 'No Category Found');
+                    return redirect()->route('back.categories')->with('error', 'No Category Found');
             }
-        /** edit */ 
+        /** edit */
 
         /** update */
             public function update(CategoryRequest $request){
@@ -204,19 +204,19 @@
                     }else{
                         $crud["image"] = $ext_user->image ?? null;
                     }
-                    DB::enableQueryLog();
+
                     $update = Category::where('id',$request->id)->update($crud);
-                    // dd(DB::getQuerylog());
+
                     if($update){
                         if(!empty($request->file('image')))
                             $file->move($folder_to_upload, $filenameToStore);
 
-                        return redirect()->route('back.category')->with('success', 'Category Updated Successfully.');
+                        return redirect()->route('back.categories')->with('success', 'Category Updated Successfully.');
                     }else{
-                        return redirect()->route('back.category')->with('error', 'Faild To Update Category!');
+                        return redirect()->route('back.categories')->with('error', 'Faild To Update Category!');
                     }
                 }else{
-                    return redirect()->back('back.category')->with('error', 'Something went wrong');
+                    return redirect()->back('back.categories')->with('error', 'Something went wrong');
                 }
             }
         /** update */
@@ -233,58 +233,22 @@
 
                     if(!empty($data)){
                         if($status == 'deleted'){
-                            $delete = Category::where('id',$id)->delete();
-                            if($delete){
-                                return response()->json(['code' => 200]);
-                            }else{
-                                return response()->json(['code' => 201]);
-                            }
-
-                        }else{
-
-                            $update = Category::where(['id' => $id])->update(['status' => $status, 'updated_at' => date('Y-m-d H:i:s'), 'updated_by' => auth()->user()->id]);
-
-                            if($update){
-                                return response()->json(['code' => 200]);
-                            }else{
-                                return response()->json(['code' => 201]);
-                            }
-                        }
-                        }else{
-                            return response()->json(['code' => 201]);
-                        }
-                }else{
-                    return response()->json(['code' => 201]);
-                }
-            }
-        /** change-status */
-
-        /** delete-image(Not Necessary!!!) */
-            public function delete_image(Request $request){
-                if(!$request->ajax()){ exit('No direct script access allowed'); }
-
-                if(!empty($request->all())){
-                    $id = base64_decode($request->id);
-                    $data = Category::find($id);
-
-                    if($data){
-                        if($data->image != ''){
                             $file_path = public_path().'/back/uploads/category/'.$data->image;
+                            @unlink($file_path);
 
-                            if(File::exists($file_path) && $file_path != ''){
-                                if($data->image != 'default.png'){
-                                    unlink($file_path);
-                                }
-                            }
-
-                            $update = Category::where(['id' => $id])->limit(1)->update(['image' => '']);
+                            $delete = Category::where(['id' => $id])->delete();
+                    
+                            if($delete)
+                                return response()->json(['code' => 200]);
+                            else
+                                return response()->json(['code' => 201]);
+                        }else{
+                            $update = Category::where(['id' => $id])->update(['status' => $status, 'updated_at' => date('Y-m-d H:i:s'), 'updated_by' => auth()->user()->id]);
 
                             if($update)
                                 return response()->json(['code' => 200]);
                             else
                                 return response()->json(['code' => 201]);
-                        }else{
-                            return response()->json(['code' => 200]);
                         }
                     }else{
                         return response()->json(['code' => 201]);
@@ -293,5 +257,5 @@
                     return response()->json(['code' => 201]);
                 }
             }
-        /** delete-image(Not Necessary!!!) */
+        /** change-status */
     }

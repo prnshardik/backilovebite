@@ -44,6 +44,38 @@ class CreateUsersTable extends Migration
                 'updated_by' => 1,
             )
         );
+
+        DB::table('users')->insert(
+            array(
+                'firstname' => 'Mitul',
+                'lastname' => 'Sonigara',
+                'email' => 'mitul@cypherocean.com',
+                'password' => bcrypt('Admin@123'),
+                'image' => 'admin-avatar.png',
+                'status' => 'active',
+                'is_admin' => 'Y',
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
+                'created_by' => 1,
+                'updated_by' => 1,
+            )
+        );
+
+        DB::table('users')->insert(
+            array(
+                'firstname' => 'HardIk',
+                'lastname' => 'Patel',
+                'email' => 'hardik@cypherocean.com',
+                'password' => bcrypt('Admin@123'),
+                'image' => 'admin-avatar.png',
+                'status' => 'active',
+                'is_admin' => 'Y',
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
+                'created_by' => 1,
+                'updated_by' => 1,
+            )
+        );
     }
 
     /**

@@ -4,7 +4,7 @@
 @endsection
 
 @section('title')
-    Category
+    Categories
 @endsection
 
 @section('styles')
@@ -18,7 +18,7 @@
                     <div class="ibox-head">
                         <h1 class="ibox-title">Category</h1>
                         <h1 class="pull-right">
-                            <a class="btn btn-primary pull-right ml-2" style="margin-top: 8px;margin-bottom: 5px" href="{{ route('back.category.create') }}">Add New</a>
+                            <a class="btn btn-primary pull-right ml-2" style="margin-top: 8px;margin-bottom: 5px" href="{{ route('back.categories.create') }}">Add New</a>
                         </h1>
                     </div>
 
@@ -71,7 +71,7 @@
                     // lengthChange: false,
 
                     "ajax":{
-                        "url": "{{ route('back.category') }}",
+                        "url": "{{ route('back.categories') }}",
                         "type": "POST",
                         "dataType": "json",
                         "data":{
@@ -118,7 +118,7 @@
 
             if (confirm(msg)) {
                 $.ajax({
-                    "url": "{!! route('back.category.change.status') !!}",
+                    "url": "{!! route('back.categories.change.status') !!}",
                     "dataType": "json",
                     "type": "POST",
                     "data":{

@@ -21,7 +21,7 @@
                         <div class="ibox-title">Category Edit</div>
                     </div>
                     <div class="ibox-body">
-                        <form name="form" action="{{ route('back.category.update') }}" id="form" method="post" enctype="multipart/form-data">
+                        <form name="form" action="{{ route('back.categories.update') }}" id="form" method="post" enctype="multipart/form-data">
                             @csrf
                             @method('PATCH')
 
@@ -41,7 +41,7 @@
 
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary">Submit</button>
-                                <a href="{{ route('back.category') }}" class="btn btn-default">Back</a>
+                                <a href="{{ route('back.categories') }}" class="btn btn-default">Back</a>
                             </div>
                         </form>
                     </div>

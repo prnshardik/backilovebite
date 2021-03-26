@@ -9,14 +9,14 @@
     use App\Http\Requests\ProductRequest;
     use DataTables, DB, File;
 
-    class ProductController extends Controller{
+    class ProductsController extends Controller{
 
         /** index */
             public function index(Request $request){
                 if($request->ajax()){
                     $path = asset('/back/uploads/products/').'/';
 
-                    $data = Product::select('id', 'name', 'status','price',
+                    $data = Product::select('id', 'name', 'price', 'status', 
                                             DB::Raw("CASE 
                                                         WHEN ".'image'." != '' 
                                                         THEN CONCAT("."'".$path."'".", ".'image'.") 
@@ -73,9 +73,9 @@
 
         /** create */
             public function create(Request $request){
-                $cat = DB::table('categories')->where('status','active')->get();
+                $categories = DB::table('categories')->where('status','active')->get();
                 
-                return view('back.products.create')->with('cat',$cat);
+                return view('back.products.create')->with('categories', $categories);
             }
         /** create */
 
@@ -86,7 +86,7 @@
                     
                     $crud = [
                             'name' => $request->name,
-                            'cat_id' => $request->cat_id,
+                            'category_id' => $request->category_id,
                             'price' => $request->price,
                             'status' => 'active',
                             'created_at' => date('Y-m-d H:i:s'),
@@ -138,17 +138,17 @@
                 $path = asset('/back/uploads/products/').'/';
 
                 $data = DB::table('products AS p')
-                                ->select('p.id', 'p.name', 'p.status','p.price',
+                                ->select('p.id', 'p.name', 'p.price', 'p.status',
                                     DB::Raw("CASE 
                                                 WHEN ".'p.image'." != '' 
                                                 THEN CONCAT("."'".$path."'".", ".'p.image'.") 
                                                 ELSE CONCAT("."'".$path."'".", 'default.png') 
-                                            END as image"),'c.name AS cat_name'
+                                            END as image"), 'c.name AS category_name'
                                 )
-                        ->leftjoin('categories AS c' ,'p.cat_id' ,'c.id')
+                        ->leftjoin('categories as c', 'p.category_id', 'c.id')
                         ->where(['p.id' => $id])
                         ->first();
-                // dd($data);
+
                 if($data)
                     return view('back.products.view')->with('data', $data);
                 else
@@ -163,8 +163,9 @@
 
                 $id = base64_decode($id);
                 $path = asset('/back/uploads/products/').'/';
-                $cat = DB::table('categories')->where('status','active')->get();
-                $data = Product::select('id', 'cat_id','name', 'status','price',
+                $categories = DB::table('categories')->where('status', 'active')->get();
+
+                $data = Product::select('id', 'category_id', 'name', 'price', 'status',
                                     DB::Raw("CASE 
                                                 WHEN ".'image'." != '' 
                                                 THEN CONCAT("."'".$path."'".", ".'image'.") 
@@ -175,9 +176,9 @@
                         ->first();
                 
                 if($data)
-                    return view('back.products.edit')->with(['data' => $data ,'cat' => $cat]);
+                    return view('back.products.edit')->with(['data' => $data, 'categories' => $categories]);
                 else
-                    return redirect()->route('back.products')->with('error', 'No Category Found');
+                    return redirect()->route('back.products')->with('error', 'No Product Found');
             }
         /** edit */ 
 
@@ -190,7 +191,7 @@
 
                     $crud = [
                             'name' => $request->name,
-                            'cat_id' => $request->cat_id,
+                            'category_id' => $request->category_id,
                             'price' => $request->price,
                             'updated_at' => date('Y-m-d H:i:s'),
                             'updated_by' => auth()->user()->id
@@ -213,16 +214,16 @@
                     }else{
                         $crud["image"] = $ext_user->image ?? null;
                     }
-                    DB::enableQueryLog();
+
                     $update = Product::where('id',$request->id)->update($crud);
-                    // dd(DB::getQuerylog());
+
                     if($update){
                         if(!empty($request->file('image')))
                             $file->move($folder_to_upload, $filenameToStore);
 
-                        return redirect()->route('back.products')->with('success', 'Category Updated Successfully.');
+                        return redirect()->route('back.products')->with('success', 'Product Updated Successfully.');
                     }else{
-                        return redirect()->route('back.products')->with('error', 'Faild To Update Category!');
+                        return redirect()->route('back.products')->with('error', 'Faild To Update Product!');
                     }
                 }else{
                     return redirect()->back('back.products')->with('error', 'Something went wrong');
@@ -242,15 +243,16 @@
 
                     if(!empty($data)){
                         if($status == 'deleted'){
+                            $file_path = public_path().'/back/uploads/products/'.$data->image;
+                            @unlink($file_path);
+
                             $delete = Product::where('id',$id)->delete();
                             if($delete){
                                 return response()->json(['code' => 200]);
                             }else{
                                 return response()->json(['code' => 201]);
                             }
-
                         }else{
-
                             $update = Product::where(['id' => $id])->update(['status' => $status, 'updated_at' => date('Y-m-d H:i:s'), 'updated_by' => auth()->user()->id]);
 
                             if($update){
