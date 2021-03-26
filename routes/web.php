@@ -37,5 +37,17 @@ Route::group(['middleware' => 'prevent-back-history', 'namespace' => 'Back', 'as
             Route::post('users/change-status', 'UsersController@change_status')->name('users.change.status');
             Route::post('users/delete-image', 'UsersController@delete_image')->name('users.delete.image');
         /** users */
+
+
+        /** Category */
+            Route::any('category', 'CategoryController@index')->name('category');
+            Route::get('category/create', 'CategoryController@create')->name('category.create');
+            Route::post('category/insert', 'CategoryController@insert')->name('category.insert');
+            Route::get('category/view/{id?}', 'CategoryController@view')->name('category.view');
+            Route::get('category/edit/{id?}', 'CategoryController@edit')->name('category.edit');
+            Route::patch('category/update', 'CategoryController@update')->name('category.update');
+            Route::post('category/change-status', 'CategoryController@change_status')->name('category.change.status');
+            Route::post('category/delete-image', 'CategoryController@delete_image')->name('category.delete.image');
+        /** Category */
     });
 });

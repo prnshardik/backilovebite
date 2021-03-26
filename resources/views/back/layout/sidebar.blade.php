@@ -21,6 +21,12 @@
                     <span class="nav-label">Users</span>
                 </a>
             </li>
+
+            <li class="{{ Request::is('back/category*') ? 'active' : '' }}">
+                <a class="{{ Request::is('back/category*') ? 'active' : '' }}" href="{{ route('back.category') }}"><i class="sidebar-item-icon fa fa-bars"></i>
+                    <span class="nav-label">Category</span>
+                </a>
+            </li>
         </ul>
     </div>
 </nav>
