@@ -115,12 +115,12 @@
                         if(!empty($request->file('image')))
                             $file->move($folder_to_upload, $filenameToStore);
 
-                        return redirect()->route('back.users')->with('success', 'User Created Successfully.');
+                        return redirect()->route('back.category')->with('success', 'Category Created Successfully.');
                     }else{
-                        return redirect()->route('back.users')->with('error', 'Faild To Create User!');
+                        return redirect()->route('back.category')->with('error', 'Faild To Create Category!');
                     }
                 }else{
-                    return redirect()->back('back.users')->with('error', 'Something went wrong');
+                    return redirect()->back('back.category')->with('error', 'Something went wrong');
                 }
             }
         /** insert */
