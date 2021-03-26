@@ -27,6 +27,12 @@
                     <span class="nav-label">Category</span>
                 </a>
             </li>
+
+            <li class="{{ Request::is('back/products*') ? 'active' : '' }}">
+                <a class="{{ Request::is('back/products*') ? 'active' : '' }}" href="{{ route('back.products') }}"><i class="sidebar-item-icon fa fa-tasks"></i>
+                    <span class="nav-label">Products</span>
+                </a>
+            </li>
         </ul>
     </div>
 </nav>

@@ -4,18 +4,19 @@
 
     use App\Http\Controllers\Controller;
     use Illuminate\Http\Request;
+    use App\Models\Product;
     use App\Models\Category;
-    use App\Http\Requests\CategoryRequest;
+    use App\Http\Requests\ProductRequest;
     use DataTables, DB, File;
 
-    class CategoryController extends Controller{
+    class ProductController extends Controller{
 
         /** index */
             public function index(Request $request){
                 if($request->ajax()){
-                    $path = asset('/back/uploads/category/').'/';
+                    $path = asset('/back/uploads/products/').'/';
 
-                    $data = Category::select('id', 'name', 'status',
+                    $data = Product::select('id', 'name', 'status','price',
                                             DB::Raw("CASE 
                                                         WHEN ".'image'." != '' 
                                                         THEN CONCAT("."'".$path."'".", ".'image'.") 
@@ -28,11 +29,11 @@
                             ->addIndexColumn()
                             ->addColumn('action', function($data){
                                 return ' <div class="btn-group">
-                                                <a href="'.route('back.category.view', ['id' => base64_encode($data->id)]).'" class="btn btn-default btn-xs">
+                                                <a href="'.route('back.products.view', ['id' => base64_encode($data->id)]).'" class="btn btn-default btn-xs">
                                                     <i class="fa fa-eye"></i>
                                                 </a> &nbsp;
 
-                                                <a href="'.route('back.category.edit', ['id' => base64_encode($data->id)]).'" class="btn btn-default btn-xs">
+                                                <a href="'.route('back.products.edit', ['id' => base64_encode($data->id)]).'" class="btn btn-default btn-xs">
                                                     <i class="fa fa-edit"></i>
                                                 </a> &nbsp;
                                                 
@@ -66,23 +67,27 @@
                             ->rawColumns(['action', 'status', 'image'])
                             ->make(true);
                 }
-                return view('back.category.index');
+                return view('back.products.index');
             }
         /** index */
 
         /** create */
             public function create(Request $request){
-                return view('back.category.create');
+                $cat = DB::table('categories')->where('status','active')->get();
+                
+                return view('back.products.create')->with('cat',$cat);
             }
         /** create */
 
         /** insert */
-            public function insert(CategoryRequest $request){
+            public function insert(ProductRequest $request){
                 if($request->ajax()){ return true; }
                 if(!empty($request->all())){
                     
                     $crud = [
                             'name' => $request->name,
+                            'cat_id' => $request->cat_id,
+                            'price' => $request->price,
                             'status' => 'active',
                             'created_at' => date('Y-m-d H:i:s'),
                             'created_by' => auth()->user()->id,
@@ -97,7 +102,7 @@
                         $extension = $request->file('image')->getClientOriginalExtension();
                         $filenameToStore = time()."_".$filename.'.'.$extension;
 
-                        $folder_to_upload = public_path().'/back/uploads/category/';
+                        $folder_to_upload = public_path().'/back/uploads/products/';
 
                         if (!\File::exists($folder_to_upload)) {
                             \File::makeDirectory($folder_to_upload, 0777, true, true);
@@ -108,18 +113,18 @@
                         $crud["image"] = 'default.png';
                     }
                     
-                    $category = Category::insertGetId($crud);
+                    $category = Product::insertGetId($crud);
                     
                     if($category){
                         if(!empty($request->file('image')))
                             $file->move($folder_to_upload, $filenameToStore);
 
-                        return redirect()->route('back.category')->with('success', 'Category Created Successfully.');
+                        return redirect()->route('back.products')->with('success', 'Product Created Successfully.');
                     }else{
-                        return redirect()->route('back.category')->with('error', 'Faild To Create Category!');
+                        return redirect()->route('back.products')->with('error', 'Faild To Create Product!');
                     }
                 }else{
-                    return redirect()->back('back.category')->with('error', 'Something went wrong');
+                    return redirect()->back('back.products')->with('error', 'Something went wrong');
                 }
             }
         /** insert */
@@ -127,37 +132,39 @@
         /** view */
             public function view(Request $request, $id=''){
                 if($id == '')
-                    return redirect()->route('back.category')->with('error', 'Something went wrong Found');
+                    return redirect()->route('back.products')->with('error', 'Something went wrong Found');
 
                 $id = base64_decode($id);
-                $path = asset('/back/uploads/category/').'/';
+                $path = asset('/back/uploads/products/').'/';
 
-                $data = Category::select('id', 'name', 'status',
+                $data = DB::table('products AS p')
+                                ->select('p.id', 'p.name', 'p.status','p.price',
                                     DB::Raw("CASE 
-                                                WHEN ".'image'." != '' 
-                                                THEN CONCAT("."'".$path."'".", ".'image'.") 
+                                                WHEN ".'p.image'." != '' 
+                                                THEN CONCAT("."'".$path."'".", ".'p.image'.") 
                                                 ELSE CONCAT("."'".$path."'".", 'default.png') 
-                                            END as image")
+                                            END as image"),'c.name AS cat_name'
                                 )
-                        ->where(['id' => $id])
+                        ->leftjoin('categories AS c' ,'p.cat_id' ,'c.id')
+                        ->where(['p.id' => $id])
                         ->first();
-                
+                // dd($data);
                 if($data)
-                    return view('back.category.view')->with('data', $data);
+                    return view('back.products.view')->with('data', $data);
                 else
-                    return redirect()->route('back.category')->with('error', 'No Category Found');
+                    return redirect()->route('back.products')->with('error', 'No Product Found');
             }
         /** view */
 
         /** edit */
             public function edit(Request $request, $id=''){
                 if($id == '')
-                    return redirect()->route('back.category')->with('error', 'Something went wrong Found');
+                    return redirect()->route('back.products')->with('error', 'Something went wrong Found');
 
                 $id = base64_decode($id);
-                $path = asset('/back/uploads/category/').'/';
-
-                $data = Category::select('id', 'name', 'status',
+                $path = asset('/back/uploads/products/').'/';
+                $cat = DB::table('categories')->where('status','active')->get();
+                $data = Product::select('id', 'cat_id','name', 'status','price',
                                     DB::Raw("CASE 
                                                 WHEN ".'image'." != '' 
                                                 THEN CONCAT("."'".$path."'".", ".'image'.") 
@@ -168,21 +175,23 @@
                         ->first();
                 
                 if($data)
-                    return view('back.category.edit')->with('data', $data);
+                    return view('back.products.edit')->with(['data' => $data ,'cat' => $cat]);
                 else
-                    return redirect()->route('back.category')->with('error', 'No Category Found');
+                    return redirect()->route('back.products')->with('error', 'No Category Found');
             }
         /** edit */ 
 
         /** update */
-            public function update(CategoryRequest $request){
+            public function update(ProductRequest $request){
                 if($request->ajax()){ return true; }
 
                 if(!empty($request->all())){
-                    $ext_user = Category::where(['id' => $request->id])->first();
+                    $ext_user = Product::where(['id' => $request->id])->first();
 
                     $crud = [
-                            'name' => ucfirst($request->name),
+                            'name' => $request->name,
+                            'cat_id' => $request->cat_id,
+                            'price' => $request->price,
                             'updated_at' => date('Y-m-d H:i:s'),
                             'updated_by' => auth()->user()->id
                     ];
@@ -194,7 +203,7 @@
                         $extension = $request->file('image')->getClientOriginalExtension();
                         $filenameToStore = time()."_".$filename.'.'.$extension;
 
-                        $folder_to_upload = public_path().'/back/uploads/category/';
+                        $folder_to_upload = public_path().'/back/uploads/products/';
 
                         if (!\File::exists($folder_to_upload)) {
                             \File::makeDirectory($folder_to_upload, 0777, true, true);
@@ -205,18 +214,18 @@
                         $crud["image"] = $ext_user->image ?? null;
                     }
                     DB::enableQueryLog();
-                    $update = Category::where('id',$request->id)->update($crud);
+                    $update = Product::where('id',$request->id)->update($crud);
                     // dd(DB::getQuerylog());
                     if($update){
                         if(!empty($request->file('image')))
                             $file->move($folder_to_upload, $filenameToStore);
 
-                        return redirect()->route('back.category')->with('success', 'Category Updated Successfully.');
+                        return redirect()->route('back.products')->with('success', 'Category Updated Successfully.');
                     }else{
-                        return redirect()->route('back.category')->with('error', 'Faild To Update Category!');
+                        return redirect()->route('back.products')->with('error', 'Faild To Update Category!');
                     }
                 }else{
-                    return redirect()->back('back.category')->with('error', 'Something went wrong');
+                    return redirect()->back('back.products')->with('error', 'Something went wrong');
                 }
             }
         /** update */
@@ -229,11 +238,11 @@
                     $id = base64_decode($request->id);
                     $status = $request->status;
 
-                    $data = Category::where(['id' => $id])->first();
+                    $data = Product::where(['id' => $id])->first();
 
                     if(!empty($data)){
                         if($status == 'deleted'){
-                            $delete = Category::where('id',$id)->delete();
+                            $delete = Product::where('id',$id)->delete();
                             if($delete){
                                 return response()->json(['code' => 200]);
                             }else{
@@ -242,7 +251,7 @@
 
                         }else{
 
-                            $update = Category::where(['id' => $id])->update(['status' => $status, 'updated_at' => date('Y-m-d H:i:s'), 'updated_by' => auth()->user()->id]);
+                            $update = Product::where(['id' => $id])->update(['status' => $status, 'updated_at' => date('Y-m-d H:i:s'), 'updated_by' => auth()->user()->id]);
 
                             if($update){
                                 return response()->json(['code' => 200]);
@@ -258,40 +267,4 @@
                 }
             }
         /** change-status */
-
-        /** delete-image(Not Necessary!!!) */
-            public function delete_image(Request $request){
-                if(!$request->ajax()){ exit('No direct script access allowed'); }
-
-                if(!empty($request->all())){
-                    $id = base64_decode($request->id);
-                    $data = Category::find($id);
-
-                    if($data){
-                        if($data->image != ''){
-                            $file_path = public_path().'/back/uploads/category/'.$data->image;
-
-                            if(File::exists($file_path) && $file_path != ''){
-                                if($data->image != 'default.png'){
-                                    unlink($file_path);
-                                }
-                            }
-
-                            $update = Category::where(['id' => $id])->limit(1)->update(['image' => '']);
-
-                            if($update)
-                                return response()->json(['code' => 200]);
-                            else
-                                return response()->json(['code' => 201]);
-                        }else{
-                            return response()->json(['code' => 200]);
-                        }
-                    }else{
-                        return response()->json(['code' => 201]);
-                    }
-                }else{
-                    return response()->json(['code' => 201]);
-                }
-            }
-        /** delete-image(Not Necessary!!!) */
     }
