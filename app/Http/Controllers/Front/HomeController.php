@@ -53,4 +53,24 @@
         public function product_detail(Request $request){
             return view('front.product-detail');
         }
+
+        public function checkout(Request $request){
+            return view('front.checkout');
+        }
+
+        public function error(Request $request){
+            return view('front.error');
+        }
+
+        public function login(Request $request){
+            return view('front.login');
+        }
+
+        public function signup(Request $request){
+            return view('front.signup');
+        }
+
+        public function forgot_password(Request $request){
+            return view('front.forgot_password');
+        }
     }

@@ -6,9 +6,7 @@
                     <p>
                         <i class="far fa-copyright"></i>
                         {{ date('Y') }} {{ _site_title() }}. All Rights Reserved by
-                        <a href="https://cypherocean.com/" target="_blank">
-                            CyoherOcean
-                        </a>
+                        <a href="https://cypherocean.com/" target="_blank">CyoherOcean</a>
                     </p>
                 </div>
 

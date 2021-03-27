@@ -183,7 +183,7 @@
                                     <span><b>$1713.50</b></span>
                                 </li>
                             </ul>
-                            <a href="#" class="default-btn">
+                            <a href="{{ route('front.checkout') }}" class="default-btn">
                                 Proceed to Checkout
                                 <span></span>
                             </a>
