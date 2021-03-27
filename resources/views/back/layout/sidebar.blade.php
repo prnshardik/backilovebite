@@ -29,6 +29,12 @@
                     <span class="nav-label">Products</span>
                 </a>
             </li>
+
+            <li class="{{ Request::is('back/settings*') ? 'active' : '' }}">
+                <a class="{{ Request::is('back/settings*') ? 'active' : '' }}" href="{{ route('back.settings') }}"><i class="sidebar-item-icon fa fa-cogs"></i>
+                    <span class="nav-label">Settings</span>
+                </a>
+            </li>
         </ul>
     </div>
 </nav>

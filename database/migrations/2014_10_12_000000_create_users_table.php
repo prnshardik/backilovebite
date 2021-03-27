@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\File;
 
 class CreateUsersTable extends Migration
 {
@@ -76,7 +77,11 @@ class CreateUsersTable extends Migration
                 'updated_by' => 1,
             )
         );
+        if(file_exists(public_path('/back/dummy/admin-avatar.png')) && !file_exists(public_path('/back/uploads/users/admin-avatar.png')) ){
+            File::copy(public_path('/back/dummy/admin-avatar.png'), public_path('/back/uploads/users/admin-avatar.png'));
+        }
     }
+
 
     /**
      * Reverse the migrations.

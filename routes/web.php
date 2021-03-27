@@ -44,7 +44,7 @@ Route::group(['middleware' => 'prevent-back-history', 'namespace' => 'Back', 'as
 
         Route::get('home', 'HomeController@index')->name('home');
 
-        /** users */
+        /** Users */
             Route::any('users', 'UsersController@index')->name('users');
             Route::get('users/create', 'UsersController@create')->name('users.create');
             Route::post('users/insert', 'UsersController@insert')->name('users.insert');
@@ -53,9 +53,9 @@ Route::group(['middleware' => 'prevent-back-history', 'namespace' => 'Back', 'as
             Route::patch('users/update', 'UsersController@update')->name('users.update');
             Route::post('users/change-status', 'UsersController@change_status')->name('users.change.status');
             Route::post('users/delete-image', 'UsersController@delete_image')->name('users.delete.image');
-        /** users */
+        /** Users */
 
-        /** categories */
+        /** Categories */
             Route::any('categories', 'CategoriesController@index')->name('categories');
             Route::get('categories/create', 'CategoriesController@create')->name('categories.create');
             Route::post('categories/insert', 'CategoriesController@insert')->name('categories.insert');
@@ -63,9 +63,9 @@ Route::group(['middleware' => 'prevent-back-history', 'namespace' => 'Back', 'as
             Route::get('categories/edit/{id?}', 'CategoriesController@edit')->name('categories.edit');
             Route::patch('categories/update', 'CategoriesController@update')->name('categories.update');
             Route::post('categories/change-status', 'CategoriesController@change_status')->name('categories.change.status');
-        /** categories */
+        /** Categories */
 
-        /** products */
+        /** Products */
             Route::any('products', 'ProductsController@index')->name('products');
             Route::get('products/create', 'ProductsController@create')->name('products.create');
             Route::post('products/insert', 'ProductsController@insert')->name('products.insert');
@@ -73,6 +73,14 @@ Route::group(['middleware' => 'prevent-back-history', 'namespace' => 'Back', 'as
             Route::get('products/edit/{id?}', 'ProductsController@edit')->name('products.edit');
             Route::patch('products/update', 'ProductsController@update')->name('products.update');
             Route::post('products/change-status', 'ProductsController@change_status')->name('products.change.status');
-        /** products */
+        /** Products */
+
+        /** Settings */
+            Route::any('settings', 'settingsController@index')->name('settings');
+            Route::get('settings/view/{id?}', 'settingsController@view')->name('settings.view');
+            Route::get('settings/edit/{id?}', 'settingsController@edit')->name('settings.edit');
+            Route::patch('settings/update', 'settingsController@update')->name('settings.update');
+            Route::post('settings/change-status', 'settingsController@change_status')->name('settings.change.status');
+        /** Settings */
     });
 });
