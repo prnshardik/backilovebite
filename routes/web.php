@@ -12,12 +12,22 @@ Route::get('command', function() {
 Route::group(['middleware' => 'prevent-back-history', 'namespace' => 'Front', 'as' => 'front.'], function(){
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('menu', 'HomeController@menu')->name('menu');
+    Route::get('gallery', 'HomeController@gallery')->name('gallery');
+    Route::get('about', 'HomeController@about')->name('about');
+    Route::get('contact', 'HomeController@contact')->name('contact');
+    Route::get('testimonial', 'HomeController@testimonial')->name('testimonial');
+    Route::get('faq', 'HomeController@faq')->name('faq');
+    Route::get('terms', 'HomeController@terms')->name('terms');
+    Route::get('privacy', 'HomeController@privacy')->name('privacy');
+    
+    Route::get('cart', 'HomeController@cart')->name('cart');
+    Route::get('shop', 'HomeController@shop')->name('shop');
+    Route::get('product-detail', 'HomeController@product_detail')->name('product-detail');
 });
 
 Route::get('/admin', function(){ return redirect()->route('back.login'); });
 
 Route::group(['middleware' => 'prevent-back-history', 'namespace' => 'Back', 'as' => 'back.', 'prefix' => 'back'], function(){
-
     Route::group(['middleware' => ['guest:admin']], function () {
         Route::get('/login', 'AuthController@login')->name('login');
         Route::post('signin', 'AuthController@signin')->name('signin');

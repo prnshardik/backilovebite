@@ -13,4 +13,44 @@
         public function menu(Request $request){
             return view('front.menu');
         }
+
+        public function gallery(Request $request){
+            return view('front.gallery');
+        }
+
+        public function about(Request $request){
+            return view('front.about');
+        }
+
+        public function contact(Request $request){
+            return view('front.contact');
+        }
+        
+        public function testimonial(Request $request){
+            return view('front.testimonial');
+        }
+        
+        public function faq(Request $request){
+            return view('front.faq');
+        }
+
+        public function terms(Request $request){
+            return view('front.terms');
+        }
+
+        public function privacy(Request $request){
+            return view('front.privacy');
+        }
+
+        public function cart(Request $request){
+            return view('front.cart');
+        }
+
+        public function shop(Request $request){
+            return view('front.shop');
+        }
+        
+        public function product_detail(Request $request){
+            return view('front.product-detail');
+        }
     }

@@ -15,10 +15,10 @@
                 <div class="col-lg-6 col-md-6">
                     <ul>
                         <li>
-                            <a href="terms-condition.html">Terms & Conditions</a>
+                            <a href="{{ route('front.terms') }}">Terms & Conditions</a>
                         </li>
                         <li>
-                            <a href="privacy-policy.html">Privacy Policy</a>
+                            <a href="{{ route('front.privacy') }}">Privacy Policy</a>
                         </li>
                     </ul>
                 </div>

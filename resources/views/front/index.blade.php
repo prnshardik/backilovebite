@@ -23,7 +23,6 @@
                                         <img src="{{ asset('front/img/slider/burger.png') }}" alt="image">
                                         <span>Updated Menu's Item</span>
                                         <h1>Chickensup  Burger</h1>
-
                                         <ul class="list">
                                             <li>
                                                 <i class="flaticon-share"></i>
@@ -40,7 +39,6 @@
                                         </ul>
                                     </div>
                                 </div>
-
                                 <div class="col-lg-6">
                                     <div class="slider-image">
                                         <img src="{{ asset('front/img/slider/image1.png') }}" alt="image">
@@ -60,7 +58,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="home-item item-bg1">
                 <div class="d-table">
                     <div class="d-table-cell">
@@ -71,7 +68,6 @@
                                         <img src="{{ asset('front/img/slider/burger.png') }}" alt="image">
                                         <span>Updated Menu's Item</span>
                                         <h1>Chickensup  Burger</h1>
-
                                         <ul class="list">
                                             <li>
                                                 <i class="flaticon-share"></i>
@@ -88,11 +84,9 @@
                                         </ul>
                                     </div>
                                 </div>
-
                                 <div class="col-lg-6">
                                     <div class="slider-image">
                                         <img src="{{ asset('front/img/slider/image2.png') }}" alt="image">
-
                                         <div class="shape">
                                             <img src="{{ asset('front/img/slider/shape.png') }}" alt="image">
                                             <div class="dollar">
@@ -108,7 +102,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="home-item item-bg1">
                 <div class="d-table">
                     <div class="d-table-cell">
@@ -119,7 +112,6 @@
                                         <img src="{{ asset('front/img/slider/burger.png') }}" alt="image">
                                         <span>Updated Menu's Item</span>
                                         <h1>Chickensup  Burger</h1>
-
                                         <ul class="list">
                                             <li>
                                                 <i class="flaticon-share"></i>
@@ -136,11 +128,9 @@
                                         </ul>
                                     </div>
                                 </div>
-
                                 <div class="col-lg-6">
                                     <div class="slider-image">
                                         <img src="{{ asset('front/img/slider/image3.png') }}" alt="image">
-
                                         <div class="shape">
                                             <img src="{{ asset('front/img/slider/shape.png') }}" alt="image">
                                             <div class="dollar">
@@ -158,7 +148,6 @@
             </div>
         </div>
     </div>
-
     <section class="food-area ptb-100">
         <div class="container">
             <div class="row">
@@ -168,21 +157,18 @@
                         <h3>Hamburger</h3>
                     </div>
                 </div>
-
                 <div class="col-lg-3 col-md-6">
                     <div class="food-item">
                         <img src="{{ asset('front/img/food/2.png') }}" alt="image">
                         <h3>Yummy Donuts</h3>
                     </div>
                 </div>
-
                 <div class="col-lg-3 col-md-6">
                     <div class="food-item">
                         <img src="{{ asset('front/img/food/3.png') }}" alt="image">
                         <h3>Craft Pizza</h3>
                     </div>
                 </div>
-
                 <div class="col-lg-3 col-md-6">
                     <div class="food-item">
                         <img src="{{ asset('front/img/food/4.png') }}" alt="image">
@@ -192,7 +178,6 @@
             </div>
         </div>
     </section>
-
     <section class="welcome-area pb-100">
         <div class="container-fluid">
             <div class="row align-items-center">
@@ -201,15 +186,14 @@
                         <img src="{{ asset('front/img/welcome.png') }}" alt="image">
                     </div>
                 </div>
-
                 <div class="col-lg-6">
                     <div class="welcome-content">
                         <span>Welcome</span>
                         <h3>Burger With Yummy Test Real Love</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
                         <div class="welcome-btn">
-                            <a href="#" class="default-btn">
-                                Explore History
+                            <a href="{{ route('front.menu') }}" class="default-btn">
+                                Menu
                                 <i class="flaticon-play-button"></i>
                                 <span></span>
                             </a>
@@ -218,7 +202,6 @@
                 </div>
             </div>
         </div>
-
         <div class="welcome-shape">
             <div class="shape1">
                 <img src="{{ asset('front/img/image-icon/1.png') }}" alt="image">
@@ -228,168 +211,143 @@
             </div>
         </div>
     </section>
-
     <section class="burger-shop-area ptb-100">
         <div class="container">
             <div class="section-title">
                 <span>Quality Products</span>
                 <h2>Burgers As Expected Dilicious One</h2>
             </div>
-
             <div class="burger-shop-slider owl-carousel owl-theme">
                 <div class="burger-shop-item">
                     <div class="image">
                         <img src="{{ asset('front/img/burger-shop/1.png') }}" alt="image">
-
                         <div class="burger-btn">
-                            <a href="shop.html" class="default-btn">
+                            <a href="{{ route('front.shop') }}" class="default-btn">
                                 Order Online
                                 <i class="flaticon-play-button"></i>
                                 <span></span>
                             </a>
                         </div>
                     </div>
-
                     <div class="content">
                         <h3>The Crispy Bun</h3>
                         <p>Learning do amet contur dicivt suia non nuameius velit</p>
                         <span>$56.00</span>
                     </div>
                 </div>
-
                 <div class="burger-shop-item">
                     <div class="image">
                         <img src="{{ asset('front/img/burger-shop/2.png') }}" alt="image">
-
                         <div class="burger-btn">
-                            <a href="shop.html" class="default-btn">
+                            <a href="{{ route('front.shop') }}" class="default-btn">
                                 Order Online
                                 <i class="flaticon-play-button"></i>
                                 <span></span>
                             </a>
                         </div>
                     </div>
-
                     <div class="content">
                         <h3>Beefcakes Burgers</h3>
                         <p>Buarning do amet contur dicivt suia non nuameius velit</p>
                         <span>$30.00</span>
                     </div>
                 </div>
-
                 <div class="burger-shop-item">
                     <div class="image">
                         <img src="{{ asset('front/img/burger-shop/3.png') }}" alt="image">
-
                         <div class="burger-btn">
-                            <a href="shop.html" class="default-btn">
+                            <a href="{{ route('front.shop') }}" class="default-btn">
                                 Order Online
                                 <i class="flaticon-play-button"></i>
                                 <span></span>
                             </a>
                         </div>
                     </div>
-
                     <div class="content">
                         <h3>Bugout Burgers</h3>
                         <p>Rearning do amet contur dicivt suia non nuameius velit</p>
                         <span>$35.00</span>
                     </div>
                 </div>
-
                 <div class="burger-shop-item">
                     <div class="image">
                         <img src="{{ asset('front/img/burger-shop/4.png') }}" alt="image">
-
                         <div class="burger-btn">
-                            <a href="shop.html" class="default-btn">
+                            <a href="{{ route('front.shop') }}" class="default-btn">
                                 Order Online
                                 <i class="flaticon-play-button"></i>
                                 <span></span>
                             </a>
                         </div>
                     </div>
-
                     <div class="content">
                         <h3>Crazy Burger</h3>
                         <p>Rearning do amet contur dicivt suia non nuameius velit</p>
                         <span>$20.00</span>
                     </div>
                 </div>
-
                 <div class="burger-shop-item">
                     <div class="image">
                         <img src="{{ asset('front/img/burger-shop/1.png') }}" alt="image">
-
                         <div class="burger-btn">
-                            <a href="shop.html" class="default-btn">
+                            <a href="{{ route('front.shop') }}" class="default-btn">
                                 Order Online
                                 <i class="flaticon-play-button"></i>
                                 <span></span>
                             </a>
                         </div>
                     </div>
-
                     <div class="content">
                         <h3>The Crispy Bun</h3>
                         <p>Learning do amet contur dicivt suia non nuameius velit</p>
                         <span>$56.00</span>
                     </div>
                 </div>
-
                 <div class="burger-shop-item">
                     <div class="image">
                         <img src="{{ asset('front/img/burger-shop/2.png') }}" alt="image">
-
                         <div class="burger-btn">
-                            <a href="shop.html" class="default-btn">
+                            <a href="{{ route('front.shop') }}" class="default-btn">
                                 Order Online
                                 <i class="flaticon-play-button"></i>
                                 <span></span>
                             </a>
                         </div>
                     </div>
-
                     <div class="content">
                         <h3>Beefcakes Burgers</h3>
                         <p>Buarning do amet contur dicivt suia non nuameius velit</p>
                         <span>$30.00</span>
                     </div>
                 </div>
-
                 <div class="burger-shop-item">
                     <div class="image">
                         <img src="{{ asset('front/img/burger-shop/3.png') }}" alt="image">
-
                         <div class="burger-btn">
-                            <a href="shop.html" class="default-btn">
+                            <a href="{{ route('front.shop') }}" class="default-btn">
                                 Order Online
                                 <i class="flaticon-play-button"></i>
                                 <span></span>
                             </a>
                         </div>
                     </div>
-
                     <div class="content">
                         <h3>Bugout Burgers</h3>
                         <p>Rearning do amet contur dicivt suia non nuameius velit</p>
                         <span>$35.00</span>
                     </div>
                 </div>
-
                 <div class="burger-shop-item">
                     <div class="image">
                         <img src="{{ asset('front/img/burger-shop/4.png') }}" alt="image">
-
                         <div class="burger-btn">
-                            <a href="shop.html" class="default-btn">
+                            <a href="{{ route('front.shop') }}" class="default-btn">
                                 Order Online
                                 <i class="flaticon-play-button"></i>
                                 <span></span>
                             </a>
                         </div>
                     </div>
-
                     <div class="content">
                         <h3>Crazy Burger</h3>
                         <p>Rearning do amet contur dicivt suia non nuameius velit</p>
@@ -398,7 +356,6 @@
                 </div>
             </div>
         </div>
-
         <div class="burger-shop-shape">
             <div class="shape1">
                 <img src="{{ asset('front/img/image-icon/3.png') }}" alt="image">
@@ -411,7 +368,6 @@
             </div>
         </div>
     </section>
-
     <div class="video-area">
         <div class="container">
             <div class="video-content">
@@ -422,7 +378,6 @@
                             <h3>$45</h3>
                         </div>
                     </div>
-
                     <a href="https://www.youtube.com/watch?v=qaHWDmFtBl0" class="video-btn popup-youtube">
                         <i class="flaticon-play-button"></i>
                     </a>
@@ -430,7 +385,6 @@
             </div>
         </div>
     </div>
-
     <section class="fun-facts-area pt-100 pb-70">
         <div class="container">
             <div class="row align-items-center">
@@ -443,7 +397,6 @@
                         <p>Cups of Coffee</p>
                     </div>
                 </div>
-
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="single-fun-fact">
                         <h3>
@@ -453,7 +406,6 @@
                         <p>Orders Everyday</p>
                     </div>
                 </div>
-
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="single-fun-fact">
                         <h3>
@@ -462,7 +414,6 @@
                         <p>Skilled Professionals</p>
                     </div>
                 </div>
-
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="single-fun-fact">
                         <h3>
@@ -474,14 +425,12 @@
             </div>
         </div>
     </section>
-
     <section class="menu-area ptb-100">
         <div class="container">
             <div class="section-title">
                 <span>Pricing Lists</span>
                 <h2>Choose & order now!</h2>
             </div>
-
             <div class="tab menu-list-tab">
                 <ul class="tabs">
                     <li>
@@ -515,7 +464,6 @@
                         </a>
                     </li>
                 </ul>
-
                 <div class="tab_content">
                     <div class="tabs_item">
                         <div class="row">
@@ -529,7 +477,6 @@
                                         </h3>
                                         <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
                                     </div>
-
                                     <div class="menu-list-content">
                                         <h3>
                                             Magninil's Apple Juice
@@ -538,7 +485,6 @@
                                         </h3>
                                         <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
                                     </div>
-
                                     <div class="menu-list-content">
                                         <h3>
                                             6 Piece Sostikno Sticks
@@ -547,7 +493,6 @@
                                         </h3>
                                         <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
                                     </div>
-
                                     <div class="menu-list-content">
                                         <h3>
                                             Dilso Chicken Sandwich
@@ -558,7 +503,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="col-lg-6">
                                 <div class="menu-bar">
                                     <div class="menu-list-content">
@@ -569,7 +513,6 @@
                                         </h3>
                                         <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
                                     </div>
-
                                     <div class="menu-list-content">
                                         <h3>
                                             Smoked Brisket Sandwich
@@ -578,7 +521,6 @@
                                         </h3>
                                         <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
                                     </div>
-
                                     <div class="menu-list-content">
                                         <h3>
                                             Japanies Dilicious Burger
@@ -587,7 +529,6 @@
                                         </h3>
                                         <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
                                     </div>
-
                                     <div class="menu-list-content">
                                         <h3>
                                             Fotboy Combo Packs
@@ -600,7 +541,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="tabs_item">
                         <div class="row">
                             <div class="col-lg-6">
@@ -613,7 +553,6 @@
                                         </h3>
                                         <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
                                     </div>
-
                                     <div class="menu-list-content">
                                         <h3>
                                             Magninil's Apple Juice
@@ -622,7 +561,6 @@
                                         </h3>
                                         <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
                                     </div>
-
                                     <div class="menu-list-content">
                                         <h3>
                                             6 Piece Sostikno Sticks
@@ -631,7 +569,6 @@
                                         </h3>
                                         <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
                                     </div>
-
                                     <div class="menu-list-content">
                                         <h3>
                                             Dilso Chicken Sandwich
@@ -642,7 +579,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="col-lg-6">
                                 <div class="menu-bar">
                                     <div class="menu-list-content">
@@ -653,7 +589,6 @@
                                         </h3>
                                         <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
                                     </div>
-
                                     <div class="menu-list-content">
                                         <h3>
                                             Smoked Brisket Sandwich
@@ -662,7 +597,6 @@
                                         </h3>
                                         <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
                                     </div>
-
                                     <div class="menu-list-content">
                                         <h3>
                                             Japanies Dilicious Burger
@@ -671,7 +605,6 @@
                                         </h3>
                                         <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
                                     </div>
-
                                     <div class="menu-list-content">
                                         <h3>
                                             Fotboy Combo Packs
@@ -684,7 +617,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="tabs_item">
                         <div class="row">
                             <div class="col-lg-6">
@@ -697,7 +629,6 @@
                                         </h3>
                                         <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
                                     </div>
-
                                     <div class="menu-list-content">
                                         <h3>
                                             Magninil's Apple Juice
@@ -706,7 +637,6 @@
                                         </h3>
                                         <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
                                     </div>
-
                                     <div class="menu-list-content">
                                         <h3>
                                             6 Piece Sostikno Sticks
@@ -715,7 +645,6 @@
                                         </h3>
                                         <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
                                     </div>
-
                                     <div class="menu-list-content">
                                         <h3>
                                             Dilso Chicken Sandwich
@@ -726,7 +655,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="col-lg-6">
                                 <div class="menu-bar">
                                     <div class="menu-list-content">
@@ -737,7 +665,6 @@
                                         </h3>
                                         <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
                                     </div>
-
                                     <div class="menu-list-content">
                                         <h3>
                                             Smoked Brisket Sandwich
@@ -746,7 +673,6 @@
                                         </h3>
                                         <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
                                     </div>
-
                                     <div class="menu-list-content">
                                         <h3>
                                             Japanies Dilicious Burger
@@ -755,7 +681,6 @@
                                         </h3>
                                         <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
                                     </div>
-
                                     <div class="menu-list-content">
                                         <h3>
                                             Fotboy Combo Packs
@@ -768,7 +693,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="tabs_item">
                         <div class="row">
                             <div class="col-lg-6">
@@ -781,7 +705,6 @@
                                         </h3>
                                         <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
                                     </div>
-
                                     <div class="menu-list-content">
                                         <h3>
                                             Magninil's Apple Juice
@@ -790,7 +713,6 @@
                                         </h3>
                                         <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
                                     </div>
-
                                     <div class="menu-list-content">
                                         <h3>
                                             6 Piece Sostikno Sticks
@@ -799,7 +721,6 @@
                                         </h3>
                                         <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
                                     </div>
-
                                     <div class="menu-list-content">
                                         <h3>
                                             Dilso Chicken Sandwich
@@ -810,7 +731,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="col-lg-6">
                                 <div class="menu-bar">
                                     <div class="menu-list-content">
@@ -821,7 +741,6 @@
                                         </h3>
                                         <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
                                     </div>
-
                                     <div class="menu-list-content">
                                         <h3>
                                             Smoked Brisket Sandwich
@@ -830,7 +749,6 @@
                                         </h3>
                                         <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
                                     </div>
-
                                     <div class="menu-list-content">
                                         <h3>
                                             Japanies Dilicious Burger
@@ -839,7 +757,6 @@
                                         </h3>
                                         <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
                                     </div>
-
                                     <div class="menu-list-content">
                                         <h3>
                                             Fotboy Combo Packs
@@ -852,7 +769,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="tabs_item">
                         <div class="row">
                             <div class="col-lg-6">
@@ -865,7 +781,6 @@
                                         </h3>
                                         <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
                                     </div>
-
                                     <div class="menu-list-content">
                                         <h3>
                                             Magninil's Apple Juice
@@ -874,7 +789,6 @@
                                         </h3>
                                         <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
                                     </div>
-
                                     <div class="menu-list-content">
                                         <h3>
                                             6 Piece Sostikno Sticks
@@ -883,7 +797,6 @@
                                         </h3>
                                         <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
                                     </div>
-
                                     <div class="menu-list-content">
                                         <h3>
                                             Dilso Chicken Sandwich
@@ -894,7 +807,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="col-lg-6">
                                 <div class="menu-bar">
                                     <div class="menu-list-content">
@@ -905,7 +817,6 @@
                                         </h3>
                                         <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
                                     </div>
-
                                     <div class="menu-list-content">
                                         <h3>
                                             Smoked Brisket Sandwich
@@ -914,7 +825,6 @@
                                         </h3>
                                         <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
                                     </div>
-
                                     <div class="menu-list-content">
                                         <h3>
                                             Japanies Dilicious Burger
@@ -923,7 +833,6 @@
                                         </h3>
                                         <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
                                     </div>
-
                                     <div class="menu-list-content">
                                         <h3>
                                             Fotboy Combo Packs
@@ -939,7 +848,6 @@
                 </div>
             </div>
         </div>
-
         <div class="menu-shape">
             <div class="shape1">
                 <img src="{{ asset('front/img/image-icon/7.png') }}" alt="image">
@@ -955,37 +863,31 @@
             </div>
         </div>
     </section>
-
     <section class="gallery-area pb-100">
         <div class="container-fluid">
             <div class="section-title">
                 <span>Photos</span>
                 <h2>Our Food Gallery</h2>
             </div>
-
             <div class="gallery-slider owl-carousel owl-theme">
                 <div class="gallery-item">
                     <div class="image">
                         <img src="{{ asset('front/img/gallery/image1.jpg') }}" alt="image">
-
                         <div class="content">
                             <span>Burger</span>
                             <h3>Dilicious Burger</h3>
                         </div>
                     </div>
                 </div>
-
                 <div class="gallery-item">
                     <div class="image">
                         <img src="{{ asset('front/img/gallery/image2.jpg') }}" alt="image">
-
                         <div class="content">
                             <span>Burger</span>
                             <h3>Buzz Burgers</h3>
                         </div>
                     </div>
                 </div>
-
                 <div class="gallery-item">
                     <div class="image">
                         <img src="{{ asset('front/img/gallery/image3.jpg') }}" alt="image">
@@ -996,18 +898,15 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="gallery-item">
                     <div class="image">
                         <img src="{{ asset('front/img/gallery/image4.jpg') }}" alt="image">
-
                         <div class="content">
                             <span>Burger</span>
                             <h3>Bugout Burgers</h3>
                         </div>
                     </div>
                 </div>
-
                 <div class="gallery-item">
                     <div class="image">
                         <img src="{{ asset('front/img/gallery/image5.jpg') }}" alt="image">
@@ -1018,29 +917,24 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="gallery-item">
                     <div class="image">
                         <img src="{{ asset('front/img/gallery/image6.jpg') }}" alt="image">
-
                         <div class="content">
                             <span>Burger</span>
                             <h3>Beefcakes Burgers</h3>
                         </div>
                     </div>
                 </div>
-
                 <div class="gallery-item">
                     <div class="image">
                         <img src="{{ asset('front/img/gallery/image7.jpg') }}" alt="image">
-
                         <div class="content">
                             <span>Burger</span>
                             <h3>Dungeon Burgers</h3>
                         </div>
                     </div>
                 </div>
-
                 <div class="gallery-item">
                     <div class="image">
                         <img src="{{ asset('front/img/gallery/image8.jpg') }}" alt="image">
@@ -1053,7 +947,6 @@
                 </div>
             </div>
         </div>
-
         <div class="gallery-shape">
             <div class="shape1">
                 <img src="{{ asset('front/img/image-icon/3.png') }}" alt="image">
@@ -1063,7 +956,6 @@
             </div>
         </div>
     </section>
-
     <section class="delivery-area ptb-100">
         <div class="container">
             <div class="row align-items-center">
@@ -1073,9 +965,8 @@
                         <h3>What You Want to Select A Pick Up Through Online</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
                         <p>Eusmod tempor incididunt ut labore et dolore magna aliqua. Quis suspendisse ultrices gravida.</p>
-
                         <div class="delivery-btn">
-                            <a href="#" class="default-btn">
+                            <a href="{{ route('front.menu') }}" class="default-btn">
                                 Order Now
                                 <span></span>
                                 <i class="flaticon-play-button"></i>
@@ -1083,7 +974,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="col-lg-6">
                     <div class="delivery-image">
                         <img src="{{ asset('front/img/delivery.png') }}" alt="image">
@@ -1091,19 +981,16 @@
                 </div>
             </div>
         </div>
-
         <div class="global-shape">
             <img src="{{ asset('front/img/global.png') }}" alt="image">
         </div>
     </section>
-
     <section class="testimonial-area ptb-100">
         <div class="container">
             <div class="section-title">
                 <span>Testimonial</span>
                 <h2>Our Clients Review</h2>
             </div>
-
             <div class="row align-items-center">
                 <div class="col-lg-6">
                     <div class="testimonial-slider owl-carousel owl-theme">
@@ -1114,7 +1001,6 @@
                             </div>
                             <p>I chose ilovebite because of their value And incredible superior customer Service they really awesome Food with quality service</p>
                         </div>
-
                         <div class="testimonial-item">
                             <div class="info">
                                 <h3>David McLean</h3>
@@ -1124,7 +1010,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="col-lg-6">
                     <div class="testimonial-image">
                         <img src="{{ asset('front/img/feedback/image.png') }}" alt="image">
@@ -1132,7 +1017,6 @@
                 </div>
             </div>
         </div>
-
         <div class="testimonial-shape">
             <div class="shape1">
                 <img src="{{ asset('front/img/image-icon/5.png') }}" alt="image">
@@ -1151,118 +1035,103 @@
             </div>
         </div>
     </section>
-
     <section class="overview-area pb-70">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-6">
                     <div class="overview-item">
                         <img src="{{ asset('front/img/overview/image1.jpg') }}" alt="image">
-
                         <div class="content">
                             <strong>Pangolin Burger</strong>
                             <h3>
-                                <a href="#">Festive Special Burger</a>
+                                <a href="{{ route('front.menu') }}">Festive Special Burger</a>
                             </h3>
-                            <a href="#" class="default-btn">
+                            <a href="{{ route('front.menu') }}" class="default-btn">
                                 Order Now
                                 <i class="flaticon-play-button"></i>
                                 <span></span>
                             </a>
                         </div>
-
                         <div class="dollar">
                             <span>Burger</span>
                             <h4>$12</h4>
                         </div>
                     </div>
                 </div>
-
                 <div class="col-lg-6">
                     <div class="overview-item">
                         <img src="{{ asset('front/img/overview/image2.jpg') }}" alt="image">
-
                         <div class="content">
                             <strong>Flat 30% Off</strong>
                             <h3>
-                                <a href="#">Burger King Special</a>
+                                <a href="{{ route('front.menu') }}">Burger King Special</a>
                             </h3>
-                            <a href="#" class="default-btn">
+                            <a href="{{ route('front.menu') }}" class="default-btn">
                                 Order Now
                                 <i class="flaticon-play-button"></i>
                                 <span></span>
                             </a>
                         </div>
-
                         <div class="dollar">
                             <span>Burger</span>
                             <h4>$45</h4>
                         </div>
                     </div>
                 </div>
-
                 <div class="col-lg-4">
                     <div class="overview-item">
                         <img src="{{ asset('front/img/overview/image3.jpg') }}" alt="image">
-
                         <div class="content">
                             <strong>Pangolin Burger</strong>
                             <h3>
-                                <a href="#">Festive Burger</a>
+                                <a href="{{ route('front.menu') }}">Festive Burger</a>
                             </h3>
-                            <a href="#" class="default-btn">
+                            <a href="{{ route('front.menu') }}" class="default-btn">
                                 Order Now
                                 <i class="flaticon-play-button"></i>
                                 <span></span>
                             </a>
                         </div>
-
                         <div class="dollar">
                             <span>Burger</span>
                             <h4>$65</h4>
                         </div>
                     </div>
                 </div>
-
                 <div class="col-lg-4">
                     <div class="overview-item">
                         <img src="{{ asset('front/img/overview/image4.jpg') }}" alt="image">
-
                         <div class="content">
                             <strong>CrazyBurger</strong>
                             <h3>
-                                <a href="#">Jurik Burger</a>
+                                <a href="{{ route('front.menu') }}">Jurik Burger</a>
                             </h3>
-                            <a href="#" class="default-btn">
+                            <a href="{{ route('front.menu') }}" class="default-btn">
                                 Order Now
                                 <i class="flaticon-play-button"></i>
                                 <span></span>
                             </a>
                         </div>
-
                         <div class="dollar">
                             <span>Burger</span>
                             <h4>$09</h4>
                         </div>
                     </div>
                 </div>
-
                 <div class="col-lg-4">
                     <div class="overview-item">
                         <img src="{{ asset('front/img/overview/image5.jpg') }}" alt="image">
-
                         <div class="content">
                             <strong>Summer 30% Off</strong>
                             <h3>
-                                <a href="#">Burger Vulso Special</a>
+                                <a href="{{ route('front.menu') }}">Burger Vulso Special</a>
                             </h3>
-                            <a href="#" class="default-btn">
+                            <a href="{{ route('front.menu') }}" class="default-btn">
                                 Order Now
                                 <i class="flaticon-play-button"></i>
                                 <span></span>
                             </a>
                         </div>
-
                         <div class="dollar">
                             <span>Burger</span>
                             <h4>$10</h4>
@@ -1272,22 +1141,19 @@
             </div>
         </div>
     </section>
-
     <section class="blog-area pb-70">
         <div class="container">
             <div class="section-title">
                 <span>Blogs</span>
                 <h2>Read Our Blogs</h2>
             </div>
-
             <div class="row">
                 <div class="col-lg-4 col-md-6">
                     <div class="blog-item">
                         <div class="image">
-                            <a href="blog-details.html">
+                            <a href="#">
                                 <img src="{{ asset('front/img/blog/1.jpg') }}" alt="image">
                             </a>
-
                             <ul class="post-meta d-flex justify-content-between align-items-center">
                                 <li>
                                     <div class="post-author d-flex align-items-center">
@@ -1302,25 +1168,23 @@
                         </div>
                         <div class="content">
                             <h3>
-                                <a href="blog-details.html">
+                                <a href="#">
                                     Burgers Of Melbourne Is Helping
                                 </a>
                             </h3>
                             <p>Lorem ipsum dolor sit amet consectetur adipiscingum suspendisse ultrices gravida.</p>
-                            <a href="blog-details.html">
+                            <a href="#">
                                 <i class="flaticon-plus"></i>
                             </a>
                         </div>
                     </div>
                 </div>
-
                 <div class="col-lg-4 col-md-6">
                     <div class="blog-item">
                         <div class="image">
-                            <a href="blog-details.html">
+                            <a href="#">
                                 <img src="{{ asset('front/img/blog/2.jpg') }}" alt="image">
                             </a>
-
                             <ul class="post-meta d-flex justify-content-between align-items-center">
                                 <li>
                                     <div class="post-author d-flex align-items-center">
@@ -1335,25 +1199,23 @@
                         </div>
                         <div class="content">
                             <h3>
-                                <a href="blog-details.html">
+                                <a href="#">
                                     Savoir Faire Is Everywhere
                                 </a>
                             </h3>
                             <p>Lorem ipsum dolor sit amet consectetur adipiscingum suspendisse ultrices gravida.</p>
-                            <a href="blog-details.html">
+                            <a href="#">
                                 <i class="flaticon-plus"></i>
                             </a>
                         </div>
                     </div>
                 </div>
-
                 <div class="col-lg-4 col-md-6">
                     <div class="blog-item">
                         <div class="image">
                             <a href="#">
                                 <img src="{{ asset('front/img/blog/3.jpg') }}" alt="image">
                             </a>
-
                             <ul class="post-meta d-flex justify-content-between align-items-center">
                                 <li>
                                     <div class="post-author d-flex align-items-center">
@@ -1368,12 +1230,12 @@
                         </div>
                         <div class="content">
                             <h3>
-                                <a href="blog-details.html">
+                                <a href="#">
                                     Brie Burger served with curly
                                 </a>
                             </h3>
                             <p>Lorem ipsum dolor sit amet consectetur adipiscingum suspendisse ultrices gravida.</p>
-                            <a href="blog-details.html">
+                            <a href="#">
                                 <i class="flaticon-plus"></i>
                             </a>
                         </div>
@@ -1382,7 +1244,6 @@
             </div>
         </div>
     </section>
-
     <section class="footer-area pt-100 pb-70">
         <div class="book-table-area pb-100">
             <div class="container">
@@ -1407,7 +1268,6 @@
                 </div>
             </div>
         </div>
-
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-6">
@@ -1422,7 +1282,6 @@
                         </ul>
                     </div>
                 </div>
-
                 <div class="col-lg-4 col-md-6">
                     <div class="single-footer-widget">
                         <h3>Address</h3>
@@ -1440,7 +1299,6 @@
                                 855 Road, Brooklyn Street <br> New York 600
                             </li>
                         </ul>
-
                         <ul class="social">
                             <li class="facebook">
                                 <a href="#" target="_blank">
@@ -1470,7 +1328,6 @@
                         </ul>
                     </div>
                 </div>
-
                 <div class="col-lg-4 col-md-6">
                     <div class="single-footer-widget">
                         <div class="map">
@@ -1484,5 +1341,4 @@
 @endsection
 
 @section('scripts')
-
 @endsection

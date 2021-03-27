@@ -513,5 +513,4 @@
 @endsection
 
 @section('scripts')
-
 @endsection
