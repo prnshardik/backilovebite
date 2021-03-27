@@ -72,31 +72,6 @@
             </div>
         </div>
     </div>
-    <section class="footer-area pt-100">
-        <div class="subscribe-area">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 col-md-6">
-                        <div class="subscribe-content">
-                            <h2>
-                                <i class="flaticon-email"></i>
-                                Don't Miss Our Update
-                            </h2>
-                        </div>
-                    </div>    
-                    <div class="col-lg-6 col-md-6">
-                        <form class="newsletter-form">
-                            <input type="email" class="input-newsletter" placeholder="Your Email" name="EMAIL" required autocomplete="off">
-                            <button type="submit">
-                                Subscribe Now
-                            </button>  
-                            <div id="validator-newsletter" class="form-result"></div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 @endsection
 
 @section('scripts')
