@@ -25,7 +25,7 @@ Route::group(['middleware' => 'prevent-back-history', 'namespace' => 'Front', 'a
     Route::get('cart', 'HomeController@cart')->name('cart');
     Route::get('shop', 'HomeController@shop')->name('shop');
     Route::get('checkout', 'HomeController@checkout')->name('checkout');
-    
+
     Route::get('login', 'HomeController@login')->name('login');
     Route::get('signup', 'HomeController@signup')->name('signup');
     Route::get('forgot-password', 'HomeController@forgot_password')->name('forgot-password');
@@ -82,5 +82,10 @@ Route::group(['middleware' => 'prevent-back-history', 'namespace' => 'Back', 'as
             Route::patch('settings/update', 'settingsController@update')->name('settings.update');
             Route::post('settings/change-status', 'settingsController@change_status')->name('settings.change.status');
         /** Settings */
+
+        /** Temp-Settings */
+            Route::get('temp-settings', 'TempSettingsController@index')->name('temp.settings');
+            Route::post('temp-settings/update', 'TempSettingsController@update')->name('temp.settings.update');
+        /** Temp-Settings */
     });
 });

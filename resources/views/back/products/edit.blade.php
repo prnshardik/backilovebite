@@ -4,7 +4,7 @@
 @endsection
 
 @section('title')
-    Product Edit
+    Edit Product
 @endsection
 
 @section('styles')
@@ -19,7 +19,7 @@
             <div class="col-md-12">
                 <div class="ibox">
                     <div class="ibox-head">
-                        <div class="ibox-title">Product Edit</div>
+                        <div class="ibox-title">Edit Product</div>
                     </div>
                     <div class="ibox-body">
                         <form name="form" action="{{ route('back.products.update') }}" id="form" method="post" enctype="multipart/form-data">

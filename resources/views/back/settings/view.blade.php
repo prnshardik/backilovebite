@@ -4,7 +4,7 @@
 @endsection
 
 @section('title')
-    Users View
+    View Setting
 @endsection
 
 @section('styles')
@@ -18,7 +18,7 @@
             <div class="col-md-12">
                 <div class="ibox">
                     <div class="ibox-head">
-                        <div class="ibox-title">Users View</div>
+                        <div class="ibox-title">View Setting</div>
                     </div>
                     <div class="ibox-body">
                         <div class="row">

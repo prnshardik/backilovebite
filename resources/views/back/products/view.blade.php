@@ -4,7 +4,7 @@
 @endsection
 
 @section('title')
-    Product View
+    View Product
 @endsection
 
 @section('styles')
@@ -19,7 +19,7 @@
             <div class="col-md-12">
                 <div class="ibox">
                     <div class="ibox-head">
-                        <div class="ibox-title">Product View</div>
+                        <div class="ibox-title">View Product</div>
                     </div>
                     <div class="ibox-body">
                         <div class="row">                                

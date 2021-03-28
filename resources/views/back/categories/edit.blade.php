@@ -4,7 +4,7 @@
 @endsection
 
 @section('title')
-    Category Edit
+    Edit Category
 @endsection
 
 @section('styles')
@@ -18,7 +18,7 @@
             <div class="col-md-12">
                 <div class="ibox">
                     <div class="ibox-head">
-                        <div class="ibox-title">Category Edit</div>
+                        <div class="ibox-title">Edit Category</div>
                     </div>
                     <div class="ibox-body">
                         <form name="form" action="{{ route('back.categories.update') }}" id="form" method="post" enctype="multipart/form-data">

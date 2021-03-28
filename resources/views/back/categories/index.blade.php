@@ -16,7 +16,7 @@
             <div class="col-lg-12">
                 <div class="ibox">
                     <div class="ibox-head">
-                        <h1 class="ibox-title">Category</h1>
+                        <h1 class="ibox-title">Categories</h1>
                         <h1 class="pull-right">
                             <a class="btn btn-primary pull-right ml-2" style="margin-top: 8px;margin-bottom: 5px" href="{{ route('back.categories.create') }}">Add New</a>
                         </h1>

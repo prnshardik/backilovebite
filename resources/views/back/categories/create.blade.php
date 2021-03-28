@@ -4,7 +4,7 @@
 @endsection
 
 @section('title')
-    Category Create
+    Create Category 
 @endsection
 
 @section('styles')
@@ -18,7 +18,7 @@
             <div class="col-md-12">
                 <div class="ibox">
                     <div class="ibox-head">
-                        <div class="ibox-title">Category Create</div>
+                        <div class="ibox-title">Create Category</div>
                     </div>
                     <div class="ibox-body">
                         <form name="form" action="{{ route('back.categories.insert') }}" id="form" method="post" enctype="multipart/form-data">

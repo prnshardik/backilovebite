@@ -4,7 +4,7 @@
 @endsection
 
 @section('title')
-    Users Update
+    Edit Setting
 @endsection
 
 @section('styles')
@@ -18,7 +18,7 @@
             <div class="col-md-12">
                 <div class="ibox">
                     <div class="ibox-head">
-                        <div class="ibox-title">Users Update</div>
+                        <div class="ibox-title">Edit Setting</div>
                     </div>
                     <div class="ibox-body">
                         <form name="form" action="{{ route('back.users.update') }}" id="form" method="post" enctype="multipart/form-data">

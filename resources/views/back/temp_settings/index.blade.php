@@ -4,7 +4,7 @@
 @endsection
 
 @section('title')
-    Settings
+    Temp Settings
 @endsection
 
 @section('styles')
@@ -14,6 +14,7 @@
     <div class="page-content fade-in-up">
         <div class="row">
             <div class="col-lg-12">
+
                 <div class="ibox">
                     <div class="ibox-head">
                         <div class="ibox-title">Settings</div>
@@ -122,169 +123,4 @@
 @endsection
 
 @section('scripts')
-    <script type="text/javascript">
-        $(document).ready(function(){
-        var datatable;
-            $('.nav-item').on('click', function(){
-                var type = $(this).children().data('id');
-                    $('.tab-pane').removeClass(' active show');
-                    $('#'+type).addClass(' active show');
-                    if($('#'+type).length > 0){
-                    datatable = $('#'+type).DataTable({
-                        processing: true,
-                        serverSide: true,
-                        destroy:true,
-
-                        // "pageLength": 10,
-                        // "iDisplayLength": 10,
-                        "responsive": true,
-                        "aaSorting": [],
-                        // "order": [], //Initial no order.
-                        //     "aLengthMenu": [
-                        //     [5, 10, 25, 50, 100, -1],
-                        //     [5, 10, 25, 50, 100, "All"]
-                        // ],
-
-                        // "scrollX": true,
-                        // "scrollY": '',
-                        // "scrollCollapse": false,
-                        // scrollCollapse: true,
-
-                        // lengthChange: false,
-
-                        "ajax":{
-                            "url": "{{ route('back.settings') }}",
-                            "type": "POST",
-                            "dataType": "json",
-                            "data":{
-                                _token: "{{csrf_token()}}",
-                                flag:type
-
-                            }
-                        },
-                        "columnDefs": [{
-                                //"targets": [0, 5], //first column / numbering column
-                                "orderable": true, //set not orderable
-                            },
-                        ],
-                        columns: [
-                            {
-                                data: 'DT_RowIndex',
-                                name: 'DT_RowIndex'
-                            },
-                            {
-                                data: 'key',
-                                name: 'key'
-                            },
-                            {
-                                data: 'value',
-                                name: 'value'
-                            },
-                            {
-                                data: 'status',
-                                name: 'status'
-                            },
-                            {
-                                data: 'action',
-                                name: 'action',
-                                orderable: false,
-                            },
-                        ]
-                    });
-                }
-            })
-
-            if($('#general').length > 0){
-                datatable = $('#general').DataTable({
-                    processing: true,
-                    serverSide: true,
-                    destroy:true,
-
-                    // "pageLength": 10,
-                    // "iDisplayLength": 10,
-                    "responsive": true,
-                    "aaSorting": [],
-                    // "order": [], //Initial no order.
-                    //     "aLengthMenu": [
-                    //     [5, 10, 25, 50, 100, -1],
-                    //     [5, 10, 25, 50, 100, "All"]
-                    // ],
-
-                    // "scrollX": true,
-                    // "scrollY": '',
-                    // "scrollCollapse": false,
-                    // scrollCollapse: true,
-
-                    // lengthChange: false,
-
-                    "ajax":{
-                        "url": "{{ route('back.settings') }}",
-                        "type": "POST",
-                        "dataType": "json",
-                        "data":{
-                            _token: "{{csrf_token()}}",
-                            flag:'general'
-
-                        }
-                    },
-                    "columnDefs": [{
-                            //"targets": [0, 5], //first column / numbering column
-                            "orderable": true, //set not orderable
-                        },
-                    ],
-                    columns: [
-                        {
-                            data: 'DT_RowIndex',
-                            name: 'DT_RowIndex'
-                        },
-                        {
-                            data: 'key',
-                            name: 'key'
-                        },
-                        {
-                            data: 'value',
-                            name: 'value'
-                        },
-                        {
-                            data: 'status',
-                            name: 'status'
-                        },
-                        {
-                            data: 'action',
-                            name: 'action',
-                            orderable: false,
-                        },
-                    ]
-                });
-            }
-        });
-
-        function change_status(object){
-            var id = $(object).data("id");
-            var status = $(object).data("status");
-            var old_status = $(object).data("old_status");
-            var msg = "Are you Sure?";
-
-            if (confirm(msg)) {
-                $.ajax({
-                    "url": "{!! route('back.settings.change.status') !!}",
-                    "dataType": "json",
-                    "type": "POST",
-                    "data":{
-                        id: id,
-                        status: status,
-                        _token: "{{ csrf_token() }}"
-                    },
-                    success: function (response){
-                        if (response.code == 200){
-                            datatable.ajax.reload();
-                            toastr.success('Record status changed successfully.', 'Success');
-                        }else{
-                            toastr.error('Failed to delete record.', 'Error');
-                        }
-                    }
-                });
-            }
-        }
-    </script>
 @endsection
