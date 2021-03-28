@@ -123,8 +123,8 @@
 
 @section('scripts')
     <script type="text/javascript">
-        $(document).ready(function(){
         var datatable;
+        $(document).ready(function(){
             $('.nav-item').on('click', function(){
                 var type = $(this).children().data('id');
                     $('.tab-pane').removeClass(' active show');
