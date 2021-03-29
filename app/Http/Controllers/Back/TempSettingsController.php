@@ -19,6 +19,21 @@
         }
 
         public function update(Request $request){
-            dd($request->All());
+            $data = $request->all();
+            unset($data['_method']);
+            unset($data['_token']);
+            $tab = $data['tab'];
+
+            if(!empty($data)){
+                foreach($data as $key => $value){
+                    $data = Setting::where(['id' => $key])->first();
+                    if(!empty($data)){
+                        $data->value = $value;
+                        $data->save();
+                    }
+                }
+            }
+
+            return redirect()->back()->with(['success' => 'Settings updated successfully', 'tab' => $tab]);
         }
     }
