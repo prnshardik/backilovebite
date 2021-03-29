@@ -14,107 +14,57 @@
     <div class="page-content fade-in-up">
         <div class="row">
             <div class="col-lg-12">
-
                 <div class="ibox">
                     <div class="ibox-head">
                         <div class="ibox-title">Settings</div>
                     </div>
-                    <div class="ibox-body">
-                        <ul class="nav nav-tabs tabs-line">
-                            <li class="nav-item">
-                                <a class="nav-link active" href="#tab-7-1" data-id="general" data-toggle="tab">General</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#tab-7-2" data-id="logo" data-toggle="tab">Logo</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#tab-7-3" data-id="smtp" data-toggle="tab">SMTP</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#tab-7-4" data-id="sms" data-toggle="tab">SMS</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#tab-7-5" data-id="payment" data-toggle="tab">Payment</a>
-                            </li>
-                        </ul>
-                        <div class="tab-content">
-                            <div class="tab-pane fade show active" id="tab-7-1">
-                                <div class="dataTables_wrapper container-fluid dt-bootstrap4">
-                                    <table class="table table-bordered table-responsive data-table" id="general">
-                                        <thead>
-                                            <tr>
-                                                <th>No</th>
-                                                <th>Key</th>
-                                                <th>Value</th>
-                                                <th>Status</th>
-                                                <th>Action</th>
-                                            </tr>
-                                        </thead>
-                                    </table>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="tab-7-2">
-                                <div class="dataTables_wrapper container-fluid dt-bootstrap4">
-                                    <table class="table table-bordered table-responsive data-table" id="logo">
-                                        <thead>
-                                            <tr>
-                                                <th>No</th>
-                                                <th>Key</th>
-                                                <th>Value</th>
-                                                <th>Status</th>
-                                                <th>Action</th>
-                                            </tr>
-                                        </thead>
-                                    </table>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="tab-7-3">
-                                <div class="dataTables_wrapper container-fluid dt-bootstrap4">
-                                    <table class="table table-bordered table-responsive data-table" id="smtp">
-                                        <thead>
-                                            <tr>
-                                                <th>No</th>
-                                                <th>Key</th>
-                                                <th>Value</th>
-                                                <th>Status</th>
-                                                <th>Action</th>
-                                            </tr>
-                                        </thead>
-                                    </table>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="tab-7-4">
-                                <div class="dataTables_wrapper container-fluid dt-bootstrap4">
-                                    <table class="table table-bordered table-responsive data-table" id="sms">
-                                        <thead>
-                                            <tr>
-                                                <th>No</th>
-                                                <th>Key</th>
-                                                <th>Value</th>
-                                                <th>Status</th>
-                                                <th>Action</th>
-                                            </tr>
-                                        </thead>
-                                    </table>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="tab-7-5">
-                                <div class="dataTables_wrapper container-fluid dt-bootstrap4">
-                                    <table class="table table-bordered table-responsive data-table" id="payment">
-                                        <thead>
-                                            <tr>
-                                                <th>No</th>
-                                                <th>Key</th>
-                                                <th>Value</th>
-                                                <th>Status</th>
-                                                <th>Action</th>
-                                            </tr>
-                                        </thead>
-                                    </table>
+                    <ul class="nav nav-tabs nav-fill">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#general" data-toggle="tab" aria-expanded="true">General</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#smtp" data-toggle="tab" aria-expanded="false">SMTP</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#sms" data-toggle="tab" aria-expanded="false">SMS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#payment" data-toggle="tab" aria-expanded="false">Payment</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#logo" data-toggle="tab" aria-expanded="false">Logo</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active show" id="general" aria-expanded="true">
+                            <div class="row m-2">
+                                <div class="col-sm-12">
+                                    <form action="{{ route('temp.settings.update') }}" method="post">
+                                        @if(isset($general) && $general->isNotEmpty())
+                                            @foreach($general as $row)
+                                                <div class="form-group">
+                                                    <label>{{ ucwords(strtolower(str_replace('_', ' ', $row->key))) }}</label>
+                                                    <input type="text" name="{{ $row->id }}" class="form-control" value="{{ $row->value }}" placeholder="Email address">
+                                                </div>
+                                            @endforeach
+                                        @endif
+                                        <input type="submit" value="Save" class="btn btn-primary">
+                                    </form>
                                 </div>
                             </div>
                         </div>
-                        <br>
+                        <div class="tab-pane fade" id="smtp" aria-expanded="false">
+                            SMTP
+                        </div>
+                        <div class="tab-pane fade" id="sms" aria-expanded="false">
+                            SMS
+                        </div>
+                        <div class="tab-pane fade" id="payment" aria-expanded="false">
+                            Payment
+                        </div>
+                        <div class="tab-pane fade" id="logo" aria-expanded="false">
+                            Logo
+                        </div>
                     </div>
                 </div>
             </div>

@@ -5,7 +5,6 @@
     use App\Http\Controllers\Controller;
     use Illuminate\Http\Request;
     use App\Models\Setting;
-    use App\Http\Requests\CategoryRequest;
     use DataTables, DB, File;
 
     class SettingsController extends Controller{
