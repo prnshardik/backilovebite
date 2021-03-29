@@ -5,6 +5,7 @@
     use App\Http\Controllers\Controller;
     use Illuminate\Http\Request;
     use App\Models\Setting;
+    use App\Http\Requests\SettingRequest;
     use DataTables, DB, File;
 
     class SettingsController extends Controller{
@@ -28,11 +29,11 @@
                                 ->addIndexColumn()
                                 ->addColumn('action', function($data){
                                     return ' <div class="btn-group">
-                                                    <a href="'.route('back.categories.view', ['id' => base64_encode($data->id)]).'" class="btn btn-default btn-xs">
+                                                    <a href="'.route('back.settings.view', ['id' => base64_encode($data->id)]).'" class="btn btn-default btn-xs">
                                                         <i class="fa fa-eye"></i>
                                                     </a> &nbsp;
 
-                                                    <a href="'.route('back.categories.edit', ['id' => base64_encode($data->id)]).'" class="btn btn-default btn-xs">
+                                                    <a href="'.route('back.settings.edit', ['id' => base64_encode($data->id)]).'" class="btn btn-default btn-xs">
                                                         <i class="fa fa-edit"></i>
                                                     </a> &nbsp;
 
@@ -42,7 +43,6 @@
                                                     <ul class="dropdown-menu">
                                                         <li><a class="dropdown-item" href="javascript:;" onclick="change_status(this);" data-status="active" data-old_status="'.$data->status.'" data-id="'.base64_encode($data->id).'">Active</a></li>
                                                         <li><a class="dropdown-item" href="javascript:;" onclick="change_status(this);" data-status="inactive" data-old_status="'.$data->status.'" data-id="'.base64_encode($data->id).'">Inactive</a></li>
-                                                        <li><a class="dropdown-item" href="javascript:;" onclick="change_status(this);" data-status="deleted" data-old_status="'.$data->status.'" data-id="'.base64_encode($data->id).'">Delete</a></li>
                                                     </ul>
                                                 </div>';
                                 })
@@ -74,11 +74,11 @@
                                     ->addIndexColumn()
                                     ->addColumn('action', function($data){
                                         return ' <div class="btn-group">
-                                                        <a href="'.route('back.categories.view', ['id' => base64_encode($data->id)]).'" class="btn btn-default btn-xs">
+                                                        <a href="'.route('back.settings.view', ['id' => base64_encode($data->id)]).'" class="btn btn-default btn-xs">
                                                             <i class="fa fa-eye"></i>
                                                         </a> &nbsp;
 
-                                                        <a href="'.route('back.categories.edit', ['id' => base64_encode($data->id)]).'" class="btn btn-default btn-xs">
+                                                        <a href="'.route('back.settings.edit', ['id' => base64_encode($data->id)]).'" class="btn btn-default btn-xs">
                                                             <i class="fa fa-edit"></i>
                                                         </a> &nbsp;
 
@@ -88,7 +88,6 @@
                                                         <ul class="dropdown-menu">
                                                             <li><a class="dropdown-item" href="javascript:;" onclick="change_status(this);" data-status="active" data-old_status="'.$data->status.'" data-id="'.base64_encode($data->id).'">Active</a></li>
                                                             <li><a class="dropdown-item" href="javascript:;" onclick="change_status(this);" data-status="inactive" data-old_status="'.$data->status.'" data-id="'.base64_encode($data->id).'">Inactive</a></li>
-                                                            <li><a class="dropdown-item" href="javascript:;" onclick="change_status(this);" data-status="deleted" data-old_status="'.$data->status.'" data-id="'.base64_encode($data->id).'">Delete</a></li>
                                                         </ul>
                                                     </div>';
                                     })
@@ -116,11 +115,11 @@
                                     ->addIndexColumn()
                                     ->addColumn('action', function($data){
                                         return ' <div class="btn-group">
-                                                        <a href="'.route('back.categories.view', ['id' => base64_encode($data->id)]).'" class="btn btn-default btn-xs">
+                                                        <a href="'.route('back.settings.view', ['id' => base64_encode($data->id)]).'" class="btn btn-default btn-xs">
                                                             <i class="fa fa-eye"></i>
                                                         </a> &nbsp;
 
-                                                        <a href="'.route('back.categories.edit', ['id' => base64_encode($data->id)]).'" class="btn btn-default btn-xs">
+                                                        <a href="'.route('back.settings.edit', ['id' => base64_encode($data->id)]).'" class="btn btn-default btn-xs">
                                                             <i class="fa fa-edit"></i>
                                                         </a> &nbsp;
 
@@ -130,7 +129,6 @@
                                                         <ul class="dropdown-menu">
                                                             <li><a class="dropdown-item" href="javascript:;" onclick="change_status(this);" data-status="active" data-old_status="'.$data->status.'" data-id="'.base64_encode($data->id).'">Active</a></li>
                                                             <li><a class="dropdown-item" href="javascript:;" onclick="change_status(this);" data-status="inactive" data-old_status="'.$data->status.'" data-id="'.base64_encode($data->id).'">Inactive</a></li>
-                                                            <li><a class="dropdown-item" href="javascript:;" onclick="change_status(this);" data-status="deleted" data-old_status="'.$data->status.'" data-id="'.base64_encode($data->id).'">Delete</a></li>
                                                         </ul>
                                                     </div>';
                                     })
@@ -158,11 +156,11 @@
                                     ->addIndexColumn()
                                     ->addColumn('action', function($data){
                                         return ' <div class="btn-group">
-                                                        <a href="'.route('back.categories.view', ['id' => base64_encode($data->id)]).'" class="btn btn-default btn-xs">
+                                                        <a href="'.route('back.settings.view', ['id' => base64_encode($data->id)]).'" class="btn btn-default btn-xs">
                                                             <i class="fa fa-eye"></i>
                                                         </a> &nbsp;
 
-                                                        <a href="'.route('back.categories.edit', ['id' => base64_encode($data->id)]).'" class="btn btn-default btn-xs">
+                                                        <a href="'.route('back.settings.edit', ['id' => base64_encode($data->id)]).'" class="btn btn-default btn-xs">
                                                             <i class="fa fa-edit"></i>
                                                         </a> &nbsp;
 
@@ -172,7 +170,6 @@
                                                         <ul class="dropdown-menu">
                                                             <li><a class="dropdown-item" href="javascript:;" onclick="change_status(this);" data-status="active" data-old_status="'.$data->status.'" data-id="'.base64_encode($data->id).'">Active</a></li>
                                                             <li><a class="dropdown-item" href="javascript:;" onclick="change_status(this);" data-status="inactive" data-old_status="'.$data->status.'" data-id="'.base64_encode($data->id).'">Inactive</a></li>
-                                                            <li><a class="dropdown-item" href="javascript:;" onclick="change_status(this);" data-status="deleted" data-old_status="'.$data->status.'" data-id="'.base64_encode($data->id).'">Delete</a></li>
                                                         </ul>
                                                     </div>';
                                     })
@@ -200,11 +197,11 @@
                                     ->addIndexColumn()
                                     ->addColumn('action', function($data){
                                         return ' <div class="btn-group">
-                                                        <a href="'.route('back.categories.view', ['id' => base64_encode($data->id)]).'" class="btn btn-default btn-xs">
+                                                        <a href="'.route('back.settings.view', ['id' => base64_encode($data->id)]).'" class="btn btn-default btn-xs">
                                                             <i class="fa fa-eye"></i>
                                                         </a> &nbsp;
 
-                                                        <a href="'.route('back.categories.edit', ['id' => base64_encode($data->id)]).'" class="btn btn-default btn-xs">
+                                                        <a href="'.route('back.settings.edit', ['id' => base64_encode($data->id)]).'" class="btn btn-default btn-xs">
                                                             <i class="fa fa-edit"></i>
                                                         </a> &nbsp;
 
@@ -214,7 +211,6 @@
                                                         <ul class="dropdown-menu">
                                                             <li><a class="dropdown-item" href="javascript:;" onclick="change_status(this);" data-status="active" data-old_status="'.$data->status.'" data-id="'.base64_encode($data->id).'">Active</a></li>
                                                             <li><a class="dropdown-item" href="javascript:;" onclick="change_status(this);" data-status="inactive" data-old_status="'.$data->status.'" data-id="'.base64_encode($data->id).'">Inactive</a></li>
-                                                            <li><a class="dropdown-item" href="javascript:;" onclick="change_status(this);" data-status="deleted" data-old_status="'.$data->status.'" data-id="'.base64_encode($data->id).'">Delete</a></li>
                                                         </ul>
                                                     </div>';
                                     })
@@ -242,96 +238,97 @@
         /** view */
             public function view(Request $request, $id=''){
                 if($id == '')
-                    return redirect()->route('back.categories')->with('error', 'Something went wrong Found');
+                    return redirect()->route('back.settings')->with('error', 'Something went wrong Found');
 
-                $id = base64_decode($id);
-                $path = asset('/back/uploads/category/').'/';
-
-                $data = Category::select('id', 'name', 'status',
-                                    DB::Raw("CASE
-                                                WHEN ".'image'." != ''
-                                                THEN CONCAT("."'".$path."'".", ".'image'.")
-                                                ELSE CONCAT("."'".$path."'".", 'default.png')
-                                            END as image")
-                                )
+                $id = base64_decode($id);;
+                $path = asset('/back/uploads/logo/').'/';
+                $data = Setting::select('id', 'key' ,'type',
+                                        DB::Raw("CASE
+                                                WHEN ".'type'." = 'logo'
+                                                THEN CONCAT("."'".$path."'".", ".'value'.")
+                                                ELSE CONCAT('',".'value'.")
+                                            END as value")
+                                        )
                         ->where(['id' => $id])
                         ->first();
 
                 if($data)
-                    return view('back.categories.view')->with('data', $data);
+                    return view('back.settings.view')->with('data', $data);
                 else
-                    return redirect()->route('back.categories')->with('error', 'No Category Found');
+                    return redirect()->route('back.settings')->with('error', 'No Setting Found');
             }
         /** view */
 
         /** edit */
             public function edit(Request $request, $id=''){
                 if($id == '')
-                    return redirect()->route('back.categories')->with('error', 'Something went wrong Found');
+                    return redirect()->route('back.settings')->with('error', 'Something went wrong Found');
 
-                $id = base64_decode($id);
-                $path = asset('/back/uploads/category/').'/';
-
-                $data = Category::select('id', 'name', 'status',
-                                    DB::Raw("CASE
-                                                WHEN ".'image'." != ''
-                                                THEN CONCAT("."'".$path."'".", ".'image'.")
-                                                ELSE CONCAT("."'".$path."'".", 'default.png')
-                                            END as image")
-                                )
+                $id = base64_decode($id);;
+                $path = asset('/back/uploads/logo/').'/';
+                $data = Setting::select('id', 'key' ,'type',
+                                        DB::Raw("CASE
+                                                WHEN ".'type'." = 'logo'
+                                                THEN CONCAT("."'".$path."'".", ".'value'.")
+                                                ELSE CONCAT('',".'value'.")
+                                            END as value")
+                                        )
                         ->where(['id' => $id])
                         ->first();
 
                 if($data)
-                    return view('back.categories.edit')->with('data', $data);
+                    return view('back.settings.edit')->with('data', $data);
                 else
-                    return redirect()->route('back.categories')->with('error', 'No Category Found');
+                    return redirect()->route('back.settings')->with('error', 'No Settings Found');
             }
         /** edit */
 
         /** update */
-            public function update(CategoryRequest $request){
+            public function update(SettingRequest $request){
                 if($request->ajax()){ return true; }
 
                 if(!empty($request->all())){
-                    $ext_user = Category::where(['id' => $request->id])->first();
+                    $ext_user = Setting::where(['id' => $request->id])->first();
 
                     $crud = [
-                            'name' => ucfirst($request->name),
                             'updated_at' => date('Y-m-d H:i:s'),
                             'updated_by' => auth()->user()->id
                     ];
+                    if($request->flag == 'logo'){
 
-                    if(!empty($request->file('image'))){
-                        $file = $request->file('image');
-                        $filenameWithExtension = $request->file('image')->getClientOriginalName();
-                        $filename = pathinfo($filenameWithExtension, PATHINFO_FILENAME);
-                        $extension = $request->file('image')->getClientOriginalExtension();
-                        $filenameToStore = time()."_".$filename.'.'.$extension;
+                        if(!empty($request->file('value'))){
+                            $file = $request->file('value');
+                            $filenameWithExtension = $request->file('value')->getClientOriginalName();
+                            $filename = pathinfo($filenameWithExtension, PATHINFO_FILENAME);
+                            $extension = $request->file('value')->getClientOriginalExtension();
+                            $filenameToStore = time()."_".$filename.'.'.$extension;
 
-                        $folder_to_upload = public_path().'/back/uploads/category/';
+                            $folder_to_upload = public_path().'/back/uploads/logo/';
 
-                        if (!\File::exists($folder_to_upload)) {
-                            \File::makeDirectory($folder_to_upload, 0777, true, true);
+                            if (!\File::exists($folder_to_upload)) {
+                                \File::makeDirectory($folder_to_upload, 0777, true, true);
+                            }
+
+                            $crud["value"] = $filenameToStore;
+                        }else{
+                            $crud["value"] = $ext_user->image ?? null;
                         }
-
-                        $crud["image"] = $filenameToStore;
                     }else{
-                        $crud["image"] = $ext_user->image ?? null;
+                        $crud["value"] = $request->value;
                     }
 
-                    $update = Category::where('id',$request->id)->update($crud);
+                    $update = Setting::where('id',$request->id)->update($crud);
 
                     if($update){
-                        if(!empty($request->file('image')))
+                        if(!empty($request->file('value')))
                             $file->move($folder_to_upload, $filenameToStore);
 
-                        return redirect()->route('back.categories')->with('success', 'Category Updated Successfully.');
+                        return redirect()->route('back.settings')->with('success', 'Setting Updated Successfully.');
                     }else{
-                        return redirect()->route('back.categories')->with('error', 'Faild To Update Category!');
+                        return redirect()->route('back.settings')->with('error', 'Faild To Update Setting!');
                     }
                 }else{
-                    return redirect()->back('back.categories')->with('error', 'Something went wrong');
+                    return redirect()->back('back.settings')->with('error', 'Something went wrong');
                 }
             }
         /** update */
@@ -344,27 +341,15 @@
                     $id = base64_decode($request->id);
                     $status = $request->status;
 
-                    $data = Category::where(['id' => $id])->first();
+                    $data = Setting::where(['id' => $id])->first();
 
                     if(!empty($data)){
-                        if($status == 'deleted'){
-                            $file_path = public_path().'/back/uploads/category/'.$data->image;
-                            @unlink($file_path);
+                        $update = Setting::where(['id' => $id])->update(['status' => $status, 'updated_at' => date('Y-m-d H:i:s'), 'updated_by' => auth()->user()->id]);
 
-                            $delete = Category::where(['id' => $id])->delete();
-                    
-                            if($delete)
-                                return response()->json(['code' => 200]);
-                            else
-                                return response()->json(['code' => 201]);
-                        }else{
-                            $update = Category::where(['id' => $id])->update(['status' => $status, 'updated_at' => date('Y-m-d H:i:s'), 'updated_by' => auth()->user()->id]);
-
-                            if($update)
-                                return response()->json(['code' => 200]);
-                            else
-                                return response()->json(['code' => 201]);
-                        }
+                        if($update)
+                            return response()->json(['code' => 200]);
+                        else
+                            return response()->json(['code' => 201]);
                     }else{
                         return response()->json(['code' => 201]);
                     }
