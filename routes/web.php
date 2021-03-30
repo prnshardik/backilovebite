@@ -37,6 +37,12 @@ Route::group(['middleware' => 'prevent-back-history', 'namespace' => 'Back', 'as
     Route::group(['middleware' => ['guest:admin']], function () {
         Route::get('/login', 'AuthController@login')->name('login');
         Route::post('signin', 'AuthController@signin')->name('signin');
+
+        Route::get('forget-password', 'AuthController@forget_password')->name('forget.password');
+        Route::post('password-forget', 'AuthController@password_forget')->name('password.forget');
+
+        Route::get('reset-password/{string?}', 'AuthController@reset_password')->name('reset.password');
+        Route::post('recover-password', 'AuthController@recover_password')->name('recover.password');
     });
 
     Route::group(['middleware' => ['auth:admin']], function () {

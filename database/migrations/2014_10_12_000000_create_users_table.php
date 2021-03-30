@@ -34,7 +34,7 @@ class CreateUsersTable extends Migration
             array(
                 'firstname' => 'Super',
                 'lastname' => 'Admin',
-                'email' => 'info@ilovebite.com',
+                'email' => 'info@ilovebite.in',
                 'password' => bcrypt('Admin@123'),
                 'image' => 'admin-avatar.png',
                 'status' => 'active',

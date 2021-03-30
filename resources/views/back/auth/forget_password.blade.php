@@ -4,37 +4,25 @@
 @endsection
 
 @section('title')
-    Login
+    Forgot Password
 @endsection
 
 @section('content')
     <div class="brand" style="margin-top:150px;">
         <a class="link" href="{{ route('back.home') }}">{{ _site_title() }}</a>
     </div>
-    <form action="{{ route('back.signin') }}" name="form" id="form" method="post" enctype="multipart/form-data">
+    <form action="{{ route('back.password.forget') }}" name="form" id="form" method="post" enctype="multipart/form-data">
         @csrf
         @method('POST')
 
-        <h2 class="login-title">Log in</h2>
+        <h3 class="m-t-10 m-b-10">Forgot password</h3>
+        <p class="m-b-20">Enter your email address below and we'll send you password reset instructions.</p>
         <div class="form-group">
-            <div class="input-group-icon right">
-                <div class="input-icon"><i class="fa fa-envelope"></i></div>
-                <input type="email" name="email" id="email" class="form-control" placeholder="Email" autocomplete="off">
-                <span class="kt-form__help error email"></span>
-            </div>
+            <input type="email" name="email" id="email" class="form-control" placeholder="Email" autocomplete="off">
+            <span class="kt-form__help error email"></span>
         </div>
         <div class="form-group">
-            <div class="input-group-icon right">
-                <div class="input-icon"><i class="fa fa-lock font-16"></i></div>
-                <input class="form-control" type="password" name="password" placeholder="Password">
-                <span class="kt-form__help error password"></span>
-            </div>
-        </div>
-        <div class="form-group d-flex justify-content-between">
-            <a href="{{ route('back.forget.password') }}">Forgot password?</a>
-        </div>
-        <div class="form-group">
-            <button type="submit" class="btn btn-info btn-block">Login</button>
+            <button class="btn btn-info btn-block" type="submit">Submit</button>
         </div>
     </form>
 @endsection
