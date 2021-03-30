@@ -87,7 +87,7 @@ class CreateSettingsTable extends Migration
         DB::table('settings')->insert(
             array(
                 'key' => 'MAIL_USERNAME',
-                'value' => 'info@ilovebite.com',
+                'value' => 'info@ilovebite.in',
                 'type' => 'smtp',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
@@ -123,7 +123,7 @@ class CreateSettingsTable extends Migration
         DB::table('settings')->insert(
             array(
                 'key' => 'MAIL_FROM_ADDRESS',
-                'value' => 'info@ilovebite.com',
+                'value' => 'info@ilovebite.in',
                 'type' => 'smtp',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
@@ -135,7 +135,7 @@ class CreateSettingsTable extends Migration
         DB::table('settings')->insert(
             array(
                 'key' => 'MAIL_FROM_NAME',
-                'value' => 'I Love Bite',
+                'value' => 'Love Bite',
                 'type' => 'smtp',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
