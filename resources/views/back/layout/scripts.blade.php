@@ -10,6 +10,7 @@
 <script src="{{ asset('back/js/app.js') }}" type="text/javascript"></script>
 <script src="{{ asset('back/vendors/DataTables/datatables.min.js') }}"></script>
 <script src="{{ asset('back/vendors/toastr/toastr.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('back/vendors/jquery-validation/dist/jquery.validate.min.js') }}" type="text/javascript"></script>
 
 <script>
     @php
