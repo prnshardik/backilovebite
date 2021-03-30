@@ -50,6 +50,10 @@
                 </div>
             </div>
         </div>
+
+        {{-- use of setting value function using key --}}
+        {{-- {{ _settings('MAIL_USERNAME') }} --}}
+
         <div class="row">
             <div class="col-lg-8">
                 <div class="ibox">

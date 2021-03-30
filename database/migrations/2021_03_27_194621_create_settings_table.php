@@ -19,7 +19,6 @@ class CreateSettingsTable extends Migration
             $table->string('key')->nullable();
             $table->string('value')->nullable();
             $table->enum('type', ['logo', 'general', 'smtp', 'sms', 'payment'])->default('general');
-            $table->enum('status', ['active', 'inactive'])->default('active');
             $table->timestamps();
             $table->integer('created_by')->nullable();
             $table->integer('updated_by')->nullable();
@@ -28,9 +27,8 @@ class CreateSettingsTable extends Migration
         DB::table('settings')->insert(
             array(
                 'key' => 'SITE_TITLE',
-                'value' => 'I Love Bite',
+                'value' => 'Love Bite',
                 'type' => 'general',
-                'status' => 'active',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
                 'created_by' => 1,
@@ -43,7 +41,6 @@ class CreateSettingsTable extends Migration
                 'key' => 'SITE_TITLE_SF',
                 'value' => 'LB',
                 'type' => 'general',
-                'status' => 'active',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
                 'created_by' => 1,
@@ -54,9 +51,8 @@ class CreateSettingsTable extends Migration
         DB::table('settings')->insert(
             array(
                 'key' => 'MAIL_MAILER',
-                'value' => 'MAIL_MAILER',
+                'value' => 'smtp',
                 'type' => 'smtp',
-                'status' => 'active',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
                 'created_by' => 1,
@@ -67,9 +63,8 @@ class CreateSettingsTable extends Migration
         DB::table('settings')->insert(
             array(
                 'key' => 'MAIL_HOST',
-                'value' => 'MAIL_HOST',
+                'value' => 'smtp.googlemail.com',
                 'type' => 'smtp',
-                'status' => 'active',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
                 'created_by' => 1,
@@ -80,9 +75,8 @@ class CreateSettingsTable extends Migration
         DB::table('settings')->insert(
             array(
                 'key' => 'MAIL_PORT',
-                'value' => 'MAIL_PORT',
+                'value' => '465',
                 'type' => 'smtp',
-                'status' => 'active',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
                 'created_by' => 1,
@@ -93,9 +87,8 @@ class CreateSettingsTable extends Migration
         DB::table('settings')->insert(
             array(
                 'key' => 'MAIL_USERNAME',
-                'value' => 'MAIL_USERNAME',
+                'value' => 'h42dik@gmail.com',
                 'type' => 'smtp',
-                'status' => 'active',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
                 'created_by' => 1,
@@ -106,9 +99,8 @@ class CreateSettingsTable extends Migration
         DB::table('settings')->insert(
             array(
                 'key' => 'MAIL_PASSWORD',
-                'value' => 'MAIL_PASSWORD',
+                'value' => 'etkblpbpszvvoern',
                 'type' => 'smtp',
-                'status' => 'active',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
                 'created_by' => 1,
@@ -119,9 +111,8 @@ class CreateSettingsTable extends Migration
         DB::table('settings')->insert(
             array(
                 'key' => 'MAIL_ENCRYPTION',
-                'value' => 'MAIL_ENCRYPTION',
+                'value' => 'ssl',
                 'type' => 'smtp',
-                'status' => 'active',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
                 'created_by' => 1,
@@ -132,9 +123,8 @@ class CreateSettingsTable extends Migration
         DB::table('settings')->insert(
             array(
                 'key' => 'MAIL_FROM_ADDRESS',
-                'value' => 'MAIL_FROM_ADDRESS',
+                'value' => 'info@ilovebite.com',
                 'type' => 'smtp',
-                'status' => 'active',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
                 'created_by' => 1,
@@ -145,9 +135,8 @@ class CreateSettingsTable extends Migration
         DB::table('settings')->insert(
             array(
                 'key' => 'MAIL_FROM_NAME',
-                'value' => 'MAIL_FROM_NAME',
+                'value' => 'I Love Bite',
                 'type' => 'smtp',
-                'status' => 'active',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
                 'created_by' => 1,
@@ -158,9 +147,8 @@ class CreateSettingsTable extends Migration
         DB::table('settings')->insert(
             array(
                 'key' => 'SMS_NAME',
-                'value' => 'NAME',
+                'value' => 'HardIk Patel',
                 'type' => 'sms',
-                'status' => 'active',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
                 'created_by' => 1,
@@ -171,9 +159,8 @@ class CreateSettingsTable extends Migration
         DB::table('settings')->insert(
             array(
                 'key' => 'SMS_NUMBER',
-                'value' => 'number',
+                'value' => '+91 80000 80272',
                 'type' => 'sms',
-                'status' => 'active',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
                 'created_by' => 1,
@@ -186,7 +173,6 @@ class CreateSettingsTable extends Migration
                 'key' => 'PAYMENT_ID',
                 'value' => 'PAYMENT_ID',
                 'type' => 'payment',
-                'status' => 'active',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
                 'created_by' => 1,
@@ -194,13 +180,23 @@ class CreateSettingsTable extends Migration
             )
         );
 
+        DB::table('settings')->insert(
+            array(
+                'key' => 'FEVICON',
+                'value' => 'fevicon.png',
+                'type' => 'logo',
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
+                'created_by' => 1,
+                'updated_by' => 1,
+            )
+        );
 
         DB::table('settings')->insert(
             array(
                 'key' => 'LOGO',
                 'value' => 'logo.png',
                 'type' => 'logo',
-                'status' => 'active',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
                 'created_by' => 1,
@@ -208,8 +204,28 @@ class CreateSettingsTable extends Migration
             )
         );
 
+        DB::table('settings')->insert(
+            array(
+                'key' => 'SMALL_LOGO',
+                'value' => 'small_logo.png',
+                'type' => 'logo',
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
+                'created_by' => 1,
+                'updated_by' => 1,
+            )
+        );
+
+        if(file_exists(public_path('/back/dummy/fevicon.png')) && !file_exists(public_path('/back/uploads/logo/fevicon.png')) ){
+            File::copy(public_path('/back/dummy/fevicon.png'), public_path('/back/uploads/logo/fevicon.png'));
+        }
+
         if(file_exists(public_path('/back/dummy/logo.png')) && !file_exists(public_path('/back/uploads/logo/logo.png')) ){
             File::copy(public_path('/back/dummy/logo.png'), public_path('/back/uploads/logo/logo.png'));
+        }
+
+        if(file_exists(public_path('/back/dummy/small_logo.png')) && !file_exists(public_path('/back/uploads/logo/small_logo.png')) ){
+            File::copy(public_path('/back/dummy/small_logo.png'), public_path('/back/uploads/logo/small_logo.png'));
         }
     }
 

@@ -76,16 +76,8 @@ Route::group(['middleware' => 'prevent-back-history', 'namespace' => 'Back', 'as
         /** Products */
 
         /** Settings */
-            Route::any('settings', 'settingsController@index')->name('settings');
-            Route::get('settings/view/{id?}', 'settingsController@view')->name('settings.view');
-            Route::get('settings/edit/{id?}', 'settingsController@edit')->name('settings.edit');
-            Route::patch('settings/update', 'settingsController@update')->name('settings.update');
-            Route::post('settings/change-status', 'settingsController@change_status')->name('settings.change.status');
+            Route::get('settings', 'SettingsController@index')->name('settings');
+            Route::post('settings/update', 'SettingsController@update')->name('settings.update');
         /** Settings */
-
-        /** Temp-Settings */
-            Route::get('temp-settings', 'TempSettingsController@index')->name('temp.settings');
-            Route::post('temp-settings/update', 'TempSettingsController@update')->name('temp.settings.update');
-        /** Temp-Settings */
     });
 });

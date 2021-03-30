@@ -27,8 +27,8 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>Name</th>
                                     <th>Image</th>
+                                    <th>Name</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
@@ -89,12 +89,12 @@
                             name: 'DT_RowIndex'
                         },
                         {
-                            data: 'name',
-                            name: 'name'
-                        },
-                        {
                             data: 'image',
                             name: 'image'
+                        },
+                        {
+                            data: 'name',
+                            name: 'name'
                         },
                         {
                             data: 'status',
