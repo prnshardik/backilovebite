@@ -38,7 +38,7 @@
                     <a href="{{ route('front.testimonial') }}">Testimonial</a>
                 </li>
                 <li>
-                    <a href="{{ route('front.gallery') }}Gallery</a>
+                    <a href="{{ route('front.gallery') }}">Gallery</a>
                 </li>
                 <li>
                     <a href="{{ route('front.faq') }}">Faq</a>
@@ -47,15 +47,14 @@
                     <a href="{{ route('front.contact') }}">Contact</a>
                 </li>
             </ul>
-            <p>Piorem ipsum dolor sit amet, consectetur adipiscing elit sed do eusmod tempor incdunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
         </div>
     </div>
     <div class="footer-bottom-area">
         <div class="container">
             <p>
                 <i class="far fa-copyright"></i>
-                {{ date('Y') }} {{ _settings('SITE_TITLE') }}. All Rights Reserved by
-                <a href="https://cypherocean.com/" target="_blank">CyoherOcean</a>
+                {{ date('Y') }} @ All Rights Reserved by <a href="https://ilovebite.in/" class="text-danger" target="_blank">{{ _settings('SITE_TITLE') }}</a>
+                | Powered by <a href="https://cypherocean.com/" class="text-primary" target="_blank">CyoherOcean</a>
             </p>
             <ul class="social">
                 <li class="facebook">
