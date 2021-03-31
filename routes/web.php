@@ -38,6 +38,7 @@ Route::group(['middleware' => 'prevent-back-history', 'namespace' => 'Back', 'as
         Route::get('/login', 'AuthController@login')->name('login');
         Route::post('signin', 'AuthController@signin')->name('signin');
 
+
         Route::get('forget-password', 'AuthController@forget_password')->name('forget.password');
         Route::post('password-forget', 'AuthController@password_forget')->name('password.forget');
 
@@ -49,6 +50,14 @@ Route::group(['middleware' => 'prevent-back-history', 'namespace' => 'Back', 'as
         Route::get('logout', 'AuthController@logout')->name('logout');
 
         Route::get('home', 'HomeController@index')->name('home');
+        
+        /** profile */        
+            Route::get('profile', 'ProfileController@profile')->name('profile');
+            Route::get('profile-edit', 'ProfileController@profile_edit')->name('profile.edit');
+            Route::PATCH('profile-update', 'ProfileController@profile_update')->name('profile.update');
+            Route::get('profile-change-password', 'ProfileController@change_password')->name('profile.change.password');
+            Route::post("profile-reset-password", "ProfileController@reset_password")->name('profile.reset.password');
+        /** profile */
 
         /** Users */
             Route::any('users', 'UsersController@index')->name('users');

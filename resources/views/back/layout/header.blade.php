@@ -143,8 +143,8 @@
                     <span></span>{{ auth()->user()->firstname }} {{ auth()->user()->lastname }}<i class="fa fa-angle-down m-l-5"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-right">
-                    <a class="dropdown-item" href="profile.html"><i class="fa fa-user"></i>Profile</a>
-                    <a class="dropdown-item" href="{{ route('back.settings') }}"><i class="fa fa-cog"></i>Settings</a>
+                    <a class="dropdown-item" href="{{ route('back.profile') }}"><i class="fa fa-user"></i>Profile</a>
+                    <a class="dropdown-item" href="{{ route('back.profile.change.password') }}"><i class="fa fa-cog"></i>Change Password</a>
                     <li class="dropdown-divider"></li>
                     <a class="dropdown-item" href="{{ route('back.logout') }}"><i class="fa fa-power-off"></i>Logout</a>
                 </ul>
