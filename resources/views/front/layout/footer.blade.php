@@ -11,11 +11,14 @@
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
-                    <form class="newsletter-form" novalidate="true">
-                        <input type="email" class="input-newsletter" placeholder="Your Email" name="EMAIL" required="" autocomplete="off">
-                        <button type="submit" class="disabled" style="pointer-events: all; cursor: pointer;">
-                            Subscribe Now
-                        </button>
+                    <form id="subscribe-form" name="subscribe-form" action="{{ route('front.subscribe') }}" method="post" class="newsletter-form">
+                        @csrf
+                        @method('post')
+
+                        <input type="email" name="email" id="subscribe_email" class="input-newsletter" placeholder="Your Email" required="" autocomplete="off">
+                        <span class="kt-form__help error email"></span>
+
+                        <button type="submit" class="disabled" style="pointer-events: all; cursor: pointer;">Subscribe Now</button>
                         <div id="validator-newsletter" class="form-result"></div>
                     </form>
                 </div>

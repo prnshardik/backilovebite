@@ -29,6 +29,8 @@ Route::group(['middleware' => 'prevent-back-history', 'namespace' => 'Front', 'a
     Route::get('login', 'HomeController@login')->name('login');
     Route::get('signup', 'HomeController@signup')->name('signup');
     Route::get('forgot-password', 'HomeController@forgot_password')->name('forgot-password');
+
+    Route::post('subscribe', 'HomeController@subscribe')->name('subscribe');
 });
 
 Route::get('/admin', function(){ return redirect()->route('back.login'); });
@@ -37,7 +39,6 @@ Route::group(['middleware' => 'prevent-back-history', 'namespace' => 'Back', 'as
     Route::group(['middleware' => ['guest:admin']], function () {
         Route::get('/login', 'AuthController@login')->name('login');
         Route::post('signin', 'AuthController@signin')->name('signin');
-
 
         Route::get('forget-password', 'AuthController@forget_password')->name('forget.password');
         Route::post('password-forget', 'AuthController@password_forget')->name('password.forget');

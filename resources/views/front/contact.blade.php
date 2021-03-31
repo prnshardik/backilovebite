@@ -39,7 +39,7 @@
                             <div class="icon">
                                 <i class="flaticon-world"></i>
                             </div>
-                            <p>54 Hegmann Uninuo Apt. 890, New York, NY 10018, United States.</p>
+                            <p>{!! _settings('CONTACT_ADDRESS') !!}</p>
                             <div class="shape">
                                 <img src="{{ asset('front/assets/img/image-icon/2.png') }}" alt="image">
                             </div>
@@ -67,8 +67,14 @@
                                 <i class="flaticon-phone-ringing"></i>
                             </div>
                             <p>
-                                <a href="tel:065432134567">+(06) – 543 213 4567</a>
-                                <a href="mailto:support@handout.com">Email.support@handout.com</a>
+                                <a href="tel:{{ _settings('CONTACT_NUMBER') }}">{{ _settings('CONTACT_NUMBER') }}</a>
+                            </p>
+                            <br>
+                            <div class="icon">
+                                <i class="flaticon-email"></i>
+                            </div>
+                            <p>
+                                <a href="tel:{{ _settings('CONTACT_EMAIL') }}">{{ _settings('CONTACT_EMAIL') }}</a>
                             </p>
                             <div class="shape">
                                 <img src="{{ asset('front/img/image-icon/1.png') }}" alt="image">
@@ -134,7 +140,7 @@
     </section>
     <div class="map pb-100">
         <div class="container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3015.5025244860035!2d-73.89913308434032!3d40.904726233738984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2f253c171734f%3A0xc8a19bda0b5e9a9d!2sBronx%20Burger%20House!5e0!3m2!1sen!2sbd!4v1594194193871!5m2!1sen!2sbd"></iframe>
+            <iframe src="{{ _settings('MAP_LINK') }}"></iframe>
         </div>
     </div>
 @endsection

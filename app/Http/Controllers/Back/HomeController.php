@@ -9,8 +9,4 @@
         public function index(Request $request){
             return view('back.home');
         }
-
-        public function page(Request $request){
-            return view('back.page');
-        }
     }

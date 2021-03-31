@@ -4,6 +4,8 @@
 
     use App\Http\Controllers\Controller;
     use Illuminate\Http\Request;
+    use App\Models\Subscribe;
+    use App\Http\Requests\SubscribeRequest;
 
     class HomeController extends Controller{
         public function index(Request $request){
@@ -72,5 +74,9 @@
 
         public function forgot_password(Request $request){
             return view('front.forgot_password');
+        }
+
+        public function subscribe(SubscribeRequest $request){
+            dd($request->all());
         }
     }

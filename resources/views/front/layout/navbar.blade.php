@@ -22,22 +22,16 @@
                             <a href="{{ route('front.home') }}" class="nav-link {{ Request::is('/') ? 'active' : '' }}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('front.menu') }}" class="nav-link {{ Request::is('menu') ? 'active' : '' }} ">Menu</a>
+                            <a href="{{ route('front.menu') }}" class="nav-link {{ Request::is('menu') ? 'active' : '' }}">Menu</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('front.gallery') }}" class="nav-link {{ Request::is('gallery') ? 'active' : '' }} ">Gallery</a>
+                            <a href="{{ route('front.gallery') }}" class="nav-link {{ Request::is('gallery') ? 'active' : '' }}">Gallery</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('front.about') }}" class="nav-link {{ Request::is('about') ? 'active' : '' }} ">About</a>
+                            <a href="{{ route('front.about') }}" class="nav-link {{ Request::is('about') ? 'active' : '' }}">About</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('front.contact') }}" class="nav-link {{ Request::is('contact') ? 'active' : '' }} ">Contact</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('front.testimonial') }}" class="nav-link {{ Request::is('testimonial') ? 'active' : '' }} ">Testimonial</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('front.faq') }}" class="nav-link {{ Request::is('faq') ? 'active' : '' }} ">Faq's</a>
+                            <a href="{{ route('front.contact') }}" class="nav-link {{ Request::is('contact') ? 'active' : '' }}">Contact</a>
                         </li>
                     </ul>
                     <div class="others-options d-flex align-items-center">
@@ -49,9 +43,15 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="option-item">
+                        {{-- <div class="option-item">
                             <a href="{{ route('front.shop') }}" class="default-btn">
                                 Order Online
+                                <span></span>
+                            </a>
+                        </div> --}}
+                        <div class="option-item">
+                            <a href="{{ route('front.login') }}" class="default-btn">
+                                Login
                                 <span></span>
                             </a>
                         </div>

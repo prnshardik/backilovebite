@@ -1,42 +1,16 @@
 <?php
 
-namespace App\Models;
+    namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
+    use Illuminate\Contracts\Auth\MustVerifyEmail;
+    use Illuminate\Database\Eloquent\Factories\HasFactory;
+    use Illuminate\Foundation\Auth\User as Authenticatable;
+    use Illuminate\Notifications\Notifiable;
 
-class Category extends Authenticatable
-{
-    use HasFactory, Notifiable;
+    class Category extends Authenticatable{
+        use HasFactory, Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'name',
-        'image',
-        'status',
-        'created_by',
-        'created_at',
-        'updated_by',
-        'updated_at'
-    ];
+        protected $table = 'categories';
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-   
-
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    
-}
+        protected $fillable = ['name', 'description', 'image', 'status', 'created_at', 'created_by', 'updated_at', 'updated_by'];        
+    }

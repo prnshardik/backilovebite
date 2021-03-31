@@ -13,4 +13,35 @@
 <script src="{{ asset('front/js/wow.min.js') }}"></script>
 <script src="{{ asset('front/js/main.js') }}"></script>
 
+<script>
+    $(document).ready(function () {
+        var form = $('#subscribe-form');
+        $('.kt-form__help').html('');
+        form.submit(function(e) {
+            $('.help-block').html('');
+            $('.m-form__help').html('');
+            $.ajax({
+                url : form.attr('action'),
+                type : form.attr('method'),
+                data : form.serialize(),
+                dataType: 'json',
+                async:false,
+                success : function(json){
+                    console.log(json);
+                },
+                error: function(json){
+                    if(json.status === 422) {
+                        e.preventDefault();
+                        var errors_ = json.responseJSON;
+                        $('.kt-form__help').html('');
+                        $.each(errors_.errors, function (key, value) {
+                            $('.'+key).html(value);
+                        });
+                    }
+                }
+            });
+        });
+    });
+</script>
+
 @yield('scripts')
