@@ -25,7 +25,7 @@
                                                     ELSE CONCAT("."'".$path."'".", 'default.png')
                                                 END as image")
                                         )
-                                    ->where(['u.id' => auth()->user()->id])
+                                    ->where(['u.id' => auth()->guard('admin')->user()->id])
                                     ->first();
             return view('back.profile.edit')->with(['data' => $data]);
         }
@@ -74,7 +74,7 @@
         }
 
         public function reset_password(Request $request){
-            $id = auth()->user()->id;
+            $id = auth()->guard('admin')->user()->id;
 
             $this->validate(request(), [
                 'current_password' => ['required', 'string', 'max:255'],

@@ -90,9 +90,9 @@
                             'price' => $request->price,
                             'status' => 'active',
                             'created_at' => date('Y-m-d H:i:s'),
-                            'created_by' => auth()->user()->id,
+                            'created_by' => auth()->guard('admin')->user()->id,
                             'updated_at' => date('Y-m-d H:i:s'),
-                            'updated_by' => auth()->user()->id
+                            'updated_by' => auth()->guard('admin')->user()->id
                     ];
 
                     if(!empty($request->file('image'))){
@@ -194,7 +194,7 @@
                             'category_id' => $request->category_id,
                             'price' => $request->price,
                             'updated_at' => date('Y-m-d H:i:s'),
-                            'updated_by' => auth()->user()->id
+                            'updated_by' => auth()->guard('admin')->user()->id
                     ];
 
                     if(!empty($request->file('image'))){
@@ -253,7 +253,7 @@
                                 return response()->json(['code' => 201]);
                             }
                         }else{
-                            $update = Product::where(['id' => $id])->update(['status' => $status, 'updated_at' => date('Y-m-d H:i:s'), 'updated_by' => auth()->user()->id]);
+                            $update = Product::where(['id' => $id])->update(['status' => $status, 'updated_at' => date('Y-m-d H:i:s'), 'updated_by' => auth()->guard('admin')->user()->id]);
 
                             if($update){
                                 return response()->json(['code' => 200]);

@@ -85,9 +85,9 @@
                             'name' => $request->name,
                             'status' => 'active',
                             'created_at' => date('Y-m-d H:i:s'),
-                            'created_by' => auth()->user()->id,
+                            'created_by' => auth()->guard('admin')->user()->id,
                             'updated_at' => date('Y-m-d H:i:s'),
-                            'updated_by' => auth()->user()->id
+                            'updated_by' => auth()->guard('admin')->user()->id
                     ];
 
                     if(!empty($request->file('image'))){
@@ -184,7 +184,7 @@
                     $crud = [
                             'name' => ucfirst($request->name),
                             'updated_at' => date('Y-m-d H:i:s'),
-                            'updated_by' => auth()->user()->id
+                            'updated_by' => auth()->guard('admin')->user()->id
                     ];
 
                     if(!empty($request->file('image'))){
@@ -243,7 +243,7 @@
                             else
                                 return response()->json(['code' => 201]);
                         }else{
-                            $update = Category::where(['id' => $id])->update(['status' => $status, 'updated_at' => date('Y-m-d H:i:s'), 'updated_by' => auth()->user()->id]);
+                            $update = Category::where(['id' => $id])->update(['status' => $status, 'updated_at' => date('Y-m-d H:i:s'), 'updated_by' => auth()->guard('admin')->user()->id]);
 
                             if($update)
                                 return response()->json(['code' => 200]);

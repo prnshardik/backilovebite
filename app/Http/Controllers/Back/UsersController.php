@@ -92,9 +92,9 @@
                             'password' => bcrypt($password),
                             'status' => 'active',
                             'created_at' => date('Y-m-d H:i:s'),
-                            'created_by' => auth()->user()->id,
+                            'created_by' => auth()->guard('admin')->user()->id,
                             'updated_at' => date('Y-m-d H:i:s'),
-                            'updated_by' => auth()->user()->id
+                            'updated_by' => auth()->guard('admin')->user()->id
                     ];
 
                     if(!empty($request->file('image'))){
@@ -194,7 +194,7 @@
                             'email' => $request->email,
                             'status' => $request->status,
                             'updated_at' => date('Y-m-d H:i:s'),
-                            'updated_by' => auth()->user()->id
+                            'updated_by' => auth()->guard('admin')->user()->id
                     ];
 
                     if(!empty($request->file('image'))){
@@ -242,7 +242,7 @@
                     $data = User::where(['id' => $id])->first();
 
                     if(!empty($data)){
-                        $update = User::where(['id' => $id])->update(['status' => $status, 'updated_at' => date('Y-m-d H:i:s'), 'updated_by' => auth()->user()->id]);
+                        $update = User::where(['id' => $id])->update(['status' => $status, 'updated_at' => date('Y-m-d H:i:s'), 'updated_by' => auth()->guard('admin')->user()->id]);
 
                         if($update)
                             return response()->json(['code' => 200]);
