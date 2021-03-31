@@ -11,17 +11,6 @@
 @endsection
 
 @section('content')
-    {{-- <div class="page-heading mt-4">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-                <a href="{{ route('back.dashboard') }}"><span class="text-dark font-weight-bold">Dashboard</span></a>
-            </li>
-            <li class="breadcrumb-item">
-                <a href="{{ route('back.profile') }}"><span class="text-dark font-weight-bold">Profile</span></a>
-            </li>
-            <li class="breadcrumb-item"><span class="text-dark font-weight-bold">Change Password</span></li>
-        </ol>
-    </div> --}}
     <div class="page-content fade-in-up">
         <div class="row">
             <div class="col-md-12">
@@ -47,7 +36,7 @@
                                 </div>
                                 <div class="form-group col-sm-6">
                                     <label for="confirm_password">Confirm Password</label>
-                                    <input type="password" name="confirm_password" id="confirm_password" class="form-control" placeholder="Plese enter new Confirm Password">
+                                    <input type="password" name="confirm_password" id="confirm_password" class="form-control" placeholder="Plese enter new confirm password">
                                     <span class="kt-form__help error confirm_password"></span>
                                 </div>
                             </div>
@@ -91,16 +80,16 @@
                 },
                 messages: {
                     current_password: {
-                        required: 'Please Enter Current Password.',
-                        minlength: 'Password Length sShould be 7 Character'
+                        required: 'Please enter current password.',
+                        minlength: 'Password length should be 7 character'
                     },
                     new_password: {
-                        required: 'Please Enter New Password.',
-                        minlength: 'Password Length Should be 7 Character'
+                        required: 'Please enter new password.',
+                        minlength: 'Password length should be 7 character'
                     },
                     confirm_password: {
-                        required: 'Please Enter Confirm Password.',
-                        minlength: 'Password Length Should be 7 Character'
+                        required: 'Please enter confirm password.',
+                        minlength: 'Password length should be 7 character'
                     }
                 },
                 invalidHandler: function (event, validator) { //display error alert on form submit
@@ -125,7 +114,7 @@
             });
             jQuery.validator.addMethod("notEqual", function(value, element, param) {
                 return this.optional(element) || value != $(param).val();
-            }, "New Password Should Not Same As Old.");
+            }, "Please choose diffrent password.");
         });
     </script>
 @endsection

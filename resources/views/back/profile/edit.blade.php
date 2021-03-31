@@ -13,17 +13,6 @@
 @endsection
 
 @section('content')
-    {{-- <div class="page-heading mt-4">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-                <a href="{{ route('back.dashboard') }}"><span class="text-dark font-weight-bold">Dashboard</span></a>
-            </li>
-            <li class="breadcrumb-item">
-                <a href="{{ route('back.profile') }}"><span class="text-dark font-weight-bold">Profile</span></a>
-            </li>
-            <li class="breadcrumb-item"><span class="text-dark font-weight-bold">Edit</span></li>
-        </ol>
-    </div> --}}
     <div class="page-content fade-in-up">
         <div class="row">
             <div class="col-md-12">
@@ -48,6 +37,11 @@
                                     <label for="lastname">Last Name</label>
                                     <input type="text" name="lastname" id="lastname" class="form-control" placeholder="Plese enter lastname" value="{{ $data->lastname ?? '' }}">
                                     <span class="kt-form__help error lastname"></span>
+                                </div>
+                                <div class="form-group col-sm-12">
+                                    <label for="email">Email</label>
+                                    <input type="text" id="email" class="form-control" placeholder="Plese enter lastname" value="{{ $data->email ?? '' }}" disabled >
+                                    <span class="kt-form__help error email"></span>
                                 </div>
                                 <div class="form-group col-sm-12">
                                     <label for="image">Profile</label>

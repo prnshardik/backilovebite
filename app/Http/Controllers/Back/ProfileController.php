@@ -13,9 +13,7 @@
 
     class ProfileController extends Controller{
         public function profile(Request $request){
-
-            $data = DB::table('users as u')->select('u.id', 'u.firstname', 'u.lastname', 'u.email')->where(['u.id' => auth()->user()->id])->first();
-            return view('back.profile.profile')->with(['data' => $data]);
+            return view('back.profile.profile');
         }
 
         public function profile_edit(Request $request){
