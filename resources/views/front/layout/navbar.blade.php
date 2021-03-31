@@ -50,10 +50,17 @@
                             </a>
                         </div> --}}
                         <div class="option-item">
-                            <a href="{{ route('front.login') }}" class="default-btn">
-                                Login
-                                <span></span>
-                            </a>
+                            @if(!auth()->guest())
+                                <a href="{{ route('front.logout') }}" class="default-btn">
+                                    Logout
+                                    <span></span>
+                                </a>
+                            @else
+                                <a href="{{ route('front.login') }}" class="default-btn">
+                                    Login
+                                    <span></span>
+                                </a>
+                            @endif
                         </div>
                     </div>
                 </div>

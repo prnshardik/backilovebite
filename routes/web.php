@@ -10,6 +10,21 @@ Route::get('command', function() {
 });
 
 Route::group(['middleware' => 'prevent-back-history', 'namespace' => 'Front', 'as' => 'front.'], function(){
+    Route::group(['middleware' => ['guest:web']], function () {
+        Route::get('login', 'AuthController@login')->name('login');
+        Route::post('signin', 'AuthController@signin')->name('signin');
+
+        Route::get('forget-password', 'AuthController@forget_password')->name('forget.password');
+        Route::post('password-forget', 'AuthController@password_forget')->name('password.forget');
+    
+        Route::get('reset-password/{string?}', 'AuthController@reset_password')->name('reset.password');
+        Route::post('recover-password', 'AuthController@recover_password')->name('recover.password');
+    });
+
+    Route::group(['middleware' => ['auth:web']], function () {
+        Route::get('logout', 'AuthController@logout')->name('logout');
+    });
+
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('menu', 'HomeController@menu')->name('menu');
     Route::get('gallery', 'HomeController@gallery')->name('gallery');
@@ -26,7 +41,6 @@ Route::group(['middleware' => 'prevent-back-history', 'namespace' => 'Front', 'a
     Route::get('shop', 'HomeController@shop')->name('shop');
     Route::get('checkout', 'HomeController@checkout')->name('checkout');
 
-    Route::get('login', 'HomeController@login')->name('login');
     Route::get('signup', 'HomeController@signup')->name('signup');
     Route::get('forgot-password', 'HomeController@forgot_password')->name('forgot-password');
 
@@ -37,7 +51,7 @@ Route::get('/admin', function(){ return redirect()->route('back.login'); });
 
 Route::group(['middleware' => 'prevent-back-history', 'namespace' => 'Back', 'as' => 'back.', 'prefix' => 'back'], function(){
     Route::group(['middleware' => ['guest:admin']], function () {
-        Route::get('/login', 'AuthController@login')->name('login');
+        Route::get('login', 'AuthController@login')->name('login');
         Route::post('signin', 'AuthController@signin')->name('signin');
 
         Route::get('forget-password', 'AuthController@forget_password')->name('forget.password');
@@ -51,8 +65,8 @@ Route::group(['middleware' => 'prevent-back-history', 'namespace' => 'Back', 'as
         Route::get('logout', 'AuthController@logout')->name('logout');
 
         Route::get('home', 'HomeController@index')->name('home');
-        
-        /** profile */        
+
+        /** profile */
             Route::get('profile', 'ProfileController@profile')->name('profile');
             Route::get('profile-edit', 'ProfileController@profile_edit')->name('profile.edit');
             Route::PATCH('profile-update', 'ProfileController@profile_update')->name('profile.update');

@@ -64,18 +64,6 @@
             return view('front.error');
         }
 
-        public function login(Request $request){
-            return view('front.login');
-        }
-
-        public function signup(Request $request){
-            return view('front.signup');
-        }
-
-        public function forgot_password(Request $request){
-            return view('front.forgot_password');
-        }
-
         public function subscribe(SubscribeRequest $request){
             dd($request->all());
         }

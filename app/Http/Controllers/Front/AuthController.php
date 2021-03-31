@@ -1,62 +1,63 @@
 <?php
 
-    namespace App\Http\Controllers\Back;
+    namespace App\Http\Controllers\Front;
 
     use App\Http\Controllers\Controller;
     use Illuminate\Http\Request;
-    use App\Http\Requests\LoginRequest;
-    use App\Http\Requests\FrogetPasswordRequest;
-    use App\Mail\ForgetPassword;
+    use App\Http\Requests\FrontLoginRequest;
+    use App\Http\Requests\FrontFrogetPasswordRequest;
+    use App\Mail\FrontForgetPassword;
     use Auth, Validator, DB, Mail, Str;
 
     class AuthController extends Controller{
         public function login(Request $request){
-            return view('back.auth.login');
+            return view('front.login');
         }
 
-        public function signin(LoginRequest $request){
+        public function signin(FrontLoginRequest $request){
             if($request->ajax()){ return true; }
 
-            $auth = auth()->guard('admin')->attempt(['email' => $request->email, 'password' => $request->password, 'is_admin' => 'Y']);
+            $auth = auth()->attempt(['email' => $request->email, 'password' => $request->password]);
             if($auth != false){
-                $user = auth()->guard('admin')->user();
+                $user = auth()->user();
+
                 if($user->status == 'inactive'){
-                    auth()->guard('admin')->logout();
-                    return redirect()->route('back.login')->with('error', 'Account belongs to this credentials is inactive, please contact administrator');
+                    auth()->logout();
+                    return redirect()->route('front.login')->with('error', 'Account belongs to this credentials is inactive, please contact administrator');
                 }elseif($user->status == 'deleted'){
-                    auth()->guard('admin')->user()->logout();
-                    return redirect()->route('back.login')->with('error', 'Account belongs to this credentials is deleted, please contact administrator');
+                    auth()->logout();
+                    return redirect()->route('front.login')->with('error', 'Account belongs to this credentials is deleted, please contact administrator');
                 }else{
-                    return redirect()->route('back.home')->with('success', 'Login successfully');
+                    return redirect()->route('front.home')->with('success', 'Login successfully');
                 }
             }else{
-                return redirect()->route('back.login')->with('error', 'invalid credentials, please check credentials');
+                return redirect()->route('front.login')->with('error', 'invalid credentials, please check credentials');
             }
         }
 
         public function logout(Request $request){
-            auth()->guard('admin')->logout();
-            return redirect()->route('back.login');
+            auth()->logout();
+            return redirect()->route('front.login');
         }
 
         public function forget_password(Request $request){
-            return view('back.auth.forget_password');
+            return view('front.forget_password');
         }
 
-        public function password_forget(FrogetPasswordRequest $request){
+        public function password_forget(FrontFrogetPasswordRequest $request){
             $user = DB::table('users')->where(['email' => $request->email])->first();
 
             if(empty($user))
                 return redirect()->back()->with(['error' => 'Entered email address does not exists in records, please check email address']);
 
-            if($user->is_admin == 'N')
-                return redirect()->back()->with(['error' => 'Account belongs to this email address is not admin account, please contact admin']);
+            if($user->is_admin == 'Y')
+                return redirect()->back()->with(['error' => 'Account belongs to this email address is admin account, please use not admin account']);
 
             if($user->status != 'active')
                 return redirect()->back()->with(['error' => 'Account belongs to this email address is deactivated, please contact admin']);
 
             $token = Str::random(60);
-            $link = url('/back/reset-password').'/'.$token.'?email='.urlencode($user->email);
+            $link = url('/front/reset-password').'/'.$token.'?email='.urlencode($user->email);
 
             DB::table('password_resets')->insert([
                 'email' => $request->email,
@@ -69,14 +70,14 @@
             $mailData['link'] = $link;
             $mailData['logo'] = $link;
 
-            Mail::to($request->email)->send(new ForgetPassword($mailData));
+            Mail::to($request->email)->send(new FrontForgetPassword($mailData));
 
-            return redirect()->route('back.login')->with('success', 'we are successfully send reset link to provided email address, please check your email address');
+            return redirect()->route('front.login')->with('success', 'we are successfully send reset link to provided email address, please check your email address');
         }
 
         public function reset_password(Request $request, $string){
             $email = $request->email;
-            return view('back.auth.reset_password', compact('email', 'string'));
+            return view('front.reset_password', compact('email', 'string'));
         }
 
         public function recover_password(Request $request){
@@ -92,7 +93,7 @@
             $tokenData = \DB::table('password_resets')->where('token', $request->token)->OrderBy('created_at', 'desc')->first();
 
             if(empty($tokenData))
-                return redirect()->route('back.login')->with('error', 'reset password token mismatch, please regenerate link again')->withInput();
+                return redirect()->route('front.login')->with('error', 'reset password token mismatch, please regenerate link again')->withInput();
 
             $user = \DB::table('users')->where('email', $request->email)->first();
 
@@ -108,6 +109,6 @@
 
             DB::table('password_resets')->where('email', $user->email)->delete();
 
-            return redirect()->route('back.login')->with('success', 'Password resetted successgully');
+            return redirect()->route('front.login')->with('success', 'Password resetted successgully');
         }
     }
