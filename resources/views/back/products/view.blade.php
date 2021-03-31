@@ -25,12 +25,12 @@
                         <div class="row">                                
                             <div class="form-group col-sm-6">
                                 <label for="name">Name</label>
-                                <input type="text" name="name" id="name" class="form-control" placeholder="Plese enter name" value="{{ $data->name ?? '' }}"  disabled>
+                                <input type="text" name="name" id="name" class="form-control" placeholder="Plese enter name" value="{{ $data->name ?? '' }}" disabled="disabled" />
                                 <span class="kt-form__help error name"></span>
                             </div>
                             <div class="form-group col-sm-6">
                                 <label for="category_id">Category Name</label>
-                                <select name="category_id" class="form-control select2" disabled>
+                                <select name="category_id" class="form-control select2" disabled="disabled">
                                     <option value="" disabled >Select Category</option>
                                     <option value=""selected>{{ $data->category_name }}</option>
                                 </select>
@@ -38,12 +38,17 @@
                             </div>
                             <div class="form-group col-sm-6">
                                 <label for="price">Price</label>
-                                <input type="text" name="price" id="price" class="form-control" placeholder="Plese enter price" value="{{ $data->price ?? '' }}" disabled>
+                                <input type="text" name="price" id="price" class="form-control" placeholder="Plese enter price" value="{{ $data->price ?? '' }}" disabled="disabled" />
                                 <span class="kt-form__help error price"></span>
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <label for="description">Description</label>
+                                <textarea name="description" id="description" class="form-control" placeholder="Plese enter description" rows="3" cols="10" disabled="disabled">{{ $data->description ?? '' }}</textarea>
+                                <span class="kt-form__help error description"></span>
                             </div>
                             <div class="form-group col-sm-12">
                                 <label for="image">Image</label>
-                                <input type="file" class="dropify" id="image" name="image" data-show-remove="false" data-height="200" data-default-file="{{ $data->image ??'' }}" data-max-file-size="3M" data-show-errors="true"  data-allowed-file-extensions="jpg png jpeg JPG PNG JPEG"  data-max-file-size-preview="3M" disabled>
+                                <input type="file" class="dropify" id="image" name="image" data-show-remove="false" data-height="200" data-default-file="{{ $data->image ??'' }}" data-max-file-size="3M" data-show-errors="true"  data-allowed-file-extensions="jpg png jpeg JPG PNG JPEG"  data-max-file-size-preview="3M" disabled="disabled" />
                                 <span class="kt-form__help error image"></span>
                             </div>
                         </div>

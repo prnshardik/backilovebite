@@ -29,6 +29,7 @@
                                     <th>No</th>
                                     <th>Image</th>
                                     <th>Name</th>
+                                    <th>Description</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
@@ -95,6 +96,10 @@
                         {
                             data: 'name',
                             name: 'name'
+                        },
+                        {
+                            data: 'description',
+                            name: 'description'
                         },
                         {
                             data: 'status',

@@ -26,17 +26,17 @@
                             <div class="row">
                                 <div class="form-group col-sm-6">
                                     <label for="current_password">Current Password</label>
-                                    <input type="password" name="current_password" id="current_password" class="form-control" placeholder="Plese enter current password">
+                                    <input type="password" name="current_password" id="current_password" class="form-control" placeholder="Plese enter current password" />
                                     <span class="kt-form__help error current_password"></span>
                                 </div>
                                 <div class="form-group col-sm-6">
                                     <label for="new_password">New Password</label>
-                                    <input type="password" name="new_password" id="new_password" class="form-control" placeholder="Plese enter new password">
+                                    <input type="password" name="new_password" id="new_password" class="form-control" placeholder="Plese enter new password" />
                                     <span class="kt-form__help error new_password"></span>
                                 </div>
                                 <div class="form-group col-sm-6">
                                     <label for="confirm_password">Confirm Password</label>
-                                    <input type="password" name="confirm_password" id="confirm_password" class="form-control" placeholder="Plese enter new confirm password">
+                                    <input type="password" name="confirm_password" id="confirm_password" class="form-control" placeholder="Plese enter new confirm password" />
                                     <span class="kt-form__help error confirm_password"></span>
                                 </div>
                             </div>

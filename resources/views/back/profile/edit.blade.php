@@ -30,22 +30,22 @@
                             <div class="row">
                                 <div class="form-group col-sm-6">
                                     <label for="firstname">First Name</label>
-                                    <input type="text" name="firstname" id="firstname" class="form-control" placeholder="Plese enter firstname" value="{{ $data->firstname ?? '' }}">
+                                    <input type="text" name="firstname" id="firstname" class="form-control" placeholder="Plese enter firstname" value="{{ $data->firstname ?? '' }}" />
                                     <span class="kt-form__help error firstname"></span>
                                 </div>
                                 <div class="form-group col-sm-6">
                                     <label for="lastname">Last Name</label>
-                                    <input type="text" name="lastname" id="lastname" class="form-control" placeholder="Plese enter lastname" value="{{ $data->lastname ?? '' }}">
+                                    <input type="text" name="lastname" id="lastname" class="form-control" placeholder="Plese enter lastname" value="{{ $data->lastname ?? '' }}" />
                                     <span class="kt-form__help error lastname"></span>
                                 </div>
                                 <div class="form-group col-sm-12">
                                     <label for="email">Email</label>
-                                    <input type="text" id="email" class="form-control" placeholder="Plese enter lastname" value="{{ $data->email ?? '' }}" disabled >
+                                    <input type="text" id="email" class="form-control" placeholder="Plese enter lastname" value="{{ $data->email ?? '' }}" disabled="disabled" />
                                     <span class="kt-form__help error email"></span>
                                 </div>
                                 <div class="form-group col-sm-12">
                                     <label for="image">Profile</label>
-                                    <input type="file" class="form-control dropify" id="image" name="image" data-default-file="{{ $data->image ?? '' }}"  data-allowed-file-extensions="jpg png jpeg" data-max-file-size-preview="2M" data-show-remove="false">
+                                    <input type="file" class="form-control dropify" id="image" name="image" data-default-file="{{ $data->image ?? '' }}"  data-allowed-file-extensions="jpg png jpeg" data-max-file-size-preview="2M" data-show-remove="false" />
                                     <span class="kt-form__help error image"></span>
                                 </div>
                             </div>

@@ -8,7 +8,7 @@
     use App\Http\Requests\CategoryRequest;
     use DataTables, DB, File;
 
-    class SubscriberController extends Controller{
+    class SubscribersController extends Controller{
 
         /** index */
             public function index(Request $request){
@@ -33,8 +33,6 @@
                 return view('back.subscriber.index');
             }
         /** index */
-
-
 
         /** change-status */
             public function delete(Request $request){

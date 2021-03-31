@@ -66,7 +66,7 @@
                     // lengthChange: false,
 
                     "ajax":{
-                        "url": "{{ route('back.subscriber') }}",
+                        "url": "{{ route('back.subscribers') }}",
                         "type": "POST",
                         "dataType": "json",
                         "data":{
@@ -103,7 +103,7 @@
             // alert(id);
             if (confirm(msg)) {
                 $.ajax({
-                    "url": "{!! route('back.subscriber.delete') !!}",
+                    "url": "{!! route('back.subscriber.deletes') !!}",
                     "dataType": "json",
                     "type": "POST",
                     "data":{

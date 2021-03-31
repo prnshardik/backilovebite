@@ -15,7 +15,7 @@
                 if($request->ajax()){
                     $path = asset('/back/uploads/users/').'/';
 
-                    $data = User::select('id', 'email', 'status',
+                    $data = User::select('id', 'email', 'phone', 'status',
                                             DB::Raw("CONCAT(".'firstname'.", ' ', ".'lastname'.") as fullname"),
                                             DB::Raw("CASE 
                                                         WHEN ".'image'." != '' 
@@ -89,6 +89,7 @@
                             'firstname' => $request->firstname,
                             'lastname' => $request->lastname,
                             'email' => $request->email,
+                            'phone' => $request->phone ?? NULL,
                             'password' => bcrypt($password),
                             'status' => 'active',
                             'created_at' => date('Y-m-d H:i:s'),
@@ -139,7 +140,7 @@
                 $id = base64_decode($id);
                 $path = asset('/back/uploads/users/').'/';
 
-                $data = User::select('id', 'firstname', 'lastname', 'email',
+                $data = User::select('id', 'firstname', 'lastname', 'email', 'phone',
                                     DB::Raw("CASE 
                                                 WHEN ".'image'." != '' 
                                                 THEN CONCAT("."'".$path."'".", ".'image'.") 
@@ -164,7 +165,7 @@
                 $id = base64_decode($id);
                 $path = asset('/back/uploads/users/').'/';
 
-                $data = User::select('id', 'firstname', 'lastname', 'email', 'status',
+                $data = User::select('id', 'firstname', 'lastname', 'email', 'status', 'phone',
                                     DB::Raw("CASE 
                                                 WHEN ".'image'." != '' 
                                                 THEN CONCAT("."'".$path."'".", ".'image'.") 
@@ -192,6 +193,7 @@
                             'firstname' => ucfirst($request->firstname),
                             'lastname' => ucfirst($request->lastname),
                             'email' => $request->email,
+                            'phone' => $request->phone ?? NULL,
                             'status' => $request->status,
                             'updated_at' => date('Y-m-d H:i:s'),
                             'updated_by' => auth()->guard('admin')->user()->id

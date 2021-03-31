@@ -30,6 +30,7 @@
                                     <th>Image</th>
                                     <th>Name</th>
                                     <th>Price</th>
+                                    <th>Description</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
@@ -100,6 +101,10 @@
                         {
                             data: 'price',
                             name: 'price'
+                        },
+                        {
+                            data: 'description',
+                            name: 'description'
                         },
                         {
                             data: 'status',

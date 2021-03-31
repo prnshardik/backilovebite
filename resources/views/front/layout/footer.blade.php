@@ -11,7 +11,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
-                    <form id="subscribe_form" name="subscribe_form" action="{{ route('front.subscribe_user') }}" method="post" class="newsletter-form">
+                    <form id="subscribe_form" name="subscribe_form" action="{{ route('front.subscribe') }}" method="post" class="newsletter-form">
                         @csrf
                         @method('post')
 

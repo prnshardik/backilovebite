@@ -29,6 +29,7 @@
                                     <th>No</th>
                                     <th>Name</th>
                                     <th>Email</th>
+                                    <th>Phone</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
@@ -95,6 +96,10 @@
                         {
                             data: 'email',
                             name: 'email'
+                        },
+                        {
+                            data: 'phone',
+                            name: 'phone'
                         },
                         {
                             data: 'status',

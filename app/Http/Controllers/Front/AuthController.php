@@ -11,7 +11,7 @@
 
     class AuthController extends Controller{
         public function login(Request $request){
-            return view('front.login');
+            return view('front.auth.login');
         }
 
         public function signin(FrontLoginRequest $request){
@@ -40,8 +40,12 @@
             return redirect()->route('front.login');
         }
 
+        public function signup(Request $request){
+            return view('front.auth.signup');
+        }
+
         public function forget_password(Request $request){
-            return view('front.forget_password');
+            return view('front.auth.forget_password');
         }
 
         public function password_forget(FrontFrogetPasswordRequest $request){

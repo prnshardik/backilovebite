@@ -18,6 +18,7 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('firstname')->nullable();
             $table->string('lastname')->nullable();
+            $table->string('phone')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
@@ -34,6 +35,7 @@ class CreateUsersTable extends Migration
             array(
                 'firstname' => 'Super',
                 'lastname' => 'Admin',
+                'phone' => '9624040501',
                 'email' => 'info@ilovebite.in',
                 'password' => bcrypt('Admin@123'),
                 'image' => 'admin-avatar.png',
@@ -50,6 +52,7 @@ class CreateUsersTable extends Migration
             array(
                 'firstname' => 'Mitul',
                 'lastname' => 'Sonigara',
+                'phone' => '8200242382',
                 'email' => 'mitul@cypherocean.com',
                 'password' => bcrypt('Admin@123'),
                 'image' => 'admin-avatar.png',
@@ -66,6 +69,7 @@ class CreateUsersTable extends Migration
             array(
                 'firstname' => 'HardIk',
                 'lastname' => 'Patel',
+                'phone' => '8000080272',
                 'email' => 'hardik@cypherocean.com',
                 'password' => bcrypt('Admin@123'),
                 'image' => 'admin-avatar.png',
@@ -81,7 +85,6 @@ class CreateUsersTable extends Migration
             File::copy(public_path('/back/dummy/admin-avatar.png'), public_path('/back/uploads/users/admin-avatar.png'));
         }
     }
-
 
     /**
      * Reverse the migrations.

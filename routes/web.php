@@ -14,6 +14,8 @@ Route::group(['middleware' => 'prevent-back-history', 'namespace' => 'Front', 'a
         Route::get('login', 'AuthController@login')->name('login');
         Route::post('signin', 'AuthController@signin')->name('signin');
 
+        Route::get('signup', 'AuthController@signup')->name('signup');
+
         Route::get('forget-password', 'AuthController@forget_password')->name('forget.password');
         Route::post('password-forget', 'AuthController@password_forget')->name('password.forget');
     
@@ -41,10 +43,7 @@ Route::group(['middleware' => 'prevent-back-history', 'namespace' => 'Front', 'a
     Route::get('shop', 'HomeController@shop')->name('shop');
     Route::get('checkout', 'HomeController@checkout')->name('checkout');
 
-    Route::get('signup', 'HomeController@signup')->name('signup');
-    Route::get('forgot-password', 'HomeController@forgot_password')->name('forgot-password');
-
-    Route::post('subscribe_user', 'HomeController@subscribe')->name('subscribe_user');
+    Route::post('subscribe', 'HomeController@subscribe')->name('subscribe');
 });
 
 Route::get('/admin', function(){ return redirect()->route('back.login'); });
@@ -105,15 +104,15 @@ Route::group(['middleware' => 'prevent-back-history', 'namespace' => 'Back', 'as
             Route::post('products/change-status', 'ProductsController@change_status')->name('products.change.status');
         /** Products */
 
+        /** Subscriber */
+            Route::any('subscribers', 'SubscribersController@index')->name('subscribers');
+            Route::post('subscriber/deletes', 'SubscribersController@delete')->name('subscriber.deletes');
+        /** Subscriber */
+
         /** Settings */
             Route::get('settings', 'SettingsController@index')->name('settings');
             Route::post('settings/update', 'SettingsController@update')->name('settings.update');
             Route::post('settings/logo/update', 'SettingsController@logo_update')->name('settings.update.logo');
         /** Settings */
-
-        /** Subscribers */
-            Route::any('subscriber', 'SubscriberController@index')->name('subscriber');
-            Route::post('settings/delete', 'SubscriberController@delete')->name('subscriber.delete');
-        /** Subscribers */
     });
 });

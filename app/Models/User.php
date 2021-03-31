@@ -12,7 +12,7 @@
 
         protected $table = 'users';
 
-        protected $fillable = ['name', 'email', 'password', 'image', 'status', 'created_at', 'created_by', 'updated_at', 'updated_at'];
+        protected $fillable = ['firstname', 'lastname', 'email', 'phone', 'password', 'image', 'status', 'created_at', 'created_by', 'updated_at', 'updated_at'];
 
         protected $hidden = ['password', 'remember_token'];
 

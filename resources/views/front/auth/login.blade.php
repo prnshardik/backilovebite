@@ -60,7 +60,7 @@
                             </div>
                         </div>
                         <div class="col-lg-12 text-right">
-                            <p class="forgot-password"><a href="{{ route('front.forgot-password') }}">Forgot Password?</a></p>
+                            <p class="forgot-password"><a href="{{ route('front.forget.password') }}">Forgot Password?</a></p>
                         </div>
                         <div class="col-lg-12">
                             <div class="send-btn">

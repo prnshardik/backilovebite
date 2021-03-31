@@ -38,23 +38,33 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Username">
+                                <input type="text" name="firstname" id="firstname" class="form-control" placeholder="Firstname">
                             </div>
                         </div>
                         <div class="col-lg-12">
                             <div class="form-group">
-                                <input type="email" class="form-control" placeholder="Email">
+                                <input type="text" name="lastname" id="lastname" class="form-control" placeholder="Lastname">
                             </div>
                         </div>
                         <div class="col-lg-12">
                             <div class="form-group">
-                                <input type="password" class="form-control" placeholder="Password">
+                                <input type="text" name="phone" id="phone" class="form-control" placeholder="Phone Number">
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <input type="email" name="email" id="email" class="form-control" placeholder="Email">
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <input type="password" name="password" id="password" class="form-control" placeholder="Password">
                             </div>
                         </div>
                         <div class="col-lg-12">
                             <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="checkme">
-                                <label class="form-check-label" for="checkme">Keep Me Sign Up</label>
+                                {{-- <input type="checkbox" class="form-check-input" id="checkme">
+                                <label class="form-check-label" for="checkme">Keep Me Sign Up</label> --}}
                             </div>
                         </div>
                         <div class="col-lg-12">

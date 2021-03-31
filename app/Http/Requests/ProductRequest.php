@@ -14,14 +14,15 @@
                 return [
                     'name' => 'required',
                     'category_id' => 'required',
-                    'price' => 'required'
-
+                    'price' => 'required|numeric',
+                    'description' => 'required'
                 ];
             }else{
                 return [
                     'name' => 'required',
                     'category_id' => 'required',
-                    'price' => 'required'
+                    'price' => 'required|numeric',
+                    'description' => 'required'
 
                 ];
             }
@@ -29,9 +30,11 @@
 
         public function messages(){
             return [
-                'name.required' => 'Please Enter Name',
-                'category_id.required' => 'Please Select Category',
-                'price.required' => 'Please Enter Price'
+                'name.required' => 'Please enter name',
+                'category_id.required' => 'Please select category',
+                'price.required' => 'Please enter price',
+                'price.digits' => 'Please enter price in digits only',
+                'description.required' => 'Please enter description'
             ];
         }
     }

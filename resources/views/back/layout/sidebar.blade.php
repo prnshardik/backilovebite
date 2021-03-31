@@ -29,16 +29,14 @@
                     <span class="nav-label">Products</span>
                 </a>
             </li>
-
+            <li class="{{ Request::is('back/subscribers*') ? 'active' : '' }}">
+                <a class="{{ Request::is('back/subscribers*') ? 'active' : '' }}" href="{{ route('back.subscribers') }}"><i class="sidebar-item-icon fa fa-address-book"></i>
+                    <span class="nav-label">Subscribers</span>
+                </a>
+            </li>
             <li class="{{ Request::is('back/settings*') ? 'active' : '' }}">
                 <a class="{{ Request::is('back/settings*') ? 'active' : '' }}" href="{{ route('back.settings') }}"><i class="sidebar-item-icon fa fa-cogs"></i>
                     <span class="nav-label">Settings</span>
-                </a>
-            </li>
-
-            <li class="{{ Request::is('back/subscriber*') ? 'active' : '' }}">
-                <a class="{{ Request::is('back/subscriber*') ? 'active' : '' }}" href="{{ route('back.subscriber') }}"><i class="sidebar-item-icon fa fa-user-o"></i>
-                    <span class="nav-label">Subscribers</span>
                 </a>
             </li>
         </ul>

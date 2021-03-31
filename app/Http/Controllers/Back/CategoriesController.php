@@ -16,6 +16,7 @@
                     $path = asset('/back/uploads/category/').'/';
 
                     $data = Category::select('id', 'name', 'status',
+                                            DB::Raw("SUBSTRING(".'description'.", 1, 50) AS description"),
                                             DB::Raw("CASE
                                                         WHEN ".'image'." != ''
                                                         THEN CONCAT("."'".$path."'".", ".'image'.")
@@ -83,6 +84,7 @@
 
                     $crud = [
                             'name' => $request->name,
+                            'description' => $request->description ?? NULL,
                             'status' => 'active',
                             'created_at' => date('Y-m-d H:i:s'),
                             'created_by' => auth()->guard('admin')->user()->id,
@@ -132,7 +134,7 @@
                 $id = base64_decode($id);
                 $path = asset('/back/uploads/category/').'/';
 
-                $data = Category::select('id', 'name', 'status',
+                $data = Category::select('id', 'name', 'status', 'description',
                                     DB::Raw("CASE
                                                 WHEN ".'image'." != ''
                                                 THEN CONCAT("."'".$path."'".", ".'image'.")
@@ -157,7 +159,7 @@
                 $id = base64_decode($id);
                 $path = asset('/back/uploads/category/').'/';
 
-                $data = Category::select('id', 'name', 'status',
+                $data = Category::select('id', 'name', 'status', 'description',
                                     DB::Raw("CASE
                                                 WHEN ".'image'." != ''
                                                 THEN CONCAT("."'".$path."'".", ".'image'.")
@@ -183,6 +185,7 @@
 
                     $crud = [
                             'name' => ucfirst($request->name),
+                            'description' => $request->description ?? NULL,
                             'updated_at' => date('Y-m-d H:i:s'),
                             'updated_by' => auth()->guard('admin')->user()->id
                     ];

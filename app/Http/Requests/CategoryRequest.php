@@ -12,18 +12,21 @@
         public function rules(){
             if($this->method() == 'PATCH'){
                 return [
-                    'name' => 'required'
+                    'name' => 'required',
+                    'description' => 'required'
                 ];
             }else{
                 return [
-                    'name' => 'required'
+                    'name' => 'required',
+                    'description' => 'required'
                 ];
             }
         }
 
         public function messages(){
             return [
-                'name.required' => 'Please enter name'
+                'name.required' => 'Please enter name',
+                'description.required' => 'Please enter description'
             ];
         }
     }

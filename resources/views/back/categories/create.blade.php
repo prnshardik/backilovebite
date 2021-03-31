@@ -23,15 +23,21 @@
                     <div class="ibox-body">
                         <form name="form" action="{{ route('back.categories.insert') }}" id="form" method="post" enctype="multipart/form-data">
                             @csrf
+
                             <div class="row">
                                 <div class="form-group col-sm-12">
                                     <label for="name">Name</label>
-                                    <input type="text" name="name" id="name" class="form-control" placeholder="Plese enter name" value="{{ $data->name ?? '' }}" >
+                                    <input type="text" name="name" id="name" class="form-control" placeholder="Plese enter name" />
                                     <span class="kt-form__help error name"></span>
                                 </div>
                                 <div class="form-group col-sm-12">
+                                    <label for="description">Description</label>
+                                    <textarea name="description" id="description" class="form-control" placeholder="Plese enter description" rows="3" cols="10"></textarea>
+                                    <span class="kt-form__help error description"></span>
+                                </div>
+                                <div class="form-group col-sm-12">
                                     <label for="image">Image</label>
-                                    <input type="file" class="form-control dropify" id="image" name="image" data-show-remove="false" data-height="200" data-max-file-size="3M" data-show-errors="true"  data-allowed-file-extensions="jpg png jpeg JPG PNG JPEG"  data-max-file-size-preview="3M" required="required">
+                                    <input type="file" class="form-control dropify" id="image" name="image" data-show-remove="false" data-height="200" data-max-file-size="3M" data-show-errors="true"  data-allowed-file-extensions="jpg png jpeg JPG PNG JPEG"  data-max-file-size-preview="3M" required="required" />
                                     <span class="kt-form__help error image"></span>
                                 </div>
                             </div>

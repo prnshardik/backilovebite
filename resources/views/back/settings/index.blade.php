@@ -59,7 +59,7 @@
                                             @foreach($general as $row)
                                                 <div class="form-group">
                                                     <label><b>{{ strtoupper(str_replace('_', ' ', $row->key)) }}</b></label>
-                                                    <input type="text" name="{{ $row->id }}" class="form-control" value="{{ $row->value }}" placeholder="{{ strtoupper(str_replace('_', ' ', $row->key)) }}">
+                                                    <input type="text" name="{{ $row->id }}" class="form-control" value="{{ $row->value }}" placeholder="{{ strtoupper(str_replace('_', ' ', $row->key)) }}" />
                                                 </div>
                                             @endforeach
                                         @endif
@@ -80,7 +80,7 @@
                                             @foreach($smtp as $row)
                                                 <div class="form-group">
                                                     <label><b>{{ strtoupper(str_replace('_', ' ', $row->key)) }}</b></label>
-                                                    <input type="text" name="{{ $row->id }}" class="form-control" value="{{ $row->value }}" placeholder="{{ strtoupper(str_replace('_', ' ', $row->key)) }}">
+                                                    <input type="text" name="{{ $row->id }}" class="form-control" value="{{ $row->value }}" placeholder="{{ strtoupper(str_replace('_', ' ', $row->key)) }}" />
                                                 </div>
                                             @endforeach
                                         @endif
@@ -101,7 +101,7 @@
                                             @foreach($sms as $row)
                                                 <div class="form-group">
                                                     <label><b>{{ strtoupper(str_replace('_', ' ', $row->key)) }}</b></label>
-                                                    <input type="text" name="{{ $row->id }}" class="form-control" value="{{ $row->value }}" placeholder="{{ strtoupper(str_replace('_', ' ', $row->key)) }}">
+                                                    <input type="text" name="{{ $row->id }}" class="form-control" value="{{ $row->value }}" placeholder="{{ strtoupper(str_replace('_', ' ', $row->key)) }}" />
                                                 </div>
                                             @endforeach
                                         @endif
@@ -122,7 +122,7 @@
                                             @foreach($payment as $row)
                                                 <div class="form-group">
                                                     <label><b>{{ strtoupper(str_replace('_', ' ', $row->key)) }}</b></label>
-                                                    <input type="text" name="{{ $row->id }}" class="form-control" value="{{ $row->value }}" placeholder="{{ strtoupper(str_replace('_', ' ', $row->key)) }}">
+                                                    <input type="text" name="{{ $row->id }}" class="form-control" value="{{ $row->value }}" placeholder="{{ strtoupper(str_replace('_', ' ', $row->key)) }}" />
                                                 </div>
                                             @endforeach
                                         @endif
@@ -143,7 +143,7 @@
                                             @foreach($social as $row)
                                                 <div class="form-group">
                                                     <label><b>{{ strtoupper(str_replace('_', ' ', $row->key)) }}</b></label>
-                                                    <input type="text" name="{{ $row->id }}" class="form-control" value="{{ $row->value }}" placeholder="{{ strtoupper(str_replace('_', ' ', $row->key)) }}">
+                                                    <input type="text" name="{{ $row->id }}" class="form-control" value="{{ $row->value }}" placeholder="{{ strtoupper(str_replace('_', ' ', $row->key)) }}" />
                                                 </div>
                                             @endforeach
                                         @endif
@@ -164,7 +164,7 @@
                                             @foreach($logo as $row)
                                                 <div class="form-group">
                                                     <label><b>{{ strtoupper(str_replace('_', ' ', $row->key)) }}</b></label>
-                                                    <input type="file" class="form-control dropify" id="{{ $row->key }}" name="{{ $row->key }}"  data-default-file="{{ url('back/uploads/logo').'/'.$row->value ?? '' }}" data-show-remove="false" data-height="200" data-max-file-size="3M" data-show-errors="true"  data-allowed-file-extensions="jpg png jpeg JPG PNG JPEG"  data-max-file-size-preview="3M">
+                                                    <input type="file" class="form-control dropify" id="{{ $row->key }}" name="{{ $row->key }}"  data-default-file="{{ url('back/uploads/logo').'/'.$row->value ?? '' }}" data-show-remove="false" data-height="200" data-max-file-size="3M" data-show-errors="true"  data-allowed-file-extensions="jpg png jpeg JPG PNG JPEG"  data-max-file-size-preview="3M" />
                                                     <span class="kt-form__help error {{ $row->key }}"></span>
                                                 </div>
                                             @endforeach

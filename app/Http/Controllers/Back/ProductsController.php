@@ -17,6 +17,7 @@
                     $path = asset('/back/uploads/products/').'/';
 
                     $data = Product::select('id', 'name', 'price', 'status', 
+                                            DB::Raw("SUBSTRING(".'description'.", 1, 50) AS description"),
                                             DB::Raw("CASE 
                                                         WHEN ".'image'." != '' 
                                                         THEN CONCAT("."'".$path."'".", ".'image'.") 
@@ -88,6 +89,7 @@
                             'name' => $request->name,
                             'category_id' => $request->category_id,
                             'price' => $request->price,
+                            'description' => $request->description ?? NULL,
                             'status' => 'active',
                             'created_at' => date('Y-m-d H:i:s'),
                             'created_by' => auth()->guard('admin')->user()->id,
@@ -138,7 +140,7 @@
                 $path = asset('/back/uploads/products/').'/';
 
                 $data = DB::table('products AS p')
-                                ->select('p.id', 'p.name', 'p.price', 'p.status',
+                                ->select('p.id', 'p.name', 'p.price', 'p.description', 'p.status',
                                     DB::Raw("CASE 
                                                 WHEN ".'p.image'." != '' 
                                                 THEN CONCAT("."'".$path."'".", ".'p.image'.") 
@@ -165,7 +167,7 @@
                 $path = asset('/back/uploads/products/').'/';
                 $categories = DB::table('categories')->where('status', 'active')->get();
 
-                $data = Product::select('id', 'category_id', 'name', 'price', 'status',
+                $data = Product::select('id', 'category_id', 'name', 'price', 'description', 'status',
                                     DB::Raw("CASE 
                                                 WHEN ".'image'." != '' 
                                                 THEN CONCAT("."'".$path."'".", ".'image'.") 
@@ -193,6 +195,7 @@
                             'name' => $request->name,
                             'category_id' => $request->category_id,
                             'price' => $request->price,
+                            'description' => $request->description ?? NULL,
                             'updated_at' => date('Y-m-d H:i:s'),
                             'updated_by' => auth()->guard('admin')->user()->id
                     ];
