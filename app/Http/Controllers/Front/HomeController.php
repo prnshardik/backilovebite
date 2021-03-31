@@ -65,6 +65,22 @@
         }
 
         public function subscribe(SubscribeRequest $request){
-            dd($request->all());
+            $email = $request->EMAIL;
+            // dd($email);
+            if(!empty($email) && $email != '' || $email != null){
+                $curd = [
+                        'email' => $email,
+                        'created_at' => date('Y-m-d H:i:s'),
+                        'updated_at' => date('Y-m-d H:i:s')
+                ];
+                $sub = Subscribe::insertGetId($curd);
+                if($sub){
+                    return response()->Json(['code' => 200, 'message' => "You've Subscribed Successfully."]);
+                }else{
+                    return response()->Json(['code' => 201, 'message' => "Faild To Subscribe !"]);
+                }
+            }else{
+                return response()->Json(['code' => 201, 'message' => "Somthing Went Wrong !"]);
+            }
         }
     }

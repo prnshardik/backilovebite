@@ -44,7 +44,7 @@ Route::group(['middleware' => 'prevent-back-history', 'namespace' => 'Front', 'a
     Route::get('signup', 'HomeController@signup')->name('signup');
     Route::get('forgot-password', 'HomeController@forgot_password')->name('forgot-password');
 
-    Route::post('subscribe', 'HomeController@subscribe')->name('subscribe');
+    Route::post('subscribe_user', 'HomeController@subscribe')->name('subscribe_user');
 });
 
 Route::get('/admin', function(){ return redirect()->route('back.login'); });
@@ -110,5 +110,10 @@ Route::group(['middleware' => 'prevent-back-history', 'namespace' => 'Back', 'as
             Route::post('settings/update', 'SettingsController@update')->name('settings.update');
             Route::post('settings/logo/update', 'SettingsController@logo_update')->name('settings.update.logo');
         /** Settings */
+
+        /** Subscribers */
+            Route::any('subscriber', 'SubscriberController@index')->name('subscriber');
+            Route::post('settings/delete', 'SubscriberController@delete')->name('subscriber.delete');
+        /** Subscribers */
     });
 });

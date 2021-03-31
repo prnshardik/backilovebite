@@ -15,7 +15,7 @@
 
 <script>
     $(document).ready(function () {
-        var form = $('#subscribe-form');
+        var form = $('#subscribe_form');
         $('.kt-form__help').html('');
         form.submit(function(e) {
             $('.help-block').html('');
@@ -27,7 +27,22 @@
                 dataType: 'json',
                 async:false,
                 success : function(json){
-                    console.log(json);
+                    e.preventDefault();
+                    if(json.code == 200){
+                            $('.kt-form__help').html('');
+                            $('.EMAIL').html();
+                            $('.form-result').html();
+                            $('.form-result').html(json.message);
+                            $('.form-result').html(json.message);
+                            $('#subscribe_email').html();
+                    }else{
+                        $('.kt-form__help').html('');
+                        $('.EMAIL').html();
+                        $('.form-result').html();
+                        $('.EMAIL').html(json.message);
+                        $('#subscribe_email').html();
+                        // alert(json.message);
+                    }
                 },
                 error: function(json){
                     if(json.status === 422) {
