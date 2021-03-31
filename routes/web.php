@@ -96,5 +96,10 @@ Route::group(['middleware' => 'prevent-back-history', 'namespace' => 'Back', 'as
             Route::post('settings/update', 'SettingsController@update')->name('settings.update');
             Route::post('settings/logo/update', 'SettingsController@logo_update')->name('settings.update.logo');
         /** Settings */
+
+        /** Subscribers */
+            Route::any('subscriber', 'SubscriberController@index')->name('subscriber');
+            Route::post('settings/delete', 'SubscriberController@delete')->name('subscriber.delete');
+        /** Subscribers */
     });
 });
