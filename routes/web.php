@@ -30,7 +30,7 @@ Route::group(['middleware' => 'prevent-back-history', 'namespace' => 'Front', 'a
     Route::get('signup', 'HomeController@signup')->name('signup');
     Route::get('forgot-password', 'HomeController@forgot_password')->name('forgot-password');
 
-    Route::post('subscribe', 'HomeController@subscribe')->name('subscribe');
+    Route::post('subscribe_user', 'HomeController@subscribe')->name('subscribe_user');
 });
 
 Route::get('/admin', function(){ return redirect()->route('back.login'); });

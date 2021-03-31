@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class Subscibe extends Authenticatable
+class Subscribe extends Authenticatable
 {
     use HasFactory, Notifiable;
 
-    protected $table = 'Subscibes';
+    protected $table = 'subscribes';
 
     protected $fillable = ['email', 'created_at', 'updated_at'];
 }

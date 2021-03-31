@@ -11,12 +11,12 @@
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
-                    <form id="subscribe-form" name="subscribe-form" action="{{ route('front.subscribe') }}" method="post" class="newsletter-form">
+                    <form id="subscribe_form" name="subscribe_form" action="{{ route('front.subscribe_user') }}" method="post" class="newsletter-form">
                         @csrf
                         @method('post')
 
                         <input type="email" name="email" id="subscribe_email" class="input-newsletter" placeholder="Your Email" required="" autocomplete="off">
-                        <span class="kt-form__help error email"></span>
+                        <span class="kt-form__help error EMAIL text-danger"></span>
 
                         <button type="submit" class="disabled" style="pointer-events: all; cursor: pointer;">Subscribe Now</button>
                         <div id="validator-newsletter" class="form-result"></div>
