@@ -15,7 +15,7 @@
                         <input type="email" class="input-newsletter" placeholder="Your Email" name="EMAIL" required="" autocomplete="off">
                         <button type="submit" class="disabled" style="pointer-events: all; cursor: pointer;">
                             Subscribe Now
-                        </button>              
+                        </button>
                         <div id="validator-newsletter" class="form-result"></div>
                     </form>
                 </div>
@@ -54,32 +54,22 @@
         <div class="container">
             <p>
                 <i class="far fa-copyright"></i>
-                {{ date('Y') }} {{ _site_title() }}. All Rights Reserved by
+                {{ date('Y') }} {{ _settings('SITE_TITLE') }}. All Rights Reserved by
                 <a href="https://cypherocean.com/" target="_blank">CyoherOcean</a>
             </p>
             <ul class="social">
                 <li class="facebook">
-                    <a href="#" target="_blank">
+                    <a href="{{ _settings('FACEBOOK') }}" target="_blank">
                         <i class="bx bxl-facebook"></i>
                     </a>
                 </li>
-                <li class="twitter">
-                    <a href="#" target="_blank">
-                        <i class="bx bxl-twitter"></i>
-                    </a>
-                </li>
                 <li class="instagram">
-                    <a href="#" target="_blank">
+                    <a href="{{ _settings('INSTAGRAM') }}" target="_blank">
                         <i class="bx bxl-instagram"></i>
                     </a>
                 </li>
-                <li class="pinterest">
-                    <a href="#" target="_blank">
-                        <i class="bx bxl-pinterest-alt"></i>
-                    </a>
-                </li>
                 <li class="youtube">
-                    <a href="#" target="_blank">
+                    <a href="{{ _settings('YOUTUBE') }}" target="_blank">
                         <i class="bx bxl-youtube"></i>
                     </a>
                 </li>
@@ -90,29 +80,3 @@
         <img src="{{ asset('front/img/footer-shape.png') }}" alt="image">
     </div>
 </section>
-{{-- <div class="copyright-area">
-    <div class="container">
-        <div class="copyright-area-content">
-            <div class="row align-items-center">
-                <div class="col-lg-6 col-md-6">
-                    <p>
-                        <i class="far fa-copyright"></i>
-                        {{ date('Y') }} {{ _site_title() }}. All Rights Reserved by
-                        <a href="https://cypherocean.com/" target="_blank">CyoherOcean</a>
-                    </p>
-                </div>
-
-                <div class="col-lg-6 col-md-6">
-                    <ul>
-                        <li>
-                            <a href="{{ route('front.terms') }}">Terms & Conditions</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('front.privacy') }}">Privacy Policy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> --}}

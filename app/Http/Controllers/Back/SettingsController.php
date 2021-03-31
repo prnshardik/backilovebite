@@ -13,9 +13,10 @@
             $smtp = Setting::select('id', 'key', 'value')->where(['type' => 'smtp'])->get();
             $sms = Setting::select('id', 'key', 'value')->where(['type' => 'sms'])->get();
             $payment = Setting::select('id', 'key', 'value')->where(['type' => 'payment'])->get();
+            $social = Setting::select('id', 'key', 'value')->where(['type' => 'social'])->get();
             $logo = Setting::select('id', 'key', 'value')->where(['type' => 'logo'])->get();
 
-            return view('back.settings.index', ['general' => $general, 'smtp' => $smtp, 'sms' => $sms, 'payment' => $payment, 'logo' => $logo]);
+            return view('back.settings.index', ['general' => $general, 'smtp' => $smtp, 'sms' => $sms, 'payment' => $payment, 'social' => $social,'logo' => $logo]);
         }
 
         public function update(Request $request){

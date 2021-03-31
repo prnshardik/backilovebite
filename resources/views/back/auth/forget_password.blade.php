@@ -9,7 +9,7 @@
 
 @section('content')
     <div class="brand" style="margin-top:150px;">
-        <a class="link" href="{{ route('back.home') }}">{{ _site_title() }}</a>
+        <a class="link" href="{{ route('back.home') }}">{{ _settings('SITE_TITLE') }}</a>
     </div>
     <form action="{{ route('back.password.forget') }}" name="form" id="form" method="post" enctype="multipart/form-data">
         @csrf

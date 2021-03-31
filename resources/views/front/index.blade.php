@@ -1288,41 +1288,31 @@
                         <ul class="contact-info">
                             <li>
                                 <i class="flaticon-phone-ringing"></i>
-                                <a href="tel:4498886660000">+449 888 666 0000</a>
+                                <a href="tel:{{ _settings('CONTACT_NUMBER') }}">{{ _settings('CONTACT_NUMBER') }}</a>
                             </li>
                             <li>
                                 <i class="flaticon-chat"></i>
-                                <a href="mailto:hello@ilovebite.com">hello@ilovebite.com</a>
+                                <a href="mailto:{{ _settings('CONTACT_EMAIL') }}">{{ _settings('CONTACT_EMAIL') }}</a>
                             </li>
                             <li>
                                 <i class="flaticon-aim"></i>
-                                855 Road, Brooklyn Street <br> New York 600
+                                {!! _settings('CONTACT_ADDRESS') !!}
                             </li>
                         </ul>
                         <ul class="social">
                             <li class="facebook">
-                                <a href="#" target="_blank">
-                                    <i class='bx bxl-facebook'></i>
-                                </a>
-                            </li>
-                            <li class="twitter">
-                                <a href="#" target="_blank">
-                                    <i class='bx bxl-twitter'></i>
+                                <a href="{{ _settings('FACEBOOK') }}" target="_blank">
+                                    <i class="bx bxl-facebook"></i>
                                 </a>
                             </li>
                             <li class="instagram">
-                                <a href="#" target="_blank">
-                                    <i class='bx bxl-instagram'></i>
-                                </a>
-                            </li>
-                            <li class="pinterest">
-                                <a href="#" target="_blank">
-                                    <i class='bx bxl-pinterest-alt'></i>
+                                <a href="{{ _settings('INSTAGRAM') }}" target="_blank">
+                                    <i class="bx bxl-instagram"></i>
                                 </a>
                             </li>
                             <li class="youtube">
-                                <a href="#" target="_blank">
-                                    <i class='bx bxl-youtube'></i>
+                                <a href="{{ _settings('YOUTUBE') }}" target="_blank">
+                                    <i class="bx bxl-youtube"></i>
                                 </a>
                             </li>
                         </ul>
@@ -1331,7 +1321,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="single-footer-widget">
                         <div class="map">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3015.5025244860035!2d-73.89913308434032!3d40.904726233738984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2f253c171734f%3A0xc8a19bda0b5e9a9d!2sBronx%20Burger%20House!5e0!3m2!1sen!2sbd!4v1594031943935!5m2!1sen!2sbd"></iframe>
+                            <iframe src="{{ _settings('MAP_LINK') }}"></iframe>
                         </div>
                     </div>
                 </div>

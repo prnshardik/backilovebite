@@ -40,6 +40,9 @@
                             <a class="nav-link @if($tab == 'payment') active @endif" href="#payment" data-toggle="tab" aria-expanded="false">Payment</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link @if($tab == 'social') active @endif" href="#social" data-toggle="tab" aria-expanded="false">Social</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link @if($tab == 'logo') active @endif" href="#logo" data-toggle="tab" aria-expanded="false">Logo</a>
                         </li>
                     </ul>
@@ -56,7 +59,7 @@
                                             @foreach($general as $row)
                                                 <div class="form-group">
                                                     <label><b>{{ strtoupper(str_replace('_', ' ', $row->key)) }}</b></label>
-                                                    <input type="text" name="{{ $row->id }}" class="form-control" value="{{ $row->value }}" placeholder="Email address">
+                                                    <input type="text" name="{{ $row->id }}" class="form-control" value="{{ $row->value }}" placeholder="{{ strtoupper(str_replace('_', ' ', $row->key)) }}">
                                                 </div>
                                             @endforeach
                                         @endif
@@ -77,7 +80,7 @@
                                             @foreach($smtp as $row)
                                                 <div class="form-group">
                                                     <label><b>{{ strtoupper(str_replace('_', ' ', $row->key)) }}</b></label>
-                                                    <input type="text" name="{{ $row->id }}" class="form-control" value="{{ $row->value }}" placeholder="Email address">
+                                                    <input type="text" name="{{ $row->id }}" class="form-control" value="{{ $row->value }}" placeholder="{{ strtoupper(str_replace('_', ' ', $row->key)) }}">
                                                 </div>
                                             @endforeach
                                         @endif
@@ -98,7 +101,7 @@
                                             @foreach($sms as $row)
                                                 <div class="form-group">
                                                     <label><b>{{ strtoupper(str_replace('_', ' ', $row->key)) }}</b></label>
-                                                    <input type="text" name="{{ $row->id }}" class="form-control" value="{{ $row->value }}" placeholder="Email address">
+                                                    <input type="text" name="{{ $row->id }}" class="form-control" value="{{ $row->value }}" placeholder="{{ strtoupper(str_replace('_', ' ', $row->key)) }}">
                                                 </div>
                                             @endforeach
                                         @endif
@@ -119,7 +122,28 @@
                                             @foreach($payment as $row)
                                                 <div class="form-group">
                                                     <label><b>{{ strtoupper(str_replace('_', ' ', $row->key)) }}</b></label>
-                                                    <input type="text" name="{{ $row->id }}" class="form-control" value="{{ $row->value }}" placeholder="Email address">
+                                                    <input type="text" name="{{ $row->id }}" class="form-control" value="{{ $row->value }}" placeholder="{{ strtoupper(str_replace('_', ' ', $row->key)) }}">
+                                                </div>
+                                            @endforeach
+                                        @endif
+                                        <input type="submit" value="Save" class="btn btn-primary mb-3">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane @if($tab == 'social') active show @else fade @endif" id="social" aria-expanded="false">
+                            <div class="row m-2">
+                                <div class="col-sm-12">
+                                    <form action="{{ route('back.settings.update') }}" method="post">
+                                        @method('post')
+                                        @csrf
+                                        <input type="hidden" name="tab" value="social">
+
+                                        @if(isset($social) && $social->isNotEmpty())
+                                            @foreach($social as $row)
+                                                <div class="form-group">
+                                                    <label><b>{{ strtoupper(str_replace('_', ' ', $row->key)) }}</b></label>
+                                                    <input type="text" name="{{ $row->id }}" class="form-control" value="{{ $row->value }}" placeholder="{{ strtoupper(str_replace('_', ' ', $row->key)) }}">
                                                 </div>
                                             @endforeach
                                         @endif

@@ -1,17 +1,5 @@
 <?php
 
-    if (!function_exists('_site_title')) {
-        function _site_title() {
-            return 'Ilovebite';
-        }
-    }
-
-    if (!function_exists('_site_title_sf')) {
-        function _site_title_sf() {
-            return 'LB';
-        }
-    }
-
     if (!function_exists('_settings')) {
         function _settings($key = '') {
             if($key == '')
@@ -25,7 +13,6 @@
                 return NULL;
         }
     }
-
 
     if(!function_exists('_user_profile')){
         function _user_profile(){
@@ -48,6 +35,4 @@
             return "ILoveBite";
         }
     }
-
-
 ?>

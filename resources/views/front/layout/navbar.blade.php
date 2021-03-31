@@ -4,7 +4,7 @@
             <div class="main-responsive-menu">
                 <div class="logo">
                     <a href="{{ route('front.home') }}">
-                        <h1>{{ _site_title() }}</h1>
+                        <h1>{{ _settings('SITE_TITLE') }}</h1>
                     </a>
                 </div>
             </div>
@@ -14,7 +14,7 @@
         <div class="container">
             <nav class="navbar navbar-expand-md navbar-light">
                 <a class="navbar-brand" href="{{ route('front.home') }}">
-                    <h1>{{ _site_title() }}</h1>
+                    <h1>{{ _settings('SITE_TITLE') }}</h1>
                 </a>
                 <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                     <ul class="navbar-nav">
