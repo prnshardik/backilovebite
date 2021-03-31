@@ -8,6 +8,7 @@
 @endsection
 
 @section('styles')
+    <link href="{{ asset('back/css/dropify.min.css') }}" rel="stylesheet">
 @endsection
 
 @section('content')
@@ -130,7 +131,7 @@
                         <div class="tab-pane @if($tab == 'logo') active show @else fade @endif" id="logo" aria-expanded="false">
                             <div class="row m-2">
                                 <div class="col-sm-12">
-                                    <form action="{{ route('back.settings.update') }}" method="post">
+                                    <form action="{{ route('back.settings.update.logo') }}" method="post" enctype="multipart/form-data">
                                         @method('post')
                                         @csrf
                                         <input type="hidden" name="tab" value="logo">
@@ -139,7 +140,8 @@
                                             @foreach($logo as $row)
                                                 <div class="form-group">
                                                     <label><b>{{ strtoupper(str_replace('_', ' ', $row->key)) }}</b></label>
-                                                    <input type="text" name="{{ $row->id }}" class="form-control" value="{{ $row->value }}" placeholder="Email address">
+                                                    <input type="file" class="form-control dropify" id="{{ $row->key }}" name="{{ $row->key }}"  data-default-file="{{ url('back/uploads/logo').'/'.$row->value ?? '' }}" data-show-remove="false" data-height="200" data-max-file-size="3M" data-show-errors="true"  data-allowed-file-extensions="jpg png jpeg JPG PNG JPEG"  data-max-file-size-preview="3M">
+                                                    <span class="kt-form__help error {{ $row->key }}"></span>
                                                 </div>
                                             @endforeach
                                         @endif
@@ -156,4 +158,18 @@
 @endsection
 
 @section('scripts')
+    <script src="{{ asset('back/js/dropify.min.js') }}"></script>
+    <script>
+        $(document).ready(function(){
+            $('.dropify').dropify({
+                messages: {
+                    'default': 'Drag and drop profile image here or click',
+                    'remove':  'Remove',
+                    'error':   'Ooops, something wrong happended.'
+                }
+            });
+
+            var drEvent = $('.dropify').dropify();
+        });
+    </script>
 @endsection

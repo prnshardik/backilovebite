@@ -84,6 +84,7 @@ Route::group(['middleware' => 'prevent-back-history', 'namespace' => 'Back', 'as
         /** Settings */
             Route::get('settings', 'SettingsController@index')->name('settings');
             Route::post('settings/update', 'SettingsController@update')->name('settings.update');
+            Route::post('settings/logo/update', 'SettingsController@logo_update')->name('settings.update.logo');
         /** Settings */
     });
 });
