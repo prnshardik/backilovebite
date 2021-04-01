@@ -14,13 +14,15 @@ Route::group(['middleware' => 'prevent-back-history', 'namespace' => 'Front', 'a
         Route::get('login', 'AuthController@login')->name('login');
         Route::post('signin', 'AuthController@signin')->name('signin');
 
-        /** pending */
-            Route::get('signup', 'AuthController@signup')->name('signup');
-            Route::post('register', 'AuthController@register')->name('register');
+        Route::get('signup', 'AuthController@signup')->name('signup');
+        Route::post('register', 'AuthController@register')->name('register');
 
+        Route::get('verification/{string?}', 'AuthController@verifiaction')->name('verifiaction');
+
+        /** pending */
             Route::get('forget-password', 'AuthController@forget_password')->name('forget.password');
             Route::post('password-forget', 'AuthController@password_forget')->name('password.forget');
-        
+
             Route::get('reset-password/{string?}', 'AuthController@reset_password')->name('reset.password');
             Route::post('recover-password', 'AuthController@recover_password')->name('recover.password');
         /** pending */

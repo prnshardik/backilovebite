@@ -64,10 +64,7 @@
                         </div>
                         <div class="col-lg-12">
                             <div class="send-btn">
-                                <button type="submit" class="default-btn">
-                                    Sign In Now
-                                    <span></span>
-                                </button>
+                                <button type="submit" class="default-btn">Sign In Now<span></span></button>
                             </div>
                             <br>
                             <span>Don't have account? <a href="{{ route('front.signup') }}">Signup!</a></span>

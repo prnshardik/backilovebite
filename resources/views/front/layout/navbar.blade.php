@@ -4,7 +4,8 @@
             <div class="main-responsive-menu">
                 <div class="logo">
                     <a href="{{ route('front.home') }}">
-                        <h1>{{ _settings('SITE_TITLE') }}</h1>
+                        <img src="{{ _logo() }}" alt="Love Bite Logo" style="width:45px; height:45px;">
+                        {{-- <h1>{{ _settings('SITE_TITLE') }}</h1> --}}
                     </a>
                 </div>
             </div>
@@ -14,7 +15,8 @@
         <div class="container">
             <nav class="navbar navbar-expand-md navbar-light">
                 <a class="navbar-brand" href="{{ route('front.home') }}">
-                    <h1>{{ _settings('SITE_TITLE') }}</h1>
+                    {{-- <h1>{{ _settings('SITE_TITLE') }}</h1> --}}
+                    <img src="{{ _logo() }}" alt="Love Bite Logo" style="width:65px; height:65px;">
                 </a>
                 <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                     <ul class="navbar-nav">

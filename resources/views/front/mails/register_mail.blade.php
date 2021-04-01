@@ -413,10 +413,10 @@
                                         <br>
                                         <div class="f-fallback">
                                             <h1>Hey, User! </h1>
-                                            <p>We are recieved reset password request for this email address.</p>
+                                            <p>Thanks for signu up on {{ _settings('SITE_TITLE') }}.</p>
                                             <p>If you dont made this request, please ignor this.</p>
 
-                                            <p>For reference, here's your reset password link:</p>
+                                            <p>For reference, here's your verification link:</p>
                                             <table class="attributes" width="100%" cellpadding="0" cellspacing="0" role="presentation">
                                                 <tr>
                                                     <td class="attributes_content">

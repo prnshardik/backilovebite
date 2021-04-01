@@ -12,6 +12,26 @@
 <script src="{{ asset('front/js/contact-form-script.js') }}"></script>
 <script src="{{ asset('front/js/wow.min.js') }}"></script>
 <script src="{{ asset('front/js/main.js') }}"></script>
+<script src="{{ asset('back/vendors/toastr/toastr.min.js') }}" type="text/javascript"></script>
+
+<script>
+    @php
+        $success = '';
+        if(\Session::has('success'))
+            $success = \Session::get('success');
+
+        $error = '';
+        if(\Session::has('error'))
+            $error = \Session::get('error');
+    @endphp
+
+    var success = "{{ $success }}";
+    var error = "{{ $error }}";
+
+    if(success != ''){ toastr.success(success, 'Success'); }
+
+    if(error != ''){ toastr.error(error, 'error'); }
+</script>
 
 <script>
     $(document).ready(function () {

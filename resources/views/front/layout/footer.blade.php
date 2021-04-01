@@ -28,7 +28,7 @@
     <div class="container">
         <div class="footer-content-item">
             <a href="#">
-                <img src="{{ asset('front/img/logo.png') }}" alt="image">
+                <img src="{{ _logo() }}" alt="Love Bite Logo" style="width:100px; height:100px;">
             </a>
             <ul class="list">
                 <li>

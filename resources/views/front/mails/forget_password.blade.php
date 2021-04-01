@@ -406,8 +406,8 @@
                                     <td class="content-cell">
                                         <center>
                                             <a>
-                                                <img alt="" src="{{ $data['logo'] ?? '' }}" style="height: 50px;width: auto;" />
-                                                <h3 class="custom_title">{{ _settings('SITE_TITLE') }}</h3>
+                                                <img alt="" src="{{ _logo() }}" style="height: 65px;width: 65px;" />
+                                                {{-- <h3 class="custom_title">{{ _settings('SITE_TITLE') }}</h3> --}}
                                             </a>
                                         </center>
                                         <br>

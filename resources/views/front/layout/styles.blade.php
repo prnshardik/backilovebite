@@ -10,5 +10,6 @@
 <link rel="stylesheet" href="{{ asset('front/css/odometer.css') }}">
 <link rel="stylesheet" href="{{ asset('front/css/style.css') }}">
 <link rel="stylesheet" href="{{ asset('front/css/responsive.css') }}">
+<link href="{{ asset('back/vendors/toastr/toastr.min.css') }}" rel="stylesheet" />
 
 @yield('styles')

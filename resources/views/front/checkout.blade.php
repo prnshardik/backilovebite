@@ -32,16 +32,18 @@
     </div>
     <section class="checkout-area ptb-100">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12">
-                    <div class="user-actions">
-                        <i class='flaticon-share'></i>
-                        <span>Returning customer? 
-                            <a href="{{ route('front.login') }}">Click here to login</a>
-                        </span>
+            @if(auth()->guest())
+                <div class="row">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="user-actions">
+                            <i class='flaticon-share'></i> 
+                            <span>Returning customer? 
+                                <a href="{{ route('front.login') }}">Click here to login</a>
+                            </span>
+                        </div>
                     </div>
                 </div>
-            </div>
+            @endif
             <form>
                 <div class="row">
                     <div class="col-lg-6 col-md-12">

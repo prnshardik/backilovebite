@@ -4,9 +4,12 @@
 
     use App\Http\Controllers\Controller;
     use Illuminate\Http\Request;
+    use App\Models\User;
     use App\Http\Requests\FrontLoginRequest;
+    use App\Http\Requests\FrontRegisterRequest;
     use App\Http\Requests\FrontFrogetPasswordRequest;
     use App\Mail\FrontForgetPassword;
+    use App\Mail\RegisterMail;
     use Auth, Validator, DB, Mail, Str;
 
     class AuthController extends Controller{
@@ -42,6 +45,56 @@
 
         public function signup(Request $request){
             return view('front.auth.signup');
+        }
+
+        public function register(FrontRegisterRequest $request){
+            if($request->ajax()){ return true; }
+
+            DB::beginTransaction();
+            try{
+                $token = Str::random(60);
+
+                $crud = [
+                    'firstname' => $request->firstname,
+                    'lastname' => $request->lastname,
+                    'email' => $request->email,
+                    'phone' => $request->phone,
+                    'password' => bcrypt($request->password),
+                    'remember_token' => $token,
+                    'status' => 'inactive',
+                    'created_at' => date('Y-m-d H:i:s'),
+                    'created_by' => 1,
+                    'updated_at' => date('Y-m-d H:i:s'),
+                    'updated_by' => 1
+                ];
+
+                $user_last_id = User::insertGetId($crud);
+
+                if($user_last_id > 0){
+                    $link = url('/verification').'/'.$token.'?email='.urlencode($request->email);
+
+                    $mailData['from_email'] = _settings('MAIL_FROM_ADDRESS');
+                    $mailData['email'] = $request->email;
+                    $mailData['link'] = $link;
+                    $mailData['logo'] = _logo();
+
+                    Mail::to($request->email)->send(new RegisterMail($mailData));
+
+                    DB::commit();
+                    return redirect()->route('front.home')->with('success', 'Sign up successfully, Please check your mail and follow instruction.');
+                }else{
+                    DB::rollback();
+                    return redirect()->back()->with('error', 'Somehing went wrong while sign up, please try again later!');
+                }
+            }catch(\Exception $e){
+                DB::rollback();
+                return redirect()->back()->with('error', 'Somehing went wrong while sign up, please try again later!');    
+            }
+        }
+
+        public function verifiaction(Request $request, $string){
+            $email = $request->email;
+            dd($email, $string);
         }
 
         public function forget_password(Request $request){

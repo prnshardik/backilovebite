@@ -44,34 +44,41 @@
         }
 
         public function password_forget(FrogetPasswordRequest $request){
-            $user = DB::table('users')->where(['email' => $request->email])->first();
+            DB::beginTransaction();
+            try{
+                $user = DB::table('users')->where(['email' => $request->email])->first();
 
-            if(empty($user))
-                return redirect()->back()->with(['error' => 'Entered email address does not exists in records, please check email address']);
+                if(empty($user))
+                    return redirect()->back()->with(['error' => 'Entered email address does not exists in records, please check email address']);
 
-            if($user->is_admin == 'N')
-                return redirect()->back()->with(['error' => 'Account belongs to this email address is not admin account, please contact admin']);
+                if($user->is_admin == 'N')
+                    return redirect()->back()->with(['error' => 'Account belongs to this email address is not admin account, please contact admin']);
 
-            if($user->status != 'active')
-                return redirect()->back()->with(['error' => 'Account belongs to this email address is deactivated, please contact admin']);
+                if($user->status != 'active')
+                    return redirect()->back()->with(['error' => 'Account belongs to this email address is deactivated, please contact admin']);
 
-            $token = Str::random(60);
-            $link = url('/back/reset-password').'/'.$token.'?email='.urlencode($user->email);
+                $token = Str::random(60);
+                $link = url('/back/reset-password').'/'.$token.'?email='.urlencode($user->email);
 
-            DB::table('password_resets')->insert([
-                'email' => $request->email,
-                'token' => $token,
-                'created_at' => date('Y-m-d H:i:s')
-            ]);
+                DB::table('password_resets')->insert([
+                    'email' => $request->email,
+                    'token' => $token,
+                    'created_at' => date('Y-m-d H:i:s')
+                ]);
 
-            $mailData['from_email'] = _settings('MAIL_FROM_ADDRESS');
-            $mailData['email'] = $request->email;
-            $mailData['link'] = $link;
-            $mailData['logo'] = $link;
+                $mailData['from_email'] = _settings('MAIL_FROM_ADDRESS');
+                $mailData['email'] = $request->email;
+                $mailData['link'] = $link;
+                $mailData['logo'] = _logo();
 
-            Mail::to($request->email)->send(new ForgetPassword($mailData));
+                Mail::to($request->email)->send(new ForgetPassword($mailData));
 
-            return redirect()->route('back.login')->with('success', 'we are successfully send reset link to provided email address, please check your email address');
+                DB::commit();
+                return redirect()->route('back.login')->with('success', 'we are successfully send reset link to provided email address, please check your email address');
+            }catch(\Exception $e){
+                DB::rollback();
+                return redirect()->back()->with('error', 'Somehing went wrong while sign up, please try again later!');    
+            }
         }
 
         public function reset_password(Request $request, $string){
