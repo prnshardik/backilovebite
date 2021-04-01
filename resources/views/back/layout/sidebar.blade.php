@@ -39,6 +39,11 @@
                     <span class="nav-label">Settings</span>
                 </a>
             </li>
+            <li class="{{ Request::is('back/contacts*') ? 'active' : '' }}">
+                <a class="{{ Request::is('back/contacts*') ? 'active' : '' }}" href="{{ route('back.contacts') }}"><i class="sidebar-item-icon fa fa-envelope"></i>
+                    <span class="nav-label">Contacts</span>
+                </a>
+            </li>
         </ul>
     </div>
 </nav>

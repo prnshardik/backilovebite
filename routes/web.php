@@ -1,3 +1,4 @@
+
 <?php
 
 use Illuminate\Support\Facades\Route;
@@ -37,6 +38,7 @@ Route::group(['middleware' => 'prevent-back-history', 'namespace' => 'Front', 'a
     Route::get('gallery', 'HomeController@gallery')->name('gallery');
     Route::get('about', 'HomeController@about')->name('about');
     Route::get('contact', 'HomeController@contact')->name('contact');
+    Route::post('contact_store', 'HomeController@contact_store')->name('contact_store');
     Route::get('testimonial', 'HomeController@testimonial')->name('testimonial');
     Route::get('faq', 'HomeController@faq')->name('faq');
     Route::get('terms', 'HomeController@terms')->name('terms');
@@ -119,5 +121,12 @@ Route::group(['middleware' => 'prevent-back-history', 'namespace' => 'Back', 'as
             Route::post('settings/update', 'SettingsController@update')->name('settings.update');
             Route::post('settings/logo/update', 'SettingsController@logo_update')->name('settings.update.logo');
         /** Settings */
+
+
+        /** Notification */
+            Route::any('contacts', 'ContactsController@index')->name('contacts');
+            Route::get('contacts/view/{id?}', 'ContactsController@view')->name('contacts.view');
+            Route::post('contacts/delete', 'ContactsController@delete')->name('contacts.delete');
+        /** Notification */
     });
 });

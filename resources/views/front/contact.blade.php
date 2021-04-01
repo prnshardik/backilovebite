@@ -92,7 +92,9 @@
                     <span>Contact Us</span>
                     <h3>Contact With Us</h3>
                 </div>
-                <form id="contactForm">
+                <form id="contactForm" action="{{ route('front.contact_store') }}" method="post">
+                    @csrf
+
                     <div class="row">
                         <div class="col-lg-6 col-md-12">
                             <div class="form-group">
@@ -108,13 +110,13 @@
                         </div>
                         <div class="col-lg-6 col-md-12">
                             <div class="form-group">
-                                <input type="text" name="phone_number" id="phone_number" required data-error="Please enter your number" class="form-control" placeholder="Phone">
+                                <input type="text" name="phone" id="phone" required data-error="Please enter your number" class="form-control" placeholder="Phone">
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-12">
                             <div class="form-group">
-                                <input type="text" name="msg_subject" id="msg_subject" class="form-control" required data-error="Please enter your subject" placeholder="Subject">
+                                <input type="text" name="subject" id="subject" class="form-control" required data-error="Please enter your subject" placeholder="Subject">
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
@@ -146,4 +148,42 @@
 @endsection
 
 @section('scripts')
+<script>
+    
+    $(document).ready(function () {
+        var form = $('#contactForm');
+        $('.kt-form__help').html('');
+        form.submit(function(e) {
+            $('.help-block').html('');
+            $('.m-form__help').html('');
+            $.ajax({
+                url : form.attr('action'),
+                type : form.attr('method'),
+                data : form.serialize(),
+                dataType: 'json',
+                async:false,
+                success : function(json){
+                    
+                    if(json.code == 200){
+                        toastr.success('Record Insertd successfully.', 'Success');
+                        $("#contactForm").trigger("reset");
+                    }else{
+                        toastr.error('Faild To Insert Record !.', 'Error');
+                    }
+                },
+                error: function(json){
+                    if(json.status === 422) {
+                        e.preventDefault();
+                        var errors_ = json.responseJSON;
+                        $('.kt-form__help').html('');
+                        $.each(errors_.errors, function (key, value) {
+                            $('.'+key).html(value);
+                        });
+                    }
+                }
+            });
+        });
+    });
+
+</script>
 @endsection

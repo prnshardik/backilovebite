@@ -5,7 +5,9 @@
     use App\Http\Controllers\Controller;
     use Illuminate\Http\Request;
     use App\Models\Subscribe;
+    use App\Models\Contact;
     use App\Http\Requests\SubscribeRequest;
+    use App\Http\Requests\ContactRequest;
 
     class HomeController extends Controller{
         public function index(Request $request){
@@ -26,6 +28,26 @@
 
         public function contact(Request $request){
             return view('front.contact');
+        }
+
+        public function contact_store(ContactRequest $request){
+            if(!$request->ajax()){ exit('No direct script access allowed'); }
+            
+            $crud = [
+                'name' => $request->name,
+                'email' => $request->email,
+                'phone' => $request->phone,
+                'subject' => $request->subject,
+                'message' => $request->message
+            ];
+
+            $contact = Contact::create($crud);
+            // dd($contact);
+            if($contact){
+                return response()->json(['code' => 200 ,'message' => 'Record Inserted Successfully.']);
+            }else{
+                return response()->json(['code' => 201 ,'message' => 'Faild To Insert Record !']);
+            }
         }
         
         public function testimonial(Request $request){
