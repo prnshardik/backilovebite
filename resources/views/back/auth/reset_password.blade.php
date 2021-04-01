@@ -28,7 +28,7 @@
             <div class="form-group">
                 <div class="input-group-icon right">
                     <div class="input-icon"><i class="fa fa-envelope"></i></div>
-                    <input type="email" name="email" id="email" class="form-control" placeholder="Email" autocomplete="off" value="{{ $email }}">
+                    <input type="email" name="email" id="email" class="form-control" placeholder="Email" autocomplete="off" value="{{ $email }}" readonly="readonly">
                     @error('email')
                         <div class="invalid-feedback" style="display: block;">
                             <strong>{{ $message }}</strong>

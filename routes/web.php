@@ -20,13 +20,10 @@ Route::group(['middleware' => 'prevent-back-history', 'namespace' => 'Front', 'a
 
         Route::get('verification/{string?}', 'AuthController@verifiaction')->name('verifiaction');
 
-        /** pending */
-            Route::get('forget-password', 'AuthController@forget_password')->name('forget.password');
-            Route::post('password-forget', 'AuthController@password_forget')->name('password.forget');
-
-            Route::get('reset-password/{string?}', 'AuthController@reset_password')->name('reset.password');
-            Route::post('recover-password', 'AuthController@recover_password')->name('recover.password');
-        /** pending */
+        Route::get('forget-password', 'AuthController@forget_password')->name('forget.password');
+        Route::post('password-forget', 'AuthController@password_forget')->name('password.forget');
+        Route::get('reset-password/{string?}', 'AuthController@reset_password')->name('reset.password');
+        Route::post('recover-password', 'AuthController@recover_password')->name('recover.password');
     });
 
     Route::group(['middleware' => ['auth:web']], function () {
