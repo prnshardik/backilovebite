@@ -3,7 +3,7 @@
         <a class="link" href="{{ route('back.home') }}">
             {{-- <span class="brand">{{ _settings('SITE_TITLE') }}</span> --}}
             {{-- <span class="brand-mini">{{ _settings('SITE_TITLE_SF') }}</span> --}}
-            <span class="brand"><img src="{{ _logo() }}" alt="Love Bite Logo" style="max-height:60px;"></span>
+            <span class="brand"><img src="{{ _logo() }}" alt="Love Bite Logo" style="max-height:60px;"><p style="margin-top: 25px;margin-left: 10px;">I Love Bite</p></span>
             <span class="brand-mini"><img src="{{ _logo() }}" alt="Love Bite Logo" style="max-height:40px;"></span>
         </a>
     </div>

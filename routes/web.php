@@ -125,5 +125,15 @@ Route::group(['middleware' => 'prevent-back-history', 'namespace' => 'Back', 'as
             Route::get('contacts/view/{id?}', 'ContactsController@view')->name('contacts.view');
             Route::post('contacts/delete', 'ContactsController@delete')->name('contacts.delete');
         /** Notification */
+
+        /** Reviews */
+            Route::any('reviews', 'ReviewsController@index')->name('reviews');
+            Route::get('reviews/create', 'ReviewsController@create')->name('reviews.create');
+            Route::post('reviews/insert', 'ReviewsController@insert')->name('reviews.insert');
+            Route::get('reviews/view/{id?}', 'ReviewsController@view')->name('reviews.view');
+            Route::get('reviews/edit/{id?}', 'ReviewsController@edit')->name('reviews.edit');
+            Route::patch('reviews/update', 'ReviewsController@update')->name('reviews.update');
+            Route::post('reviews/change-status', 'ReviewsController@change_status')->name('reviews.change.status');
+        /** Reviews */
     });
 });

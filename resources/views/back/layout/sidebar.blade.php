@@ -44,6 +44,11 @@
                     <span class="nav-label">Contacts</span>
                 </a>
             </li>
+            <li class="{{ Request::is('back/reviews*') ? 'active' : '' }}">
+                <a class="{{ Request::is('back/reviews*') ? 'active' : '' }}" href="{{ route('back.reviews') }}"><i class="sidebar-item-icon fa fa-star"></i>
+                    <span class="nav-label">Review</span>
+                </a>
+            </li>
         </ul>
     </div>
 </nav>
