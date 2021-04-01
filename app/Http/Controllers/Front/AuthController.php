@@ -94,7 +94,22 @@
 
         public function verifiaction(Request $request, $string){
             $email = $request->email;
-            dd($email, $string);
+
+            $message = 'Token mismatch, please contact administrator';
+            
+            $user = User::where(['email' => $email, 'remember_token' => $string])->first();
+
+            if(!empty($user)){
+                $user->remember_token = '';
+                $user->status = 'active';
+                $user->updated_at = date('Y-m-d H:i:s');
+
+                if($user->save()){
+                    $message = 'Your Account verify successfully, Thank you';
+                }
+            }
+
+            return view('front.thankeyou', ['message' => $message]);
         }
 
         public function forget_password(Request $request){
@@ -102,39 +117,47 @@
         }
 
         public function password_forget(FrontFrogetPasswordRequest $request){
-            $user = DB::table('users')->where(['email' => $request->email])->first();
+            if($request->ajax()){ return true; }
 
-            if(empty($user))
-                return redirect()->back()->with(['error' => 'Entered email address does not exists in records, please check email address']);
+            DB::beginTransaction();
+            try{
+                $user = DB::table('users')->where(['email' => $request->email])->first();
 
-            if($user->is_admin == 'Y')
-                return redirect()->back()->with(['error' => 'Account belongs to this email address is admin account, please use not admin account']);
+                if(empty($user))
+                    return redirect()->back()->with(['error' => 'Entered email address does not exists in records, please check email address']);
 
-            if($user->status != 'active')
-                return redirect()->back()->with(['error' => 'Account belongs to this email address is deactivated, please contact admin']);
+                if($user->is_admin == 'Y')
+                    return redirect()->back()->with(['error' => 'Account belongs to this email address is admin account, please use not admin account']);
 
-            $token = Str::random(60);
-            $link = url('/front/reset-password').'/'.$token.'?email='.urlencode($user->email);
+                if($user->status != 'active')
+                    return redirect()->back()->with(['error' => 'Account belongs to this email address is deactivated, please contact admin']);
 
-            DB::table('password_resets')->insert([
-                'email' => $request->email,
-                'token' => $token,
-                'created_at' => date('Y-m-d H:i:s')
-            ]);
+                $token = Str::random(60);
+                $link = url('/reset-password').'/'.$token.'?email='.urlencode($user->email);
 
-            $mailData['from_email'] = _settings('MAIL_FROM_ADDRESS');
-            $mailData['email'] = $request->email;
-            $mailData['link'] = $link;
-            $mailData['logo'] = $link;
+                DB::table('password_resets')->insert([
+                    'email' => $request->email,
+                    'token' => $token,
+                    'created_at' => date('Y-m-d H:i:s')
+                ]);
 
-            Mail::to($request->email)->send(new FrontForgetPassword($mailData));
+                $mailData['from_email'] = _settings('MAIL_FROM_ADDRESS');
+                $mailData['email'] = $request->email;
+                $mailData['link'] = $link;
+                $mailData['logo'] = _logo();
 
-            return redirect()->route('front.login')->with('success', 'we are successfully send reset link to provided email address, please check your email address');
+                Mail::to($request->email)->send(new FrontForgetPassword($mailData));
+                DB::commit();
+                return redirect()->route('front.login')->with('success', 'we are successfully send reset link to provided email address, please check your email address');
+            }catch(\Exception $e){
+                DB::rollback();
+                return redirect()->back()->with('error', 'Somehing went wrong while sign up, please try again later!');    
+            }
         }
 
         public function reset_password(Request $request, $string){
             $email = $request->email;
-            return view('front.reset_password', compact('email', 'string'));
+            return view('front.auth.reset_password', compact('email', 'string'));
         }
 
         public function recover_password(Request $request){
@@ -152,20 +175,20 @@
             if(empty($tokenData))
                 return redirect()->route('front.login')->with('error', 'reset password token mismatch, please regenerate link again')->withInput();
 
-            $user = \DB::table('users')->where('email', $request->email)->first();
+            $user = User::where('email', $request->email)->first();
 
             if(empty($user))
                 return redirect()->back()->with('error', 'email address does not exists, please check email address')->withInput();
 
             $crud = array(
                 'password' => bcrypt($request->password),
-                'updated_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
             );
 
-            DB::table('users')->where('email', $request->email)->limit(1)->update($crud);
+            User::where('email', $request->email)->update($crud);
 
-            DB::table('password_resets')->where('email', $user->email)->delete();
+            DB::table('password_resets')->where('email', $request->email)->delete();
 
-            return redirect()->route('front.login')->with('success', 'Password resetted successgully');
+            return redirect()->route('front.login')->with('success', 'Password resetted successfully, now you can login');
         }
     }

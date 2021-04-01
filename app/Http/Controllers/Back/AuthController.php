@@ -44,6 +44,8 @@
         }
 
         public function password_forget(FrogetPasswordRequest $request){
+            if($request->ajax()){ return true; }
+            
             DB::beginTransaction();
             try{
                 $user = DB::table('users')->where(['email' => $request->email])->first();
@@ -115,6 +117,6 @@
 
             DB::table('password_resets')->where('email', $user->email)->delete();
 
-            return redirect()->route('back.login')->with('success', 'Password resetted successgully');
+            return redirect()->route('back.login')->with('success', 'Password resetted successfully, now you can login');
         }
     }
