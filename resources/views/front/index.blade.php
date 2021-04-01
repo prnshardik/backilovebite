@@ -154,25 +154,25 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="food-item">
                         <img src="{{ asset('front/img/food/1.png') }}" alt="image">
-                        <h3>Hamburger</h3>
+                        <h3>Burgers</h3>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="food-item">
                         <img src="{{ asset('front/img/food/2.png') }}" alt="image">
-                        <h3>Yummy Donuts</h3>
+                        <h3>Pizza</h3>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="food-item">
                         <img src="{{ asset('front/img/food/3.png') }}" alt="image">
-                        <h3>Craft Pizza</h3>
+                        <h3>Cold Coffees</h3>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="food-item">
                         <img src="{{ asset('front/img/food/4.png') }}" alt="image">
-                        <h3>Ice Cream</h3>
+                        <h3>Cold Drinks</h3>
                     </div>
                 </div>
             </div>
@@ -211,149 +211,33 @@
             </div>
         </div>
     </section>
-    <section class="burger-shop-area ptb-100">
+    <section class="burger-shop-area">
         <div class="container">
             <div class="section-title">
                 <span>Quality Products</span>
                 <h2>Burgers As Expected Dilicious One</h2>
             </div>
             <div class="burger-shop-slider owl-carousel owl-theme">
-                <div class="burger-shop-item">
-                    <div class="image">
-                        <img src="{{ asset('front/img/burger-shop/1.png') }}" alt="image">
-                        <div class="burger-btn">
-                            <a href="{{ route('front.shop') }}" class="default-btn">
-                                Order Online
-                                <i class="flaticon-play-button"></i>
-                                <span></span>
-                            </a>
+                @if(isset($categories) && !empty($categories))
+                    @foreach($categories as $row)
+                        <div class="burger-shop-item">
+                            <div class="image">
+                                <img src="{{ $row->image }}" alt="{{ $row->name ?? '' }} image" style="max-width: 60px; max-height: 60px;">
+                                <div class="burger-btn">
+                                    <a href="{{ route('front.shop') }}" class="default-btn">
+                                        Order Online
+                                        <i class="flaticon-play-button"></i>
+                                        <span></span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <h3>{{ $row->name ?? '' }}</h3>
+                                <p>{{ $row->description ?? '' }}</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="content">
-                        <h3>The Crispy Bun</h3>
-                        <p>Learning do amet contur dicivt suia non nuameius velit</p>
-                        <span>$56.00</span>
-                    </div>
-                </div>
-                <div class="burger-shop-item">
-                    <div class="image">
-                        <img src="{{ asset('front/img/burger-shop/2.png') }}" alt="image">
-                        <div class="burger-btn">
-                            <a href="{{ route('front.shop') }}" class="default-btn">
-                                Order Online
-                                <i class="flaticon-play-button"></i>
-                                <span></span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h3>Beefcakes Burgers</h3>
-                        <p>Buarning do amet contur dicivt suia non nuameius velit</p>
-                        <span>$30.00</span>
-                    </div>
-                </div>
-                <div class="burger-shop-item">
-                    <div class="image">
-                        <img src="{{ asset('front/img/burger-shop/3.png') }}" alt="image">
-                        <div class="burger-btn">
-                            <a href="{{ route('front.shop') }}" class="default-btn">
-                                Order Online
-                                <i class="flaticon-play-button"></i>
-                                <span></span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h3>Bugout Burgers</h3>
-                        <p>Rearning do amet contur dicivt suia non nuameius velit</p>
-                        <span>$35.00</span>
-                    </div>
-                </div>
-                <div class="burger-shop-item">
-                    <div class="image">
-                        <img src="{{ asset('front/img/burger-shop/4.png') }}" alt="image">
-                        <div class="burger-btn">
-                            <a href="{{ route('front.shop') }}" class="default-btn">
-                                Order Online
-                                <i class="flaticon-play-button"></i>
-                                <span></span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h3>Crazy Burger</h3>
-                        <p>Rearning do amet contur dicivt suia non nuameius velit</p>
-                        <span>$20.00</span>
-                    </div>
-                </div>
-                <div class="burger-shop-item">
-                    <div class="image">
-                        <img src="{{ asset('front/img/burger-shop/1.png') }}" alt="image">
-                        <div class="burger-btn">
-                            <a href="{{ route('front.shop') }}" class="default-btn">
-                                Order Online
-                                <i class="flaticon-play-button"></i>
-                                <span></span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h3>The Crispy Bun</h3>
-                        <p>Learning do amet contur dicivt suia non nuameius velit</p>
-                        <span>$56.00</span>
-                    </div>
-                </div>
-                <div class="burger-shop-item">
-                    <div class="image">
-                        <img src="{{ asset('front/img/burger-shop/2.png') }}" alt="image">
-                        <div class="burger-btn">
-                            <a href="{{ route('front.shop') }}" class="default-btn">
-                                Order Online
-                                <i class="flaticon-play-button"></i>
-                                <span></span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h3>Beefcakes Burgers</h3>
-                        <p>Buarning do amet contur dicivt suia non nuameius velit</p>
-                        <span>$30.00</span>
-                    </div>
-                </div>
-                <div class="burger-shop-item">
-                    <div class="image">
-                        <img src="{{ asset('front/img/burger-shop/3.png') }}" alt="image">
-                        <div class="burger-btn">
-                            <a href="{{ route('front.shop') }}" class="default-btn">
-                                Order Online
-                                <i class="flaticon-play-button"></i>
-                                <span></span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h3>Bugout Burgers</h3>
-                        <p>Rearning do amet contur dicivt suia non nuameius velit</p>
-                        <span>$35.00</span>
-                    </div>
-                </div>
-                <div class="burger-shop-item">
-                    <div class="image">
-                        <img src="{{ asset('front/img/burger-shop/4.png') }}" alt="image">
-                        <div class="burger-btn">
-                            <a href="{{ route('front.shop') }}" class="default-btn">
-                                Order Online
-                                <i class="flaticon-play-button"></i>
-                                <span></span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h3>Crazy Burger</h3>
-                        <p>Rearning do amet contur dicivt suia non nuameius velit</p>
-                        <span>$20.00</span>
-                    </div>
-                </div>
+                    @endforeach
+                @endif
             </div>
         </div>
         <div class="burger-shop-shape">
@@ -365,63 +249,6 @@
             </div>
             <div class="shape3">
                 <img src="{{ asset('front/img/image-icon/6.png') }}" alt="image">
-            </div>
-        </div>
-    </section>
-    <div class="video-area">
-        <div class="container">
-            <div class="video-content">
-                <div class="image">
-                    <div class="dollar">
-                        <div class="text">
-                            <span>Burger</span>
-                            <h3>$45</h3>
-                        </div>
-                    </div>
-                    <a href="https://www.youtube.com/watch?v=qaHWDmFtBl0" class="video-btn popup-youtube">
-                        <i class="flaticon-play-button"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <section class="fun-facts-area pt-100 pb-70">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="single-fun-fact">
-                        <h3>
-                            <span class="odometer" data-count="340">00</span>
-                            <span class="sign-icon">+</span>
-                        </h3>
-                        <p>Cups of Coffee</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="single-fun-fact">
-                        <h3>
-                            <span class="odometer" data-count="2678">00</span>
-                            <span class="sign-icon">+</span>
-                        </h3>
-                        <p>Orders Everyday</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="single-fun-fact">
-                        <h3>
-                            <span class="odometer" data-count="60">00</span>
-                        </h3>
-                        <p>Skilled Professionals</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="single-fun-fact">
-                        <h3>
-                            <span class="odometer" data-count="130">00</span>
-                        </h3>
-                        <p>Burgers at Hour</p>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -863,99 +690,6 @@
             </div>
         </div>
     </section>
-    <section class="gallery-area pb-100">
-        <div class="container-fluid">
-            <div class="section-title">
-                <span>Photos</span>
-                <h2>Our Food Gallery</h2>
-            </div>
-            <div class="gallery-slider owl-carousel owl-theme">
-                <div class="gallery-item">
-                    <div class="image">
-                        <img src="{{ asset('front/img/gallery/image1.jpg') }}" alt="image">
-                        <div class="content">
-                            <span>Burger</span>
-                            <h3>Dilicious Burger</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="image">
-                        <img src="{{ asset('front/img/gallery/image2.jpg') }}" alt="image">
-                        <div class="content">
-                            <span>Burger</span>
-                            <h3>Buzz Burgers</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="image">
-                        <img src="{{ asset('front/img/gallery/image3.jpg') }}" alt="image">
-
-                        <div class="content">
-                            <span>Burger</span>
-                            <h3>Smokin' Burger</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="image">
-                        <img src="{{ asset('front/img/gallery/image4.jpg') }}" alt="image">
-                        <div class="content">
-                            <span>Burger</span>
-                            <h3>Bugout Burgers</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="image">
-                        <img src="{{ asset('front/img/gallery/image5.jpg') }}" alt="image">
-
-                        <div class="content">
-                            <span>Burger</span>
-                            <h3>Backyard Burgers</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="image">
-                        <img src="{{ asset('front/img/gallery/image6.jpg') }}" alt="image">
-                        <div class="content">
-                            <span>Burger</span>
-                            <h3>Beefcakes Burgers</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="image">
-                        <img src="{{ asset('front/img/gallery/image7.jpg') }}" alt="image">
-                        <div class="content">
-                            <span>Burger</span>
-                            <h3>Dungeon Burgers</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="image">
-                        <img src="{{ asset('front/img/gallery/image8.jpg') }}" alt="image">
-
-                        <div class="content">
-                            <span>Burger</span>
-                            <h3>Master Burgers</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="gallery-shape">
-            <div class="shape1">
-                <img src="{{ asset('front/img/image-icon/3.png') }}" alt="image">
-            </div>
-            <div class="shape2">
-                <img src="{{ asset('front/img/image-icon/4.png') }}" alt="image">
-            </div>
-        </div>
-    </section>
     <section class="delivery-area ptb-100">
         <div class="container">
             <div class="row align-items-center">
@@ -1035,215 +769,6 @@
             </div>
         </div>
     </section>
-    <section class="overview-area pb-70">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="overview-item">
-                        <img src="{{ asset('front/img/overview/image1.jpg') }}" alt="image">
-                        <div class="content">
-                            <strong>Pangolin Burger</strong>
-                            <h3>
-                                <a href="{{ route('front.menu') }}">Festive Special Burger</a>
-                            </h3>
-                            <a href="{{ route('front.menu') }}" class="default-btn">
-                                Order Now
-                                <i class="flaticon-play-button"></i>
-                                <span></span>
-                            </a>
-                        </div>
-                        <div class="dollar">
-                            <span>Burger</span>
-                            <h4>$12</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="overview-item">
-                        <img src="{{ asset('front/img/overview/image2.jpg') }}" alt="image">
-                        <div class="content">
-                            <strong>Flat 30% Off</strong>
-                            <h3>
-                                <a href="{{ route('front.menu') }}">Burger King Special</a>
-                            </h3>
-                            <a href="{{ route('front.menu') }}" class="default-btn">
-                                Order Now
-                                <i class="flaticon-play-button"></i>
-                                <span></span>
-                            </a>
-                        </div>
-                        <div class="dollar">
-                            <span>Burger</span>
-                            <h4>$45</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="overview-item">
-                        <img src="{{ asset('front/img/overview/image3.jpg') }}" alt="image">
-                        <div class="content">
-                            <strong>Pangolin Burger</strong>
-                            <h3>
-                                <a href="{{ route('front.menu') }}">Festive Burger</a>
-                            </h3>
-                            <a href="{{ route('front.menu') }}" class="default-btn">
-                                Order Now
-                                <i class="flaticon-play-button"></i>
-                                <span></span>
-                            </a>
-                        </div>
-                        <div class="dollar">
-                            <span>Burger</span>
-                            <h4>$65</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="overview-item">
-                        <img src="{{ asset('front/img/overview/image4.jpg') }}" alt="image">
-                        <div class="content">
-                            <strong>CrazyBurger</strong>
-                            <h3>
-                                <a href="{{ route('front.menu') }}">Jurik Burger</a>
-                            </h3>
-                            <a href="{{ route('front.menu') }}" class="default-btn">
-                                Order Now
-                                <i class="flaticon-play-button"></i>
-                                <span></span>
-                            </a>
-                        </div>
-                        <div class="dollar">
-                            <span>Burger</span>
-                            <h4>$09</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="overview-item">
-                        <img src="{{ asset('front/img/overview/image5.jpg') }}" alt="image">
-                        <div class="content">
-                            <strong>Summer 30% Off</strong>
-                            <h3>
-                                <a href="{{ route('front.menu') }}">Burger Vulso Special</a>
-                            </h3>
-                            <a href="{{ route('front.menu') }}" class="default-btn">
-                                Order Now
-                                <i class="flaticon-play-button"></i>
-                                <span></span>
-                            </a>
-                        </div>
-                        <div class="dollar">
-                            <span>Burger</span>
-                            <h4>$10</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="blog-area pb-70">
-        <div class="container">
-            <div class="section-title">
-                <span>Blogs</span>
-                <h2>Read Our Blogs</h2>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="blog-item">
-                        <div class="image">
-                            <a href="#">
-                                <img src="{{ asset('front/img/blog/1.jpg') }}" alt="image">
-                            </a>
-                            <ul class="post-meta d-flex justify-content-between align-items-center">
-                                <li>
-                                    <div class="post-author d-flex align-items-center">
-                                        <img src="{{ asset('front/img/user/user1.jpg') }}" class="rounded-circle" alt="image">
-                                        <span>Adam Smith</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <i class='flaticon-calendar'></i> 2020-23-06
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="content">
-                            <h3>
-                                <a href="#">
-                                    Burgers Of Melbourne Is Helping
-                                </a>
-                            </h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipiscingum suspendisse ultrices gravida.</p>
-                            <a href="#">
-                                <i class="flaticon-plus"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="blog-item">
-                        <div class="image">
-                            <a href="#">
-                                <img src="{{ asset('front/img/blog/2.jpg') }}" alt="image">
-                            </a>
-                            <ul class="post-meta d-flex justify-content-between align-items-center">
-                                <li>
-                                    <div class="post-author d-flex align-items-center">
-                                        <img src="{{ asset('front/img/user/user2.jpg') }}" class="rounded-circle" alt="image">
-                                        <span>Julfikar Don</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <i class='flaticon-calendar'></i> 2020-23-06
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="content">
-                            <h3>
-                                <a href="#">
-                                    Savoir Faire Is Everywhere
-                                </a>
-                            </h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipiscingum suspendisse ultrices gravida.</p>
-                            <a href="#">
-                                <i class="flaticon-plus"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="blog-item">
-                        <div class="image">
-                            <a href="#">
-                                <img src="{{ asset('front/img/blog/3.jpg') }}" alt="image">
-                            </a>
-                            <ul class="post-meta d-flex justify-content-between align-items-center">
-                                <li>
-                                    <div class="post-author d-flex align-items-center">
-                                        <img src="{{ asset('front/img/user/user3.jpg') }}" class="rounded-circle" alt="image">
-                                        <span>Adam Smith</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <i class='flaticon-calendar'></i> 2020-12-6
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="content">
-                            <h3>
-                                <a href="#">
-                                    Brie Burger served with curly
-                                </a>
-                            </h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipiscingum suspendisse ultrices gravida.</p>
-                            <a href="#">
-                                <i class="flaticon-plus"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
     <section class="footer-area pt-100 pb-70">
         <div class="book-table-area pb-100">
             <div class="container">
@@ -1251,10 +776,10 @@
                     <div class="col-lg-6">
                         <div class="book-table-content">
                             <h3>Book A Table Now!</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing eltsed do eiusmod tempor incididunt ut labore et dolore</p>
+                            <p>Book table as per your requirment with between 9 AM to 11 PM.</p>
                             <div class="book-table-btn">
-                                <a href="tel:+123775984753">
-                                    +123 775 (984) 753
+                                <a href="tel:{{ _settings('CONTACT_NUMBER') }}">
+                                    {{ _settings('CONTACT_NUMBER') }}
                                     <i class="flaticon-play-button"></i>
                                 </a>
                             </div>
@@ -1300,21 +825,9 @@
                             </li>
                         </ul>
                         <ul class="social">
-                            <li class="facebook">
-                                <a href="{{ _settings('FACEBOOK') }}" target="_blank">
-                                    <i class="bx bxl-facebook"></i>
-                                </a>
-                            </li>
-                            <li class="instagram">
-                                <a href="{{ _settings('INSTAGRAM') }}" target="_blank">
-                                    <i class="bx bxl-instagram"></i>
-                                </a>
-                            </li>
-                            <li class="youtube">
-                                <a href="{{ _settings('YOUTUBE') }}" target="_blank">
-                                    <i class="bx bxl-youtube"></i>
-                                </a>
-                            </li>
+                            <li class="facebook"><a href="https://{{ _settings('FACEBOOK') }}" target="_blank"><i class="bx bxl-facebook"></i></a></li>
+                            <li class="instagram"><a href="https://{{ _settings('INSTAGRAM') }}" target="_blank"><i class="bx bxl-instagram"></i></a></li>
+                            <li class="youtube"><a href="https://{{ _settings('YOUTUBE') }}" target="_blank"><i class="bx bxl-youtube"></i></a></li>
                         </ul>
                     </div>
                 </div>

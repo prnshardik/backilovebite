@@ -77,7 +77,7 @@
                         <div class="col-lg-12">
                             <div class="form-check">
                                 <input type="checkbox" name="terms" id="terms" class="form-check-input" value="on">
-                                <label for="terms">I have read and agree to the <a href="{{ route('front.terms') }}" class="text-warning">"Terms"</a> and I have read and agree to the <a href="{{ route('front.terms') }}" class="text-warning">"Privacy Policy"</a>.</label><br>
+                                <label for="terms">I have read and agree to the <a href="{{ route('front.terms') }}" target="_blank" class="text-warning">"Terms"</a> and I have read and agree to the <a href="{{ route('front.privacy') }}" target="_blank" class="text-warning">"Privacy Policy"</a>.</label><br>
                                 <span class="kt-form__help text-danger error terms"></span>
                             </div>
                         </div>

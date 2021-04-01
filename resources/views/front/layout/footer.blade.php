@@ -26,29 +26,19 @@
         </div>
     </div>
     <div class="container">
-        <div class="footer-content-item">
-            <a href="#">
+        <div class="footer-content-item" style="max-width: 825px;" >
+            <a href="{{ route('front.home') }}">
                 <img src="{{ _logo() }}" alt="Love Bite Logo" style="width:100px; height:100px;">
             </a>
             <ul class="list">
-                <li>
-                    <a href="{{ route('front.about') }}">About Us</a>
-                </li>
-                <li>
-                    <a href="{{ route('front.menu') }}">Menu</a>
-                </li>
-                <li>
-                    <a href="{{ route('front.testimonial') }}">Testimonial</a>
-                </li>
-                <li>
-                    <a href="{{ route('front.gallery') }}">Gallery</a>
-                </li>
-                <li>
-                    <a href="{{ route('front.faq') }}">Faq</a>
-                </li>
-                <li>
-                    <a href="{{ route('front.contact') }}">Contact</a>
-                </li>
+                <li><a href="{{ route('front.about') }}">About Us</a></li>
+                <li><a href="{{ route('front.menu') }}">Menu</a></li>
+                <li><a href="{{ route('front.testimonial') }}">Testimonial</a></li>
+                <li><a href="{{ route('front.gallery') }}">Gallery</a></li>
+                <li><a href="{{ route('front.faq') }}">Faq</a></li>
+                <li><a href="{{ route('front.contact') }}">Contact</a></li>
+                <li><a href="{{ route('front.terms') }}">Terms & Conditions</a></li>
+                <li><a href="{{ route('front.privacy') }}">Privacy Policy</a></li>
             </ul>
         </div>
     </div>
@@ -60,21 +50,9 @@
                 | Powered by <a href="https://cypherocean.com/" class="text-primary" target="_blank">CyoherOcean</a>
             </p>
             <ul class="social">
-                <li class="facebook">
-                    <a href="{{ _settings('FACEBOOK') }}" target="_blank">
-                        <i class="bx bxl-facebook"></i>
-                    </a>
-                </li>
-                <li class="instagram">
-                    <a href="{{ _settings('INSTAGRAM') }}" target="_blank">
-                        <i class="bx bxl-instagram"></i>
-                    </a>
-                </li>
-                <li class="youtube">
-                    <a href="{{ _settings('YOUTUBE') }}" target="_blank">
-                        <i class="bx bxl-youtube"></i>
-                    </a>
-                </li>
+                <li class="facebook"><a href="https://{{ _settings('FACEBOOK') }}" target="_blank"><i class="bx bxl-facebook"></i></a></li>
+                <li class="instagram"><a href="https://{{ _settings('INSTAGRAM') }}" target="_blank"><i class="bx bxl-instagram"></i></a></li>
+                <li class="youtube"><a href="https://{{ _settings('YOUTUBE') }}" target="_blank"><i class="bx bxl-youtube"></i></a></li>
             </ul>
         </div>
     </div>
