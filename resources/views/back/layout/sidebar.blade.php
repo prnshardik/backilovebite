@@ -34,19 +34,19 @@
                     <span class="nav-label">Subscribers</span>
                 </a>
             </li>
-            <li class="{{ Request::is('back/settings*') ? 'active' : '' }}">
-                <a class="{{ Request::is('back/settings*') ? 'active' : '' }}" href="{{ route('back.settings') }}"><i class="sidebar-item-icon fa fa-cogs"></i>
-                    <span class="nav-label">Settings</span>
-                </a>
-            </li>
             <li class="{{ Request::is('back/contacts*') ? 'active' : '' }}">
                 <a class="{{ Request::is('back/contacts*') ? 'active' : '' }}" href="{{ route('back.contacts') }}"><i class="sidebar-item-icon fa fa-envelope"></i>
-                    <span class="nav-label">Contacts</span>
+                    <span class="nav-label">Contact-Us</span>
                 </a>
             </li>
             <li class="{{ Request::is('back/reviews*') ? 'active' : '' }}">
                 <a class="{{ Request::is('back/reviews*') ? 'active' : '' }}" href="{{ route('back.reviews') }}"><i class="sidebar-item-icon fa fa-star"></i>
-                    <span class="nav-label">Review</span>
+                    <span class="nav-label">Reviews</span>
+                </a>
+            </li>
+            <li class="{{ Request::is('back/settings*') ? 'active' : '' }}">
+                <a class="{{ Request::is('back/settings*') ? 'active' : '' }}" href="{{ route('back.settings') }}"><i class="sidebar-item-icon fa fa-cogs"></i>
+                    <span class="nav-label">Settings</span>
                 </a>
             </li>
         </ul>
