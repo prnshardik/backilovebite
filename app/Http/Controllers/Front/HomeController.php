@@ -8,55 +8,15 @@
     use App\Models\Contact;
     use App\Models\Product;
     use App\Models\Category;
+    use App\Models\Review;
     use App\Http\Requests\SubscribeRequest;
     use App\Http\Requests\ContactRequest;
     use DB;
 
     class HomeController extends Controller{
         public function index(Request $request){
-            $product_path = _path('product');
-            $products['burgers'] = Product::select('id', 'name', 'description', 'price',
-                                                    DB::Raw("CASE
-                                                        WHEN ".'image'." != ''
-                                                        THEN CONCAT("."'".$product_path."'".", ".'image'.")
-                                                        ELSE CONCAT("."'".$product_path."'".", 'default.png')
-                                                    END as image")
-                                                )
-                                                ->where(['category_id' => 3])
-                                                ->get();
-
-            $products['pizzas'] = Product::select('id', 'name', 'description', 'price',
-                                                    DB::Raw("CASE
-                                                        WHEN ".'image'." != ''
-                                                        THEN CONCAT("."'".$product_path."'".", ".'image'.")
-                                                        ELSE CONCAT("."'".$product_path."'".", 'default.png')
-                                                    END as image")
-                                                )
-                                                ->where(['category_id' => 10])
-                                                ->get();
-
-            $products['cold_coffees'] = Product::select('id', 'name', 'description', 'price',
-                                                    DB::Raw("CASE
-                                                        WHEN ".'image'." != ''
-                                                        THEN CONCAT("."'".$product_path."'".", ".'image'.")
-                                                        ELSE CONCAT("."'".$product_path."'".", 'default.png')
-                                                    END as image")
-                                                )
-                                                ->where(['category_id' => 15])
-                                                ->get();
-
-            $products['cold_drinks'] = Product::select('id', 'name', 'description', 'price',
-                                                    DB::Raw("CASE
-                                                        WHEN ".'image'." != ''
-                                                        THEN CONCAT("."'".$product_path."'".", ".'image'.")
-                                                        ELSE CONCAT("."'".$product_path."'".", 'default.png')
-                                                    END as image")
-                                                )
-                                                ->where(['category_id' => 16])
-                                                ->get();
-            
             $category_path = _path('category');
-            $categories = Category::select('id', 'name', 'description', 
+            $categories = Category::select('id', 'name', 'description',
                                             DB::Raw("CASE
                                                 WHEN ".'image'." != ''
                                                 THEN CONCAT("."'".$category_path."'".", ".'image'.")
@@ -66,11 +26,85 @@
                                         ->where(['status' => 'active'])
                                         ->get();
 
-            return view('front.index', ['products' => $products, 'categories' => $categories]);
+            $menu = Category::select('id', 'name', 'description',
+                                            DB::Raw("CASE
+                                                WHEN ".'image'." != ''
+                                                THEN CONCAT("."'".$category_path."'".", ".'image'.")
+                                                ELSE CONCAT("."'".$category_path."'".", 'default.png')
+                                            END as image")
+                                        )
+                                        ->where(['status' => 'active'])
+                                        ->inRandomOrder()
+                                        ->limit(5)
+                                        ->get();
+
+            if($menu->isNotEmpty()){
+                $product_path = _path('product');
+                foreach($menu as $row){
+                    $products = Product::select('id', 'name', 'description', 'price',
+                                            DB::Raw("CASE
+                                                WHEN ".'image'." != ''
+                                                THEN CONCAT("."'".$product_path."'".", ".'image'.")
+                                                ELSE CONCAT("."'".$product_path."'".", 'default.png')
+                                            END as image")
+                                        )
+                                        ->where(['category_id' => $row->id, 'status' => 'active'])
+                                        ->get()
+                                        ->toArray();
+
+                    if(!empty($products))
+                        $row->products = $products;
+                    else
+                        $row->products = [];
+                }
+            }
+
+            $review_path = _path('reviews');
+            $reviews = Review::select('id', 'name', 'title', 'message',
+                                    DB::Raw("CASE
+                                        WHEN ".'image'." != ''
+                                        THEN CONCAT("."'".$review_path."'".", ".'image'.")
+                                        ELSE CONCAT("."'".$review_path."'".", 'default.png')
+                                    END as image")
+                                )
+                                ->where(['status' => 'active'])
+                                ->get();
+
+            return view('front.index', ['menu' => $menu, 'categories' => $categories, 'reviews' => $reviews]);
         }
 
         public function menu(Request $request){
-            $data = Product::select('id', 'name', 'description')->where(['status' => 'active'])->get();
+            $category_path = _path('category');
+            $data = Category::select('id', 'name', 'description',
+                                            DB::Raw("CASE
+                                                WHEN ".'image'." != ''
+                                                THEN CONCAT("."'".$category_path."'".", ".'image'.")
+                                                ELSE CONCAT("."'".$category_path."'".", 'default.png')
+                                            END as image")
+                                        )
+                                        ->where(['status' => 'active'])
+                                        ->get();
+
+            if($data->isNotEmpty()){
+                $product_path = _path('product');
+                foreach($data as $row){
+                    $products = Product::select('id', 'name', 'description', 'price',
+                                            DB::Raw("CASE
+                                                WHEN ".'image'." != ''
+                                                THEN CONCAT("."'".$product_path."'".", ".'image'.")
+                                                ELSE CONCAT("."'".$product_path."'".", 'default.png')
+                                            END as image")
+                                        )
+                                        ->where(['category_id' => $row->id, 'status' => 'active'])
+                                        ->get()
+                                        ->toArray();
+
+                    if(!empty($products))
+                        $row->products = $products;
+                    else
+                        $row->products = [];
+                }
+            }
 
             return view('front.menu', ['data' => $data]);
         }
@@ -127,7 +161,20 @@
         }
 
         public function shop(Request $request){
-            return view('front.shop');
+            $categories = Category::select('id', 'name', 'description')
+                                    ->where(['status' => 'active'])
+                                    ->get();
+
+            $selected = '3';
+            return view('front.shop', ['categories' => $categories, 'selected' => 1]);
+        }
+
+        public function shop_ajax(Request $request){
+            $categories = Category::select('id', 'name', 'description')
+                                    ->where(['status' => 'active'])
+                                    ->get();
+
+            return view('front.shop', ['categories' =>$categories]);
         }
 
         public function product_detail(Request $request){

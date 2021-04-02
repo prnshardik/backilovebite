@@ -45,6 +45,7 @@ Route::group(['middleware' => 'prevent-back-history', 'namespace' => 'Front', 'a
 
     Route::get('cart', 'HomeController@cart')->name('cart');
     Route::get('shop', 'HomeController@shop')->name('shop');
+    Route::get('shop-ajax', 'HomeController@shop_ajax')->name('shop.ajax');
     Route::get('checkout', 'HomeController@checkout')->name('checkout');
 
     Route::post('subscribe', 'HomeController@subscribe')->name('subscribe');

@@ -39,459 +39,44 @@
 
             <div class="tab menu-list-tab">
                 <ul class="tabs">
-                    <li>
-                        <a href="#">
-                            <i class="flaticon-hamburger"></i>
-                            <span>Burgers</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="flaticon-boiled"></i>
-                            <span>Chickhen</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="flaticon-frappe"></i>
-                            <span>Beverage</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="flaticon-tea-cup"></i>
-                            <span>Coffee</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="flaticon-pizza-slice"></i>
-                            <span>Pizzas</span>
-                        </a>
-                    </li>
+                    @if(isset($data) && $data->isNotEmpty())
+                        @foreach($data as $row)
+                            <li>
+                                <a href="#">
+                                    <img src="{{ $row->image }}" alt="{{ $row->name }} image" style="max-height: 50px; max-width: 50px;">
+                                    <span>{{ $row->name }}</span>
+                                </a>
+                            </li>
+                        @endforeach
+                    @endif
                 </ul>
-
                 <div class="tab_content">
-                    <div class="tabs_item">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="menu-bar">
-                                    <div class="menu-list-content">
-                                        <h3>
-                                            London Dry Ginger Kai
-                                            <b>....................</b>
-                                            <span>$30</span>
-                                        </h3>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
-                                    </div>
-
-                                    <div class="menu-list-content">
-                                        <h3>
-                                            Magninil's Apple Juice
-                                            <b>....................</b>
-                                            <span>$12</span>
-                                        </h3>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
-                                    </div>
-
-                                    <div class="menu-list-content">
-                                        <h3>
-                                            6 Piece Sostikno Sticks
-                                            <b>....................</b>
-                                            <span>$45</span>
-                                        </h3>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
-                                    </div>
-
-                                    <div class="menu-list-content">
-                                        <h3>
-                                            Dilso Chicken Sandwich
-                                            <b>....................</b>
-                                            <span>$12</span>
-                                        </h3>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
+                    @if(isset($data) && $data->isNotEmpty())
+                        @foreach($data as $row)
+                            <div class="tabs_item">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="menu-bar">
+                                            @if(isset($row->products) && !empty($row->products))
+                                                @foreach($row->products as $pRow)
+                                                    <div class="menu-list-content" style="margin-bottom: 20px;">
+                                                        <h3>
+                                                            {{ $pRow['name'] ?? '' }}
+                                                            <b>....................</b>
+                                                            <span>${{ $pRow['price'] ?? '' }}</span>
+                                                        </h3>
+                                                        <p>{{ $pRow['description'] ?? '' }}</p>
+                                                    </div>
+                                                @endforeach
+                                            @endif
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="col-lg-6">
-                                <div class="menu-bar">
-                                    <div class="menu-list-content">
-                                        <h3>
-                                            Ocean Spray Swits Juice
-                                            <b>................</b>
-                                            <span>$60</span>
-                                        </h3>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
-                                    </div>
-
-                                    <div class="menu-list-content">
-                                        <h3>
-                                            Smoked Brisket Sandwich
-                                            <b>..............</b>
-                                            <span>$45</span>
-                                        </h3>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
-                                    </div>
-
-                                    <div class="menu-list-content">
-                                        <h3>
-                                            Japanies Dilicious Burger
-                                            <b>..............</b>
-                                            <span>$12</span>
-                                        </h3>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
-                                    </div>
-
-                                    <div class="menu-list-content">
-                                        <h3>
-                                            Fotboy Combo Packs
-                                            <b>.......................</b>
-                                            <span>$12</span>
-                                        </h3>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="tabs_item">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="menu-bar">
-                                    <div class="menu-list-content">
-                                        <h3>
-                                            London Dry Ginger Kai
-                                            <b>....................</b>
-                                            <span>$30</span>
-                                        </h3>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
-                                    </div>
-
-                                    <div class="menu-list-content">
-                                        <h3>
-                                            Magninil's Apple Juice
-                                            <b>....................</b>
-                                            <span>$12</span>
-                                        </h3>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
-                                    </div>
-
-                                    <div class="menu-list-content">
-                                        <h3>
-                                            6 Piece Sostikno Sticks
-                                            <b>....................</b>
-                                            <span>$45</span>
-                                        </h3>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
-                                    </div>
-
-                                    <div class="menu-list-content">
-                                        <h3>
-                                            Dilso Chicken Sandwich
-                                            <b>....................</b>
-                                            <span>$12</span>
-                                        </h3>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-6">
-                                <div class="menu-bar">
-                                    <div class="menu-list-content">
-                                        <h3>
-                                            Ocean Spray Swits Juice
-                                            <b>................</b>
-                                            <span>$60</span>
-                                        </h3>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
-                                    </div>
-
-                                    <div class="menu-list-content">
-                                        <h3>
-                                            Smoked Brisket Sandwich
-                                            <b>..............</b>
-                                            <span>$45</span>
-                                        </h3>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
-                                    </div>
-
-                                    <div class="menu-list-content">
-                                        <h3>
-                                            Japanies Dilicious Burger
-                                            <b>..............</b>
-                                            <span>$12</span>
-                                        </h3>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
-                                    </div>
-
-                                    <div class="menu-list-content">
-                                        <h3>
-                                            Fotboy Combo Packs
-                                            <b>.......................</b>
-                                            <span>$12</span>
-                                        </h3>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="tabs_item">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="menu-bar">
-                                    <div class="menu-list-content">
-                                        <h3>
-                                            London Dry Ginger Kai
-                                            <b>....................</b>
-                                            <span>$30</span>
-                                        </h3>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
-                                    </div>
-
-                                    <div class="menu-list-content">
-                                        <h3>
-                                            Magninil's Apple Juice
-                                            <b>....................</b>
-                                            <span>$12</span>
-                                        </h3>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
-                                    </div>
-
-                                    <div class="menu-list-content">
-                                        <h3>
-                                            6 Piece Sostikno Sticks
-                                            <b>....................</b>
-                                            <span>$45</span>
-                                        </h3>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
-                                    </div>
-
-                                    <div class="menu-list-content">
-                                        <h3>
-                                            Dilso Chicken Sandwich
-                                            <b>....................</b>
-                                            <span>$12</span>
-                                        </h3>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-6">
-                                <div class="menu-bar">
-                                    <div class="menu-list-content">
-                                        <h3>
-                                            Ocean Spray Swits Juice
-                                            <b>................</b>
-                                            <span>$60</span>
-                                        </h3>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
-                                    </div>
-
-                                    <div class="menu-list-content">
-                                        <h3>
-                                            Smoked Brisket Sandwich
-                                            <b>..............</b>
-                                            <span>$45</span>
-                                        </h3>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
-                                    </div>
-
-                                    <div class="menu-list-content">
-                                        <h3>
-                                            Japanies Dilicious Burger
-                                            <b>..............</b>
-                                            <span>$12</span>
-                                        </h3>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
-                                    </div>
-
-                                    <div class="menu-list-content">
-                                        <h3>
-                                            Fotboy Combo Packs
-                                            <b>.......................</b>
-                                            <span>$12</span>
-                                        </h3>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="tabs_item">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="menu-bar">
-                                    <div class="menu-list-content">
-                                        <h3>
-                                            London Dry Ginger Kai
-                                            <b>....................</b>
-                                            <span>$30</span>
-                                        </h3>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
-                                    </div>
-
-                                    <div class="menu-list-content">
-                                        <h3>
-                                            Magninil's Apple Juice
-                                            <b>....................</b>
-                                            <span>$12</span>
-                                        </h3>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
-                                    </div>
-
-                                    <div class="menu-list-content">
-                                        <h3>
-                                            6 Piece Sostikno Sticks
-                                            <b>....................</b>
-                                            <span>$45</span>
-                                        </h3>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
-                                    </div>
-
-                                    <div class="menu-list-content">
-                                        <h3>
-                                            Dilso Chicken Sandwich
-                                            <b>....................</b>
-                                            <span>$12</span>
-                                        </h3>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-6">
-                                <div class="menu-bar">
-                                    <div class="menu-list-content">
-                                        <h3>
-                                            Ocean Spray Swits Juice
-                                            <b>................</b>
-                                            <span>$60</span>
-                                        </h3>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
-                                    </div>
-
-                                    <div class="menu-list-content">
-                                        <h3>
-                                            Smoked Brisket Sandwich
-                                            <b>..............</b>
-                                            <span>$45</span>
-                                        </h3>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
-                                    </div>
-
-                                    <div class="menu-list-content">
-                                        <h3>
-                                            Japanies Dilicious Burger
-                                            <b>..............</b>
-                                            <span>$12</span>
-                                        </h3>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
-                                    </div>
-
-                                    <div class="menu-list-content">
-                                        <h3>
-                                            Fotboy Combo Packs
-                                            <b>.......................</b>
-                                            <span>$12</span>
-                                        </h3>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="tabs_item">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="menu-bar">
-                                    <div class="menu-list-content">
-                                        <h3>
-                                            London Dry Ginger Kai
-                                            <b>....................</b>
-                                            <span>$30</span>
-                                        </h3>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
-                                    </div>
-
-                                    <div class="menu-list-content">
-                                        <h3>
-                                            Magninil's Apple Juice
-                                            <b>....................</b>
-                                            <span>$12</span>
-                                        </h3>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
-                                    </div>
-
-                                    <div class="menu-list-content">
-                                        <h3>
-                                            6 Piece Sostikno Sticks
-                                            <b>....................</b>
-                                            <span>$45</span>
-                                        </h3>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
-                                    </div>
-
-                                    <div class="menu-list-content">
-                                        <h3>
-                                            Dilso Chicken Sandwich
-                                            <b>....................</b>
-                                            <span>$12</span>
-                                        </h3>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-6">
-                                <div class="menu-bar">
-                                    <div class="menu-list-content">
-                                        <h3>
-                                            Ocean Spray Swits Juice
-                                            <b>................</b>
-                                            <span>$60</span>
-                                        </h3>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
-                                    </div>
-
-                                    <div class="menu-list-content">
-                                        <h3>
-                                            Smoked Brisket Sandwich
-                                            <b>..............</b>
-                                            <span>$45</span>
-                                        </h3>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
-                                    </div>
-
-                                    <div class="menu-list-content">
-                                        <h3>
-                                            Japanies Dilicious Burger
-                                            <b>..............</b>
-                                            <span>$12</span>
-                                        </h3>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
-                                    </div>
-
-                                    <div class="menu-list-content">
-                                        <h3>
-                                            Fotboy Combo Packs
-                                            <b>.......................</b>
-                                            <span>$12</span>
-                                        </h3>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing  ipsum suspendisse ultrices gravida.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        @endforeach
+                    @endif
                 </div>
+
             </div>
         </div>
 
@@ -513,4 +98,26 @@
 @endsection
 
 @section('scripts')
+    <script>
+        $('.owl-carousel').owlCarousel({
+            loop:true,
+            margin:10,
+            responsiveClass:true,
+            responsive:{
+                0:{
+                    items:1,
+                    nav:true
+                },
+                600:{
+                    items:3,
+                    nav:false
+                },
+                1000:{
+                    items:5,
+                    nav:true,
+                    loop:false
+                }
+            }
+        })
+    </script>
 @endsection
