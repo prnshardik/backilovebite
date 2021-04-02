@@ -80,10 +80,10 @@
         /** insert */
             public function insert(ReviewRequest $request){
                 if($request->ajax()){ return true; }
-                if(!empty($request->all())){
 
+                if(!empty($request->all())){
                     $crud = [
-                            'name' => $request->name,
+                            'name' => ucfirst($request->name),
                             'title' => $request->title ?? NULL,
                             'message' => $request->message ?? NULL,
                             'status' => 'active',
@@ -148,7 +148,7 @@
                 if($data)
                     return view('back.reviews.view')->with('data', $data);
                 else
-                    return redirect()->route('back.reviews')->with('error', 'No Category Found');
+                    return redirect()->route('back.reviews')->with('error', 'No Review Found');
             }
         /** view */
 
@@ -242,7 +242,7 @@
                             @unlink($file_path);
 
                             $delete = Review::where(['id' => $id])->delete();
-                    
+
                             if($delete)
                                 return response()->json(['code' => 200]);
                             else

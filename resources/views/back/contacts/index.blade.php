@@ -110,7 +110,7 @@
         function delete_sub(object){
             var id = $(object).data("id");
             var msg = "Are you Sure You Want To Delete This Record ?";
-            // alert(id);
+
             if (confirm(msg)) {
                 $.ajax({
                     "url": "{!! route('back.contacts.delete') !!}",

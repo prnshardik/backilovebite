@@ -110,21 +110,14 @@ Route::group(['middleware' => 'prevent-back-history', 'namespace' => 'Back', 'as
 
         /** Subscriber */
             Route::any('subscribers', 'SubscribersController@index')->name('subscribers');
-            Route::post('subscriber/deletes', 'SubscribersController@delete')->name('subscriber.deletes');
+            Route::post('subscribers/deletes', 'SubscribersController@delete')->name('subscriber.deletes');
         /** Subscriber */
 
-        /** Settings */
-            Route::get('settings', 'SettingsController@index')->name('settings');
-            Route::post('settings/update', 'SettingsController@update')->name('settings.update');
-            Route::post('settings/logo/update', 'SettingsController@logo_update')->name('settings.update.logo');
-        /** Settings */
-
-
-        /** Notification */
+        /** Contact-us */
             Route::any('contacts', 'ContactsController@index')->name('contacts');
             Route::get('contacts/view/{id?}', 'ContactsController@view')->name('contacts.view');
             Route::post('contacts/delete', 'ContactsController@delete')->name('contacts.delete');
-        /** Notification */
+        /** Contact-us */
 
         /** Reviews */
             Route::any('reviews', 'ReviewsController@index')->name('reviews');
@@ -135,5 +128,11 @@ Route::group(['middleware' => 'prevent-back-history', 'namespace' => 'Back', 'as
             Route::patch('reviews/update', 'ReviewsController@update')->name('reviews.update');
             Route::post('reviews/change-status', 'ReviewsController@change_status')->name('reviews.change.status');
         /** Reviews */
+
+        /** Settings */
+            Route::get('settings', 'SettingsController@index')->name('settings');
+            Route::post('settings/update', 'SettingsController@update')->name('settings.update');
+            Route::post('settings/logo/update', 'SettingsController@logo_update')->name('settings.update.logo');
+        /** Settings */
     });
 });
