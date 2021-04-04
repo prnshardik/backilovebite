@@ -8,5 +8,6 @@
 <link href="{{ asset('front/vendor/OwlCarousel/assets/owl.theme.default.min.css') }}" rel="stylesheet">
 <link href="{{ asset('front/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 <link href="{{ asset('front/vendor/semantic/semantic.min.css') }}" rel="stylesheet" type="text/css">
+<link href="{{ asset('back/vendors/toastr/toastr.min.css') }}" rel="stylesheet" />
 
 @yield('styles')

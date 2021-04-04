@@ -24,6 +24,13 @@
     <link href="{{ asset('front/vendor/OwlCarousel/assets/owl.theme.default.min.css') }}" rel="stylesheet">
     <link href="{{ asset('front/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('front/vendor/semantic/semantic.min.css') }}" rel="stylesheet" type="text/css" >
+    <link href="{{ asset('back/vendors/toastr/toastr.min.css') }}" rel="stylesheet" />
+
+    <style>
+        .uil_position{
+            top: 14%;
+        }
+    </style>
 
     @yield('styles')
 </head>
@@ -33,7 +40,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-5">
-                    
+
                     @yield('content')
 
                     <div class="copyright-text text-center mt-3">
@@ -54,6 +61,46 @@
     <script src="{{ asset('front/js/product.thumbnail.slider.js') }}"></script>
     <script src="{{ asset('front/js/offset_overlay.js') }}"></script>
     <script src="{{ asset('front/js/night-mode.js') }}"></script>
+    <script src="{{ asset('back/vendors/toastr/toastr.min.js') }}" type="text/javascript"></script>
+
+    <script>
+        @php
+            $success = '';
+            if(\Session::has('success'))
+                $success = \Session::get('success');
+
+            $error = '';
+            if(\Session::has('error'))
+                $error = \Session::get('error');
+        @endphp
+
+        var success = "{{ $success }}";
+        var error = "{{ $error }}";
+
+        if(success != ''){ toastr.success(success, 'Success'); }
+
+        if(error != ''){ toastr.error(error, 'error'); }
+
+        toastr.options = {
+            "closeButton": false,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": false,
+            "positionClass": "toast-top-left",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "5000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        };
+    </script>
+
+    @yield('scripts')
 </body>
 
 </html>

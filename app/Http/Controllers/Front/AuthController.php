@@ -88,7 +88,7 @@
                 }
             }catch(\Exception $e){
                 DB::rollback();
-                return redirect()->back()->with('error', 'Somehing went wrong while sign up, please try again later!');    
+                return redirect()->back()->with('error', 'Somehing went wrong while sign up, please try again later!');
             }
         }
 
@@ -96,7 +96,7 @@
             $email = $request->email;
 
             $message = 'Token mismatch, please contact administrator';
-            
+
             $user = User::where(['email' => $email, 'remember_token' => $string])->first();
 
             if(!empty($user)){
@@ -151,7 +151,7 @@
                 return redirect()->route('front.login')->with('success', 'we are successfully send reset link to provided email address, please check your email address');
             }catch(\Exception $e){
                 DB::rollback();
-                return redirect()->back()->with('error', 'Somehing went wrong while sign up, please try again later!');    
+                return redirect()->back()->with('error', 'Somehing went wrong while sign up, please try again later!');
             }
         }
 
