@@ -41,7 +41,7 @@ Route::group(['middleware' => 'prevent-back-history', 'namespace' => 'Front', 'a
     Route::get('terms', 'HomeController@terms')->name('terms');
     Route::get('privacy', 'HomeController@privacy')->name('privacy');
     // Route::get('product-detail', 'HomeController@product_detail')->name('product-detail');
-    // Route::get('error', 'HomeController@error')->name('error');
+    Route::get('error', 'HomeController@error')->name('error');
 
     // Route::get('cart', 'HomeController@cart')->name('cart');
     // Route::get('shop', 'HomeController@shop')->name('shop');
