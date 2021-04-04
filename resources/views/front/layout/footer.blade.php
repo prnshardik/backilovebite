@@ -23,7 +23,7 @@
     <div class="footer-second-row">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="second-row-item">
                         <h4>Categories</h4>
                         <ul>
@@ -35,29 +35,35 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="second-row-item">
                         <h4>Useful Links</h4>
                         <ul>
-                            <li><a href="about_us.html">About US</a></li>
-                            <li><a href="shop_grid.html">Featured Products</a></li>
-                            <li><a href="offers.html">Offers</a></li>
-                            <li><a href="our_blog.html">Blog</a></li>
-                            <li><a href="faq.html">Faq</a></li>
-                            <li><a href="contact_us.html">Contact Us</a></li>
+                            <li><a href="{{ route('front.about') }}">About</a></li>
+                            <li><a href="{{ route('front.contact') }}">Contact Us</a></li>
+                            <li><a href="{{ route('front.privacy') }}">Privacy Policy</a></li>
+                            <li><a href="{{ route('front.terms') }}">Terms & Conditions</a></li>
+                            <li><a href="{{ route('front.faq') }}">Faq</a></li>
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="second-row-item">
-                        <h4>Top Cities</h4>
+                        <h4>Contact Us</h4>
                         <ul>
-                            <li><a href="#">Gurugram</a></li>
-                            <li><a href="#">New Delhi</a></li>
-                            <li><a href="#">Bangaluru</a></li>
-                            <li><a href="#">Mumbai</a></li>
-                            <li><a href="#">Hyderabad</a></li>
+                            <li>{{ _settings('CONTACT_NUMBER') }}</li>
+                            <li>{{ _settings('CONTACT_EMAIL') }}</li>
+                            <li>{!! _settings('CONTACT_ADDRESS') !!}</li>
                         </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="second-row-item-payment">
+                        <h4>Newsletter</h4>
+                        <div class="newsletter-input">
+                            <input id="email" name="email" type="text" placeholder="Email Address" class="form-control input-md" required="">
+                            <button class="newsletter-btn hover-btn" type="submit"><i class="uil uil-telegram-alt"></i></button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -69,11 +75,10 @@
                 <div class="col-md-12">
                     <div class="footer-bottom-links">
                         <ul>
-                            <li><a href="about_us.html">About</a></li>
-                            <li><a href="contact_us.html">Contact</a></li>
-                            <li><a href="privacy_policy.html">Privacy Policy</a></li>
-                            <li><a href="term_and_conditions.html">Term & Conditions</a></li>
-                            <li><a href="refund_and_return_policy.html">Refund & Return Policy</a></li>
+                            <li><a href="{{ route('front.about') }}">About</a></li>
+                            <li><a href="{{ route('front.contact') }}">Contact</a></li>
+                            <li><a href="{{ route('front.privacy') }}">Privacy Policy</a></li>
+                            <li><a href="{{ route('front.terms') }}">Term & Conditions</a></li>
                         </ul>
                     </div>
                     <div class="copyright-text">

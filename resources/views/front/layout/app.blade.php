@@ -3,7 +3,7 @@
 <head>
     @include('front.layout.meta')
 
-    <title>{{ _settings('SITE_TITLE') }} | @yield('title') </title>
+    <title>{{ _settings('SITE_TITLE') }} | @yield('title')</title>
 
     <link rel="icon" type="image/png" href="{{ _fevicon('FEVICON') }}">
 
