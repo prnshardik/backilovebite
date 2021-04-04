@@ -24,7 +24,6 @@
                                 </div>
                                 <div class="offer-text-dt">
                                     <div class="offer-top-text-banner">
-                                        <p>6% Off</p>
                                         <div class="top-text-1">Buy More & Save More</div>
                                         <span>Fresh Vegetables</span>
                                     </div>
@@ -40,7 +39,6 @@
                                 </div>
                                 <div class="offer-text-dt">
                                     <div class="offer-top-text-banner">
-                                        <p>5% Off</p>
                                         <div class="top-text-1">Buy More & Save More</div>
                                         <span>Fresh Fruits</span>
                                     </div>
@@ -56,7 +54,6 @@
                                 </div>
                                 <div class="offer-text-dt">
                                     <div class="offer-top-text-banner">
-                                        <p>3% Off</p>
                                         <div class="top-text-1">Hot Deals on New Items</div>
                                         <span>Daily Essentials Eggs & Dairy</span>
                                     </div>
@@ -72,7 +69,6 @@
                                 </div>
                                 <div class="offer-text-dt">
                                     <div class="offer-top-text-banner">
-                                        <p>2% Off</p>
                                         <div class="top-text-1">Buy More & Save More</div>
                                         <span>Beverages</span>
                                     </div>
@@ -88,7 +84,6 @@
                                 </div>
                                 <div class="offer-text-dt">
                                     <div class="offer-top-text-banner">
-                                        <p>3% Off</p>
                                         <div class="top-text-1">Buy More & Save More</div>
                                         <span>Nuts & Snacks</span>
                                     </div>
@@ -108,7 +103,6 @@
                 <div class="col-md-12">
                     <div class="main-title-tt">
                         <div class="main-title-left">
-                            <span>Shop By</span>
                             <h2>Categories</h2>
                         </div>
                     </div>
@@ -215,17 +209,16 @@
                 <div class="col-md-12">
                     <div class="main-title-tt">
                         <div class="main-title-left">
-                            <span>For You</span>
-                            <h2>Added New Products</h2>
+                            <h2>Products</h2>
                         </div>
-                        <a href="#" class="see-more-btn">See All</a>
+                        <a href="{{ route('front.menu') }}" class="see-more-btn">See All</a>
                     </div>
                 </div>
                 <div class="col-md-12">
                     <div class="owl-carousel featured-slider owl-theme">
                         <div class="item">
                             <div class="product-item">
-                                <a href="single_product_view.html" class="product-img">
+                                <a href="{{ route('front.product-detail') }}" class="product-img">
                                     <img src="{{ asset('front/images/product/img-10.jpg') }}" alt="">
                                     <div class="product-absolute-options">
                                         <span class="offer-badge-1">New</span>
@@ -250,7 +243,7 @@
                         </div>
                         <div class="item">
                             <div class="product-item">
-                                <a href="single_product_view.html" class="product-img">
+                                <a href="{{ route('front.product-detail') }}" class="product-img">
                                     <img src="{{ asset('front/images/product/img-9.jpg') }}" alt="">
                                     <div class="product-absolute-options">
                                         <span class="offer-badge-1">New</span>
@@ -275,7 +268,7 @@
                         </div>
                         <div class="item">
                             <div class="product-item">
-                                <a href="single_product_view.html" class="product-img">
+                                <a href="{{ route('front.product-detail') }}" class="product-img">
                                     <img src="{{ asset('front/images/product/img-15.jpg') }}" alt="">
                                     <div class="product-absolute-options">
                                         <span class="offer-badge-1">5% off</span>
@@ -300,7 +293,7 @@
                         </div>
                         <div class="item">
                             <div class="product-item">
-                                <a href="single_product_view.html" class="product-img">
+                                <a href="{{ route('front.product-detail') }}" class="product-img">
                                     <img src="{{ asset('front/images/product/img-11.jpg') }}" alt="">
                                     <div class="product-absolute-options">
                                         <span class="offer-badge-1">New</span>
@@ -325,7 +318,7 @@
                         </div>
                         <div class="item">
                             <div class="product-item">
-                                <a href="single_product_view.html" class="product-img">
+                                <a href="{{ route('front.product-detail') }}" class="product-img">
                                     <img src="{{ asset('front/images/product/img-14.jpg') }}" alt="">
                                     <div class="product-absolute-options">
                                         <span class="offer-badge-1">New</span>
@@ -350,7 +343,7 @@
                         </div>
                         <div class="item">
                             <div class="product-item">
-                                <a href="single_product_view.html" class="product-img">
+                                <a href="{{ route('front.product-detail') }}" class="product-img">
                                     <img src="{{ asset('front/images/product/img-2.jpg') }}" alt="">
                                     <div class="product-absolute-options">
                                         <span class="offer-badge-1">New</span>
@@ -375,7 +368,7 @@
                         </div>
                         <div class="item">
                             <div class="product-item">
-                                <a href="single_product_view.html" class="product-img">
+                                <a href="{{ route('front.product-detail') }}" class="product-img">
                                     <img src="{{ asset('front/images/product/img-5.jpg') }}" alt="">
                                     <div class="product-absolute-options">
                                         <span class="offer-badge-1">New</span>
@@ -400,7 +393,7 @@
                         </div>
                         <div class="item">
                             <div class="product-item">
-                                <a href="single_product_view.html" class="product-img">
+                                <a href="{{ route('front.product-detail') }}" class="product-img">
                                     <img src="{{ asset('front/images/product/img-6.jpg') }}" alt="">
                                     <div class="product-absolute-options">
                                         <span class="offer-badge-1">New</span>
@@ -422,6 +415,227 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="life-gambo">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="default-title">
+                        <h2>Testimonials</h2>
+                        <img src="{{ asset('front/images/line.svg') }}" alt="">
+                    </div>
+                    <div class="dd-content">
+                        <div class="owl-carousel testimonial-slider owl-theme owl-loaded owl-drag">
+                            <div class="owl-stage-outer">
+                                <div class="owl-stage"
+                                    style="transform: translate3d(-2000px, 0px, 0px); transition: all 0.25s ease 0s; width: 4000px;">
+                                    <div class="owl-item cloned" style="width: 370px; margin-right: 30px;">
+                                        <div class="item">
+                                            <div class="testi-item">
+                                                <div class="testi-text">
+                                                    <div class="qoute-icon"><i class="fas fa-quote-left"></i></div>
+                                                    <div class="testo-text">Sed ut mattis enim. Nunc id semper eros. Donec luctus venenatis quam at tincidunt. In tristique nibh eget porta cursus. Integer volutpat tincidunt nibh et mattis.</div>
+                                                </div>
+                                                <div class="team-dt">
+                                                    <div class="team-avatar">
+                                                        <img src="{{ asset('front/images/avatar/img-2.jpg') }}" alt="">
+                                                    </div>
+                                                    <div class="team-emp-dt">
+                                                        <h4>Zoena Singh</h4>
+                                                        <p>Senior Manager - Training, Corporate</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="owl-item cloned" style="width: 370px; margin-right: 30px;">
+                                        <div class="item">
+                                            <div class="testi-item">
+                                                <div class="testi-text">
+                                                    <div class="qoute-icon"><i class="fas fa-quote-left"></i></div>
+                                                    <div class="testo-text">Sed ut mattis enim. Nunc id semper eros. Donec luctus venenatis quam at tincidunt. In tristique nibh eget porta cursus. Integer volutpat tincidunt nibh et mattis.</div>
+                                                </div>
+                                                <div class="team-dt">
+                                                    <div class="team-avatar">
+                                                        <img src="{{ asset('front/images/avatar/img-3.jpg') }}" alt="">
+                                                    </div>
+                                                    <div class="team-emp-dt">
+                                                        <h4>Rock William</h4>
+                                                        <p>Senior Manager - Finance &amp; Accounts, Corporate</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="owl-item cloned" style="width: 370px; margin-right: 30px;">
+                                        <div class="item">
+                                            <div class="testi-item">
+                                                <div class="testi-text">
+                                                    <div class="qoute-icon"><i class="fas fa-quote-left"></i></div>
+                                                    <div class="testo-text">Sed ut mattis enim. Nunc id semper eros. Donec luctus venenatis quam at tincidunt. In tristique nibh eget porta cursus. Integer volutpat tincidunt nibh et mattis.</div>
+                                                </div>
+                                                <div class="team-dt">
+                                                    <div class="team-avatar">
+                                                        <img src="{{ asset('front/images/avatar/img-4.jpg') }}" alt="">
+                                                    </div>
+                                                    <div class="team-emp-dt">
+                                                        <h4>Ridhima William</h4>
+                                                        <p>Head Customer Support</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="owl-item" style="width: 370px; margin-right: 30px;">
+                                        <div class="item">
+                                            <div class="testi-item">
+                                                <div class="testi-text">
+                                                    <div class="qoute-icon"><i class="fas fa-quote-left"></i></div>
+                                                    <div class="testo-text">Sed ut mattis enim. Nunc id semper eros. Donec luctus venenatis quam at tincidunt. In tristique nibh eget porta cursus. Integer volutpat tincidunt nibh et mattis.</div>
+                                                </div>
+                                                <div class="team-dt">
+                                                    <div class="team-avatar">
+                                                        <img src="{{ asset('front/images/avatar/img-1.jpg') }}" alt="">
+                                                    </div>
+                                                    <div class="team-emp-dt">
+                                                        <h4>Joginder Singh</h4>
+                                                        <p>Senior UX Designer, Product</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="owl-item" style="width: 370px; margin-right: 30px;">
+                                        <div class="item">
+                                            <div class="testi-item">
+                                                <div class="testi-text">
+                                                    <div class="qoute-icon"><i class="fas fa-quote-left"></i></div>
+                                                    <div class="testo-text">Sed ut mattis enim. Nunc id semper eros. Donec luctus venenatis quam at tincidunt. In tristique nibh eget porta cursus. Integer volutpat tincidunt nibh et mattis.</div>
+                                                </div>
+                                                <div class="team-dt">
+                                                    <div class="team-avatar">
+                                                        <img src="{{ asset('front/images/avatar/img-2.jpg') }}" alt="">
+                                                    </div>
+                                                    <div class="team-emp-dt">
+                                                        <h4>Zoena Singh</h4>
+                                                        <p>Senior Manager - Training, Corporate</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="owl-item active" style="width: 370px; margin-right: 30px;">
+                                        <div class="item">
+                                            <div class="testi-item">
+                                                <div class="testi-text">
+                                                    <div class="qoute-icon"><i class="fas fa-quote-left"></i></div>
+                                                    <div class="testo-text">Sed ut mattis enim. Nunc id semper eros. Donec luctus venenatis quam at tincidunt. In tristique nibh eget porta cursus. Integer volutpat tincidunt nibh et mattis.</div>
+                                                </div>
+                                                <div class="team-dt">
+                                                    <div class="team-avatar">
+                                                        <img src="{{ asset('front/images/avatar/img-3.jpg') }}" alt="">
+                                                    </div>
+                                                    <div class="team-emp-dt">
+                                                        <h4>Rock William</h4>
+                                                        <p>Senior Manager - Finance &amp; Accounts, Corporate</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="owl-item active" style="width: 370px; margin-right: 30px;">
+                                        <div class="item">
+                                            <div class="testi-item">
+                                                <div class="testi-text">
+                                                    <div class="qoute-icon"><i class="fas fa-quote-left"></i></div>
+                                                    <div class="testo-text">Sed ut mattis enim. Nunc id semper eros. Donec luctus venenatis quam at tincidunt. In tristique nibh eget porta cursus. Integer volutpat tincidunt nibh et mattis.</div>
+                                                </div>
+                                                <div class="team-dt">
+                                                    <div class="team-avatar">
+                                                        <img src="{{ asset('front/images/avatar/img-4.jpg') }}" alt="">
+                                                    </div>
+                                                    <div class="team-emp-dt">
+                                                        <h4>Ridhima William</h4>
+                                                        <p>Head Customer Support</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="owl-item cloned active" style="width: 370px; margin-right: 30px;">
+                                        <div class="item">
+                                            <div class="testi-item">
+                                                <div class="testi-text">
+                                                    <div class="qoute-icon"><i class="fas fa-quote-left"></i></div>
+                                                    <div class="testo-text">Sed ut mattis enim. Nunc id semper eros. Donec luctus venenatis quam at tincidunt. In tristique nibh eget porta cursus. Integer volutpat tincidunt nibh et mattis.</div>
+                                                </div>
+                                                <div class="team-dt">
+                                                    <div class="team-avatar">
+                                                        <img src="{{ asset('front/images/avatar/img-1.jpg') }}" alt="">
+                                                    </div>
+                                                    <div class="team-emp-dt">
+                                                        <h4>Joginder Singh</h4>
+                                                        <p>Senior UX Designer, Product</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="owl-item cloned" style="width: 370px; margin-right: 30px;">
+                                        <div class="item">
+                                            <div class="testi-item">
+                                                <div class="testi-text">
+                                                    <div class="qoute-icon"><i class="fas fa-quote-left"></i></div>
+                                                    <div class="testo-text">Sed ut mattis enim. Nunc id semper eros. Donec luctus venenatis quam at tincidunt. In tristique nibh eget porta cursus. Integer volutpat tincidunt nibh et mattis.</div>
+                                                </div>
+                                                <div class="team-dt">
+                                                    <div class="team-avatar">
+                                                        <img src="{{ asset('front/images/avatar/img-2.jpg') }}" alt="">
+                                                    </div>
+                                                    <div class="team-emp-dt">
+                                                        <h4>Zoena Singh</h4>
+                                                        <p>Senior Manager - Training, Corporate</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="owl-item cloned" style="width: 370px; margin-right: 30px;">
+                                        <div class="item">
+                                            <div class="testi-item">
+                                                <div class="testi-text">
+                                                    <div class="qoute-icon"><i class="fas fa-quote-left"></i></div>
+                                                    <div class="testo-text">Sed ut mattis enim. Nunc id semper eros. Donec luctus venenatis quam at tincidunt. In tristique nibh eget porta cursus. Integer volutpat tincidunt nibh et mattis.</div>
+                                                </div>
+                                                <div class="team-dt">
+                                                    <div class="team-avatar">
+                                                        <img src="{{ asset('front/images/avatar/img-3.jpg') }}" alt="">
+                                                    </div>
+                                                    <div class="team-emp-dt">
+                                                        <h4>Rock William</h4>
+                                                        <p>Senior Manager - Finance &amp; Accounts, Corporate</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="owl-nav">
+                                <button type="button" role="presentation" class="owl-prev">
+                                    <i class="uil uil-angle-left"></i>
+                                </button>
+                                <button type="button" role="presentation" class="owl-next">
+                                    <i class="uil uil-angle-right"></i>
+                                </button>
+                            </div>
+                            <div class="owl-dots disabled"></div>
                         </div>
                     </div>
                 </div>

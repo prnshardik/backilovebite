@@ -36,11 +36,11 @@ Route::group(['middleware' => 'prevent-back-history', 'namespace' => 'Front', 'a
     Route::get('about', 'HomeController@about')->name('about');
     Route::get('contact', 'HomeController@contact')->name('contact');
     Route::post('contact_store', 'HomeController@contact_store')->name('contact_store');
-    // Route::get('testimonial', 'HomeController@testimonial')->name('testimonial');
+    Route::get('testimonial', 'HomeController@testimonial')->name('testimonial');
     Route::get('faq', 'HomeController@faq')->name('faq');
     Route::get('terms', 'HomeController@terms')->name('terms');
     Route::get('privacy', 'HomeController@privacy')->name('privacy');
-    // Route::get('product-detail', 'HomeController@product_detail')->name('product-detail');
+    Route::get('product-detail', 'HomeController@product_detail')->name('product-detail');
     Route::get('error', 'HomeController@error')->name('error');
 
     // Route::get('cart', 'HomeController@cart')->name('cart');

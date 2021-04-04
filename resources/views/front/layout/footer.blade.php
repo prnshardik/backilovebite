@@ -43,7 +43,8 @@
                             <li><a href="{{ route('front.contact') }}">Contact Us</a></li>
                             <li><a href="{{ route('front.privacy') }}">Privacy Policy</a></li>
                             <li><a href="{{ route('front.terms') }}">Terms & Conditions</a></li>
-                            <li><a href="{{ route('front.faq') }}">Faq</a></li>
+                            <li><a href="{{ route('front.faq') }}">Faq's</a></li>
+                            <li><a href="{{ route('front.testimonial') }}">Testimonial</a></li>
                         </ul>
                     </div>
                 </div>

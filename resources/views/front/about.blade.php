@@ -54,40 +54,31 @@
     <div class="about-steps-group white-bg">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3">
+                <div class="col-lg-4">
                     <div class="about-step">
                         <div class="about-step-img">
-                            <img src="{{ asset('front/about/icon-1.svg') }}" alt="">
+                            <img src="{{ asset('front/images/about/icon-1.svg') }}" alt="">
                         </div>
-                        <h4>400+</h4>
-                        <p>People have joined the Gambo team in the past six months</p>
+                        <h4>100+</h4>
+                        <p>People have joined the {{ _settings('SITE_TITLE') }} from starting online services</p>
                     </div>
                 </div>
-                <div class="col-lg-3">
+                <div class="col-lg-4">
                     <div class="about-step">
                         <div class="about-step-img">
-                            <img src="{{ asset('front/about/icon-2.svg') }}" alt="">
+                            <img src="{{ asset('front/images/about/icon-2.svg') }}" alt="">
                         </div>
                         <h4>2x</h4>
                         <p>Rate of growth in our monthly user base</p>
                     </div>
                 </div>
-                <div class="col-lg-3">
+                <div class="col-lg-4">
                     <div class="about-step">
                         <div class="about-step-img">
-                            <img src="{{ asset('front/about/icon-3.svg') }}" alt="">
+                            <img src="{{ asset('front/images/about/icon-3.svg') }}" alt="">
                         </div>
-                        <h4>10 days</h4>
-                        <p>Time taken to launch in 8 cities across India</p>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="about-step">
-                        <div class="about-step-img">
-                            <img src="{{ asset('front/about/icon-4.svg') }}" alt="">
-                        </div>
-                        <h4>95k</h4>
-                        <p>App downloads on iOS and Android</p>
+                        <h4>10+</h4>
+                        <p>Online orders every days</p>
                     </div>
                 </div>
             </div>
@@ -99,51 +90,35 @@
                 <div class="col-lg-12">
                     <div class="default-title">
                         <h2>How Do I Order?</h2>
-                        <p>How Do I order on Gambo</p>
-                        <img src="{{ asset('front/line.svg') }}" alt="">
+                        <p>How Do I order on {{ _settings('SITE_TITLE') }}</p>
+                        <img src="{{ asset('front/images/line.svg') }}" alt="">
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-6 col-md-6">
                     <div class="how-order-steps">
                         <div class="how-order-icon">
                             <i class="uil uil-search"></i>
                         </div>
-                        <h4>Browse gambo.com for products or use the search feature</h4>
+                        <h4>Browse {{ _settings('SITE_TITLE') }} for products</h4>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-6 col-md-6">
                     <div class="how-order-steps">
                         <div class="how-order-icon">
                             <i class="uil uil-shopping-basket"></i>
                         </div>
-                        <h4>Add item to your shopping Basket</h4>
+                        <h4>Add item to your cart</h4>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="how-order-steps">
-                        <div class="how-order-icon">
-                            <i class="uil uil-stopwatch"></i>
-                        </div>
-                        <h4>Choose a convenient delivery time from our 5 Slots* a day</h4>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="how-order-steps">
-                        <div class="how-order-icon">
-                            <i class="uil uil-money-bill"></i>
-                        </div>
-                        <h4>Select suitable payment option(Cash, Master, Credit Card, Discover)</h4>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-6 col-md-6">
                     <div class="how-order-steps">
                         <div class="how-order-icon">
                             <i class="uil uil-truck"></i>
                         </div>
-                        <h4>Your products will be home-delivered as per your order.</h4>
+                        <h4>Your products will be delivered as per your order.</h4>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-6 col-md-6">
                     <div class="how-order-steps">
                         <div class="how-order-icon">
                             <i class="uil uil-smile"></i>
