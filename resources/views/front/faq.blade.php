@@ -45,6 +45,7 @@
                 <div class="col-lg-7 col-md-12">
                     <div class="faq-accordion">
                         <ul class="accordion">
+<<<<<<< HEAD
                             @if(isset($data) && !empty($data))
                                 @php $i = '1';  @endphp
                                 @foreach( $data AS $data )
@@ -61,6 +62,43 @@
                                 @endforeach
                             @endif
 
+=======
+                            <li class="accordion-item">
+                                <a class="accordion-title active" href="javascript:void(0)">
+                                    <i class="flaticon-plus"></i>
+                                    Which material types can you work with?
+                                </a>
+                                <p class="accordion-content show">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
+                            </li>
+                            <li class="accordion-item">
+                                <a class="accordion-title" href="javascript:void(0)">
+                                    <i class="flaticon-plus"></i>
+                                    How monthly payments every month?
+                                </a>
+                                <p class="accordion-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
+                            </li>
+                            <li class="accordion-item">
+                                <a class="accordion-title" href="javascript:void(0)">
+                                    <i class="flaticon-plus"></i>
+                                    Can I have multiple activities in a single feature?
+                                </a>
+                                <p class="accordion-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
+                            </li>
+                            <li class="accordion-item">
+                                <a class="accordion-title" href="javascript:void(0)">
+                                    <i class="flaticon-plus"></i>
+                                    Which material types can you work with?
+                                </a>
+                                <p class="accordion-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
+                            </li>
+                            <li class="accordion-item">
+                                <a class="accordion-title" href="javascript:void(0)">
+                                    <i class="flaticon-plus"></i>
+                                    Why Choose Our Services In Your Business?
+                                </a>
+                                <p class="accordion-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
+                            </li>
+>>>>>>> e4cf3a2390f9f3f89dfb8ce1acecd0838deecf6a
                         </ul>
                     </div>
                 </div>
@@ -71,8 +109,12 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                 </div>
                 <div class="faq-contact-form">
+<<<<<<< HEAD
                     <form id="contactForm" action="{{ route('front.contact_store') }}" method="post">
                     @csrf
+=======
+                    <form id="contactForm">
+>>>>>>> e4cf3a2390f9f3f89dfb8ce1acecd0838deecf6a
                         <div class="row">
                             <div class="col-lg-6 col-md-6">
                                 <div class="form-group">
@@ -88,13 +130,21 @@
                             </div>
                             <div class="col-lg-6 col-md-6">
                                 <div class="form-group">
+<<<<<<< HEAD
                                     <input type="text" name="phone" id="phone" required data-error="Please enter your number" class="form-control" placeholder="Phone">
+=======
+                                    <input type="text" name="phone_number" id="phone_number" required data-error="Please enter your number" class="form-control" placeholder="Phone">
+>>>>>>> e4cf3a2390f9f3f89dfb8ce1acecd0838deecf6a
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6">
                                 <div class="form-group">
+<<<<<<< HEAD
                                     <input type="text" name="subject" id="subject" class="form-control" required data-error="Please enter your subject" placeholder="Subject">
+=======
+                                    <input type="text" name="msg_subject" id="msg_subject" class="form-control" required data-error="Please enter your subject" placeholder="Subject">
+>>>>>>> e4cf3a2390f9f3f89dfb8ce1acecd0838deecf6a
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
