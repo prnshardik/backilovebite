@@ -1,123 +1,56 @@
 @extends('front.layout.app')
 
-@section('title')
-    Privacy Policy
+@section('meta')
 @endsection
 
-@section('meta')
+@section('title')
+    Privacy Policy
 @endsection
 
 @section('styles')
 @endsection
 
 @section('content')
-    <div class="default-dt">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12">
-                    <div class="title129">
+    <div class="page-title-area item-bg-1">
+        <div class="d-table">
+            <div class="d-table-cell">
+                <div class="container">
+                    <div class="page-title-content">
                         <h2>Privacy Policy</h2>
+                        <ul>
+                            <li><a href="{{ route('front.home') }}">Home</a></li>
+                            <li><i class="flaticon-tea-cup"></i></li>
+                            <li>Privacy Policy</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="page-title-shape">
+            <img src="{{ asset('front/img/page-title/down-shape.png') }}" alt="image">
+        </div>
     </div>
-    <div class="all-product-grid">
+    <section class="privacy-area ptb-100">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12">
-                    <div class="job-main-dt">
-                        <h2>Gambo Privacy Policy</h2>
-                        <span>These Privacy Policy ("Privacy") were last updated on May 16, 2020.</span>
-                    </div>
-                    <div class="job-des-dt142 policy-des-dt">
-                        <h4>Personal Information</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rutrum turpis vitae facilisis
-                            tempus. Donec in blandit risus, eget pretium mauris. Aliquam nec venenatis massa. Ut vel nulla
-                            id velit dictum rutrum nec vel ex. Phasellus sit amet faucibus massa, in feugiat augue. Maecenas
-                            eget dapibus turpis, a finibus justo. Suspendisse pretium lorem non lorem faucibus, non sagittis
-                            nisi finibus. Sed efficitur massa ac nibh condimentum interdum. Orci varius natoque penatibus et
-                            magnis dis parturient montes, nascetur ridiculus mus. Suspendisse luctus, ex ut congue interdum,
-                            nibh turpis malesuada orci, vel vulputate arcu velit condimentum orci. Ut sed dictum lacus.</p>
-                    </div>
-                    <div class="job-des-dt142 policy-des-dt">
-                        <h4>What information is, or may be, collected form you?</h4>
-                        <p>Donec maximus lorem vitae risus molestie sollicitudin. Ut sem lorem, consequat et tortor sit
-                            amet, viverra porttitor erat. Suspendisse aliquet arcu vel auctor maximus. Nunc in euismod
-                            purus. Aliquam non varius quam. Sed eros magna, tempus ullamcorper auctor vitae, pretium eu
-                            elit. Integer sagittis eu purus eget venenatis. Ut rhoncus tempor velit vitae consequat. Quisque
-                            consequat, enim eu cursus eleifend, velit mi viverra arcu, sed elementum dolor odio eget neque.
-                        </p>
-                    </div>
-                    <div class="job-des-dt142 policy-des-dt">
-                        <h4>How do we Collect the Information ?</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rutrum turpis vitae facilisis
-                            tempus. Donec in blandit risus, eget pretium mauris. Aliquam nec venenatis massa. Ut vel nulla
-                            id velit dictum rutrum nec vel ex. Phasellus sit amet faucibus massa, in feugiat augue. Maecenas
-                            eget dapibus turpis, a finibus justo. Suspendisse pretium lorem non lorem faucibus, non sagittis
-                            nisi finibus. Sed efficitur massa ac nibh condimentum interdum. Orci varius natoque penatibus et
-                            magnis dis parturient montes, nascetur ridiculus mus. Suspendisse luctus, ex ut congue interdum,
-                            nibh turpis malesuada orci, vel vulputate arcu velit condimentum orci. Ut sed dictum lacus.</p>
-                    </div>
-                    <div class="job-des-dt142 policy-des-dt">
-                        <h4>How is information used ?</h4>
-                        <p>Donec maximus lorem vitae risus molestie sollicitudin. Ut sem lorem, consequat et tortor sit
-                            amet, viverra porttitor erat. Suspendisse aliquet arcu vel auctor maximus. Nunc in euismod
-                            purus. Aliquam non varius quam. Sed eros magna, tempus ullamcorper auctor vitae, pretium eu
-                            elit. Integer sagittis eu purus eget venenatis. Ut rhoncus tempor velit vitae consequat. Quisque
-                            consequat, enim eu cursus eleifend, velit mi viverra arcu, sed elementum dolor odio eget neque.
-                        </p>
-                    </div>
-                    <div class="job-des-dt142 policy-des-dt">
-                        <h4>With whom your information will be shared</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rutrum turpis vitae facilisis
-                            tempus. Donec in blandit risus, eget pretium mauris. Aliquam nec venenatis massa. Ut vel nulla
-                            id velit dictum rutrum nec vel ex. Phasellus sit amet faucibus massa, in feugiat augue. Maecenas
-                            eget dapibus turpis, a finibus justo. Suspendisse pretium lorem non lorem faucibus, non sagittis
-                            nisi finibus. Sed efficitur massa ac nibh condimentum interdum. Orci varius natoque penatibus et
-                            magnis dis parturient montes, nascetur ridiculus mus. Suspendisse luctus, ex ut congue interdum,
-                            nibh turpis malesuada orci, vel vulputate arcu velit condimentum orci. Ut sed dictum lacus.</p>
-                    </div>
-                    <div class="job-des-dt142 policy-des-dt">
-                        <h4>What Choice are available to you regarding collection, use and distribution of your information
-                            ?</h4>
-                        <p>Donec maximus lorem vitae risus molestie sollicitudin. Ut sem lorem, consequat et tortor sit
-                            amet, viverra porttitor erat. Suspendisse aliquet arcu vel auctor maximus. Nunc in euismod
-                            purus. Aliquam non varius quam. Sed eros magna, tempus ullamcorper auctor vitae, pretium eu
-                            elit. Integer sagittis eu purus eget venenatis. Ut rhoncus tempor velit vitae consequat. Quisque
-                            consequat, enim eu cursus eleifend, velit mi viverra arcu, sed elementum dolor odio eget neque.
-                        </p>
-                    </div>
-                    <div class="job-des-dt142 policy-des-dt">
-                        <h4>How can you correct inaccuracies in the information?</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rutrum turpis vitae facilisis
-                            tempus. Donec in blandit risus, eget pretium mauris. Aliquam nec venenatis massa. Ut vel nulla
-                            id velit dictum rutrum nec vel ex. Phasellus sit amet faucibus massa, in feugiat augue. Maecenas
-                            eget dapibus turpis, a finibus justo. Suspendisse pretium lorem non lorem faucibus, non sagittis
-                            nisi finibus. Sed efficitur massa ac nibh condimentum interdum. Orci varius natoque penatibus et
-                            magnis dis parturient montes, nascetur ridiculus mus. Suspendisse luctus, ex ut congue interdum,
-                            nibh turpis malesuada orci, vel vulputate arcu velit condimentum orci. Ut sed dictum lacus.</p>
-                    </div>
-                    <div class="job-des-dt142 policy-des-dt">
-                        <h4>Policy updates</h4>
-                        <p>Donec maximus lorem vitae risus molestie sollicitudin. Ut sem lorem, consequat et tortor sit
-                            amet, viverra porttitor erat. Suspendisse aliquet arcu vel auctor maximus. Nunc in euismod
-                            purus. Aliquam non varius quam. Sed eros magna, tempus ullamcorper auctor vitae.</p>
-                    </div>
-                    <div class="job-des-dt142 policy-des-dt">
-                        <h4>Contact Information</h4>
-                        <p>
-                            Innovative Retail Concepts Pvt Ltd,<br>
-                            1st Floor, Sua Road, Ludhiana,<br>
-                            Near Pakhowal Road, Punjab-141001 INDIA<br>
-                            Tel.: +91 8437176189<br>
-                            Email id: customerservice@gambosupermarket.com<br>
-                        </p>
-                    </div>
-                </div>
+            <div class="privacy-image">
+                <img src="{{ asset('front/img/privacy.jpg') }}" alt="image">
+                <a href="https://www.youtube.com/watch?v=qaHWDmFtBl0" class="video-btn popup-youtube">
+                    <i class="flaticon-play-button"></i>
+                </a>
+            </div>
+            <div class="single-privacy">
+                <h3 class="mt-0">Welcome to Tinzer Privacy Policy</h3>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not</p>
+                <h3>Welcome to Tinzer Privacy Policy</h3>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not</p>
+                <h3>Welcome to Tinzer Privacy Policy</h3>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not</p>
             </div>
         </div>
-    </div>
+    </section>
 @endsection
 
 @section('scripts')

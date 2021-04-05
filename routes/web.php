@@ -32,7 +32,7 @@ Route::group(['middleware' => 'prevent-back-history', 'namespace' => 'Front', 'a
 
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('menu', 'HomeController@menu')->name('menu');
-    // Route::get('gallery', 'HomeController@gallery')->name('gallery');
+    Route::get('gallery', 'HomeController@gallery')->name('gallery');
     Route::get('about', 'HomeController@about')->name('about');
     Route::get('contact', 'HomeController@contact')->name('contact');
     Route::post('contact_store', 'HomeController@contact_store')->name('contact_store');
@@ -43,9 +43,10 @@ Route::group(['middleware' => 'prevent-back-history', 'namespace' => 'Front', 'a
     Route::get('product-detail', 'HomeController@product_detail')->name('product-detail');
     Route::get('error', 'HomeController@error')->name('error');
 
-    // Route::get('checkout', 'HomeController@checkout')->name('checkout');
+    Route::get('checkout', 'HomeController@checkout')->name('checkout');
+    Route::get('cart', 'HomeController@cart')->name('cart');
 
-    // Route::post('subscribe', 'HomeController@subscribe')->name('subscribe');
+    Route::post('subscribe', 'HomeController@subscribe')->name('subscribe');
 });
 
 Route::get('/admin', function(){ return redirect()->route('back.login'); });
@@ -132,5 +133,15 @@ Route::group(['middleware' => 'prevent-back-history', 'namespace' => 'Back', 'as
             Route::post('settings/update', 'SettingsController@update')->name('settings.update');
             Route::post('settings/logo/update', 'SettingsController@logo_update')->name('settings.update.logo');
         /** Settings */
+        
+        /** FAQ */
+            Route::any('FAQs', 'FAQsController@index')->name('FAQs');
+            Route::get('FAQs/create', 'FAQsController@create')->name('FAQs.create');
+            Route::post('FAQs/insert', 'FAQsController@insert')->name('FAQs.insert');
+            Route::get('FAQs/view/{id?}', 'FAQsController@view')->name('FAQs.view');
+            Route::get('FAQs/edit/{id?}', 'FAQsController@edit')->name('FAQs.edit');
+            Route::PATCH('FAQs/update', 'FAQsController@update')->name('FAQs.update');
+            Route::post('FAQs/change-status', 'FAQsController@change_status')->name('FAQs.change.status');
+        /** FAQ */
     });
 });

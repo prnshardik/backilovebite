@@ -49,6 +49,11 @@
                     <span class="nav-label">Settings</span>
                 </a>
             </li>
+            <li class="{{ Request::is('back/FAQs*') ? 'active' : '' }}">
+                <a class="{{ Request::is('back/FAQs*') ? 'active' : '' }}" href="{{ route('back.FAQs') }}"><i class="sidebar-item-icon fa fa-question-circle"></i>
+                    <span class="nav-label">FAQs</span>
+                </a>
+            </li>
         </ul>
     </div>
 </nav>

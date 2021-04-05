@@ -35,7 +35,8 @@
         }
 
         public function faq(Request $request){
-            return view('front.faq');
+            $faq = DB::table('faqs')->where('status','active')->get();
+            return view('front.faq')->with('data', $faq);
         }
 
         public function terms(Request $request){

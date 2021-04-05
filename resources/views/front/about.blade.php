@@ -1,134 +1,108 @@
 @extends('front.layout.app')
 
-@section('title')
-    About
+@section('meta')
 @endsection
 
-@section('meta')
+@section('title')
+    About
 @endsection
 
 @section('styles')
 @endsection
 
 @section('content')
-    <div class="default-dt">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12">
-                    <div class="title129">
-                        <h2>About Us</h2>
+    <div class="page-title-area item-bg-1">
+        <div class="d-table">
+            <div class="d-table-cell">
+                <div class="container">
+                    <div class="page-title-content">
+                        <h2>About</h2>
+                        <ul>
+                            <li><a href="{{ route('front.home') }}">Home</a></li>
+                            <li><i class="flaticon-tea-cup"></i></li>
+                            <li>About</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="page-title-shape">
+            <img src="{{ asset('front/img/page-title/down-shape.png') }}" alt="image">
+        </div>
     </div>
-    <div class="life-gambo">
+    <section class="about-area ptb-100">
         <div class="container">
-            <div class="row">
+            <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <div class="default-title left-text">
-                        <h2>About Gambo</h2>
-                        <p>Customers Deserve Better</p>
-                        <img src="{{ asset('front/line.svg') }}" alt="">
-                    </div>
                     <div class="about-content">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac sodales sapien. Sed
-                            pellentesque, quam in ornare tincidunt, magna augue placerat nunc, ut facilisis nibh ipsum
-                            non ipsum. Cras ac eros non neque viverra consequat sed at est. Fusce efficitur, lacus nec
-                            dignissim tincidunt, diam sapien rhoncus neque, at tristique sapien nibh sed neque. Proin in
-                            neque in purus luctus facilisis. Donec viverra ligula quis lorem viverra consequat. Aliquam
-                            condimentum id enim volutpat rutrum. Donec semper iaculis convallis. Praesent quis elit eget
-                            ligula facilisis mattis. Praesent sed euismod dui. Suspendisse imperdiet vel quam nec
-                            venenatis. Suspendisse dictum blandit quam, vitae auctor enim gravida et. Sed id dictum
-                            nibh. Proin egestas massa sit amet tincidunt aliquet.</p>
+                        <span>Who Are We</span>
+                        <h3>We Are Amongest Best For Providing Fast Food</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
+                        <p>Eusmod tempor incididunt labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
+
+                        <div class="signature">
+                            <h4>Christopher Nolan</h4>
+                            <span>Manager At Handout</span>
+                            <img src="{{ asset('front/img/about/signature.png') }}" alt="image">
+                        </div>
                     </div>
                 </div>
+
                 <div class="col-lg-6">
-                    <div class="about-img">
-                        <img src="{{ asset('front/images/about.svg') }}" alt="">
+                    <div class="about-image">
+                        <img src="{{ asset('front/img/about/image1.jpg') }}" alt="image">
+
+                        <div class="shape">
+                            <img src="{{ asset('front/img/about/shape.png') }}" alt="image">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="about-steps-group white-bg">
+    </section>
+    <section class="fun-facts-area bg-color pt-100 pb-70">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="about-step">
-                        <div class="about-step-img">
-                            <img src="{{ asset('front/images/about/icon-1.svg') }}" alt="">
-                        </div>
-                        <h4>100+</h4>
-                        <p>People have joined the {{ _settings('SITE_TITLE') }} from starting online services</p>
+            <div class="row align-items-center">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="single-fun-fact">
+                        <h3>
+                            <span class="odometer" data-count="340">00</span>
+                            <span class="sign-icon">+</span>
+                        </h3>
+                        <p>Cups of Coffee</p>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="about-step">
-                        <div class="about-step-img">
-                            <img src="{{ asset('front/images/about/icon-2.svg') }}" alt="">
-                        </div>
-                        <h4>2x</h4>
-                        <p>Rate of growth in our monthly user base</p>
+
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="single-fun-fact">
+                        <h3>
+                            <span class="odometer" data-count="2678">00</span>
+                            <span class="sign-icon">+</span>
+                        </h3>
+                        <p>Orders Everyday</p>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="about-step">
-                        <div class="about-step-img">
-                            <img src="{{ asset('front/images/about/icon-3.svg') }}" alt="">
-                        </div>
-                        <h4>10+</h4>
-                        <p>Online orders every days</p>
+
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="single-fun-fact">
+                        <h3>
+                            <span class="odometer" data-count="60">00</span>
+                        </h3>
+                        <p>Skilled Professionals</p>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="how-order-gambo mt-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="default-title">
-                        <h2>How Do I Order?</h2>
-                        <p>How Do I order on {{ _settings('SITE_TITLE') }}</p>
-                        <img src="{{ asset('front/images/line.svg') }}" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="how-order-steps">
-                        <div class="how-order-icon">
-                            <i class="uil uil-search"></i>
-                        </div>
-                        <h4>Browse {{ _settings('SITE_TITLE') }} for products</h4>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="how-order-steps">
-                        <div class="how-order-icon">
-                            <i class="uil uil-shopping-basket"></i>
-                        </div>
-                        <h4>Add item to your cart</h4>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="how-order-steps">
-                        <div class="how-order-icon">
-                            <i class="uil uil-truck"></i>
-                        </div>
-                        <h4>Your products will be delivered as per your order.</h4>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="how-order-steps">
-                        <div class="how-order-icon">
-                            <i class="uil uil-smile"></i>
-                        </div>
-                        <h4>Happy Curstomers</h4>
+
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="single-fun-fact">
+                        <h3>
+                            <span class="odometer" data-count="130">00</span>
+                        </h3>
+                        <p>Burgers at Hour</p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 @endsection
 
 @section('scripts')

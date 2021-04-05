@@ -1,208 +1,56 @@
 @extends('front.layout.app')
 
-@section('title')
-    Terms & Conditions
+@section('meta')
 @endsection
 
-@section('meta')
+@section('title')
+    Terms & Conditions
 @endsection
 
 @section('styles')
 @endsection
 
 @section('content')
-    <div class="default-dt">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12">
-                    <div class="title129">
+    <div class="page-title-area item-bg-1">
+        <div class="d-table">
+            <div class="d-table-cell">
+                <div class="container">
+                    <div class="page-title-content">
                         <h2>Terms & Conditions</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="all-product-grid">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12">
-                    <div class="job-main-dt">
-                        <h2>Gambo Term and Conditions</h2>
-                        <span>These Terms of Use ("Terms") were last updated on May 16, 2020.</span>
-                    </div>
-                    <div class="job-des-dt142 policy-des-dt">
-                        <h4>Personal Information</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rutrum turpis vitae facilisis
-                            tempus. Donec in blandit risus, eget pretium mauris. Aliquam nec venenatis massa. Ut vel
-                            nulla id velit dictum rutrum nec vel ex. Phasellus sit amet faucibus massa, in feugiat
-                            augue. Maecenas eget dapibus turpis, a finibus justo. Suspendisse pretium lorem non lorem
-                            faucibus, non sagittis nisi finibus. Sed efficitur massa ac nibh condimentum interdum. Orci
-                            varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                            Suspendisse luctus, ex ut congue interdum, nibh turpis malesuada orci, vel vulputate arcu
-                            velit condimentum orci. Ut sed dictum lacus.</p>
-                    </div>
-                    <div class="job-des-dt142 policy-des-dt">
-                        <h4>Services overview</h4>
-                        <p>Donec maximus lorem vitae risus molestie sollicitudin. Ut sem lorem, consequat et tortor sit
-                            amet, viverra porttitor erat. Suspendisse aliquet arcu vel auctor maximus. Nunc in euismod
-                            purus. Aliquam non varius quam. Sed eros magna, tempus ullamcorper auctor vitae, pretium eu
-                            elit. Integer sagittis eu purus eget venenatis. Ut rhoncus tempor velit vitae consequat.
-                            Quisque consequat, enim eu cursus eleifend, velit mi viverra arcu, sed elementum dolor odio
-                            eget neque.</p>
-                    </div>
-                    <div class="job-des-dt142 policy-des-dt">
-                        <h4>Eligibility</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rutrum turpis vitae facilisis
-                            tempus. Donec in blandit risus, eget pretium mauris. Aliquam nec venenatis massa. Ut vel
-                            nulla id velit dictum rutrum nec vel ex. Phasellus sit amet faucibus massa, in feugiat
-                            augue. Maecenas eget dapibus turpis, a finibus justo. Suspendisse pretium lorem non lorem
-                            faucibus, non sagittis nisi finibus. Sed efficitur massa ac nibh condimentum interdum. Orci
-                            varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                            Suspendisse luctus, ex ut congue interdum, nibh turpis malesuada orci, vel vulputate arcu
-                            velit condimentum orci. Ut sed dictum lacus.</p>
-                    </div>
-                    <div class="job-des-dt142 policy-des-dt">
-                        <h4>License &amp; Site access</h4>
-                        <p>Donec maximus lorem vitae risus molestie sollicitudin. Ut sem lorem, consequat et tortor sit
-                            amet, viverra porttitor erat. Suspendisse aliquet arcu vel auctor maximus. Nunc in euismod
-                            purus. Aliquam non varius quam. Sed eros magna, tempus ullamcorper auctor vitae, pretium eu
-                            elit. Integer sagittis eu purus eget venenatis. Ut rhoncus tempor velit vitae consequat.
-                            Quisque consequat, enim eu cursus eleifend, velit mi viverra arcu, sed elementum dolor odio
-                            eget neque.</p>
-                    </div>
-                    <div class="job-des-dt142 policy-des-dt">
-                        <h4>With whom your information will be shared</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rutrum turpis vitae facilisis
-                            tempus. Donec in blandit risus, eget pretium mauris. Aliquam nec venenatis massa. Ut vel
-                            nulla id velit dictum rutrum nec vel ex. Phasellus sit amet faucibus massa, in feugiat
-                            augue. Maecenas eget dapibus turpis, a finibus justo. Suspendisse pretium lorem non lorem
-                            faucibus, non sagittis nisi finibus. Sed efficitur massa ac nibh condimentum interdum. Orci
-                            varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                            Suspendisse luctus, ex ut congue interdum, nibh turpis malesuada orci, vel vulputate arcu
-                            velit condimentum orci. Ut sed dictum lacus.</p>
-                    </div>
-                    <div class="job-des-dt142 policy-des-dt">
-                        <h4>Account &amp; Registration Obligations</h4>
-                        <p>Donec maximus lorem vitae risus molestie sollicitudin. Ut sem lorem, consequat et tortor sit
-                            amet, viverra porttitor erat. Suspendisse aliquet arcu vel auctor maximus. Nunc in euismod
-                            purus. Aliquam non varius quam. Sed eros magna, tempus ullamcorper auctor vitae, pretium eu
-                            elit. Integer sagittis eu purus eget venenatis. Ut rhoncus tempor velit vitae consequat.
-                            Quisque consequat, enim eu cursus eleifend, velit mi viverra arcu, sed elementum dolor odio
-                            eget neque.</p>
-                    </div>
-                    <div class="job-des-dt142 policy-des-dt">
-                        <h4>Pricing</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rutrum turpis vitae facilisis
-                            tempus. Donec in blandit risus, eget pretium mauris. Aliquam nec venenatis massa. Ut vel
-                            nulla id velit dictum rutrum nec vel ex. Phasellus sit amet faucibus massa, in feugiat
-                            augue. Maecenas eget dapibus turpis, a finibus justo. Suspendisse pretium lorem non lorem
-                            faucibus, non sagittis nisi finibus. Sed efficitur massa ac nibh condimentum interdum. Orci
-                            varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                            Suspendisse luctus, ex ut congue interdum, nibh turpis malesuada orci, vel vulputate arcu
-                            velit condimentum orci. Ut sed dictum lacus.</p>
-                    </div>
-                    <div class="job-des-dt142 policy-des-dt">
-                        <h4>Cancellation by Site / Customer</h4>
-                        <p>Donec maximus lorem vitae risus molestie sollicitudin. Ut sem lorem, consequat et tortor sit
-                            amet, viverra porttitor erat. Suspendisse aliquet arcu vel auctor maximus. Nunc in euismod
-                            purus. Aliquam non varius quam. Sed eros magna, tempus ullamcorper auctor vitae.</p>
-                    </div>
-                    <div class="job-des-dt142 policy-des-dt">
-                        <h4>Return &amp; Refunds</h4>
-                        <p>Donec maximus lorem vitae risus molestie sollicitudin. Ut sem lorem, consequat et tortor sit
-                            amet, viverra porttitor erat. Suspendisse aliquet arcu vel auctor maximus. Nunc in euismod
-                            purus. Aliquam non varius quam. Sed eros magna, tempus ullamcorper auctor vitae.</p>
-                    </div>
-                    <div class="job-des-dt142 policy-des-dt">
-                        <h4>You Agree and Confirm</h4>
-                        <p>Donec maximus lorem vitae risus molestie sollicitudin. Ut sem lorem, consequat et tortor sit
-                            amet, viverra porttitor erat. Suspendisse aliquet arcu vel auctor maximus. Nunc in euismod
-                            purus. Aliquam non varius quam. Sed eros magna, tempus ullamcorper auctor vitae.</p>
-                    </div>
-                    <div class="job-des-dt142 policy-des-dt">
-                        <h4>Contact Information</h4>
-                        <ul class="joby-list-dt">
-                            <li>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </li>
-                            <li>
-                                <p>Sed ut dui et tellus euismod accumsan.</p>
-                            </li>
-                            <li>
-                                <p>Aenean sed neque vitae nisi commodo ultricies sed ut sapien.</p>
-                            </li>
-                            <li>
-                                <p>Sed euismod urna vel lacus porta imperdiet.</p>
-                            </li>
-                            <li>
-                                <p>Proin id neque condimentum, eleifend ipsum sed, luctus nisi.</p>
-                            </li>
-                            <li>
-                                <p>Ut eu sem eget dolor bibendum tempor.</p>
-                            </li>
-                            <li>
-                                <p>Sed scelerisque purus id nunc semper, in elementum quam fringilla.</p>
-                            </li>
-                            <li>
-                                <p>Donec pulvinar enim vel convallis egestas.</p>
-                            </li>
+                        <ul>
+                            <li><a href="{{ route('front.home') }}">Home</a></li>
+                            <li><i class="flaticon-tea-cup"></i></li>
+                            <li>Terms & Conditions</li>
                         </ul>
                     </div>
-                    <div class="job-des-dt142 policy-des-dt">
-                        <h4>Modification of Terms &amp; Conditions of Service</h4>
-                        <p>Donec maximus lorem vitae risus molestie sollicitudin. Ut sem lorem, consequat et tortor sit
-                            amet, viverra porttitor erat. Suspendisse aliquet arcu vel auctor maximus. Nunc in euismod
-                            purus. Aliquam non varius quam. Sed eros magna, tempus ullamcorper auctor vitae.</p>
-                    </div>
-                    <div class="job-des-dt142 policy-des-dt">
-                        <h4>Governing Law and Jurisdiction</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rutrum turpis vitae facilisis
-                            tempus. Donec in blandit risus, eget pretium mauris. Aliquam nec venenatis massa. Ut vel
-                            nulla id velit dictum rutrum nec vel ex. Phasellus sit amet faucibus massa, in feugiat
-                            augue. Maecenas eget dapibus turpis, a finibus justo. Suspendisse pretium lorem non lorem
-                            faucibus, non sagittis nisi finibus. Sed efficitur massa ac nibh condimentum interdum. Orci
-                            varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                            Suspendisse luctus, ex ut congue interdum, nibh turpis malesuada orci, vel vulputate arcu
-                            velit condimentum orci. Ut sed dictum lacus.</p>
-                    </div>
-                    <div class="job-des-dt142 policy-des-dt">
-                        <h4>Copyright &amp; Trademark</h4>
-                        <p>Donec maximus lorem vitae risus molestie sollicitudin. Ut sem lorem, consequat et tortor sit
-                            amet, viverra porttitor erat. Suspendisse aliquet arcu vel auctor maximus. Nunc in euismod
-                            purus. Aliquam non varius quam. Sed eros magna, tempus ullamcorper auctor vitae.</p>
-                    </div>
-                    <div class="job-des-dt142 policy-des-dt">
-                        <h4>Objectionable Material</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rutrum turpis vitae facilisis
-                            tempus. Donec in blandit risus, eget pretium mauris. Aliquam nec venenatis massa. Ut vel
-                            nulla id velit dictum rutrum nec vel ex. Phasellus sit amet faucibus massa, in feugiat
-                            augue. Maecenas eget dapibus turpis, a finibus justo. Suspendisse pretium lorem non lorem
-                            faucibus, non sagittis nisi finibus. Sed efficitur massa ac nibh condimentum interdum. Orci
-                            varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                            Suspendisse luctus, ex ut congue interdum, nibh turpis malesuada orci, vel vulputate arcu
-                            velit condimentum orci. Ut sed dictum lacus.</p>
-                    </div>
-                    <div class="job-des-dt142 policy-des-dt">
-                        <h4>Indemnity</h4>
-                        <p>Donec maximus lorem vitae risus molestie sollicitudin. Ut sem lorem, consequat et tortor sit
-                            amet, viverra porttitor erat. Suspendisse aliquet arcu vel auctor maximus. Nunc in euismod
-                            purus. Aliquam non varius quam. Sed eros magna, tempus ullamcorper auctor vitae.</p>
-                    </div>
-                    <div class="job-des-dt142 policy-des-dt">
-                        <h4>Termination</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rutrum turpis vitae facilisis
-                            tempus. Donec in blandit risus, eget pretium mauris. Aliquam nec venenatis massa. Ut vel
-                            nulla id velit dictum rutrum nec vel ex. Phasellus sit amet faucibus massa, in feugiat
-                            augue. Maecenas eget dapibus turpis, a finibus justo. Suspendisse pretium lorem non lorem
-                            faucibus, non sagittis nisi finibus. Sed efficitur massa ac nibh condimentum interdum. Orci
-                            varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                            Suspendisse luctus, ex ut congue interdum, nibh turpis malesuada orci, vel vulputate arcu
-                            velit condimentum orci. Ut sed dictum lacus.</p>
-                    </div>
                 </div>
             </div>
         </div>
+        <div class="page-title-shape">
+            <img src="{{ asset('front/img/page-title/down-shape.png') }}" alt="image">
+        </div>
     </div>
+    <section class="conditions-area ptb-100">
+        <div class="container">
+            <div class="privacy-image">
+                <img src="{{ asset('front/img/conditions.jpg') }}" alt="image">
+                <a href="https://www.youtube.com/watch?v=qaHWDmFtBl0" class="video-btn popup-youtube">
+                    <i class="flaticon-play-button"></i>
+                </a>
+            </div>
+            <div class="single-privacy">
+                <h3 class="mt-0">Welcome to Handout Terms & Conditions</h3>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not</p>
+                <h3>Welcome to Handout Terms & Conditions</h3>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not</p>
+                <h3>Welcome to Handout Terms & Conditions</h3>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not</p>
+            </div>
+        </div>
+    </section>
 @endsection
 
 @section('scripts')

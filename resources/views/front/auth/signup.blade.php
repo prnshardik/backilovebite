@@ -1,65 +1,95 @@
-@extends('front.auth.app')
+@extends('front.layout.app')
 
 @section('meta')
 @endsection
 
 @section('title')
-    Sign-Up
+    Sign-up
 @endsection
 
 @section('styles')
 @endsection
 
 @section('content')
-    <div class="sign-form">
-        <div class="sign-inner">
-            <div class="sign-logo" id="logo">
-                <a href="{{ route('front.home') }}"><img src="{{ _logo() }}" alt="{{ _settings('SITE_TITLE') }} Logo" style="max-height: 60px; max-width: 60px;"></a>
-                <a href="{{ route('front.home') }}"><img class="logo-inverse" src="{{ _logo() }}" alt="{{ _settings('SITE_TITLE') }} Logo" style="max-height: 60px; max-width: 60px;"></a>
+    <div class="page-title-area item-bg-1">
+        <div class="d-table">
+            <div class="d-table-cell">
+                <div class="container">
+                    <div class="page-title-content">
+                        <h2>Sign Up</h2>
+                        <ul>
+                            <li><a href="{{ route('front.home') }}">Home</a></li>
+                            <li><i class="flaticon-tea-cup"></i></li>
+                            <li>Sign Up</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="form-dt">
-                <div class="form-inpts checout-address-step">
-                    <form name="form" id="form" action="{{ route('front.register') }}" method="post" enctype="multipart/form-data" >
-                        @csrf
-                        @method('post')
+        </div>
+        <div class="page-title-shape">
+            <img src="{{ asset('front/img/page-title/down-shape.png') }}" alt="image">
+        </div>
+    </div>
+    <div class="signup-area ptb-100">
+        <div class="container">
+            <div class="signup-form">
+                <h3>Create your Account</h3>
+                <form name="form" action="{{ route('front.register') }}" id="form" method="post" enctype="multipart/form-data">
+                    @csrf
 
-                        <div class="form-title"><h6>Sign Up</h6></div>
-                        <div class="form-group pos_rel">
-                            <input type="text" name="firstname" id="firstname" class="form-control lgn_input" placeholder="Enter firstname" />
-                            <i class="uil uil-user-circle uil_position lgn_icon"></i>
-                            <span class="kt-form__help text-danger ml-5 error firstname"></span>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <input type="text" name="firstname" id="firstname" class="form-control" placeholder="Firstname">
+                                <span class="kt-form__help text-danger error firstname"></span>
+                            </div>
                         </div>
-                        <div class="form-group pos_rel">
-                            <input type="text" name="lastname" id="lastname" class="form-control lgn_input" placeholder="Enter lastname" />
-                            <i class="uil uil-user-circle uil_position lgn_icon"></i>
-                            <span class="kt-form__help text-danger ml-5 error lastname"></span>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <input type="text" name="lastname" id="lastname" class="form-control" placeholder="Lastname">
+                                <span class="kt-form__help text-danger error lastname"></span>
+                            </div>
                         </div>
-                        <div class="form-group pos_rel">
-                            <input type="email" name="email" id="email" class="form-control lgn_input" placeholder="Enter email address" />
-                            <i class="uil uil-envelope uil_position lgn_icon"></i>
-                            <span class="kt-form__help text-danger ml-5 error email"></span>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <input type="text" name="phone" id="phone" class="form-control" placeholder="Phone Number">
+                                <span class="kt-form__help text-danger error phone"></span>
+                            </div>
                         </div>
-                        <div class="form-group pos_rel">
-                            <input type="text" name="phone" id="phone" class="form-control lgn_input" placeholder="Enter phone number" />
-                            <i class="uil uil-mobile-android-alt uil_position lgn_icon"></i>
-                            <span class="kt-form__help text-danger ml-5 error phone"></span>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <input type="email" name="email" id="email" class="form-control" placeholder="Email">
+                                <span class="kt-form__help text-danger error email"></span>
+                            </div>
                         </div>
-                        <div class="form-group pos_rel">
-                            <input type="password" name="password" id="password" class="form-control lgn_input" placeholder="Enter password" />
-                            <i class="uil uil-padlock uil_position lgn_icon"></i>
-                            <span class="kt-form__help text-danger ml-5 error password"></span>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <input type="password" name="password" id="password" class="form-control" placeholder="Password">
+                                <span class="kt-form__help text-danger error password"></span>
+                            </div>
                         </div>
-                        <div class="form-group pos_rel">
-                            <input type="checkbox" name="terms" id="terms" class="lgn_input" value="on">
-                            <label for="terms">I have read and agree to the <a href="{{ route('front.terms') }}" target="_blank" class="text-warning"><b>Terms</b></a> and I have read and agree to the <a href="{{ route('front.privacy') }}" target="_blank" class="text-warning"><b>Privacy Policy</b></a>.</label><br>
-                            <span class="kt-form__help text-danger ml-5 error terms"></span>
+                        <div class="col-lg-12">
+                            <div class="form-check">
+                                {{-- <input type="checkbox" class="form-check-input" id="checkme">
+                                <label class="form-check-label" for="checkme">Keep Me Sign Up</label> --}}
+                            </div>
                         </div>
-                        <button class="login-btn hover-btn" type="submit">Sign Up Now</button>
-                    </form>
-                </div>
-                <div class="signup-link">
-                    <p>I have an account? - <a href="{{ route('front.login') }}">Sign In Now</a></p>
-                </div>
+                        <div class="col-lg-12">
+                            <div class="form-check">
+                                <input type="checkbox" name="terms" id="terms" class="form-check-input" value="on">
+                                <label for="terms">I have read and agree to the <a href="{{ route('front.terms') }}" target="_blank" class="text-warning">"Terms"</a> and I have read and agree to the <a href="{{ route('front.privacy') }}" target="_blank" class="text-warning">"Privacy Policy"</a>.</label><br>
+                                <span class="kt-form__help text-danger error terms"></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="send-btn">
+                                <button type="submit" class="default-btn">Sign Up Now<span></span></button>
+                            </div>
+                            <br>
+                            <span>Already a registered user? <a href="{{ route('front.login') }}">Signin!</a></span>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
