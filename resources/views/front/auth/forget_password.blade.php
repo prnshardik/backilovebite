@@ -1,4 +1,4 @@
-@extends('front.auth.app')
+@extends('front.layout.app')
 
 @section('meta')
 @endsection
@@ -11,30 +11,56 @@
 @endsection
 
 @section('content')
-    <div class="sign-form">
-        <div class="sign-inner">
-            <div class="sign-logo" id="logo">
-                <a href="{{ route('front.home') }}"><img src="{{ _logo() }}" alt="{{ _settings('SITE_TITLE') }} Logo" style="max-height: 60px; max-width: 60px;"></a>
-                <a href="{{ route('front.home') }}"><img class="logo-inverse" src="{{ _logo() }}" alt="{{ _settings('SITE_TITLE') }} Logo" style="max-height: 60px; max-width: 60px;"></a>
+    <div class="page-title-area item-bg-1">
+        <div class="d-table">
+            <div class="d-table-cell">
+                <div class="container">
+                    <div class="page-title-content">
+                        <h2>Forgot Password</h2>
+                        <ul>
+                            <li><a href="{{ route('front.home') }}">Home</a></li>
+                            <li><i class="flaticon-tea-cup"></i></li>
+                            <li>Forgot Password</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="form-dt">
-                <div class="form-inpts checout-address-step">
-                    <form name="form" id="form" action="{{ route('front.password.forget') }}" method="post">
-                        @csrf
-                        @method('post')
+        </div>
+        <div class="page-title-shape">
+            <img src="{{ asset('front/img/page-title/down-shape.png') }}" alt="image">
+        </div>
+    </div>
+    <div class="sign-in-area ptb-100">
+        <div class="container">
+            <div class="sign-in-form">
+                <div class="sign-in-title">
+                    <h3>Forgot Password!</h3>
+                    <p>Enter your email address below and we'll send you password reset instructions.</p>
+                </div>
+                <form name="form" id="form" action="{{ route('front.password.forget') }}" method="post">
+                    @csrf
 
-                        <div class="form-title"><h6>Request a Password Reset</h6></div>
-                        <div class="form-group pos_rel">
-                            <input type="email" name="email" id="email" class="form-control lgn_input" placeholder="Enter email address" />
-                            <i class="uil uil-envelope uil_position lgn_icon"></i>
-                            <span class="kt-form__help text-danger ml-5 error email"></span>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <input type="email" name="email" id="email" class="form-control" placeholder="Email">
+                                <span class="kt-form__help text-danger error email"></span>
+                            </div>
                         </div>
-                        <button class="login-btn hover-btn" type="submit">Request</button>
-                    </form>
-                </div>
-                <div class="signup-link">
-                    <p>Go Back - <a href="{{ route('front.login') }}">Sign In Now</a></p>
-                </div>
+                        <div class="col-lg-12">
+                            <div class="form-check">
+                                {{-- <input type="checkbox" class="form-check-input" id="checkme">
+                                <label class="form-check-label" for="checkme">Keep me Log In</label> --}}
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="send-btn">
+                                <button type="submit" class="default-btn">Submit</button>
+                                <button class="default-btn"><a href="{{ route('front.login') }}">Login</a></button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

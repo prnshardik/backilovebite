@@ -1,162 +1,272 @@
 @extends('front.layout.app')
 
-@section('title')
-    Product Detail
+@section('meta')
 @endsection
 
-@section('meta')
+@section('title')
+    Product Detail
 @endsection
 
 @section('styles')
 @endsection
 
 @section('content')
-    <div class="default-dt">
+    <div class="page-title-area item-bg-1">
+        <div class="d-table">
+            <div class="d-table-cell">
+                <div class="container">
+                    <div class="page-title-content">
+                        <h2>Products Details</h2>
+                        <ul>
+                            <li><a href="{{ route('front.home') }}">Home</a></li>
+                            <li><i class="flaticon-tea-cup"></i></li>
+                            <li>Products Details</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-title-shape">
+            <img src="{{ asset('front/img/page-title/down-shape.png') }}" alt="image">
+        </div>
+    </div>
+    <section class="product-details-area pt-100 pb-70">
         <div class="container">
-            <div class="row">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-12">
+                    <div class="product-details-image">
+                        <img src="{{ asset('front/img/shop/details-image.jpg') }}" alt="image">
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <div class="product-details-desc">
+                        <h3>Burger Smokehouse</h3>
+                        <div class="price">
+                            <span class="new-price">$541.00</span>
+                            <span class="old-price">$652.00</span>
+                        </div>
+                        <div class="product-review">
+                            <div class="rating">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                            </div>
+                            <a href="#" class="rating-count">3 reviews</a>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                        <div class="product-add-to-cart">
+                            <div class="input-counter">
+                                <span class="minus-btn">
+                                    <i class='bx bx-minus'></i>
+                                </span>
+                                <input type="text" min="1" value="1">
+                                <span class="plus-btn">
+                                    <i class='bx bx-plus'></i>
+                                </span>
+                            </div>
+                            <button type="submit" class="default-btn">
+                                Add to cart
+                                <span></span>
+                            </button>
+                        </div>
+                        <div class="buy-checkbox-btn">
+                            <div class="item">
+                                <input class="inp-cbx" id="cbx" type="checkbox">
+                                <label class="cbx" for="cbx">
+                                    <span>
+                                        <svg width="12px" height="10px" viewbox="0 0 12 10">
+                                            <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                        </svg>
+                                    </span>
+                                    <span>I agree with the terms and conditions</span>
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a href="#" class="btn btn-light">Buy it now!</a>
+                            </div>
+                        </div>
+                        <div class="custom-payment-options">
+                            <span>Guaranteed safe checkout:</span>
+                            <div class="payment-methods">
+                                <a href="#">
+                                    <img src="{{ asset('front/img/payment/1.svg') }}" alt="image">
+                                </a>
+                                <a href="#">
+                                    <img src="{{ asset('front/img/payment/2.svg') }}" alt="image">
+                                </a>
+                                <a href="#">
+                                    <img src="{{ asset('front/img/payment/3.svg') }}" alt="image">
+                                </a>
+                                <a href="#">
+                                    <img src="{{ asset('front/img/payment/4.svg') }}" alt="image">
+                                </a>
+                                <a href="#">
+                                    <img src="{{ asset('front/img/payment/5.svg') }}" alt="image">
+                                </a>
+                                <a href="#">
+                                    <img src="{{ asset('front/img/payment/6.svg') }}" alt="image">
+                                </a>
+                                <a href="#">
+                                    <img src="{{ asset('front/img/payment/7.svg') }}" alt="image">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="col-lg-12 col-md-12">
-                    <div class="title129">
-                        <h2>Product Detail</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="all-product-grid">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="product-dt-view">
+                    <div class="tab products-details-tab">
                         <div class="row">
-                            <div class="col-lg-4 col-md-4">
-                                <div id="sync1" class="owl-carousel owl-theme owl-loaded owl-drag">
-                                    <div class="owl-stage-outer">
-                                        <div class="owl-stage"
-                                            style="transform: translate3d(-700px, 0px, 0px); transition: all 0s ease 0s; width: 2800px;">
-                                            <div class="owl-item cloned" style="width: 350px;">
-                                                <div class="item">
-                                                    <img src="{{ asset('front/images/product/big-3.jpg') }}" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="owl-item cloned" style="width: 350px;">
-                                                <div class="item">
-                                                    <img src="{{ asset('front/images/product/big-4.jpg') }}" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="owl-item active" style="width: 350px;">
-                                                <div class="item">
-                                                    <img src="{{ asset('front/images/product/big-1.jpg') }}" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="owl-item" style="width: 350px;">
-                                                <div class="item">
-                                                    <img src="{{ asset('front/images/product/big-2.jpg') }}" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="owl-item" style="width: 350px;">
-                                                <div class="item">
-                                                    <img src="{{ asset('front/images/product/big-3.jpg') }}" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="owl-item" style="width: 350px;">
-                                                <div class="item">
-                                                    <img src="{{ asset('front/images/product/big-4.jpg') }}" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="owl-item cloned" style="width: 350px;">
-                                                <div class="item">
-                                                    <img src="{{ asset('front/images/product/big-1.jpg') }}" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="owl-item cloned" style="width: 350px;">
-                                                <div class="item">
-                                                    <img src="{{ asset('front/images/product/big-2.jpg') }}" alt="">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="owl-nav">
-                                        <button type="button" role="presentation" class="owl-prev">
-                                            <i class="uil uil-angle-left"></i>
-                                        </button>
-                                        <button type="button" role="presentation" class="owl-next">
-                                            <i class="uil uil-angle-right"></i>
-                                        </button>
-                                    </div>
-                                    <div class="owl-dots disabled"></div>
-                                </div>
-                                <div id="sync2" class="owl-carousel owl-theme owl-loaded owl-drag">
-                                    <div class="owl-stage-outer">
-                                        <div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 350px;">
-                                            <div class="owl-item active current" style="width: 87.5px;">
-                                                <div class="item">
-                                                    <img src="{{ asset('front/images/product/big-1.jpg') }}" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="owl-item active" style="width: 87.5px;">
-                                                <div class="item">
-                                                    <img src="{{ asset('front/images/product/big-2.jpg') }}" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="owl-item active" style="width: 87.5px;">
-                                                <div class="item">
-                                                    <img src="{{ asset('front/images/product/big-3.jpg') }}" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="owl-item active" style="width: 87.5px;">
-                                                <div class="item">
-                                                    <img src="{{ asset('front/images/product/big-4.jpg') }}" alt="">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="owl-nav disabled">
-                                        <button type="button" role="presentation" class="owl-prev disabled">
-                                            <span aria-label="Previous">←</span>
-                                        </button>
-                                        <button type="button" role="presentation" class="owl-next disabled">
-                                            <span aria-label="Next">→</span>
-                                        </button>
-                                    </div>
-                                    <div class="owl-dots disabled">
-                                        <button role="button" class="owl-dot active"><span></span></button>
-                                    </div>
-                                </div>
+                            <div class="col-lg-12 col-md-12">
+                                <ul class="tabs">
+                                    <li>
+                                        <a href="#">
+                                            <div class="dot"></div> 
+                                            Description
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="dot"></div> 
+                                            Additional information
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="dot"></div> 
+                                            Reviews
+                                        </a>
+                                    </li>
+                                </ul>
                             </div>
-                            <div class="col-lg-8 col-md-8">
-                                <div class="product-dt-right">
-                                    <h2>Grape Fruit Turkey</h2>
-                                    <div class="no-stock">
-                                        <p class="pd-no">Product No.<span>12345</span></p>
-                                        <p class="stock-qty">Available<span>(Instock)</span></p>
+                            <div class="col-lg-12 col-md-12">
+                                <div class="tab_content">
+                                    <div class="tabs_item">
+                                        <div class="products-details-tab-content">
+                                            <p>DeSign Inspiration lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio lorem non turpis. Nullam sit amet enim. Suspendisse id velit vitae ligula volutpat condimentum.  Aliquam erat volutpat. Sed quis velit. Nulla facilisi. Nulla libero. Vivamus pharetra posuere sapien. Nam consectetuer. Sed aliquam, nunc eget euismod ullamcorper, lectus nunc ullamcorper orci, fermentum bibendum enim nibh eget ipsum. Nam consectetuer. Sed aliquam, nunc eget euismod ullamcorper, lectus nunc ullamcorper orci, fermentum bibendum enim nibh eget ipsum. Nulla libero. Vivamus pharetra posuere sapien.</p>
+                                        </div>
                                     </div>
-                                    <p class="pp-descp">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-                                        vulputate, purus at tempor blandit, nulla felis dictum eros, sed volutpat odio
-                                        sapien id lectus. Cras mollis massa ac congue posuere. Fusce viverra mauris vel
-                                        magna pretium aliquet. Nunc tincidunt, velit id tempus tristique, velit dolor
-                                        hendrerit nibh, at scelerisque neque mauris sed ex.</p>
-                                    <div class="product-group-dt">
-                                        <ul>
-                                            <li>
-                                                <div class="main-price color-discount">MRP Price<span>$15</span>
+                                    <div class="tabs_item">
+                                        <div class="products-details-tab-content">
+                                            <ul class="additional-information">
+                                                <li>
+                                                    <span>Brand:</span> 
+                                                    ThemeForest
+                                                </li>
+                                                <li>
+                                                    <span>Color:</span> 
+                                                    Brown
+                                                </li>
+                                                <li>
+                                                    <span>Size:</span> 
+                                                    Large, Medium
+                                                </li>
+                                                <li>
+                                                    <span>Weight:</span> 
+                                                    27 kg
+                                                </li>
+                                                <li>
+                                                    <span>Dimensions:</span> 
+                                                    22 x 123 cm
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="tabs_item">
+                                        <div class="products-details-tab-content">
+                                            <div class="product-review-form">
+                                                <h3>Customer Reviews</h3>
+                                                <div class="review-title">
+                                                    <div class="rating">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="far fa-star"></i>
+                                                    </div>
+                                                    <p>Based on 3 reviews</p>
+                                                    <a href="#" class="default-btn">
+                                                        Write a Review
+                                                        <span></span>
+                                                    </a>
                                                 </div>
-                                            </li>
-                                        </ul>
-                                        <ul class="gty-wish-share">
-                                            <li>
-                                                <div class="qty-product">
-                                                    <div class="quantity buttons_added">
-                                                        <input type="button" value="-" class="minus minus-btn">
-                                                        <input type="number" step="1" name="quantity" value="1" class="input-text qty text">
-                                                        <input type="button" value="+" class="plus plus-btn">
+                                                <div class="review-comments">
+                                                    <div class="review-item">
+                                                        <div class="rating">
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="far fa-star"></i>
+                                                        </div>
+                                                        <h3>Good</h3>
+                                                        <span><strong>Admin</strong> on <strong>Sep 21, 2019</strong></span>
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+                                                        <a href="#" class="review-report-link">Report as Inappropriate</a>
+                                                    </div>
+                                                    <div class="review-item">
+                                                        <div class="rating">
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="far fa-star"></i>
+                                                        </div>
+                                                        <h3>Good</h3>
+                                                        <span><strong>Admin</strong> on <strong>Sep 21, 2019</strong></span>
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+                                                        <a href="#" class="review-report-link">Report as Inappropriate</a>
+                                                    </div>
+                                                    <div class="review-item">
+                                                        <div class="rating">
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="far fa-star"></i>
+                                                        </div>
+                                                        <h3>Good</h3>
+                                                        <span><strong>Admin</strong> on <strong>Sep 21, 2019</strong></span>
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+                                                        <a href="#" class="review-report-link">Report as Inappropriate</a>
                                                     </div>
                                                 </div>
-                                            </li>
-                                        </ul>
-                                        <ul class="ordr-crt-share">
-                                            <li><button class="add-cart-btn hover-btn"><i class="uil uil-shopping-cart-alt"></i>Add to Cart</button></li>
-                                            <li><button class="order-btn hover-btn">Order Now</button></li>
-                                        </ul>
+                                                <div class="review-form">
+                                                    <h3>Write a Review</h3>
+                                                    <form>
+                                                        <div class="row">
+                                                            <div class="col-lg-6 col-md-6">
+                                                                <div class="form-group">
+                                                                    <input type="text" id="name" name="name" placeholder="Enter your name" class="form-control">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-6 col-md-6">
+                                                                <div class="form-group">
+                                                                    <input type="email" id="email" name="email" placeholder="Enter your email" class="form-control">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-12 col-md-12">
+                                                                <div class="form-group">
+                                                                    <input type="text" id="review-title" name="review-title" placeholder="Enter your review a title" class="form-control">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-12 col-md-12">
+                                                                <div class="form-group">
+                                                                    <textarea name="review-body" id="review-body" cols="30" rows="7" placeholder="Write your comments here" class="form-control"></textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-12 col-md-12">
+                                                                <button type="submit" class="default-btn">
+                                                                    Submit Review
+                                                                    <span></span>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -165,261 +275,104 @@
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="section145">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="main-title-tt">
-                        <div class="main-title-left">
-                            <h2>Top Featured Products</h2>
-                        </div>
-                        <a href="{{ route('front.menu') }}" class="see-more-btn">See All</a>
-                    </div>
+        <div class="related-products">
+            <div class="container">
+                <div class="products-title">
+                    <span class="sub-title">Our Shop</span>
+                    <h2>Related Products</h2>
                 </div>
-                <div class="col-md-12">
-                    <div class="owl-carousel featured-slider owl-theme owl-loaded owl-drag">
-                        <div class="owl-stage-outer">
-                            <div class="owl-stage"
-                                style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 2360px;">
-                                <div class="owl-item active" style="width: 285px; margin-right: 10px;">
-                                    <div class="item">
-                                        <div class="product-item">
-                                            <a href="{{ route('front.product-detail') }}" class="product-img">
-                                                <img src="{{ asset('front/images/product/img-1.jpg') }}" alt="">
-                                                <div class="product-absolute-options">
-                                                    <span class="offer-badge-1">6% off</span>
-                                                    <span class="like-icon" title="wishlist"></span>
-                                                </div>
-                                            </a>
-                                            <div class="product-text-dt">
-                                                <p>Available<span>(In Stock)</span></p>
-                                                <h4>Product Title Here</h4>
-                                                <div class="product-price">$12 <span>$15</span></div>
-                                                <div class="qty-cart">
-                                                    <div class="quantity buttons_added">
-                                                        <input type="button" value="-" class="minus minus-btn">
-                                                        <input type="number" step="1" name="quantity" value="1"
-                                                            class="input-text qty text">
-                                                        <input type="button" value="+" class="plus plus-btn">
-                                                    </div>
-                                                    <span class="cart-icon"><i
-                                                            class="uil uil-shopping-cart-alt"></i></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="single-product">
+                            <div class="product-image">
+                                <a href="{{ route('front.product-detail') }}">
+                                    <img src="{{ asset('front/img/shop/image1.jpg') }}" alt="image">
+                                </a>
+                                <a href="{{ route('front.cart') }}" class="add-to-cart-btn">
+                                    Add To Cart 
+                                    <i class="flaticon-shopping-cart"></i>
+                                </a>
+                            </div>
+                            <div class="product-content">
+                                <h3>
+                                    <a href="{{ route('front.product-detail') }}">Dungeon Burgers</a>
+                                </h3>
+                                <div class="price">
+                                    <span class="new">$455.50</span>
+                                    <span class="old">$460.50</span>
                                 </div>
-                                <div class="owl-item active" style="width: 285px; margin-right: 10px;">
-                                    <div class="item">
-                                        <div class="product-item">
-                                            <a href="{{ route('front.product-detail') }}" class="product-img">
-                                                <img src="{{ asset('front/images/product/img-2.jpg') }}" alt="">
-                                                <div class="product-absolute-options">
-                                                    <span class="offer-badge-1">2% off</span>
-                                                    <span class="like-icon" title="wishlist"></span>
-                                                </div>
-                                            </a>
-                                            <div class="product-text-dt">
-                                                <p>Available<span>(In Stock)</span></p>
-                                                <h4>Product Title Here</h4>
-                                                <div class="product-price">$10 <span>$13</span></div>
-                                                <div class="qty-cart">
-                                                    <div class="quantity buttons_added">
-                                                        <input type="button" value="-" class="minus minus-btn">
-                                                        <input type="number" step="1" name="quantity" value="1"
-                                                            class="input-text qty text">
-                                                        <input type="button" value="+" class="plus plus-btn">
-                                                    </div>
-                                                    <span class="cart-icon"><i
-                                                            class="uil uil-shopping-cart-alt"></i></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="owl-item active" style="width: 285px; margin-right: 10px;">
-                                    <div class="item">
-                                        <div class="product-item">
-                                            <a href="{{ route('front.product-detail') }}" class="product-img">
-                                                <img src="{{ asset('front/images/product/img-3.jpg') }}" alt="">
-                                                <div class="product-absolute-options">
-                                                    <span class="offer-badge-1">5% off</span>
-                                                    <span class="like-icon" title="wishlist"></span>
-                                                </div>
-                                            </a>
-                                            <div class="product-text-dt">
-                                                <p>Available<span>(In Stock)</span></p>
-                                                <h4>Product Title Here</h4>
-                                                <div class="product-price">$5 <span>$8</span></div>
-                                                <div class="qty-cart">
-                                                    <div class="quantity buttons_added">
-                                                        <input type="button" value="-" class="minus minus-btn">
-                                                        <input type="number" step="1" name="quantity" value="1"
-                                                            class="input-text qty text">
-                                                        <input type="button" value="+" class="plus plus-btn">
-                                                    </div>
-                                                    <span class="cart-icon"><i
-                                                            class="uil uil-shopping-cart-alt"></i></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="owl-item active" style="width: 285px; margin-right: 10px;">
-                                    <div class="item">
-                                        <div class="product-item">
-                                            <a href="{{ route('front.product-detail') }}" class="product-img">
-                                                <img src="{{ asset('front/images/product/img-4.jpg') }}" alt="">
-                                                <div class="product-absolute-options">
-                                                    <span class="offer-badge-1">3% off</span>
-                                                    <span class="like-icon" title="wishlist"></span>
-                                                </div>
-                                            </a>
-                                            <div class="product-text-dt">
-                                                <p>Available<span>(In Stock)</span></p>
-                                                <h4>Product Title Here</h4>
-                                                <div class="product-price">$15 <span>$20</span></div>
-                                                <div class="qty-cart">
-                                                    <div class="quantity buttons_added">
-                                                        <input type="button" value="-" class="minus minus-btn">
-                                                        <input type="number" step="1" name="quantity" value="1"
-                                                            class="input-text qty text">
-                                                        <input type="button" value="+" class="plus plus-btn">
-                                                    </div>
-                                                    <span class="cart-icon"><i
-                                                            class="uil uil-shopping-cart-alt"></i></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="owl-item" style="width: 285px; margin-right: 10px;">
-                                    <div class="item">
-                                        <div class="product-item">
-                                            <a href="{{ route('front.product-detail') }}" class="product-img">
-                                                <img src="{{ asset('front/images/product/img-5.jpg') }}" alt="">
-                                                <div class="product-absolute-options">
-                                                    <span class="offer-badge-1">2% off</span>
-                                                    <span class="like-icon" title="wishlist"></span>
-                                                </div>
-                                            </a>
-                                            <div class="product-text-dt">
-                                                <p>Available<span>(In Stock)</span></p>
-                                                <h4>Product Title Here</h4>
-                                                <div class="product-price">$9 <span>$10</span></div>
-                                                <div class="qty-cart">
-                                                    <div class="quantity buttons_added">
-                                                        <input type="button" value="-" class="minus minus-btn">
-                                                        <input type="number" step="1" name="quantity" value="1"
-                                                            class="input-text qty text">
-                                                        <input type="button" value="+" class="plus plus-btn">
-                                                    </div>
-                                                    <span class="cart-icon"><i
-                                                            class="uil uil-shopping-cart-alt"></i></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="owl-item" style="width: 285px; margin-right: 10px;">
-                                    <div class="item">
-                                        <div class="product-item">
-                                            <a href="{{ route('front.product-detail') }}" class="product-img">
-                                                <img src="{{ asset('front/images/product/img-6.jpg') }}" alt="">
-                                                <div class="product-absolute-options">
-                                                    <span class="offer-badge-1">2% off</span>
-                                                    <span class="like-icon" title="wishlist"></span>
-                                                </div>
-                                            </a>
-                                            <div class="product-text-dt">
-                                                <p>Available<span>(In Stock)</span></p>
-                                                <h4>Product Title Here</h4>
-                                                <div class="product-price">$7 <span>$8</span></div>
-                                                <div class="qty-cart">
-                                                    <div class="quantity buttons_added">
-                                                        <input type="button" value="-" class="minus minus-btn">
-                                                        <input type="number" step="1" name="quantity" value="1"
-                                                            class="input-text qty text">
-                                                        <input type="button" value="+" class="plus plus-btn">
-                                                    </div>
-                                                    <span class="cart-icon"><i
-                                                            class="uil uil-shopping-cart-alt"></i></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="owl-item" style="width: 285px; margin-right: 10px;">
-                                    <div class="item">
-                                        <div class="product-item">
-                                            <a href="{{ route('front.product-detail') }}" class="product-img">
-                                                <img src="{{ asset('front/images/product/img-7.jpg') }}" alt="">
-                                                <div class="product-absolute-options">
-                                                    <span class="offer-badge-1">1% off</span>
-                                                    <span class="like-icon" title="wishlist"></span>
-                                                </div>
-                                            </a>
-                                            <div class="product-text-dt">
-                                                <p>Available<span>(In Stock)</span></p>
-                                                <h4>Product Title Here</h4>
-                                                <div class="product-price">$6.95 <span>$7</span></div>
-                                                <div class="qty-cart">
-                                                    <div class="quantity buttons_added">
-                                                        <input type="button" value="-" class="minus minus-btn">
-                                                        <input type="number" step="1" name="quantity" value="1"
-                                                            class="input-text qty text">
-                                                        <input type="button" value="+" class="plus plus-btn">
-                                                    </div>
-                                                    <span class="cart-icon"><i
-                                                            class="uil uil-shopping-cart-alt"></i></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="owl-item" style="width: 285px; margin-right: 10px;">
-                                    <div class="item">
-                                        <div class="product-item">
-                                            <a href="{{ route('front.product-detail') }}" class="product-img">
-                                                <img src="{{ asset('front/images/product/img-8.jpg') }}" alt="">
-                                                <div class="product-absolute-options">
-                                                    <span class="offer-badge-1">3% off</span>
-                                                    <span class="like-icon" title="wishlist"></span>
-                                                </div>
-                                            </a>
-                                            <div class="product-text-dt">
-                                                <p>Available<span>(In Stock)</span></p>
-                                                <h4>Product Title Here</h4>
-                                                <div class="product-price">$8 <span>$10</span></div>
-                                                <div class="qty-cart">
-                                                    <div class="quantity buttons_added">
-                                                        <input type="button" value="-" class="minus minus-btn">
-                                                        <input type="number" step="1" name="quantity" value="1"
-                                                            class="input-text qty text">
-                                                        <input type="button" value="+" class="plus plus-btn">
-                                                    </div>
-                                                    <span class="cart-icon"><i
-                                                            class="uil uil-shopping-cart-alt"></i></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class="rating">
+                                    <i class='bx bxs-star'></i>
+                                    <i class='bx bxs-star'></i>
+                                    <i class='bx bxs-star'></i>
+                                    <i class='bx bxs-star'></i>
+                                    <i class='bx bxs-star'></i>
                                 </div>
                             </div>
                         </div>
-                        <div class="owl-nav"><button type="button" role="presentation" class="owl-prev disabled"><i
-                                    class="uil uil-angle-left"></i></button><button type="button" role="presentation"
-                                class="owl-next"><i class="uil uil-angle-right"></i></button></div>
-                        <div class="owl-dots disabled"></div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="single-product">
+                            <div class="product-image">
+                                <a href="{{ route('front.product-detail') }}">
+                                    <img src="{{ asset('front/img/shop/image2.jpg') }}" alt="image">
+                                </a>
+                                <a href="{{ route('front.cart') }}" class="add-to-cart-btn">
+                                    Add To Cart 
+                                    <i class="flaticon-shopping-cart"></i>
+                                </a>
+                            </div>
+                            <div class="product-content">
+                                <h3>
+                                    <a href="{{ route('front.product-detail') }}">Bugout Burgers</a>
+                                </h3>
+                                <div class="price">
+                                    <span class="new">$541.50</span>
+                                    <span class="old">$652.50</span>
+                                </div>
+                                <div class="rating">
+                                    <i class='bx bxs-star'></i>
+                                    <i class='bx bxs-star'></i>
+                                    <i class='bx bxs-star'></i>
+                                    <i class='bx bxs-star'></i>
+                                    <i class='bx bxs-star'></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-0 offset-md-3">
+                        <div class="single-product">
+                            <div class="product-image">
+                                <a href="{{ route('front.product-detail') }}">
+                                    <img src="{{ asset('front/img/shop/image3.jpg') }}" alt="image">
+                                </a>
+                                <a href="{{ route('front.cart') }}" class="add-to-cart-btn">
+                                    Add To Cart 
+                                    <i class="flaticon-shopping-cart"></i>
+                                </a>
+                            </div>
+                            <div class="product-content">
+                                <h3>
+                                    <a href="{{ route('front.product-detail') }}">Bullhorn Burgers</a>
+                                </h3>
+                                <div class="price">
+                                    <span class="new">$140.50</span>
+                                    <span class="old">$150.50</span>
+                                </div>
+                                <div class="rating">
+                                    <i class='bx bxs-star'></i>
+                                    <i class='bx bxs-star'></i>
+                                    <i class='bx bxs-star'></i>
+                                    <i class='bx bxs-star'></i>
+                                    <i class='bx bxs-star'></i>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-
-</div>
+    </section>
 @endsection
 
 @section('scripts')

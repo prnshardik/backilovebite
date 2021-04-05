@@ -1,305 +1,123 @@
 @extends('front.layout.app')
 
-@section('title')
-    Menu
+@section('meta')
 @endsection
 
-@section('meta')
+@section('title')
+    Menu
 @endsection
 
 @section('styles')
 @endsection
 
 @section('content')
-    <div class="all-product-grid">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="product-top-dt">
-                        <div class="product-left-title">
-                            <h2>Vegetables &amp; Fruits</h2>
-                        </div>
-                        <button class="filter-btn ">Filters</button>
-                        <div class="product-sort">
-                            <div class="ui selection dropdown vchrt-dropdown" tabindex="0">
-                                <input name="gender" type="hidden" value="default">
-                                <i class="dropdown icon d-icon" tabindex="0">
-                                    <div class="menu" tabindex="-1"></div>
-                                </i>
-                                <div class="text">Popularity</div>
-                                <div class="menu" tabindex="-1">
-                                    <div class="item" data-value="0">Popularity</div>
-                                    <div class="item" data-value="1">Price - Low to High</div>
-                                    <div class="item" data-value="2">Price - High to Low</div>
-                                    <div class="item" data-value="3">Alphabetical</div>
-                                    <div class="item" data-value="4">Saving - High to Low</div>
-                                    <div class="item" data-value="5">Saving - Low to High</div>
-                                    <div class="item" data-value="6">% Off - High to Low</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="product-list-view">
-                <div class="row">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="product-item mb-30">
-                            <a href="single_product_view.html" class="product-img">
-                                <img src="{{ asset('front/images/product/img-1.jpg') }}" alt="">
-                            </a>
-                            <div class="product-text-dt">
-                                <p>Available<span>(In Stock)</span></p>
-                                <h4>Product Title Here</h4>
-                                <div class="product-price">$12</div>
-                                <div class="qty-cart">
-                                    <div class="quantity buttons_added">
-                                        <input type="button" value="-" class="minus minus-btn">
-                                        <input type="number" step="1" name="quantity" value="1"
-                                            class="input-text qty text">
-                                        <input type="button" value="+" class="plus plus-btn">
-                                    </div>
-                                    <span class="cart-icon"><i class="uil uil-shopping-cart-alt"></i></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="product-item mb-30">
-                            <a href="single_product_view.html" class="product-img">
-                                <img src="{{ asset('front/images/product/img-2.jpg') }}" alt="">
-                            </a>
-                            <div class="product-text-dt">
-                                <p>Available<span>(In Stock)</span></p>
-                                <h4>Product Title Here</h4>
-                                <div class="product-price">$10</div>
-                                <div class="qty-cart">
-                                    <div class="quantity buttons_added">
-                                        <input type="button" value="-" class="minus minus-btn">
-                                        <input type="number" step="1" name="quantity" value="1"
-                                            class="input-text qty text">
-                                        <input type="button" value="+" class="plus plus-btn">
-                                    </div>
-                                    <span class="cart-icon"><i class="uil uil-shopping-cart-alt"></i></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="product-item mb-30">
-                            <a href="single_product_view.html" class="product-img">
-                                <img src="{{ asset('front/images/product/img-3.jpg') }}" alt="">
-                            </a>
-                            <div class="product-text-dt">
-                                <p>Available<span>(In Stock)</span></p>
-                                <h4>Product Title Here</h4>
-                                <div class="product-price">$5</div>
-                                <div class="qty-cart">
-                                    <div class="quantity buttons_added">
-                                        <input type="button" value="-" class="minus minus-btn">
-                                        <input type="number" step="1" name="quantity" value="1"
-                                            class="input-text qty text">
-                                        <input type="button" value="+" class="plus plus-btn">
-                                    </div>
-                                    <span class="cart-icon"><i class="uil uil-shopping-cart-alt"></i></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="product-item mb-30">
-                            <a href="single_product_view.html" class="product-img">
-                                <img src="{{ asset('front/images/product/img-4.jpg') }}" alt="">
-                            </a>
-                            <div class="product-text-dt">
-                                <p>Available<span>(In Stock)</span></p>
-                                <h4>Product Title Here</h4>
-                                <div class="product-price">$15</div>
-                                <div class="qty-cart">
-                                    <div class="quantity buttons_added">
-                                        <input type="button" value="-" class="minus minus-btn">
-                                        <input type="number" step="1" name="quantity" value="1"
-                                            class="input-text qty text">
-                                        <input type="button" value="+" class="plus plus-btn">
-                                    </div>
-                                    <span class="cart-icon"><i class="uil uil-shopping-cart-alt"></i></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="product-item mb-30">
-                            <a href="single_product_view.html" class="product-img">
-                                <img src="{{ asset('front/images/product/img-5.jpg') }}" alt="">
-                            </a>
-                            <div class="product-text-dt">
-                                <p>Available<span>(In Stock)</span></p>
-                                <h4>Product Title Here</h4>
-                                <div class="product-price">$9</div>
-                                <div class="qty-cart">
-                                    <div class="quantity buttons_added">
-                                        <input type="button" value="-" class="minus minus-btn">
-                                        <input type="number" step="1" name="quantity" value="1"
-                                            class="input-text qty text">
-                                        <input type="button" value="+" class="plus plus-btn">
-                                    </div>
-                                    <span class="cart-icon"><i class="uil uil-shopping-cart-alt"></i></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="product-item mb-30">
-                            <a href="single_product_view.html" class="product-img">
-                                <img src="{{ asset('front/images/product/img-6.jpg') }}" alt="">
-                            </a>
-                            <div class="product-text-dt">
-                                <p>Available<span>(In Stock)</span></p>
-                                <h4>Product Title Here</h4>
-                                <div class="product-price">$7</div>
-                                <div class="qty-cart">
-                                    <div class="quantity buttons_added">
-                                        <input type="button" value="-" class="minus minus-btn">
-                                        <input type="number" step="1" name="quantity" value="1"
-                                            class="input-text qty text">
-                                        <input type="button" value="+" class="plus plus-btn">
-                                    </div>
-                                    <span class="cart-icon"><i class="uil uil-shopping-cart-alt"></i></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="product-item mb-30">
-                            <a href="single_product_view.html" class="product-img">
-                                <img src="{{ asset('front/images/product/img-7.jpg') }}" alt="">
-                            </a>
-                            <div class="product-text-dt">
-                                <p>Available<span>(In Stock)</span></p>
-                                <h4>Product Title Here</h4>
-                                <div class="product-price">$6.95</div>
-                                <div class="qty-cart">
-                                    <div class="quantity buttons_added">
-                                        <input type="button" value="-" class="minus minus-btn">
-                                        <input type="number" step="1" name="quantity" value="1"
-                                            class="input-text qty text">
-                                        <input type="button" value="+" class="plus plus-btn">
-                                    </div>
-                                    <span class="cart-icon"><i class="uil uil-shopping-cart-alt"></i></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="product-item mb-30">
-                            <a href="single_product_view.html" class="product-img">
-                                <img src="{{ asset('front/images/product/img-11.jpg') }}" alt="">
-                            </a>
-                            <div class="product-text-dt">
-                                <p>Available<span>(In Stock)</span></p>
-                                <h4>Product Title Here</h4>
-                                <div class="product-price">$12</div>
-                                <div class="qty-cart">
-                                    <div class="quantity buttons_added">
-                                        <input type="button" value="-" class="minus minus-btn">
-                                        <input type="number" step="1" name="quantity" value="1"
-                                            class="input-text qty text">
-                                        <input type="button" value="+" class="plus plus-btn">
-                                    </div>
-                                    <span class="cart-icon"><i class="uil uil-shopping-cart-alt"></i></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="product-item mb-30">
-                            <a href="single_product_view.html" class="product-img">
-                                <img src="{{ asset('front/images/product/img-12.jpg') }}" alt="">
-                            </a>
-                            <div class="product-text-dt">
-                                <p>Available<span>(In Stock)</span></p>
-                                <h4>Product Title Here</h4>
-                                <div class="product-price">$10</div>
-                                <div class="qty-cart">
-                                    <div class="quantity buttons_added">
-                                        <input type="button" value="-" class="minus minus-btn">
-                                        <input type="number" step="1" name="quantity" value="1"
-                                            class="input-text qty text">
-                                        <input type="button" value="+" class="plus plus-btn">
-                                    </div>
-                                    <span class="cart-icon"><i class="uil uil-shopping-cart-alt"></i></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="product-item mb-30">
-                            <a href="single_product_view.html" class="product-img">
-                                <img src="{{ asset('front/images/product/img-13.jpg') }}" alt="">
-                            </a>
-                            <div class="product-text-dt">
-                                <p>Available<span>(In Stock)</span></p>
-                                <h4>Product Title Here</h4>
-                                <div class="product-price">$5</div>
-                                <div class="qty-cart">
-                                    <div class="quantity buttons_added">
-                                        <input type="button" value="-" class="minus minus-btn">
-                                        <input type="number" step="1" name="quantity" value="1"
-                                            class="input-text qty text">
-                                        <input type="button" value="+" class="plus plus-btn">
-                                    </div>
-                                    <span class="cart-icon"><i class="uil uil-shopping-cart-alt"></i></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="product-item mb-30">
-                            <a href="single_product_view.html" class="product-img">
-                                <img src="{{ asset('front/images/product/img-14.jpg') }}" alt="">
-                            </a>
-                            <div class="product-text-dt">
-                                <p>Available<span>(In Stock)</span></p>
-                                <h4>Product Title Here</h4>
-                                <div class="product-price">$6.95</div>
-                                <div class="qty-cart">
-                                    <div class="quantity buttons_added">
-                                        <input type="button" value="-" class="minus minus-btn">
-                                        <input type="number" step="1" name="quantity" value="1"
-                                            class="input-text qty text">
-                                        <input type="button" value="+" class="plus plus-btn">
-                                    </div>
-                                    <span class="cart-icon"><i class="uil uil-shopping-cart-alt"></i></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="product-item mb-30">
-                            <a href="single_product_view.html" class="product-img">
-                                <img src="{{ asset('front/images/product/img-8.jpg') }}" alt="">
-                            </a>
-                            <div class="product-text-dt">
-                                <p>Available<span>(In Stock)</span></p>
-                                <h4>Product Title Here</h4>
-                                <div class="product-price">$8</div>
-                                <div class="qty-cart">
-                                    <div class="quantity buttons_added">
-                                        <input type="button" value="-" class="minus minus-btn">
-                                        <input type="number" step="1" name="quantity" value="1"
-                                            class="input-text qty text">
-                                        <input type="button" value="+" class="plus plus-btn">
-                                    </div>
-                                    <span class="cart-icon"><i class="uil uil-shopping-cart-alt"></i></span>
-                                </div>
-                            </div>
-                        </div>
+    <div class="page-title-area item-bg-1">
+        <div class="d-table">
+            <div class="d-table-cell">
+                <div class="container">
+                    <div class="page-title-content">
+                        <h2>Menu</h2>
+                        <ul>
+                            <li><a href="{{ route('front.home') }}">Home</a></li>
+                            <li><i class="flaticon-tea-cup"></i></li>
+                            <li>Menu</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="page-title-shape">
+            <img src="{{ asset('front/img/page-title/down-shape.png') }}" alt="image">
+        </div>
     </div>
+    <section class="menu-area ptb-100">
+        <div class="container">
+            <div class="section-title">
+                <span>Pricing Lists</span>
+                <h2>Choose & order now!</h2>
+            </div>
+
+            <div class="tab menu-list-tab">
+                <ul class="tabs">
+                    @if(isset($data) && $data->isNotEmpty())
+                        @foreach($data as $row)
+                            <li>
+                                <a href="#">
+                                    <img src="{{ $row->image }}" alt="{{ $row->name }} image" style="max-height: 50px; max-width: 50px;">
+                                    <span>{{ $row->name }}</span>
+                                </a>
+                            </li>
+                        @endforeach
+                    @endif
+                </ul>
+                <div class="tab_content">
+                    @if(isset($data) && $data->isNotEmpty())
+                        @foreach($data as $row)
+                            <div class="tabs_item">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="menu-bar">
+                                            @if(isset($row->products) && !empty($row->products))
+                                                @foreach($row->products as $pRow)
+                                                    <div class="menu-list-content" style="margin-bottom: 20px;">
+                                                        <h3>
+                                                            {{ $pRow['name'] ?? '' }}
+                                                            <b>....................</b>
+                                                            <span>${{ $pRow['price'] ?? '' }}</span>
+                                                        </h3>
+                                                        <p>{{ $pRow['description'] ?? '' }}</p>
+                                                    </div>
+                                                @endforeach
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    @endif
+                </div>
+
+            </div>
+        </div>
+
+        <div class="menu-shape">
+            <div class="shape1">
+                <img src="{{ asset('front/img/image-icon/7.png') }}" alt="image">
+            </div>
+            <div class="shape2">
+                <img src="{{ asset('front/img/image-icon/4.png') }}" alt="image">
+            </div>
+            <div class="shape3">
+                <img src="{{ asset('front/img/image-icon/5.png') }}" alt="image">
+            </div>
+            <div class="shape4">
+                <img src="{{ asset('front/img/image-icon/6.png') }}" alt="image">
+            </div>
+        </div>
+    </section>
 @endsection
 
 @section('scripts')
+    <script>
+        $('.owl-carousel').owlCarousel({
+            loop:true,
+            margin:10,
+            responsiveClass:true,
+            responsive:{
+                0:{
+                    items:1,
+                    nav:true
+                },
+                600:{
+                    items:3,
+                    nav:false
+                },
+                1000:{
+                    items:5,
+                    nav:true,
+                    loop:false
+                }
+            }
+        })
+    </script>
 @endsection

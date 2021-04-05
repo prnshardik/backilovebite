@@ -1,237 +1,78 @@
 @extends('front.layout.app')
 
-@section('title')
-    Testimonial
+@section('meta')
 @endsection
 
-@section('meta')
+@section('title')
+    Testimonial
 @endsection
 
 @section('styles')
 @endsection
 
 @section('content')
-    <div class="life-gambo">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="default-title">
-                        <h2>Testimonials</h2>
-                        <p>Our Team Says about us!</p>
-                        <img src="{{ asset('front/images/line.svg') }}" alt="">
-                    </div>
-                    <div class="dd-content">
-                        <div class="owl-carousel testimonial-slider owl-theme owl-loaded owl-drag">
-                            <div class="owl-stage-outer">
-                                <div class="owl-stage"
-                                    style="transform: translate3d(-2000px, 0px, 0px); transition: all 0.25s ease 0s; width: 4000px;">
-                                    <div class="owl-item cloned" style="width: 370px; margin-right: 30px;">
-                                        <div class="item">
-                                            <div class="testi-item">
-                                                <div class="testi-text">
-                                                    <div class="qoute-icon"><i class="fas fa-quote-left"></i></div>
-                                                    <div class="testo-text">Sed ut mattis enim. Nunc id semper eros. Donec luctus venenatis quam at tincidunt. In tristique nibh eget porta cursus. Integer volutpat tincidunt nibh et mattis.</div>
-                                                </div>
-                                                <div class="team-dt">
-                                                    <div class="team-avatar">
-                                                        <img src="{{ asset('front/images/avatar/img-2.jpg') }}" alt="">
-                                                    </div>
-                                                    <div class="team-emp-dt">
-                                                        <h4>Zoena Singh</h4>
-                                                        <p>Senior Manager - Training, Corporate</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="owl-item cloned" style="width: 370px; margin-right: 30px;">
-                                        <div class="item">
-                                            <div class="testi-item">
-                                                <div class="testi-text">
-                                                    <div class="qoute-icon"><i class="fas fa-quote-left"></i></div>
-                                                    <div class="testo-text">Sed ut mattis enim. Nunc id semper eros. Donec luctus venenatis quam at tincidunt. In tristique nibh eget porta cursus. Integer volutpat tincidunt nibh et mattis.</div>
-                                                </div>
-                                                <div class="team-dt">
-                                                    <div class="team-avatar">
-                                                        <img src="{{ asset('front/images/avatar/img-3.jpg') }}" alt="">
-                                                    </div>
-                                                    <div class="team-emp-dt">
-                                                        <h4>Rock William</h4>
-                                                        <p>Senior Manager - Finance &amp; Accounts, Corporate</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="owl-item cloned" style="width: 370px; margin-right: 30px;">
-                                        <div class="item">
-                                            <div class="testi-item">
-                                                <div class="testi-text">
-                                                    <div class="qoute-icon"><i class="fas fa-quote-left"></i></div>
-                                                    <div class="testo-text">Sed ut mattis enim. Nunc id semper eros. Donec luctus venenatis quam at tincidunt. In tristique nibh eget porta cursus. Integer volutpat tincidunt nibh et mattis.</div>
-                                                </div>
-                                                <div class="team-dt">
-                                                    <div class="team-avatar">
-                                                        <img src="{{ asset('front/images/avatar/img-4.jpg') }}" alt="">
-                                                    </div>
-                                                    <div class="team-emp-dt">
-                                                        <h4>Ridhima William</h4>
-                                                        <p>Head Customer Support</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="owl-item" style="width: 370px; margin-right: 30px;">
-                                        <div class="item">
-                                            <div class="testi-item">
-                                                <div class="testi-text">
-                                                    <div class="qoute-icon"><i class="fas fa-quote-left"></i></div>
-                                                    <div class="testo-text">Sed ut mattis enim. Nunc id semper eros. Donec luctus venenatis quam at tincidunt. In tristique nibh eget porta cursus. Integer volutpat tincidunt nibh et mattis.</div>
-                                                </div>
-                                                <div class="team-dt">
-                                                    <div class="team-avatar">
-                                                        <img src="{{ asset('front/images/avatar/img-1.jpg') }}" alt="">
-                                                    </div>
-                                                    <div class="team-emp-dt">
-                                                        <h4>Joginder Singh</h4>
-                                                        <p>Senior UX Designer, Product</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="owl-item" style="width: 370px; margin-right: 30px;">
-                                        <div class="item">
-                                            <div class="testi-item">
-                                                <div class="testi-text">
-                                                    <div class="qoute-icon"><i class="fas fa-quote-left"></i></div>
-                                                    <div class="testo-text">Sed ut mattis enim. Nunc id semper eros. Donec luctus venenatis quam at tincidunt. In tristique nibh eget porta cursus. Integer volutpat tincidunt nibh et mattis.</div>
-                                                </div>
-                                                <div class="team-dt">
-                                                    <div class="team-avatar">
-                                                        <img src="{{ asset('front/images/avatar/img-2.jpg') }}" alt="">
-                                                    </div>
-                                                    <div class="team-emp-dt">
-                                                        <h4>Zoena Singh</h4>
-                                                        <p>Senior Manager - Training, Corporate</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="owl-item active" style="width: 370px; margin-right: 30px;">
-                                        <div class="item">
-                                            <div class="testi-item">
-                                                <div class="testi-text">
-                                                    <div class="qoute-icon"><i class="fas fa-quote-left"></i></div>
-                                                    <div class="testo-text">Sed ut mattis enim. Nunc id semper eros. Donec luctus venenatis quam at tincidunt. In tristique nibh eget porta cursus. Integer volutpat tincidunt nibh et mattis.</div>
-                                                </div>
-                                                <div class="team-dt">
-                                                    <div class="team-avatar">
-                                                        <img src="{{ asset('front/images/avatar/img-3.jpg') }}" alt="">
-                                                    </div>
-                                                    <div class="team-emp-dt">
-                                                        <h4>Rock William</h4>
-                                                        <p>Senior Manager - Finance &amp; Accounts, Corporate</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="owl-item active" style="width: 370px; margin-right: 30px;">
-                                        <div class="item">
-                                            <div class="testi-item">
-                                                <div class="testi-text">
-                                                    <div class="qoute-icon"><i class="fas fa-quote-left"></i></div>
-                                                    <div class="testo-text">Sed ut mattis enim. Nunc id semper eros. Donec luctus venenatis quam at tincidunt. In tristique nibh eget porta cursus. Integer volutpat tincidunt nibh et mattis.</div>
-                                                </div>
-                                                <div class="team-dt">
-                                                    <div class="team-avatar">
-                                                        <img src="{{ asset('front/images/avatar/img-4.jpg') }}" alt="">
-                                                    </div>
-                                                    <div class="team-emp-dt">
-                                                        <h4>Ridhima William</h4>
-                                                        <p>Head Customer Support</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="owl-item cloned active" style="width: 370px; margin-right: 30px;">
-                                        <div class="item">
-                                            <div class="testi-item">
-                                                <div class="testi-text">
-                                                    <div class="qoute-icon"><i class="fas fa-quote-left"></i></div>
-                                                    <div class="testo-text">Sed ut mattis enim. Nunc id semper eros. Donec luctus venenatis quam at tincidunt. In tristique nibh eget porta cursus. Integer volutpat tincidunt nibh et mattis.</div>
-                                                </div>
-                                                <div class="team-dt">
-                                                    <div class="team-avatar">
-                                                        <img src="{{ asset('front/images/avatar/img-1.jpg') }}" alt="">
-                                                    </div>
-                                                    <div class="team-emp-dt">
-                                                        <h4>Joginder Singh</h4>
-                                                        <p>Senior UX Designer, Product</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="owl-item cloned" style="width: 370px; margin-right: 30px;">
-                                        <div class="item">
-                                            <div class="testi-item">
-                                                <div class="testi-text">
-                                                    <div class="qoute-icon"><i class="fas fa-quote-left"></i></div>
-                                                    <div class="testo-text">Sed ut mattis enim. Nunc id semper eros. Donec luctus venenatis quam at tincidunt. In tristique nibh eget porta cursus. Integer volutpat tincidunt nibh et mattis.</div>
-                                                </div>
-                                                <div class="team-dt">
-                                                    <div class="team-avatar">
-                                                        <img src="{{ asset('front/images/avatar/img-2.jpg') }}" alt="">
-                                                    </div>
-                                                    <div class="team-emp-dt">
-                                                        <h4>Zoena Singh</h4>
-                                                        <p>Senior Manager - Training, Corporate</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="owl-item cloned" style="width: 370px; margin-right: 30px;">
-                                        <div class="item">
-                                            <div class="testi-item">
-                                                <div class="testi-text">
-                                                    <div class="qoute-icon"><i class="fas fa-quote-left"></i></div>
-                                                    <div class="testo-text">Sed ut mattis enim. Nunc id semper eros. Donec luctus venenatis quam at tincidunt. In tristique nibh eget porta cursus. Integer volutpat tincidunt nibh et mattis.</div>
-                                                </div>
-                                                <div class="team-dt">
-                                                    <div class="team-avatar">
-                                                        <img src="{{ asset('front/images/avatar/img-3.jpg') }}" alt="">
-                                                    </div>
-                                                    <div class="team-emp-dt">
-                                                        <h4>Rock William</h4>
-                                                        <p>Senior Manager - Finance &amp; Accounts, Corporate</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="owl-nav">
-                                <button type="button" role="presentation" class="owl-prev">
-                                    <i class="uil uil-angle-left"></i>
-                                </button>
-                                <button type="button" role="presentation" class="owl-next">
-                                    <i class="uil uil-angle-right"></i>
-                                </button>
-                            </div>
-                            <div class="owl-dots disabled"></div>
-                        </div>
+    <div class="page-title-area item-bg-1">
+        <div class="d-table">
+            <div class="d-table-cell">
+                <div class="container">
+                    <div class="page-title-content">
+                        <h2>Testimonial</h2>
+                        <ul>
+                            <li><a href="{{ route('front.home') }}">Home</a></li>
+                            <li><i class="flaticon-tea-cup"></i></li>
+                            <li>Testimonial</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="page-title-shape">
+            <img src="{{ asset('front/img/page-title/down-shape.png') }}" alt="image">
+        </div>
     </div>
+    <section class="feedback-area ptb-100">
+        <div class="container">
+            <div class="feedback-slider owl-carousel owl-theme">
+                <div class="feedback-item">
+                    <div class="image">
+                        <img src="{{ asset('front//img/feedback/image.png') }}" alt="image">
+                    </div>
+                    <div class="info">
+                        <h3>David McLean</h3>
+                        <span>CEO, Foodplanet</span>
+                    </div>
+                    <p>I chose Handout because of their value And incredible superior customer Service they really awesome Food with quality service Ha of their value And incredible sup with quality</p>
+                </div>
+                <div class="feedback-item">
+                    <div class="image">
+                        <img src="{{ asset('front//img/feedback/image.png') }}" alt="image">
+                    </div>
+                    <div class="info">
+                        <h3>David McLean</h3>
+                        <span>CEO, Foodplanet</span>
+                    </div>
+                    <p>I chose Handout because of their value And incredible superior customer Service they really awesome Food with quality service Ha of their value And incredible sup with quality</p>
+                </div>
+            </div>
+        </div>
+        <div class="feedback-shape">
+            <div class="shape1">
+                <img src="{{ asset('front//img/image-icon/5.png') }}" alt="image">
+            </div>
+            <div class="shape2">
+                <img src="{{ asset('front//img/image-icon/3.png') }}" alt="image">
+            </div>
+            <div class="shape3">
+                <img src="{{ asset('front//img/image-icon/6.png') }}" alt="image">
+            </div>
+            <div class="shape4">
+                <img src="{{ asset('front//img/image-icon/2.png') }}" alt="image">
+            </div>
+            <div class="shape5">
+                <img src="{{ asset('front//img/image-icon/6.png') }}" alt="image">
+            </div>
+        </div>
+    </section>
 @endsection
 
 @section('scripts')
