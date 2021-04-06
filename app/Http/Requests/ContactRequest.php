@@ -10,33 +10,25 @@
         }
 
         public function rules(){
-            if($this->method() == 'PATCH'){
-                return [
-                    'name' => 'required',
-                    'email' => 'required|email',
-                    'phone' => 'required',
-                    'subject' => 'required',
-                    'message' => 'required'
-                ];
-            }else{
-                return [
-                    'name' => 'required',
-                    'email' => 'required|email',
-                    'phone' => 'required',
-                    'subject' => 'required',
-                    'message' => 'required'
-                ];
-            }
+            return [
+                'name' => 'required',
+                'email' => 'required|email|unique:contact_us,email',
+                'phone' => 'required|numeric|digits:10|unique:contact_us,phone',
+                'subject' => 'required',
+                'message' => 'required'
+            ];
         }
 
         public function messages(){
             return [
-                'name.required' => 'Please Enter Name',
-                'email.required' => 'Please Enter Email ID',
-                'email.email' => 'Please Enter Valid Email ID',
-                'phone.required' => 'Please Enter Phone Number',
-                'subject.required' => 'Please Enter Subject',
-                'message.required' => 'Please Enter Message'
+                'name.required' => 'Please enter name',
+                'email.required' => 'Please enter email address',
+                'email.email' => 'Please enter valida email address',
+                'phone.required' => 'Please enter phone number',
+                'phone.numeric' => 'Please enter valid phone number',
+                'phone.digits' => ' Phone number must be 10 digits only',
+                'subject.required' => 'Please enter subject',
+                'message.required' => 'Please enter message'
             ];
         }
     }

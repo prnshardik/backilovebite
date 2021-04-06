@@ -9,13 +9,24 @@
     use App\Models\Product;
     use App\Models\Category;
     use App\Models\Review;
+    use App\Models\FAQs;
     use App\Http\Requests\SubscribeRequest;
     use App\Http\Requests\ContactRequest;
     use DB;
 
     class HomeController extends Controller{
         public function index(Request $request){
-            return view('front.index');
+            $reviews_path = asset('/back/uploads/reviews/').'/';
+            $reviews = Review::select('id', 'name', 'title' ,'status', 'message',
+                                    DB::Raw("CASE
+                                                WHEN ".'image'." != ''
+                                                THEN CONCAT("."'".$reviews_path."'".", ".'image'.")
+                                                ELSE CONCAT("."'".$reviews_path."'".", 'default.png')
+                                            END as image")
+                                )
+                                ->get();
+
+            return view('front.index', ['reviews' => $reviews]);
         }
 
         public function menu(Request $request){
@@ -35,7 +46,8 @@
         }
 
         public function faq(Request $request){
-            $faq = DB::table('faqs')->where('status','active')->get();
+            $faq = FAQs::where('status','active')->get();
+
             return view('front.faq')->with('data', $faq);
         }
 
@@ -106,8 +118,8 @@
             $contact = Contact::create($crud);
 
             if($contact)
-                return response()->json(['code' => 200 ,'message' => 'Thanks For Contact us, we will take actions sortly.']);
+                return response()->json(['code' => 200, 'message' => 'Thanks For Contact us, we will take actions sortly.']);
             else
-                return response()->json(['code' => 201 ,'message' => 'Something went wrong, please try again later.']);
+                return response()->json(['code' => 201, 'message' => 'Something went wrong, please try again later.']);
         }
     }

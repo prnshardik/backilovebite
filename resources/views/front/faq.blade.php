@@ -45,11 +45,9 @@
                 <div class="col-lg-7 col-md-12">
                     <div class="faq-accordion">
                         <ul class="accordion">
-<<<<<<< HEAD
                             @if(isset($data) && !empty($data))
                                 @php $i = '1';  @endphp
                                 @foreach( $data AS $data )
-                                
                                     <li class="accordion-item">
                                         <a class="accordion-title <?= ($i == '1' ?'active':''); ?>" href="javascript:void(0)">
                                             <i class="flaticon-plus"></i>
@@ -57,48 +55,9 @@
                                         </a>
                                         <p class="accordion-content <?= ($i == '1' ?'show':''); ?>">{!! $data->discription !!}</p>
                                     </li>
-
-                                @php $i++  @endphp
+                                    @php $i++  @endphp
                                 @endforeach
                             @endif
-
-=======
-                            <li class="accordion-item">
-                                <a class="accordion-title active" href="javascript:void(0)">
-                                    <i class="flaticon-plus"></i>
-                                    Which material types can you work with?
-                                </a>
-                                <p class="accordion-content show">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
-                            </li>
-                            <li class="accordion-item">
-                                <a class="accordion-title" href="javascript:void(0)">
-                                    <i class="flaticon-plus"></i>
-                                    How monthly payments every month?
-                                </a>
-                                <p class="accordion-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
-                            </li>
-                            <li class="accordion-item">
-                                <a class="accordion-title" href="javascript:void(0)">
-                                    <i class="flaticon-plus"></i>
-                                    Can I have multiple activities in a single feature?
-                                </a>
-                                <p class="accordion-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
-                            </li>
-                            <li class="accordion-item">
-                                <a class="accordion-title" href="javascript:void(0)">
-                                    <i class="flaticon-plus"></i>
-                                    Which material types can you work with?
-                                </a>
-                                <p class="accordion-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
-                            </li>
-                            <li class="accordion-item">
-                                <a class="accordion-title" href="javascript:void(0)">
-                                    <i class="flaticon-plus"></i>
-                                    Why Choose Our Services In Your Business?
-                                </a>
-                                <p class="accordion-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
-                            </li>
->>>>>>> e4cf3a2390f9f3f89dfb8ce1acecd0838deecf6a
                         </ul>
                     </div>
                 </div>
@@ -109,55 +68,46 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                 </div>
                 <div class="faq-contact-form">
-<<<<<<< HEAD
                     <form id="contactForm" action="{{ route('front.contact_store') }}" method="post">
-                    @csrf
-=======
-                    <form id="contactForm">
->>>>>>> e4cf3a2390f9f3f89dfb8ce1acecd0838deecf6a
+                        @csrf
+                        @method('post')
+
                         <div class="row">
                             <div class="col-lg-6 col-md-6">
                                 <div class="form-group">
-                                    <input type="text" name="name" id="name" class="form-control" required data-error="Please enter your name" placeholder="Name">
-                                    <div class="help-block with-errors"></div>
+                                    <input type="text" name="name" id="name" class="form-control" placeholder="Name">
+                                    <span class="kt-form__help error text-danger name"></span>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6">
                                 <div class="form-group">
-                                    <input type="email" name="email" id="email" class="form-control" required data-error="Please enter your email" placeholder="Email">
+                                    <input type="email" name="email" id="email" class="form-control" placeholder="Email">
                                     <div class="help-block with-errors"></div>
+                                    <span class="kt-form__help error text-danger email"></span>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6">
                                 <div class="form-group">
-<<<<<<< HEAD
-                                    <input type="text" name="phone" id="phone" required data-error="Please enter your number" class="form-control" placeholder="Phone">
-=======
-                                    <input type="text" name="phone_number" id="phone_number" required data-error="Please enter your number" class="form-control" placeholder="Phone">
->>>>>>> e4cf3a2390f9f3f89dfb8ce1acecd0838deecf6a
+                                    <input type="text" name="phone" id="phone" class="form-control" placeholder="Phone">
                                     <div class="help-block with-errors"></div>
+                                    <span class="kt-form__help error text-danger phone"></span>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6">
                                 <div class="form-group">
-<<<<<<< HEAD
-                                    <input type="text" name="subject" id="subject" class="form-control" required data-error="Please enter your subject" placeholder="Subject">
-=======
-                                    <input type="text" name="msg_subject" id="msg_subject" class="form-control" required data-error="Please enter your subject" placeholder="Subject">
->>>>>>> e4cf3a2390f9f3f89dfb8ce1acecd0838deecf6a
+                                    <input type="text" name="subject" id="subject" class="form-control" placeholder="Subject">
                                     <div class="help-block with-errors"></div>
+                                    <span class="kt-form__help error text-danger subject"></span>
                                 </div>
                             </div>
                             <div class="col-lg-12 col-md-12">
                                 <div class="form-group">
-                                    <textarea name="message" class="form-control" id="message" cols="30" rows="5" required data-error="Write your message" placeholder="Your Message"></textarea>
-                                    <div class="help-block with-errors"></div>
+                                    <textarea name="message" class="form-control" id="message" cols="30" rows="5" placeholder="Your Message"></textarea>
+                                    <span class="kt-form__help error text-danger message"></span>
                                 </div>
                             </div>
                             <div class="col-lg-12 col-md-12">
-                                <button type="submit" class="default-btn">
-                                    Send Message
-                                    <span></span>
+                                <button type="submit" class="default-btn">Send Message<span></span>
                                 </button>
                                 <div id="msgSubmit" class="h3 text-center hidden"></div>
                                 <div class="clearfix"></div>
@@ -171,44 +121,39 @@
 @endsection
 
 @section('scripts')
-<script>
-    
-    
-    $(document).ready(function () {
-        var form = $('#contactForm');
-        $('.kt-form__help').html('');
-        form.submit(function(e) {
-            $('.help-block').html('');
-            $('.m-form__help').html('');
-            $.ajax({
-                url : form.attr('action'),
-                type : form.attr('method'),
-                data : form.serialize(),
-                dataType: 'json',
-                async:false,
-                success : function(json){
-                    
-                    if(json.code == 200){
-                        toastr.success('Record Insertd successfully.', 'Success');
-                        $("#contactForm").trigger("reset");
-                    }else{
-                        toastr.error('Faild To Insert Record !.', 'Error');
+    <script>    
+        $(document).ready(function () {
+            var form = $('#contactForm');
+            $('.kt-form__help').html('');
+            form.submit(function(e) {
+                $('.help-block').html('');
+                $('.m-form__help').html('');
+                $.ajax({
+                    url : form.attr('action'),
+                    type : form.attr('method'),
+                    data : form.serialize(),
+                    dataType: 'json',
+                    async:false,
+                    success : function(json){
+                        if(json.code == 200){
+                            toastr.success(json.message, 'Success');
+                            $("#contactForm").trigger("reset");
+                        }else{
+                            toastr.error(json.message, 'Error');
+                        }
+                    },
+                    error: function(json){
+                        if(json.status === 422) {
+                            e.preventDefault();
+                            var errors_ = json.responseJSON;
+                            $('.kt-form__help').html('');
+                            $.each(errors_.errors, function (key, value) {
+                                $('.'+key).html(value);
+                            });
+                        }
                     }
-                },
-                error: function(json){
-                    if(json.status === 422) {
-                        e.preventDefault();
-                        var errors_ = json.responseJSON;
-                        $('.kt-form__help').html('');
-                        $.each(errors_.errors, function (key, value) {
-                            $('.'+key).html(value);
-                        });
-                    }
-                }
+                });
             });
         });
-    });
-
-
-</script>
+    </script>
 @endsection

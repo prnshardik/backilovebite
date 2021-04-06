@@ -81,6 +81,7 @@ class CreateUsersTable extends Migration
                 'updated_by' => 1,
             )
         );
+        
         if(file_exists(public_path('/back/dummy/admin-avatar.png')) && !file_exists(public_path('/back/uploads/users/admin-avatar.png')) ){
             File::copy(public_path('/back/dummy/admin-avatar.png'), public_path('/back/uploads/users/admin-avatar.png'));
         }

@@ -22,7 +22,7 @@
                         <form name="form" action="{{ route('back.FAQs.insert') }}" id="form" method="post" enctype="multipart/form-data">
                             @csrf
 
-                            <div class="row">                                
+                            <div class="row">
                                 <div class="form-group col-sm-6">
                                     <label for="title">Title</label>
                                     <input type="text" name="title" id="title" class="form-control" placeholder="Plese enter title" />
@@ -47,7 +47,6 @@
 @endsection
 
 @section('scripts')
-
     <script>
         $(document).ready(function () {
             var form = $('#form');

@@ -23,6 +23,7 @@
                             @csrf
                             @method('PATCH')
                             <input type="hidden" name="id" value="{{ $data->id }}">
+
                             <div class="row">                                
                                 <div class="form-group col-sm-6">
                                     <label for="title">Title</label>
@@ -48,7 +49,6 @@
 @endsection
 
 @section('scripts')
-
     <script>
         $(document).ready(function () {
             var form = $('#form');
