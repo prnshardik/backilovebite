@@ -43,13 +43,8 @@ Route::group(['middleware' => 'prevent-back-history', 'namespace' => 'Front', 'a
     Route::get('product-detail', 'HomeController@product_detail')->name('product-detail');
     Route::get('error', 'HomeController@error')->name('error');
 
-<<<<<<< HEAD
-    Route::get('checkout', 'HomeController@checkout')->name('checkout');
-    Route::get('cart', 'HomeController@cart')->name('cart');
-=======
     Route::get('cart', 'HomeController@cart')->name('cart');
     Route::get('checkout', 'HomeController@checkout')->name('checkout');
->>>>>>> e4cf3a2390f9f3f89dfb8ce1acecd0838deecf6a
 
     Route::post('subscribe', 'HomeController@subscribe')->name('subscribe');
 });
@@ -138,7 +133,7 @@ Route::group(['middleware' => 'prevent-back-history', 'namespace' => 'Back', 'as
             Route::post('settings/update', 'SettingsController@update')->name('settings.update');
             Route::post('settings/logo/update', 'SettingsController@logo_update')->name('settings.update.logo');
         /** Settings */
-        
+
         /** FAQ */
             Route::any('FAQs', 'FAQsController@index')->name('FAQs');
             Route::get('FAQs/create', 'FAQsController@create')->name('FAQs.create');
