@@ -185,7 +185,7 @@
         <div class="container">
             <div class="section-title">
                 <span>Quality Products</span>
-                <h2>Burgers As Expected Dilicious One</h2>
+                <h2>Select Expected Dilicious One</h2>
             </div>
             <div class="burger-shop-slider owl-carousel owl-theme">
                 @if(isset($categories) && !empty($categories))
@@ -252,11 +252,11 @@
                                                 @foreach($row->products as $pRow)
                                                     <div class="menu-list-content" style="margin-bottom: 20px;">
                                                         <h3>
-                                                            {{ $pRow['name'] ?? '' }}
+                                                            {{ $pRow->name ?? '' }}
                                                             <b>....................</b>
-                                                            <span>${{ $pRow['price'] ?? '' }}</span>
+                                                            <span>${{ $pRow->price ?? '' }}</span>
                                                         </h3>
-                                                        <p>{{ $pRow['description'] ?? '' }}</p>
+                                                        <p>{{ $pRow->description ?? '' }}</p>
                                                     </div>
                                                 @endforeach
                                             @endif

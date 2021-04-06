@@ -26,7 +26,43 @@
                                 )
                                 ->get();
 
-            return view('front.index', ['reviews' => $reviews]);
+            $menu_path = asset('/back/uploads/category/').'/';
+            $menu = Category::select('id', 'name', 'description',
+                                        DB::Raw("CASE
+                                            WHEN ".'image'." != ''
+                                            THEN CONCAT("."'".$menu_path."'".", ".'image'.")
+                                            ELSE CONCAT("."'".$menu_path."'".", 'default.png')
+                                        END as image")
+                                )
+                                ->where(['status' => 'active'])
+                                ->inRandomOrder()
+                                ->limit(5)
+                                ->get();
+
+            if($menu->isNotEmpty()){
+                foreach ($menu as $row) {
+                    
+                    $products = Product::select('id', 'name', 'description', 'price')->where(['category_id' => $row->id, 'status' => 'active'])->get();
+
+                    if($products->isNotEmpty())
+                        $row->products = $products;
+                    else
+                        $row->products = collect();
+                }
+            }
+
+            $category_path = asset('/back/uploads/category/').'/';
+            $categories = Category::select('id', 'name', 'description',
+                                        DB::Raw("CASE
+                                            WHEN ".'image'." != ''
+                                            THEN CONCAT("."'".$category_path."'".", ".'image'.")
+                                            ELSE CONCAT("."'".$category_path."'".", 'default.png')
+                                        END as image")
+                                )
+                                ->where(['status' => 'active'])
+                                ->get();
+
+            return view('front.index', ['reviews' => $reviews, 'menu' => $menu, 'categories' => $categories]);
         }
 
         public function menu(Request $request){
