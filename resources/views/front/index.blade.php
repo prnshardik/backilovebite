@@ -185,7 +185,7 @@
         <div class="container">
             <div class="section-title">
                 <span>Quality Products</span>
-                <h2>Burgers As Expected Dilicious One</h2>
+                <h2>Select Expected Dilicious One</h2>
             </div>
             <div class="burger-shop-slider owl-carousel owl-theme">
                 @if(isset($categories) && !empty($categories))

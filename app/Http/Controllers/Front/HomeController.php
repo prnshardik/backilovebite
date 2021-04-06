@@ -26,12 +26,12 @@
                                 )
                                 ->get();
 
-            $category_path = asset('/back/uploads/category/').'/';
+            $menu_path = asset('/back/uploads/category/').'/';
             $menu = Category::select('id', 'name', 'description',
                                         DB::Raw("CASE
                                             WHEN ".'image'." != ''
-                                            THEN CONCAT("."'".$category_path."'".", ".'image'.")
-                                            ELSE CONCAT("."'".$category_path."'".", 'default.png')
+                                            THEN CONCAT("."'".$menu_path."'".", ".'image'.")
+                                            ELSE CONCAT("."'".$menu_path."'".", 'default.png')
                                         END as image")
                                 )
                                 ->where(['status' => 'active'])
@@ -51,7 +51,18 @@
                 }
             }
 
-            return view('front.index', ['reviews' => $reviews, 'menu' => $menu]);
+            $category_path = asset('/back/uploads/category/').'/';
+            $categories = Category::select('id', 'name', 'description',
+                                        DB::Raw("CASE
+                                            WHEN ".'image'." != ''
+                                            THEN CONCAT("."'".$category_path."'".", ".'image'.")
+                                            ELSE CONCAT("."'".$category_path."'".", 'default.png')
+                                        END as image")
+                                )
+                                ->where(['status' => 'active'])
+                                ->get();
+
+            return view('front.index', ['reviews' => $reviews, 'menu' => $menu, 'categories' => $categories]);
         }
 
         public function menu(Request $request){

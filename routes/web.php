@@ -45,6 +45,7 @@ Route::group(['middleware' => 'prevent-back-history', 'namespace' => 'Front', 'a
 
     Route::get('cart', 'HomeController@cart')->name('cart');
     Route::get('checkout', 'HomeController@checkout')->name('checkout');
+    Route::get('shop', 'HomeController@shop')->name('shop');
 
     Route::post('subscribe', 'HomeController@subscribe')->name('subscribe');
 });
