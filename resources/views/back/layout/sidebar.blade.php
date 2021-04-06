@@ -54,6 +54,11 @@
                     <span class="nav-label">Settings</span>
                 </a>
             </li>
+            <li class="{{ Request::is('back/Timings*') ? 'active' : '' }}">
+                <a class="{{ Request::is('back/Timings*') ? 'active' : '' }}" href="{{ route('back.Timings') }}"><i class="sidebar-item-icon fa fa-clock-o"></i>
+                    <span class="nav-label">Timings</span>
+                </a>
+            </li>
         </ul>
     </div>
 </nav>
