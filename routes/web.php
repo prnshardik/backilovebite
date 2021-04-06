@@ -143,5 +143,13 @@ Route::group(['middleware' => 'prevent-back-history', 'namespace' => 'Back', 'as
             Route::PATCH('FAQs/update', 'FAQsController@update')->name('FAQs.update');
             Route::post('FAQs/change-status', 'FAQsController@change_status')->name('FAQs.change.status');
         /** FAQ */
+        
+        /** Timings */
+            Route::any('Timings', 'TimingController@index')->name('Timings');
+            Route::get('Timings/view/{id?}', 'TimingController@view')->name('Timings.view');
+            Route::get('Timings/edit/{id?}', 'TimingController@edit')->name('Timings.edit');
+            Route::PATCH('Timings/update', 'TimingController@update')->name('Timings.update');
+            Route::post('Timings/change-status', 'TimingController@change_status')->name('Timings.change.status');
+        /** Timings */
     });
 });
