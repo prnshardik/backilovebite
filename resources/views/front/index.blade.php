@@ -396,12 +396,15 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="single-footer-widget">
                         <ul class="table">
-                            <li>Sunday<span>Closed</span></li>
-                            <li>Monday<span>8.00 - 20.00</span></li>
-                            <li>Tuesday<span>10:00-5.00</span></li>
-                            <li>Wednesday<span>12:00-9:00</span></li>
-                            <li>Friday<span>3:00-1:00</span></li>
-                            <li>Saturday<span>9:00-12:00</span></li>
+                            
+                            @if(isset($timing) && !empty($timing))
+                                @foreach($timing AS $timing)
+                                    <li>{{ $timing['days'] }}<span><?=($timing['start_time'] != null ? date('H:i',strtotime($timing['start_time'])).'-'.date('H:i',strtotime($timing['end_time'])) :'Closed')?></span></li>
+                                @endforeach
+                            @else
+                                <li>{{ $timing['days'] }}<span>Closed</span></li>
+                            @endif
+                            
                         </ul>
                     </div>
                 </div>

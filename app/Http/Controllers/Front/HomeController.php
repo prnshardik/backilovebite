@@ -9,6 +9,7 @@
     use App\Models\Product;
     use App\Models\Category;
     use App\Models\Review;
+    use App\Models\Timing;
     use App\Models\FAQs;
     use App\Http\Requests\SubscribeRequest;
     use App\Http\Requests\ContactRequest;
@@ -25,6 +26,7 @@
                                             END as image")
                                 )
                                 ->get();
+            $timing = Timing::select('id','days','start_time','end_time','status')->where('status','active')->get()->toArraY();
 
             $menu_path = asset('/back/uploads/category/').'/';
             $menu = Category::select('id', 'name', 'description',
@@ -62,7 +64,7 @@
                                 ->where(['status' => 'active'])
                                 ->get();
 
-            return view('front.index', ['reviews' => $reviews, 'menu' => $menu, 'categories' => $categories]);
+            return view('front.index', ['reviews' => $reviews, 'menu' => $menu, 'categories' => $categories ,'timing' => $timing]);
         }
 
         public function menu(Request $request){
