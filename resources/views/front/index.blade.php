@@ -252,11 +252,11 @@
                                                 @foreach($row->products as $pRow)
                                                     <div class="menu-list-content" style="margin-bottom: 20px;">
                                                         <h3>
-                                                            {{ $pRow['name'] ?? '' }}
+                                                            {{ $pRow->name ?? '' }}
                                                             <b>....................</b>
-                                                            <span>${{ $pRow['price'] ?? '' }}</span>
+                                                            <span>${{ $pRow->price ?? '' }}</span>
                                                         </h3>
-                                                        <p>{{ $pRow['description'] ?? '' }}</p>
+                                                        <p>{{ $pRow->description ?? '' }}</p>
                                                     </div>
                                                 @endforeach
                                             @endif
