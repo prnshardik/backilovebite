@@ -27,8 +27,8 @@ class CreateTimingsTable extends Migration
         DB::table('timings')->insert(
             array(
                 'days' => 'Sunday',
-                'start_time' => '10:00 AM',
-                'end_time' => '10:00 PM',
+                'start_time' => '10:00',
+                'end_time' => '10:00',
                 'status' => 'active',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
@@ -40,8 +40,8 @@ class CreateTimingsTable extends Migration
         DB::table('timings')->insert(
             array(
                 'days' => 'Monday',
-                'start_time' => '10:00 AM',
-                'end_time' => '10:00 PM',
+                'start_time' => '10:00',
+                'end_time' => '10:00',
                 'status' => 'active',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
@@ -53,8 +53,8 @@ class CreateTimingsTable extends Migration
         DB::table('timings')->insert(
             array(
                 'days' => 'Tuesday',
-                'start_time' => '10:00 AM',
-                'end_time' => '10:00 PM',
+                'start_time' => '10:00',
+                'end_time' => '10:00',
                 'status' => 'active',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
@@ -66,8 +66,8 @@ class CreateTimingsTable extends Migration
         DB::table('timings')->insert(
             array(
                 'days' => 'Wednesday',
-                'start_time' => '10:00 AM',
-                'end_time' => '10:00 PM',
+                'start_time' => '10:00',
+                'end_time' => '10:00',
                 'status' => 'active',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
@@ -79,8 +79,8 @@ class CreateTimingsTable extends Migration
         DB::table('timings')->insert(
             array(
                 'days' => 'Thrusday',
-                'start_time' => '10:00 AM',
-                'end_time' => '10:00 PM',
+                'start_time' => '10:00',
+                'end_time' => '10:00',
                 'status' => 'active',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
@@ -92,8 +92,8 @@ class CreateTimingsTable extends Migration
         DB::table('timings')->insert(
             array(
                 'days' => 'Friday',
-                'start_time' => '10:00 AM',
-                'end_time' => '10:00 PM',
+                'start_time' => '10:00',
+                'end_time' => '10:00',
                 'status' => 'active',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
@@ -105,8 +105,8 @@ class CreateTimingsTable extends Migration
         DB::table('timings')->insert(
             array(
                 'days' => 'Saturday',
-                'start_time' => '10:00 AM',
-                'end_time' => '10:00 PM',
+                'start_time' => '10:00',
+                'end_time' => '10:00',
                 'status' => 'active',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),

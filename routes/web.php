@@ -129,12 +129,6 @@ Route::group(['middleware' => 'prevent-back-history', 'namespace' => 'Back', 'as
             Route::post('reviews/change-status', 'ReviewsController@change_status')->name('reviews.change.status');
         /** Reviews */
 
-        /** Settings */
-            Route::get('settings', 'SettingsController@index')->name('settings');
-            Route::post('settings/update', 'SettingsController@update')->name('settings.update');
-            Route::post('settings/logo/update', 'SettingsController@logo_update')->name('settings.update.logo');
-        /** Settings */
-
         /** FAQ */
             Route::any('FAQs', 'FAQsController@index')->name('FAQs');
             Route::get('FAQs/create', 'FAQsController@create')->name('FAQs.create');
@@ -144,13 +138,20 @@ Route::group(['middleware' => 'prevent-back-history', 'namespace' => 'Back', 'as
             Route::PATCH('FAQs/update', 'FAQsController@update')->name('FAQs.update');
             Route::post('FAQs/change-status', 'FAQsController@change_status')->name('FAQs.change.status');
         /** FAQ */
-        
+
         /** Timings */
-            Route::any('Timings', 'TimingController@index')->name('Timings');
-            Route::get('Timings/view/{id?}', 'TimingController@view')->name('Timings.view');
-            Route::get('Timings/edit/{id?}', 'TimingController@edit')->name('Timings.edit');
-            Route::PATCH('Timings/update', 'TimingController@update')->name('Timings.update');
-            Route::post('Timings/change-status', 'TimingController@change_status')->name('Timings.change.status');
+            Route::any('timings', 'TimingController@index')->name('timings');
+            Route::post('timings/update', 'TimingController@update')->name('timings.update');
+
+            Route::get('timings/view/{id?}', 'TimingController@view')->name('timings.view');
+            Route::get('timings/edit/{id?}', 'TimingController@edit')->name('timings.edit');
+            Route::post('timings/change-status', 'TimingController@change_status')->name('timings.change.status');
         /** Timings */
+
+        /** Settings */
+            Route::get('settings', 'SettingsController@index')->name('settings');
+            Route::post('settings/update', 'SettingsController@update')->name('settings.update');
+            Route::post('settings/logo/update', 'SettingsController@logo_update')->name('settings.update.logo');
+        /** Settings */
     });
 });
