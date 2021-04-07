@@ -142,10 +142,6 @@ Route::group(['middleware' => 'prevent-back-history', 'namespace' => 'Back', 'as
         /** Timings */
             Route::any('timings', 'TimingController@index')->name('timings');
             Route::post('timings/update', 'TimingController@update')->name('timings.update');
-
-            Route::get('timings/view/{id?}', 'TimingController@view')->name('timings.view');
-            Route::get('timings/edit/{id?}', 'TimingController@edit')->name('timings.edit');
-            Route::post('timings/change-status', 'TimingController@change_status')->name('timings.change.status');
         /** Timings */
 
         /** Settings */
