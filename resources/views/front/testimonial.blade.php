@@ -33,26 +33,20 @@
     <section class="feedback-area ptb-100">
         <div class="container">
             <div class="feedback-slider owl-carousel owl-theme">
-                <div class="feedback-item">
-                    <div class="image">
-                        <img src="{{ asset('front//img/feedback/image.png') }}" alt="image">
-                    </div>
-                    <div class="info">
-                        <h3>David McLean</h3>
-                        <span>CEO, Foodplanet</span>
-                    </div>
-                    <p>I chose Handout because of their value And incredible superior customer Service they really awesome Food with quality service Ha of their value And incredible sup with quality</p>
-                </div>
-                <div class="feedback-item">
-                    <div class="image">
-                        <img src="{{ asset('front//img/feedback/image.png') }}" alt="image">
-                    </div>
-                    <div class="info">
-                        <h3>David McLean</h3>
-                        <span>CEO, Foodplanet</span>
-                    </div>
-                    <p>I chose Handout because of their value And incredible superior customer Service they really awesome Food with quality service Ha of their value And incredible sup with quality</p>
-                </div>
+                @if(isset($data) && $data->isNotEmpty())
+                    @foreach($data as $row)
+                        <div class="feedback-item">
+                            <div class="image">
+                                <img src="{{ $row->image }}" alt="{{ $row->name }} image">
+                            </div>
+                            <div class="info">
+                                <h3>{{ $row->name }}</h3>
+                                <span>{{ $row->title }}</span>
+                            </div>
+                            <p>{{ $row->message }}</p>
+                        </div>
+                    @endforeach
+                @endif
             </div>
         </div>
         <div class="feedback-shape">

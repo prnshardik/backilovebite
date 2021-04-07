@@ -81,13 +81,23 @@
         }
 
         public function testimonial(Request $request){
-            return view('front.testimonial');
+            $reviews_path = asset('/back/uploads/reviews/').'/';
+            $data = Review::select('id', 'name', 'title', 'status', 'message',
+                                    DB::Raw("CASE
+                                                WHEN ".'image'." != ''
+                                                THEN CONCAT("."'".$reviews_path."'".", ".'image'.")
+                                                ELSE CONCAT("."'".$reviews_path."'".", 'default.png')
+                                            END as image")
+                                )
+                                ->get();
+
+            return view('front.testimonial', ['data' => $data]);
         }
 
         public function faq(Request $request){
-            $faq = FAQs::where('status','active')->get();
+            $data = FAQs::where('status','active')->get();
 
-            return view('front.faq')->with('data', $faq);
+            return view('front.faq', ['data' => $data]);
         }
 
         public function terms(Request $request){
@@ -140,7 +150,8 @@
         }
 
         public function contact(Request $request){
-            return view('front.contact');
+            $timing = Timing::get();
+            return view('front.contact', ['timing' => $timing]);
         }
 
         public function contact_store(ContactRequest $request){

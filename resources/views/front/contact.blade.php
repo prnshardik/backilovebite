@@ -50,12 +50,20 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="box-item">
                         <ul class="box-table">
-                            <li>Sunday<span>Closed</span></li>
-                            <li>Monday<span>8.00 - 20.00</span></li>
-                            <li>Tuesday<span>10:00-5.00</span></li>
-                            <li>Wednesday<span>12:00-9:00</span></li>
-                            <li>Friday<span>3:00-1:00</span></li>
-                            <li>Saturday<span>9:00-12:00</span></li>
+                           @if(isset($timing) && $timing->isNotEmpty())
+                                @foreach($timing as $row)
+                                    <li>
+                                        {{ $row->days }}
+                                        <span>
+                                            @if($row->status == 'inactive')
+                                                Closed
+                                            @else
+                                                {{ $row->start_time }} - {{ $row->end_time }}                                     
+                                            @endif
+                                        </span>
+                                    </li>
+                                @endforeach
+                            @endif
                         </ul>
                     </div>
                 </div>
