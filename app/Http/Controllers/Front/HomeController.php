@@ -26,7 +26,6 @@
                                             END as image")
                                 )
                                 ->get();
-            $timing = Timing::select('id','days','start_time','end_time','status')->where('status','active')->get()->toArraY();
 
             $menu_path = asset('/back/uploads/category/').'/';
             $menu = Category::select('id', 'name', 'description',
@@ -64,7 +63,9 @@
                                 ->where(['status' => 'active'])
                                 ->get();
 
-            return view('front.index', ['reviews' => $reviews, 'menu' => $menu, 'categories' => $categories ,'timing' => $timing]);
+            $timing = Timing::get();
+
+            return view('front.index', ['reviews' => $reviews, 'menu' => $menu, 'categories' => $categories, 'timing' => $timing]);
         }
 
         public function menu(Request $request){

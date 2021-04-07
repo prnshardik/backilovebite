@@ -31,12 +31,12 @@
                 <img src="{{ _logo() }}" alt="Love Bite Logo" style="width:100px; height:100px;">
             </a>
             <ul class="list">
-                <li><a href="{{ route('front.about') }}">About Us</a></li>
                 <li><a href="{{ route('front.menu') }}">Menu</a></li>
-                <li><a href="{{ route('front.testimonial') }}">Testimonial</a></li>
                 <li><a href="{{ route('front.gallery') }}">Gallery</a></li>
-                <li><a href="{{ route('front.faq') }}">Faq</a></li>
+                <li><a href="{{ route('front.testimonial') }}">Testimonial</a></li>
+                <li><a href="{{ route('front.about') }}">About Us</a></li>
                 <li><a href="{{ route('front.contact') }}">Contact</a></li>
+                <li><a href="{{ route('front.faq') }}">Faq</a></li>
                 <li><a href="{{ route('front.terms') }}">Terms & Conditions</a></li>
                 <li><a href="{{ route('front.privacy') }}">Privacy Policy</a></li>
             </ul>

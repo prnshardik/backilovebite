@@ -342,11 +342,6 @@
                         @endif
                     </div>
                 </div>
-                {{-- <div class="col-lg-6">
-                    <div class="testimonial-image">
-                        <img src="{{ asset('front/img/feedback/image.png') }}" alt="image">
-                    </div>
-                </div> --}}
             </div>
         </div>
         <div class="testimonial-shape">
@@ -396,15 +391,20 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="single-footer-widget">
                         <ul class="table">
-                            
-                            @if(isset($timing) && !empty($timing))
-                                @foreach($timing AS $timing)
-                                    <li>{{ $timing['days'] }}<span><?=($timing['start_time'] != null ? date('H:i',strtotime($timing['start_time'])).'-'.date('H:i',strtotime($timing['end_time'])) :'Closed')?></span></li>
+                            @if(isset($timing) && $timing->isNotEmpty())
+                                @foreach($timing as $row)
+                                    <li>
+                                        {{ $row->days }}
+                                        <span>
+                                            @if($row->status == 'inactive')
+                                                Closed
+                                            @else
+                                                {{ $row->start_time }} - {{ $row->end_time }}                                     
+                                            @endif
+                                        </span>
+                                    </li>
                                 @endforeach
-                            @else
-                                <li>{{ $timing['days'] }}<span>Closed</span></li>
-                            @endif
-                            
+                            @endif                            
                         </ul>
                     </div>
                 </div>
