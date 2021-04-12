@@ -42,7 +42,7 @@
 
             if($menu->isNotEmpty()){
                 foreach ($menu as $row) {
-                    
+
                     $products = Product::select('id', 'name', 'description', 'price')->where(['category_id' => $row->id, 'status' => 'active'])->get();
 
                     if($products->isNotEmpty())
@@ -69,7 +69,30 @@
         }
 
         public function menu(Request $request){
-            return view('front.menu');
+            $category_path = asset('/back/uploads/category/').'/';
+            $data = Category::select('id', 'name', 'description',
+                                        DB::Raw("CASE
+                                            WHEN ".'image'." != ''
+                                            THEN CONCAT("."'".$category_path."'".", ".'image'.")
+                                            ELSE CONCAT("."'".$category_path."'".", 'default.png')
+                                        END as image")
+                                )
+                                ->where(['status' => 'active'])
+                                ->get();
+
+            if($data->isNotEmpty()){
+                foreach ($data as $row) {
+
+                    $products = Product::select('id', 'name', 'description', 'price')->where(['category_id' => $row->id, 'status' => 'active'])->get();
+
+                    if($products->isNotEmpty())
+                        $row->products = $products;
+                    else
+                        $row->products = collect();
+                }
+            }
+
+            return view('front.menu', ['data' => $data]);
         }
 
         public function gallery(Request $request){
