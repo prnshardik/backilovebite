@@ -28,7 +28,7 @@
     <div class="container">
         <div class="footer-content-item" style="max-width: 825px;" >
             <a href="{{ route('front.home') }}">
-                <img src="{{ _logo() }}" alt="Love Bite Logo" style="width:100px; height:100px;">
+                <img src="{{ _small_logo() }}" alt="Love Bite Logo" style="width:100px; height:100px;">
             </a>
             <ul class="list">
                 <li><a href="{{ route('front.menu') }}">Menu</a></li>

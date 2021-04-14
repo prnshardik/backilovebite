@@ -28,7 +28,7 @@ class CreateTimingsTable extends Migration
             array(
                 'days' => 'Sunday',
                 'start_time' => '10:00',
-                'end_time' => '10:00',
+                'end_time' => '22:00',
                 'status' => 'active',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
@@ -41,7 +41,7 @@ class CreateTimingsTable extends Migration
             array(
                 'days' => 'Monday',
                 'start_time' => '10:00',
-                'end_time' => '10:00',
+                'end_time' => '22:00',
                 'status' => 'active',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
@@ -54,7 +54,7 @@ class CreateTimingsTable extends Migration
             array(
                 'days' => 'Tuesday',
                 'start_time' => '10:00',
-                'end_time' => '10:00',
+                'end_time' => '22:00',
                 'status' => 'active',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
@@ -67,7 +67,7 @@ class CreateTimingsTable extends Migration
             array(
                 'days' => 'Wednesday',
                 'start_time' => '10:00',
-                'end_time' => '10:00',
+                'end_time' => '22:00',
                 'status' => 'active',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
@@ -80,7 +80,7 @@ class CreateTimingsTable extends Migration
             array(
                 'days' => 'Thrusday',
                 'start_time' => '10:00',
-                'end_time' => '10:00',
+                'end_time' => '22:00',
                 'status' => 'active',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
@@ -93,7 +93,7 @@ class CreateTimingsTable extends Migration
             array(
                 'days' => 'Friday',
                 'start_time' => '10:00',
-                'end_time' => '10:00',
+                'end_time' => '22:00',
                 'status' => 'active',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
@@ -106,7 +106,7 @@ class CreateTimingsTable extends Migration
             array(
                 'days' => 'Saturday',
                 'start_time' => '10:00',
-                'end_time' => '10:00',
+                'end_time' => '22:00',
                 'status' => 'active',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),

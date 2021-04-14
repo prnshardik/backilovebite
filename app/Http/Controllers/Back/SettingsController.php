@@ -49,7 +49,6 @@
             if(!empty($data)){
                 foreach($data as $key => $value){
                     $collection = Setting::where(['key' => $key])->first();
-
                     if(!empty($collection)){
                         if(!empty($request->file($key))){
                             $image_name = $collection->value;
