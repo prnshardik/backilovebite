@@ -4,23 +4,24 @@
 @endsection
 
 @section('title')
-    Shop
+    Products
 @endsection
 
 @section('styles')
 @endsection
 
 @section('content')
+
     <div class="page-title-area item-bg-1">
         <div class="d-table">
             <div class="d-table-cell">
                 <div class="container">
                     <div class="page-title-content">
-                        <h2>Shop List</h2>
+                        <h2>Products List</h2>
                         <ul>
                             <li><a href="{{ route('front.home') }}">Home</a></li>
                             <li><i class="flaticon-tea-cup"></i></li>
-                            <li>Shop List</li>
+                            <li>Products List</li>
                         </ul>
                     </div>
                 </div>
@@ -53,29 +54,33 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-3 col-md-6">
-                    <div class="single-product">
-                        <div class="product-image">
-                            <a href="{{ route('front.product-detail') }}">
-                                <img src="{{ asset('front/img/shop/image1.jpg') }}" alt="image">
-                            </a>
-                            <a href="{{ route('front.cart') }}" class="add-to-cart-btn">
-                                Add To Cart 
-                                <i class="flaticon-shopping-cart"></i>
-                            </a>
-                        </div>
-                        <div class="product-content">
-                            <h3>
-                                <a href="{{ route('front.product-detail') }}">
-                                    Burger Bistro
-                                </a>
-                            </h3>
-                            <div class="price">
-                                <span class="new">$45.50</span>
+                @if(isset($products) && $products->isNotEmpty())
+                    @foreach($products AS $row)
+                        <div class="col-lg-3 col-md-6">
+                            <div class="single-product">
+                                <div class="product-image">
+                                    <a href="{{ route('front.product-detail', base64_encode($row->id)) }}">
+                                        <img src="{{ $row->image }}"  alt="image">
+                                    </a>
+                                    <a href="{{ route('front.cart', base64_encode($row->id)) }}" class="add-to-cart-btn">
+                                        Add To Cart 
+                                        <i class="flaticon-shopping-cart"></i>
+                                    </a>
+                                </div>
+                                <div class="product-content">
+                                    <h3>
+                                        <a href="{{ route('front.product-detail', base64_encode($row->id)) }}">
+                                            {{ $row->name }}
+                                        </a>
+                                    </h3>
+                                    <div class="price">
+                                        <span class="new">&#x20B9;{{ $row->price }}</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    @endforeach
+                @endif
             </div>
         </div>
     </section>

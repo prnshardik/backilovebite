@@ -194,7 +194,7 @@
                             <div class="image">
                                 <img src="{{ $row->image }}" alt="{{ $row->name ?? '' }} image" style="max-width: 60px; max-height: 60px;">
                                 <div class="burger-btn">
-                                    <a href="{{ route('front.shop') }}" class="default-btn">
+                                    <a href="{{ route('front.products',base64_encode($row->id)) }}" class="default-btn">
                                         Order Online
                                         <i class="flaticon-play-button"></i>
                                         <span></span>

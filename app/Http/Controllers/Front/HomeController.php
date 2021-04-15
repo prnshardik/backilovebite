@@ -135,12 +135,43 @@
             return view('front.cart');
         }
 
-        public function shop(Request $request){
-            return view('front.shop');
+        public function products(Request $request){
+            $id = base64_decode($request->id);
+            $path = asset('/back/uploads/products').'/';
+            $products = null;
+            if (!empty($id) && $id != null) {
+                $products = DB::table('products')
+                            ->select('id','name','category_id','price','description',
+                                DB::Raw("CASE
+                                            WHEN ".'image'." != ''
+                                            THEN CONCAT("."'".$path."'".", ".'image'.")
+                                            ELSE CONCAT("."'".$path."'".", 'default.png')
+                                        END as image")
+                            )
+                            ->where('category_id',$id)->get();
+            }
+
+            return view('front.products')->with('products',$products);
         }
 
         public function product_detail(Request $request){
-            return view('front.product-detail');
+            $id = base64_decode($request->id);
+            $path = asset('/back/uploads/products').'/';
+            $product = null;
+            if (!empty($id) && $id != null) {
+                $product = DB::table('products')
+                            ->select('id','name','category_id','price','description',
+                                DB::Raw("CASE
+                                            WHEN ".'image'." != ''
+                                            THEN CONCAT("."'".$path."'".", ".'image'.")
+                                            ELSE CONCAT("."'".$path."'".", 'default.png')
+                                        END as image")
+                            )
+                            ->where('id',$id)->first();
+            }
+
+            $releted_product = Product::inRandomOrder()->limit(3)->get();
+            return view('front.product-detail')->with(['product' => $product , 'releted_product' => $releted_product]);
         }
 
         public function checkout(Request $request){

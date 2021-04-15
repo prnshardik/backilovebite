@@ -40,12 +40,12 @@ Route::group(['middleware' => 'prevent-back-history', 'namespace' => 'Front', 'a
     Route::get('faq', 'HomeController@faq')->name('faq');
     Route::get('terms', 'HomeController@terms')->name('terms');
     Route::get('privacy', 'HomeController@privacy')->name('privacy');
-    Route::get('product-detail', 'HomeController@product_detail')->name('product-detail');
+    Route::get('product-detail/{id?}', 'HomeController@product_detail')->name('product-detail');
     Route::get('error', 'HomeController@error')->name('error');
 
     Route::get('cart', 'HomeController@cart')->name('cart');
     Route::get('checkout', 'HomeController@checkout')->name('checkout');
-    Route::get('shop', 'HomeController@shop')->name('shop');
+    Route::get('products/{id?}', 'HomeController@products')->name('products');
 
     Route::post('subscribe', 'HomeController@subscribe')->name('subscribe');
 });
